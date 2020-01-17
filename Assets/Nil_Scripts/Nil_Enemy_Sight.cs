@@ -141,11 +141,12 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 
             if (checkPlayer && Time.timeSinceLevelLoad >= reCheck) 
             {
-                chaseTimer = Time.timeSinceLevelLoad + 3f;
+                // how long before chasing
+                chaseTimer = Time.timeSinceLevelLoad + 1.5f;
                 
-                
+                // how long before they can re-enter the check player state
                 checkPlayer = false;
-                reCheck = Time.timeSinceLevelLoad + 3f;
+                reCheck = Time.timeSinceLevelLoad + 1.5f;
                 
             }
             if (Time.timeSinceLevelLoad >= chaseTimer)
@@ -205,6 +206,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                        target = hit.collider.gameObject;
                        checkPlayer = true;
                    }
+                
                }
                if (Physics.Raycast(transform.position + Vector3.up * heightMultiplayer, (transform.forward + transform.right).normalized, out hit, sightDistance))
                {
@@ -214,7 +216,8 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                        target = hit.collider.gameObject;
                        checkPlayer = true;
                    }
-               }
+                
+            }
                if (Physics.Raycast(transform.position + Vector3.up * heightMultiplayer, (transform.forward - transform.right).normalized, out hit, sightDistance))
                {
                    if (hit.collider.gameObject.tag == "Player")
@@ -223,7 +226,11 @@ namespace UnityStandardAssets.Characters.ThirdPerson
                        target = hit.collider.gameObject;
                        checkPlayer = true;
                    }
-               }
+                else
+                {
+                    state = Nil_Enemy_Sight.State.PATROL;
+                }
+            }
            }
 
     }
