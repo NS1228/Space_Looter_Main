@@ -6,11 +6,20 @@ using UnityEngine.AI;
 
 public class Nil_FOVdetection : MonoBehaviour
 {
-   
+
     public NavMeshAgent agent;
 
+    public GameObject[] waypoints;
+    public int num = 0;
 
-   
+    public float minDist;
+    public float speed;
+
+    public bool rand = false;
+    public bool go = true;
+
+    public float waitTime;
+
 
     public enum State
     {
@@ -22,24 +31,10 @@ public class Nil_FOVdetection : MonoBehaviour
 
     }
 
-
+    public bool notChasing;
 
     public State state;
     private bool alive;
-
-
-    public float speed = 10f;
-   
-
-    public List<Transform> wayPointsList = new List<Transform>();
-
-    public Transform currentWaypoint;
-
-    public int wayPointNumber = 0;
-
-    
-
-
 
     public Transform Player;
     public float maxAngle;
@@ -110,15 +105,10 @@ public class Nil_FOVdetection : MonoBehaviour
     {
 
         agent = GetComponent<NavMeshAgent>();
-        state = Nil_FOVdetection.State.PATROL;
+        //state = Nil_FOVdetection.State.PATROL;
         alive = true;
 
         StartCoroutine("FSM");
-
-
-        currentWaypoint = wayPointsList[wayPointNumber];
-
-
 
     }
 
@@ -127,7 +117,7 @@ public class Nil_FOVdetection : MonoBehaviour
     {
         // Choose the next destination point when the agent gets
         // close to the current one.
-    
+
 
         //checks if in fov (bool)
         isinFov = inFOV(transform, Player, maxAngle, maxAngle);
@@ -137,8 +127,12 @@ public class Nil_FOVdetection : MonoBehaviour
 
         }
         //Vector3 relativePos = currentWaypoint.position - transform.position;
-       // transform.rotation = Quaternion.LookRotation(relativePos);
+        // transform.rotation = Quaternion.LookRotation(relativePos);
 
+        if (notChasing)
+        {
+            RunPatrol();
+        }
 
     }
 
@@ -159,31 +153,68 @@ public class Nil_FOVdetection : MonoBehaviour
 
     }
 
-    void Patrol()
+    void RunPatrol()
     {
-        float distanceToCurrent = Vector2.Distance(transform.position, currentWaypoint.position);
-        
-       
-            if (distanceToCurrent == 0)
+
+        float dist = Vector3.Distance(gameObject.transform.position, waypoints[num].transform.position);
+
+        if (go)
         {
-            if (wayPointNumber != wayPointsList.Count - 1)
+            if (dist > minDist)
             {
-                wayPointNumber++;
-                currentWaypoint = wayPointsList[wayPointNumber];
+                
+                    state = Nil_FOVdetection.State.PATROL;
+                
+               
             }
             else
             {
-                wayPointNumber = 0;
-                currentWaypoint = wayPointsList[wayPointNumber];
+                if (Time.timeSinceLevelLoad >= waitTime)
+                {
+
+
+                    if (!rand)
+                    {
+                        if (num + 1 == waypoints.Length)
+                        {
+                            num = 0;
+                            waitTime = Time.timeSinceLevelLoad + 2f;
+                        }
+                        else
+                        {
+                            num++;
+                            waitTime = Time.timeSinceLevelLoad + 2f;
+                        }
+                    }
+                    else
+                    {
+                        num = Random.Range(0, waypoints.Length);
+                        waitTime = Time.timeSinceLevelLoad + 2f;
+
+                    }
+                }
             }
         }
+    }
 
-        transform.position = Vector3.MoveTowards(transform.position, currentWaypoint.position, speed * Time.deltaTime);
+    void Patrol()
+    {
+        if (Time.timeSinceLevelLoad >= waitTime)
+        {
+            gameObject.transform.LookAt(waypoints[num].transform.position);
+            gameObject.transform.position += gameObject.transform.forward * speed * Time.deltaTime;
+        }
+    }
+            
+
+
+        
+    }
 
 
 
-    } 
-}
+     
+
 
 
     
