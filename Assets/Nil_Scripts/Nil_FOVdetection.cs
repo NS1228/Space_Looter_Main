@@ -8,12 +8,14 @@ public class Nil_FOVdetection : MonoBehaviour
 {
 
     public NavMeshAgent agent;
+    public GameObject player;
 
     public GameObject[] waypoints;
     public int num = 0;
 
     public float minDist;
     public float speed;
+    public float runSpeed;
 
     public bool rand = false;
     public bool go = true;
@@ -124,7 +126,11 @@ public class Nil_FOVdetection : MonoBehaviour
 
         if (isinFov)
         {
-
+            notChasing = false;
+        }
+        else
+        {
+            //notChasing = true;
         }
         //Vector3 relativePos = currentWaypoint.position - transform.position;
         // transform.rotation = Quaternion.LookRotation(relativePos);
@@ -133,6 +139,11 @@ public class Nil_FOVdetection : MonoBehaviour
         {
             RunPatrol();
         }
+        else
+        {
+            RunChase();
+        }
+       
 
     }
 
@@ -144,6 +155,9 @@ public class Nil_FOVdetection : MonoBehaviour
             {
                 case State.PATROL:
                     Patrol();
+                    break;
+                case State.CHASE:
+                    Chase();
                     break;
             }
             yield return null;
@@ -204,6 +218,19 @@ public class Nil_FOVdetection : MonoBehaviour
             gameObject.transform.LookAt(waypoints[num].transform.position);
             gameObject.transform.position += gameObject.transform.forward * speed * Time.deltaTime;
         }
+    }
+
+    void RunChase()
+    {
+        state = Nil_FOVdetection.State.CHASE;
+    }
+
+    void Chase()
+    {
+        Vector3 localPosition = player.transform.position - transform.position;
+        localPosition = localPosition.normalized; // The normalized direction in LOCAL space
+        transform.Translate(localPosition.x * Time.deltaTime * speed, localPosition.y * Time.deltaTime * speed, localPosition.z * Time.deltaTime * speed);
+        gameObject.transform.LookAt(player.transform.position);
     }
             
 
