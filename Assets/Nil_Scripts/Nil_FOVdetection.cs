@@ -7,6 +7,10 @@ using UnityEngine.AI;
 public class Nil_FOVdetection : MonoBehaviour
 {
 
+    public float smoothTime = 10.0f;
+    //Vector3 used to store the velocity of the enemy
+    private Vector3 smoothVelocity = Vector3.zero;
+
     public NavMeshAgent agent;
     public GameObject player;
 
@@ -21,6 +25,8 @@ public class Nil_FOVdetection : MonoBehaviour
     public bool go = true;
 
     public float waitTime;
+
+    public bool playerGreen;
 
 
     public enum State
@@ -57,10 +63,13 @@ public class Nil_FOVdetection : MonoBehaviour
         Gizmos.DrawRay(transform.position, fovLine2);
 
         if (!isinFov)
-            Gizmos.color = Color.red;
+          Gizmos.color = Color.red;
+           
+
         else
-            Gizmos.color = Color.green;
+        Gizmos.color = Color.green;
         Gizmos.DrawRay(transform.position, (Player.position - transform.position).normalized * maxRadius);
+           
 
         Gizmos.color = Color.black;
         Gizmos.DrawRay(transform.position, transform.forward * maxRadius);
@@ -107,7 +116,7 @@ public class Nil_FOVdetection : MonoBehaviour
     {
 
         agent = GetComponent<NavMeshAgent>();
-        //state = Nil_FOVdetection.State.PATROL;
+        state = Nil_FOVdetection.State.PATROL;
         alive = true;
 
         StartCoroutine("FSM");
@@ -130,7 +139,7 @@ public class Nil_FOVdetection : MonoBehaviour
         }
         else
         {
-            //notChasing = true;
+            notChasing = true;
         }
         //Vector3 relativePos = currentWaypoint.position - transform.position;
         // transform.rotation = Quaternion.LookRotation(relativePos);
@@ -227,10 +236,13 @@ public class Nil_FOVdetection : MonoBehaviour
 
     void Chase()
     {
-        Vector3 localPosition = player.transform.position - transform.position;
-        localPosition = localPosition.normalized; // The normalized direction in LOCAL space
-        transform.Translate(localPosition.x * Time.deltaTime * speed, localPosition.y * Time.deltaTime * speed, localPosition.z * Time.deltaTime * speed);
-        gameObject.transform.LookAt(player.transform.position);
+        // Vector3 localPosition = player.transform.position - transform.position;
+        //localPosition = localPosition.normalized; // The normalized direction in LOCAL space
+        // transform.Translate(localPosition.x * Time.deltaTime * speed, localPosition.y * Time.deltaTime * speed, localPosition.z * Time.deltaTime * speed);
+        //gameObject.transform.LookAt(player.transform.position);
+
+        transform.LookAt(Player);
+        transform.position = Vector3.SmoothDamp(transform.position, Player.position,ref smoothVelocity, smoothTime);
     }
             
 

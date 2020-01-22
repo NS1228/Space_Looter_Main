@@ -916,6 +916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf5a00c5aa0c284cb3d58780b54ae97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  smoothTime: 1
   agent: {fileID: 1719852491}
   player: {fileID: 2108146298}
   waypoints:
@@ -925,10 +926,11 @@ MonoBehaviour:
   num: 1
   minDist: 1
   speed: 5
-  runSpeed: 0
+  runSpeed: 7
   rand: 1
   go: 1
   waitTime: 0
+  playerGreen: 0
   notChasing: 1
   state: 0
   Player: {fileID: 1629560628}
