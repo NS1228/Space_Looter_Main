@@ -72,6 +72,28 @@ public class Battery_Level : MonoBehaviour
         }
 
 
+
+        if(CurrentBattery <= 450)
+
+        {
+
+
+            LowBattery();
+
+
+        }
+
+        else
+
+        {
+
+            FlashingDanger DangerRED = GameObject.Find("danger text").GetComponent<FlashingDanger>();
+
+            DangerRED.enabled = false;
+
+
+        }
+
     }
 
 
@@ -166,6 +188,25 @@ public class Battery_Level : MonoBehaviour
 
 
     }
+
+
+
+
+
+    void LowBattery()
+
+    {
+
+
+        FlashingDanger DangerRED = GameObject.Find("danger text").GetComponent<FlashingDanger>();
+
+        DangerRED.enabled = true;
+
+
+    }
+
+
+
 
 
 
