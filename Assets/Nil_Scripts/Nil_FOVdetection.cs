@@ -6,11 +6,6 @@ using UnityEngine.AI;
 
 public class Nil_FOVdetection : MonoBehaviour
 {
-
-    public float smoothTime = 10.0f;
-    //Vector3 used to store the velocity of the enemy
-    private Vector3 smoothVelocity = Vector3.zero;
-
     public NavMeshAgent agent;
     public GameObject player;
 
@@ -19,14 +14,20 @@ public class Nil_FOVdetection : MonoBehaviour
 
     public float minDist;
     public float speed;
-    public float runSpeed;
+    public float smoothTime = 10.0f;
+    //Vector3 used to store the velocity of the enemy
+    private Vector3 smoothVelocity = Vector3.zero;
 
     public bool rand = false;
     public bool go = true;
 
     public float waitTime;
-
-    public bool playerGreen;
+    public float investigateTime;
+    public bool reInvestigate;
+    public float reInvestigateTimer;
+    public bool investigating;
+    public float chaseTimer;
+    public bool chase;
 
 
     public enum State
@@ -118,6 +119,8 @@ public class Nil_FOVdetection : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         state = Nil_FOVdetection.State.PATROL;
         alive = true;
+        investigating = true;
+        reInvestigate = false;
 
         StartCoroutine("FSM");
 
@@ -135,22 +138,28 @@ public class Nil_FOVdetection : MonoBehaviour
 
         if (isinFov)
         {
+          
             notChasing = false;
+            
+            
         }
-        else
+        else if (!isinFov)
         {
             notChasing = true;
-        }
-        //Vector3 relativePos = currentWaypoint.position - transform.position;
-        // transform.rotation = Quaternion.LookRotation(relativePos);
+       }
+
+        
+      
 
         if (notChasing)
         {
             RunPatrol();
+            maxAngle = 45;
         }
         else
         {
             RunChase();
+            maxRadius = 60;
         }
        
 
@@ -168,6 +177,7 @@ public class Nil_FOVdetection : MonoBehaviour
                 case State.CHASE:
                     Chase();
                     break;
+                
             }
             yield return null;
 
@@ -231,7 +241,14 @@ public class Nil_FOVdetection : MonoBehaviour
 
     void RunChase()
     {
-        state = Nil_FOVdetection.State.CHASE;
+        
+            state = Nil_FOVdetection.State.CHASE;
+
+            if(reInvestigate && Time.timeSinceLevelLoad >= reInvestigateTimer && !isinFov)
+        {
+            investigating = true;
+        }
+        
     }
 
     void Chase()
@@ -241,14 +258,37 @@ public class Nil_FOVdetection : MonoBehaviour
         // transform.Translate(localPosition.x * Time.deltaTime * speed, localPosition.y * Time.deltaTime * speed, localPosition.z * Time.deltaTime * speed);
         //gameObject.transform.LookAt(player.transform.position);
 
-        transform.LookAt(Player);
-        transform.position = Vector3.SmoothDamp(transform.position, Player.position,ref smoothVelocity, smoothTime);
-    }
+        if (investigating)
+        {
+            investigateTime = Time.timeSinceLevelLoad + 3f;
+            investigating = false;
+
+            reInvestigate = true;
+            reInvestigateTimer = Time.timeSinceLevelLoad + 5;
+
+            
+            
             
 
+        }
 
-        
+        transform.LookAt(Player);
+        if (Time.timeSinceLevelLoad >= investigateTime)
+        {
+            transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
+        }
     }
+
+   
+
+   
+}
+
+
+
+
+
+    
 
 
 

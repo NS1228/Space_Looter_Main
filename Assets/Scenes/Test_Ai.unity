@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 185990587}
   - component: {fileID: 185990586}
   - component: {fileID: 185990585}
-  m_Layer: 0
+  m_Layer: 4
   m_Name: Cube (3)
   m_TagString: Waypoints
   m_Icon: {fileID: 0}
@@ -897,7 +897,7 @@ GameObject:
   - component: {fileID: 1719852492}
   - component: {fileID: 1719852491}
   - component: {fileID: 1719852490}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -916,7 +916,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1bf5a00c5aa0c284cb3d58780b54ae97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  smoothTime: 1
   agent: {fileID: 1719852491}
   player: {fileID: 2108146298}
   waypoints:
@@ -926,11 +925,16 @@ MonoBehaviour:
   num: 1
   minDist: 1
   speed: 5
-  runSpeed: 7
+  smoothTime: 2
   rand: 1
   go: 1
   waitTime: 0
-  playerGreen: 0
+  investigateTime: 0
+  reInvestigate: 0
+  reInvestigateTimer: 0
+  investigating: 0
+  chaseTimer: 0
+  chase: 0
   notChasing: 1
   state: 0
   Player: {fileID: 1629560628}
