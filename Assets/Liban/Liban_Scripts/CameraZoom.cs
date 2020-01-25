@@ -1,18 +1,21 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class CameraZoom : MonoBehaviour
 {
 
 
-    public int Zoom = 20;
+    public int Zoom = 15;
 
-    public int Normal = 60;
+    public int Normal = 70;
 
     public float SmoothYeah = 7.8f;
 
     private bool isZoomed = false;
+
+    public AudioSource ZoomInSoundYeahYeah;
 
 
     // Start is called before the first frame update
@@ -46,6 +49,7 @@ public class CameraZoom : MonoBehaviour
             GetComponent<Camera>().fieldOfView = Mathf.Lerp(GetComponent<Camera>().fieldOfView, Zoom, Time.deltaTime * SmoothYeah);
 
 
+            ZoomInSoundYeahYeah.Play();
 
         }
 
@@ -62,9 +66,10 @@ public class CameraZoom : MonoBehaviour
             GetComponent<Camera>().fieldOfView = Mathf.Lerp(GetComponent<Camera>().fieldOfView, Normal, Time.deltaTime * SmoothYeah);
 
 
+            ZoomInSoundYeahYeah.Play();
 
 
-            }
+        }
 
         }
         
