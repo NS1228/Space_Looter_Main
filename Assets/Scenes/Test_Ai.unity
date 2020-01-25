@@ -936,10 +936,12 @@ MonoBehaviour:
   chaseTimer: 0
   chase: 0
   notChasing: 1
+  notInvestigating: 0
   state: 0
   Player: {fileID: 1629560628}
   maxAngle: 45
   maxRadius: 15
+  timeSinceLastSeen: 0
 --- !u!195 &1719852491
 NavMeshAgent:
   m_ObjectHideFlags: 0

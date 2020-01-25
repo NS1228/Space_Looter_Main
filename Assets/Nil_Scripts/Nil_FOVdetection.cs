@@ -41,6 +41,7 @@ public class Nil_FOVdetection : MonoBehaviour
     }
 
     public bool notChasing;
+    public bool notInvestigating;
 
     public State state;
     private bool alive;
@@ -48,6 +49,8 @@ public class Nil_FOVdetection : MonoBehaviour
     public Transform Player;
     public float maxAngle;
     public float maxRadius;
+
+    public float timeSinceLastSeen;
 
     private bool isinFov = false;
 
@@ -121,7 +124,7 @@ public class Nil_FOVdetection : MonoBehaviour
         alive = true;
         investigating = true;
         reInvestigate = false;
-
+        notInvestigating = true;
         StartCoroutine("FSM");
 
     }
@@ -145,7 +148,17 @@ public class Nil_FOVdetection : MonoBehaviour
         }
         else if (!isinFov)
         {
-            notChasing = true;
+            if (Time.timeSinceLevelLoad >= timeSinceLastSeen)
+            {
+                notChasing = true;
+                notInvestigating = true;
+            }
+            else
+            {
+                RunInvestigating();
+                notInvestigating = false;
+                
+            }
        }
 
         
@@ -154,12 +167,15 @@ public class Nil_FOVdetection : MonoBehaviour
         if (notChasing)
         {
             RunPatrol();
-            maxAngle = 45;
+            maxRadius = 15;
         }
         else
         {
-            RunChase();
-            maxRadius = 60;
+            if (notInvestigating)
+            {
+                RunChase();
+                maxRadius = 20;
+            }
         }
        
 
@@ -177,7 +193,10 @@ public class Nil_FOVdetection : MonoBehaviour
                 case State.CHASE:
                     Chase();
                     break;
-                
+                case State.INVESTIGATE:
+                    Investigate();
+                    break;
+
             }
             yield return null;
 
@@ -258,9 +277,11 @@ public class Nil_FOVdetection : MonoBehaviour
         // transform.Translate(localPosition.x * Time.deltaTime * speed, localPosition.y * Time.deltaTime * speed, localPosition.z * Time.deltaTime * speed);
         //gameObject.transform.LookAt(player.transform.position);
 
+        timeSinceLastSeen = Time.timeSinceLevelLoad + 5;
+
         if (investigating)
         {
-            investigateTime = Time.timeSinceLevelLoad + 3f;
+            investigateTime = Time.timeSinceLevelLoad + 1.5f;
             investigating = false;
 
             reInvestigate = true;
@@ -275,6 +296,20 @@ public class Nil_FOVdetection : MonoBehaviour
         transform.LookAt(Player);
         if (Time.timeSinceLevelLoad >= investigateTime)
         {
+            transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
+        }
+    }
+
+    void RunInvestigating ()
+    {
+        state = Nil_FOVdetection.State.INVESTIGATE;
+    }
+
+    void Investigate()
+    {
+        if (Time.timeSinceLevelLoad <= timeSinceLastSeen)
+        {
+            transform.LookAt(Player);
             transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
         }
     }
