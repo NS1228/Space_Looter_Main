@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Battery
   - Goggles
+  - electronic device
   layers:
   - Default
   - TransparentFX

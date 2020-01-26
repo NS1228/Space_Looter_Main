@@ -7,6 +7,8 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
 {
     public AudioSource NightVisionActivationAudio;
 
+    private bool isNightVisionYeah;
+
 
 
     // Start is called before the first frame update
@@ -26,10 +28,7 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
 
         {
 
-
-            DeferredNightVisionEffect NightVisionYeah = GameObject.Find("FPSMainCamera").GetComponent<DeferredNightVisionEffect>();
-
-            NightVisionYeah.enabled = true;
+            isNightVisionYeah = !isNightVisionYeah;
 
 
 
@@ -38,6 +37,38 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
 
         }
 
-        
+        if(isNightVisionYeah)
+
+
+        {
+
+
+             DeferredNightVisionEffect NightVisionYeah = GameObject.Find("FPSMainCamera").GetComponent<DeferredNightVisionEffect>();
+
+             NightVisionYeah.enabled = true;
+
+
+            NightVisionActivationAudio.Play();
+
+
+
+        }
+
+
+        else
+
+
+        {
+
+            DeferredNightVisionEffect NightVisionYeah = GameObject.Find("FPSMainCamera").GetComponent<DeferredNightVisionEffect>();
+
+            NightVisionYeah.enabled = false;
+
+
+
+
+        }
+
+
     }
 }

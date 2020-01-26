@@ -211,7 +211,7 @@ public class Battery_Level : MonoBehaviour
 
     {
 
-        if(other.gameObject.tag == "Battery")
+        if(other.CompareTag("Battery"))
 
         
 
@@ -223,7 +223,7 @@ public class Battery_Level : MonoBehaviour
 
                 print("got it!");
 
-                Destroy(BatteryObject);
+                BatteryObject.SetActive(false);
 
                 CurrentBattery += BonusBattery;
 

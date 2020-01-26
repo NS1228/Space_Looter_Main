@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class GogglesCollider : MonoBehaviour
 {
+
+
+
+    public GameObject AllYEAH;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +28,12 @@ public class GogglesCollider : MonoBehaviour
 
 
 
-            CameraSwitch SwitchSwitch = GameObject.Find("Original Camera").GetComponent<CameraSwitch>();
+            CameraSwitch SwitchSwitch = GameObject.Find("camera switch script empty object").GetComponent<CameraSwitch>();
 
             SwitchSwitch.enabled = true;
 
+
+            AllYEAH.SetActive(false);
 
             print("yo hi");
 
