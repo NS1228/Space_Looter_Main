@@ -17,6 +17,10 @@ public class CameraZoom : MonoBehaviour
 
     public AudioSource ZoomInSoundYeahYeah;
 
+   // public AudioSource ZoomInSoundYeahYeah2;
+
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -66,7 +70,7 @@ public class CameraZoom : MonoBehaviour
             GetComponent<Camera>().fieldOfView = Mathf.Lerp(GetComponent<Camera>().fieldOfView, Normal, Time.deltaTime * SmoothYeah);
 
 
-            ZoomInSoundYeahYeah.Play();
+         //   ZoomInSoundYeahYeah2.Play();
 
 
         }
