@@ -10,6 +10,8 @@ public class Speed_Power_UP : MonoBehaviour
     
     public Light ShoeLight;
 
+    public Transform ThePlayer;
+    
 
 
     void OnTriggerEnter(Collider other)
@@ -46,14 +48,16 @@ public class Speed_Power_UP : MonoBehaviour
         ShoeLight.gameObject.SetActive(false);
 
 
+        ThePlayer.GetComponent<AudioSource>().maxDistance = 7.0f;
+
+
         yield return new WaitForSeconds(6.0f);
 
 
         moving.MovementSpeed /= Powerupspeed;
 
 
-
-
+        ThePlayer.GetComponent<AudioSource>().maxDistance = 1.05f;
 
 
 

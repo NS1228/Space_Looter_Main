@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GogglesCollider : MonoBehaviour
 {
@@ -9,14 +10,15 @@ public class GogglesCollider : MonoBehaviour
 
     public GameObject AllYEAH;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Text PressJToSwitch;
 
-    // Update is called once per frame
+    public Text PressOForNV;
+
+
+
+
     void OnTriggerEnter (Collider other)
+
     {
 
 
@@ -33,11 +35,47 @@ public class GogglesCollider : MonoBehaviour
             SwitchSwitch.enabled = true;
 
 
-            AllYEAH.SetActive(false);
 
             print("yo hi");
+
+
+            StartCoroutine(ActivateTEXTS(other));
+
 
         }
         
     }
+
+
+
+    IEnumerator ActivateTEXTS (Collider player)
+
+
+    {
+
+
+
+        PressJToSwitch.gameObject.SetActive(true);
+
+        PressOForNV.gameObject.SetActive(true);
+
+
+
+
+        yield return new WaitForSeconds(2.5f);
+
+
+        PressJToSwitch.gameObject.SetActive(false);
+
+        PressOForNV.gameObject.SetActive(false);
+
+
+
+        AllYEAH.SetActive(false);
+
+
+    }
+
+
+
 }
