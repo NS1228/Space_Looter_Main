@@ -5,7 +5,7 @@ using UnityEngine;
 public class Turn_Off_TorchScript : MonoBehaviour
 {
 
-    public int SpeedBoost = 4;
+    public int SpeedBoost = 5;
 
 
     // Start is called before the first frame update

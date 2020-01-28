@@ -76,15 +76,15 @@ public class Speed_Power_UP : MonoBehaviour
 
          TurnOff.enabled = true;
 
-        
 
 
 
 
-        yield return new WaitForSeconds(15.0f);
+
+        yield return new WaitForSeconds(5.0f);
 
 
-
+        GetComponent<MeshRenderer>().enabled = true;
 
 
         //perhaps try to turn off the vetro on the flashlight object?

@@ -41,16 +41,43 @@ public class Drone_Script : MonoBehaviour
 
 
 
-        Enemyyeah.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ; 
+        Enemyyeah.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
 
 
-        yield return new WaitForSeconds(2.0f);
+        Outline EnemyOutline2 = GameObject.Find("enemy sphere 2").GetComponent<Outline>();
+
+        EnemyOutline2.enabled = true;
+
+
+        Outline EnemyOultine3 = GameObject.Find("enemy sphere 3").GetComponent<Outline>();
+
+        EnemyOultine3.enabled = true;
+
+
+        Outline EnemyOutline4 = GameObject.Find("enemy sphere 4").GetComponent<Outline>();
+
+        EnemyOutline4.enabled = true;
+
+
+        yield return new WaitForSeconds(7.0f);
 
 
         Enemyyeah.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
 
+        Outline EnemyOutline2n = GameObject.Find("enemy sphere 2").GetComponent<Outline>();
 
+        EnemyOutline2n.enabled = false;
+
+
+        Outline EnemyOultine3n = GameObject.Find("enemy sphere 3").GetComponent<Outline>();
+
+        EnemyOultine3n.enabled = false;
+
+
+        Outline EnemyOutline4n = GameObject.Find("enemy sphere 4").GetComponent<Outline>();
+
+        EnemyOutline4n.enabled = false;
 
     }
 }

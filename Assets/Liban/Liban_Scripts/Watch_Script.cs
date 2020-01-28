@@ -6,7 +6,13 @@ public class Watch_Script : MonoBehaviour
 {
 
 
-    public GameObject YeahPlayer;
+    public Transform YeahPlayer;
+
+    public GameObject TheWatch;
+
+    public GameObject TheWatch2;
+
+    public GameObject TheWatch3;
 
 
 
@@ -48,12 +54,28 @@ public class Watch_Script : MonoBehaviour
     {
 
 
+
         YeahPlayer.GetComponent<MeshRenderer>().enabled = false;
+
+        TheWatch.GetComponent<MeshRenderer>().enabled = false;
+
+        TheWatch2.GetComponent<MeshRenderer>().enabled = false;
+
+        TheWatch3.GetComponent<MeshRenderer>().enabled = false;
+
+
 
         yield return new WaitForSeconds(2.0f);
 
+
         YeahPlayer.GetComponent<MeshRenderer>().enabled = true;
 
+
+        TheWatch.GetComponent<MeshRenderer>().enabled = true;
+
+        TheWatch2.GetComponent<MeshRenderer>().enabled = true;
+
+        TheWatch3.GetComponent<MeshRenderer>().enabled = true;
 
 
 
