@@ -7,11 +7,19 @@ public class Speed_Power_UP : MonoBehaviour
 
 
     public float Powerupspeed = 2.5f;
-    
+
     public Light ShoeLight;
 
     public Transform ThePlayer;
-    
+
+    public GameObject GLightBlue;
+
+    public GameObject GLightGreen;
+
+    public GameObject TLightBlue;
+
+    public GameObject TLightGreen;
+
 
 
     void OnTriggerEnter(Collider other)
@@ -39,27 +47,65 @@ public class Speed_Power_UP : MonoBehaviour
     {
 
 
-        NewMovementScript moving = player.GetComponent<NewMovementScript>();
 
-        moving.MovementSpeed *= Powerupspeed;
+        GLightBlue.SetActive(false);
 
-        GetComponent<MeshRenderer>().enabled = false;
+        GLightGreen.SetActive(false);
 
-        ShoeLight.gameObject.SetActive(false);
+        TLightBlue.SetActive(false);
 
-
-        ThePlayer.GetComponent<AudioSource>().maxDistance = 7.0f;
+        TLightGreen.SetActive(false);
 
 
-        yield return new WaitForSeconds(6.0f);
+
+        // NewMovementScript moving = player.GetComponent<NewMovementScript>();
+
+        //  moving.MovementSpeed *= Powerupspeed;
 
 
-        moving.MovementSpeed /= Powerupspeed;
+         GetComponent<MeshRenderer>().enabled = false;
+
+
+         ShoeLight.gameObject.SetActive(false);
+
+
+         ThePlayer.GetComponent<AudioSource>().maxDistance = 7.0f;
+
+
+         Turn_Off_TorchScript TurnOff = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
+
+         TurnOff.enabled = true;
+
+        
+
+
+
+
+        yield return new WaitForSeconds(15.0f);
+
+
+
+
+
+        //perhaps try to turn off the vetro on the flashlight object?
+
+
+
+        //  moving.MovementSpeed /= Powerupspeed;
 
 
         ThePlayer.GetComponent<AudioSource>().maxDistance = 1.05f;
 
 
 
+            Turn_Off_TorchScript TurnOff2 = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
+
+            TurnOff2.enabled = false;
+
+
+       
+
+
+
     }
-}
+    }
