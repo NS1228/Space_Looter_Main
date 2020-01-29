@@ -253,6 +253,7 @@ void RunPatrol()
 
 void Patrol()
 {
+        investigating = true;
         droneCanAttack = false;
     if (Time.timeSinceLevelLoad >= waitTime)
     {
@@ -280,6 +281,8 @@ void RunChase()
         // transform.Translate(localPosition.x * Time.deltaTime * speed, localPosition.y * Time.deltaTime * speed, localPosition.z * Time.deltaTime * speed);
         //gameObject.transform.LookAt(player.transform.position);
 
+        float distance = Vector3.Distance(this.transform.position, Player.transform.position);
+
         timeSinceLastSeen = Time.timeSinceLevelLoad + 5;
 
         if (investigating)
@@ -300,8 +303,17 @@ void RunChase()
         if (Time.timeSinceLevelLoad >= investigateTime)
         {
             droneCanAttack = true;
-            newYPos = new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, newYPos, runSpeed * Time.deltaTime);
+            if (distance >= 10)
+            {
+                newYPos = new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z);
+                transform.position = Vector3.MoveTowards(transform.position, newYPos, runSpeed * Time.deltaTime);
+            }
+            else if(distance < 6)
+            {
+                newYPos = new Vector3(Player.transform.position.x + 4, transform.position.y, Player.transform.position.z + 4);
+                transform.position = Vector3.MoveTowards(transform.position, newYPos, runSpeed * Time.deltaTime);
+
+            }
         }
     }
 
@@ -312,12 +324,21 @@ void RunInvestigating()
 
 void Investigate()
 {
-    if (Time.timeSinceLevelLoad <= timeSinceLastSeen)
+        float distance = Vector3.Distance(this.transform.position, Player.transform.position);
+        if (Time.timeSinceLevelLoad <= timeSinceLastSeen)
     {
             droneCanAttack = true;
             transform.LookAt(Player);
-            newYPos = new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z);
-            transform.position = Vector3.MoveTowards(transform.position, newYPos, runSpeed * Time.deltaTime);
+            if (distance >= 10)
+            {
+                newYPos = new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z);
+                transform.position = Vector3.MoveTowards(transform.position, newYPos, runSpeed * Time.deltaTime);
+            }
+            else if(distance < 6)
+            {
+                newYPos = new Vector3(Player.transform.position.x + 4, transform.position.y, Player.transform.position.z + 4);
+                transform.position = Vector3.MoveTowards(transform.position, newYPos, runSpeed * Time.deltaTime);
+            }
         }
 }
 

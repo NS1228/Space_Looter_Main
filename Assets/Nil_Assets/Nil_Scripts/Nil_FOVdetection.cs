@@ -251,6 +251,7 @@ public class Nil_FOVdetection : MonoBehaviour
 
     void Patrol()
     {
+        investigating = true;
         if (Time.timeSinceLevelLoad >= waitTime)
         {
             gameObject.transform.LookAt(waypoints[num].transform.position);
@@ -303,15 +304,21 @@ public class Nil_FOVdetection : MonoBehaviour
     void RunInvestigating ()
     {
         state = Nil_FOVdetection.State.INVESTIGATE;
+
+       
     }
 
     void Investigate()
     {
+        
         if (Time.timeSinceLevelLoad <= timeSinceLastSeen)
         {
             transform.LookAt(Player);
             transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
+            
         }
+
+        
     }
 
    
