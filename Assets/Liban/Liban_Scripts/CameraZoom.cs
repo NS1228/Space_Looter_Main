@@ -2,16 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.PostProcessing;
 
 public class CameraZoom : MonoBehaviour
 {
 
 
-    public int Zoom = 15;
+    public int Zoom = 22;
 
     public int Normal = 70;
 
     public float SmoothYeah = 7.8f;
+
 
     private bool isZoomed = false;
 
@@ -53,7 +55,11 @@ public class CameraZoom : MonoBehaviour
             GetComponent<Camera>().fieldOfView = Mathf.Lerp(GetComponent<Camera>().fieldOfView, Zoom, Time.deltaTime * SmoothYeah);
 
 
-            ZoomInSoundYeahYeah.Play();
+            PostProcessingBehaviour ImageBlur = GameObject.Find("FPSMainCamera").GetComponent<PostProcessingBehaviour>();
+
+
+            ImageBlur.enabled = false;
+           
 
         }
 
@@ -70,12 +76,21 @@ public class CameraZoom : MonoBehaviour
             GetComponent<Camera>().fieldOfView = Mathf.Lerp(GetComponent<Camera>().fieldOfView, Normal, Time.deltaTime * SmoothYeah);
 
 
-         //   ZoomInSoundYeahYeah2.Play();
+           ZoomInSoundYeahYeah.Play();
+
+
+            PostProcessingBehaviour ImageBlur = GameObject.Find("FPSMainCamera").GetComponent<PostProcessingBehaviour>();
+
+
+            ImageBlur.enabled = true;
+
+
+
 
 
         }
 
-        }
+    }
         
 
     }

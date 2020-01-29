@@ -3,7 +3,13 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CheesePowerUp
+  - Goggles
+  - electronic device
+  - Battery
+  - SecondCamera
+  - FirstCamera
   layers:
   - Default
   - TransparentFX

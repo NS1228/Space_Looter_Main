@@ -61,8 +61,7 @@ public class GogglesCollider : MonoBehaviour
 
 
 
-
-        yield return new WaitForSeconds(2.5f);
+        yield return new WaitForSeconds(4.5f);
 
 
         PressJToSwitch.gameObject.SetActive(false);
@@ -72,6 +71,13 @@ public class GogglesCollider : MonoBehaviour
 
 
         AllYEAH.SetActive(false);
+
+
+
+
+
+
+
 
 
     }

@@ -206,13 +206,12 @@ public class Battery_Level : MonoBehaviour
 
 
 
-     void OnTriggerEnter(Collider other)
+    void OnTriggerEnter (Collider other)
    
 
     {
 
         if(other.CompareTag("Battery"))
-
         
 
         {
