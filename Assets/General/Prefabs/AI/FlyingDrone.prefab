@@ -106,6 +106,8 @@ GameObject:
   - component: {fileID: 6344148559259767045}
   - component: {fileID: 6344148559259767044}
   - component: {fileID: 6344148559259767043}
+  - component: {fileID: 7583743170926788715}
+  - component: {fileID: 7583743170926788720}
   m_Layer: 8
   m_Name: FlyingDrone
   m_TagString: Untagged
@@ -226,3 +228,60 @@ NavMeshAgent:
   m_BaseOffset: 0.75
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &7583743170926788715
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6344148559259767041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e46b9fcd7853d18428fb43e3622728c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agent: {fileID: 6344148559259767043}
+  player: {fileID: 0}
+  waypoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  num: 1
+  minDist: 1
+  speed: 5
+  smoothTime: 2
+  runSpeed: 5
+  rand: 0
+  go: 1
+  waitTime: 0
+  investigateTime: 0
+  reInvestigate: 0
+  reInvestigateTimer: 0
+  investigating: 0
+  chaseTimer: 0
+  chase: 0
+  notChasing: 0
+  notInvestigating: 0
+  state: 0
+  Player: {fileID: 0}
+  maxAngle: 45
+  maxRadius: 15
+  timeSinceLastSeen: 0
+--- !u!114 &7583743170926788720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6344148559259767041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3094dd373f8d3b84a90f9dad2c6270a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Original: {fileID: 11400000, guid: 474250c9ff2315c4fad1ee67e831705b, type: 2}
+  Disoreintate: {fileID: 11400000, guid: e98055183af5a234b885f8f1edeff8ff, type: 2}
+  mainCam: {fileID: 0}
+  Player: {fileID: 0}
+  canStun: 0
+  stunTimer: 0

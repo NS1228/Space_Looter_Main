@@ -662,6 +662,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isDisorientated: 0
+  stopDisorientate: 0
   disorientatedTimer: 0
   Original: {fileID: 11400000, guid: 474250c9ff2315c4fad1ee67e831705b, type: 2}
   Disoreintate: {fileID: 11400000, guid: e98055183af5a234b885f8f1edeff8ff, type: 2}
@@ -1080,26 +1081,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 0}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 2108146298}
-    - target: {fileID: 0}
-      propertyPath: waypoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 690413554}
-    - target: {fileID: 0}
-      propertyPath: waypoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 567306610}
-    - target: {fileID: 0}
-      propertyPath: waypoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 1944762889}
-    - target: {fileID: 0}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 1629560628}
     - target: {fileID: 6344148559259767041, guid: e11539df4718faf46852b4182c223817,
         type: 3}
       propertyPath: m_Name
@@ -1160,74 +1141,40 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7583743170926788715, guid: e11539df4718faf46852b4182c223817,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2108146298}
+    - target: {fileID: 7583743170926788715, guid: e11539df4718faf46852b4182c223817,
+        type: 3}
+      propertyPath: waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 690413554}
+    - target: {fileID: 7583743170926788715, guid: e11539df4718faf46852b4182c223817,
+        type: 3}
+      propertyPath: waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 567306610}
+    - target: {fileID: 7583743170926788715, guid: e11539df4718faf46852b4182c223817,
+        type: 3}
+      propertyPath: waypoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 1944762889}
+    - target: {fileID: 7583743170926788715, guid: e11539df4718faf46852b4182c223817,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 1629560628}
+    - target: {fileID: 7583743170926788720, guid: e11539df4718faf46852b4182c223817,
+        type: 3}
+      propertyPath: mainCam
+      value: 
+      objectReference: {fileID: 1086040700}
+    - target: {fileID: 7583743170926788720, guid: e11539df4718faf46852b4182c223817,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 2108146298}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e11539df4718faf46852b4182c223817, type: 3}
---- !u!195 &7583743170926788712 stripped
-NavMeshAgent:
-  m_CorrespondingSourceObject: {fileID: 6344148559259767043, guid: e11539df4718faf46852b4182c223817,
-    type: 3}
-  m_PrefabInstance: {fileID: 3545511289908285803}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7583743170926788714 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6344148559259767041, guid: e11539df4718faf46852b4182c223817,
-    type: 3}
-  m_PrefabInstance: {fileID: 3545511289908285803}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7583743170926788715
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7583743170926788714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e46b9fcd7853d18428fb43e3622728c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  agent: {fileID: 7583743170926788712}
-  player: {fileID: 2108146298}
-  waypoints:
-  - {fileID: 690413554}
-  - {fileID: 567306610}
-  - {fileID: 1944762889}
-  num: 1
-  minDist: 1
-  speed: 5
-  smoothTime: 2
-  runSpeed: 5
-  rand: 0
-  go: 1
-  waitTime: 0
-  investigateTime: 0
-  reInvestigate: 0
-  reInvestigateTimer: 0
-  investigating: 0
-  chaseTimer: 0
-  chase: 0
-  notChasing: 0
-  notInvestigating: 0
-  state: 0
-  Player: {fileID: 1629560628}
-  maxAngle: 45
-  maxRadius: 15
-  timeSinceLastSeen: 0
---- !u!114 &7583743170926788720
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7583743170926788714}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3094dd373f8d3b84a90f9dad2c6270a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Original: {fileID: 11400000, guid: 474250c9ff2315c4fad1ee67e831705b, type: 2}
-  Disoreintate: {fileID: 11400000, guid: e98055183af5a234b885f8f1edeff8ff, type: 2}
-  mainCam: {fileID: 1086040700}
-  Player: {fileID: 2108146298}
-  canStun: 0
-  stunTimer: 0
