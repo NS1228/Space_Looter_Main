@@ -145,9 +145,10 @@ void Update()
     {
 
         notChasing = false;
+       notInvestigating = true;
 
 
-    }
+        }
     else if (!isinFov)
     {
         if (Time.timeSinceLevelLoad >= timeSinceLastSeen)

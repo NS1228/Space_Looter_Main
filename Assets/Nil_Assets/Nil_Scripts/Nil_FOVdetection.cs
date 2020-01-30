@@ -143,8 +143,8 @@ public class Nil_FOVdetection : MonoBehaviour
         {
           
             notChasing = false;
-            
-            
+            notInvestigating = true;
+
         }
         else if (!isinFov)
         {
