@@ -1,12 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Drone_Script : MonoBehaviour
 {
 
 
     public Transform Enemyyeah;
+
+    public Text EnemiesDetected;
+
+    public Light DroneLight;
 
 
 
@@ -39,6 +44,7 @@ public class Drone_Script : MonoBehaviour
 
     {
 
+        GetComponent<MeshRenderer>().enabled = false;
 
 
         Enemyyeah.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
@@ -59,7 +65,12 @@ public class Drone_Script : MonoBehaviour
         EnemyOutline4.enabled = true;
 
 
-        yield return new WaitForSeconds(7.0f);
+        EnemiesDetected.gameObject.SetActive(true);
+
+        DroneLight.gameObject.SetActive(false);
+
+
+        yield return new WaitForSeconds(4.0f);
 
 
         Enemyyeah.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
@@ -78,6 +89,15 @@ public class Drone_Script : MonoBehaviour
         Outline EnemyOutline4n = GameObject.Find("enemy sphere 4").GetComponent<Outline>();
 
         EnemyOutline4n.enabled = false;
+
+
+        EnemiesDetected.gameObject.SetActive(false);
+
+
+        GetComponent<MeshRenderer>().enabled = true;
+
+        DroneLight.gameObject.SetActive(true);
+
 
     }
 }

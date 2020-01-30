@@ -211,7 +211,7 @@ public class Battery_Level : MonoBehaviour
 
     {
 
-        if(other.CompareTag("Battery"))
+        if(other.gameObject.tag == "Battery")
         
 
         {
@@ -222,7 +222,7 @@ public class Battery_Level : MonoBehaviour
 
                 print("got it!");
 
-                BatteryObject.SetActive(false);
+                Destroy(other.gameObject);
 
                 CurrentBattery += BonusBattery;
 
@@ -234,7 +234,7 @@ public class Battery_Level : MonoBehaviour
                 }
 
 
-
+                BatterySlider.value = CurrentBattery;
 
 
 

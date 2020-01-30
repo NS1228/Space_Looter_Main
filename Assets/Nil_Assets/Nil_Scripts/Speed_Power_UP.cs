@@ -69,7 +69,7 @@ public class Speed_Power_UP : MonoBehaviour
          ShoeLight.gameObject.SetActive(false);
 
 
-         ThePlayer.GetComponent<AudioSource>().maxDistance = 7.0f;
+       //  ThePlayer.GetComponent<AudioSource>().maxDistance = 7.0f;
 
 
          Turn_Off_TorchScript TurnOff = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
@@ -94,7 +94,7 @@ public class Speed_Power_UP : MonoBehaviour
         //  moving.MovementSpeed /= Powerupspeed;
 
 
-        ThePlayer.GetComponent<AudioSource>().maxDistance = 1.05f;
+      //  ThePlayer.GetComponent<AudioSource>().maxDistance = 1.05f;
 
 
 

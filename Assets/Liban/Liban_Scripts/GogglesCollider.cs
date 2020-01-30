@@ -36,7 +36,7 @@ public class GogglesCollider : MonoBehaviour
 
 
 
-            print("yo hi");
+          //  print("yo hi");
 
 
             StartCoroutine(ActivateTEXTS(other));

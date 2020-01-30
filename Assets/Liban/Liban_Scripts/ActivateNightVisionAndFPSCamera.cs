@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.PostProcessing;
 
 public class ActivateNightVisionAndFPSCamera : MonoBehaviour
 {
@@ -9,6 +10,7 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
 
     private bool isNightVisionYeah;
 
+    public Transform ThePlayer;
 
 
 
@@ -44,17 +46,23 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
 
         {
 
-
              DeferredNightVisionEffect NightVisionYeah = GameObject.Find("FPSMainCamera").GetComponent<DeferredNightVisionEffect>();
 
              NightVisionYeah.enabled = true;
 
 
-           
+
+             ThePlayer.GetComponent<AudioSource>().minDistance = 10.0f;
 
 
+
+         //    PostProcessingBehaviour VisualYeahYeah = GameObject.Find("FPSMainCamera").GetComponent<PostProcessingBehaviour>();
+
+           //  VisualYeahYeah.enabled = false;
+          
 
         }
+
 
 
         else
@@ -62,12 +70,22 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
 
         {
 
+
             DeferredNightVisionEffect NightVisionYeah = GameObject.Find("FPSMainCamera").GetComponent<DeferredNightVisionEffect>();
 
             NightVisionYeah.enabled = false;
 
 
             NightVisionActivationAudio.Play();
+
+
+            ThePlayer.GetComponent<AudioSource>().minDistance = 1.05f;
+
+
+         //   PostProcessingBehaviour VisualYeahYeah = GameObject.Find("FPSMainCamera").GetComponent<PostProcessingBehaviour>();
+
+          //  VisualYeahYeah.enabled = true;
+
 
         }
 

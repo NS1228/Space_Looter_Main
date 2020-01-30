@@ -7,6 +7,8 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
     public int SpeedBoost = 5;
 
+    public Transform ThePlayer; 
+
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +42,10 @@ public class Turn_Off_TorchScript : MonoBehaviour
             moving.MovementSpeed *= SpeedBoost;
 
 
+            ThePlayer.GetComponent<AudioSource>().maxDistance = 7.0f;
+
+
+
         }
 
 
@@ -66,6 +72,8 @@ public class Turn_Off_TorchScript : MonoBehaviour
             NewMovementScript moving = GameObject.Find("player").GetComponent<NewMovementScript>();
 
             moving.MovementSpeed /= SpeedBoost;
+
+            ThePlayer.GetComponent<AudioSource>().maxDistance = 1.05f;
 
 
 
@@ -97,6 +105,10 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
             moving.MovementSpeed /= SpeedBoost;
 
+           
+            ThePlayer.GetComponent<AudioSource>().maxDistance = 0.7f;
+
+
 
         }
 
@@ -123,6 +135,9 @@ public class Turn_Off_TorchScript : MonoBehaviour
             NewMovementScript moving = GameObject.Find("player").GetComponent<NewMovementScript>();
 
             moving.MovementSpeed *= SpeedBoost;
+
+
+            ThePlayer.GetComponent<AudioSource>().maxDistance = 1.05f;
 
 
         }
