@@ -10,6 +10,7 @@ TagManager:
   - Battery
   - SecondCamera
   - FirstCamera
+  - FlashLight
   layers:
   - Default
   - TransparentFX

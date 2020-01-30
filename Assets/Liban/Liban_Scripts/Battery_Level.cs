@@ -134,12 +134,12 @@ public class Battery_Level : MonoBehaviour
        // ThisScrtipt.enabled = false;
 
 
-        Light_Hold_Blue LIGHTHOLDblue = GameObject.Find("flashlight").GetComponent<Light_Hold_Blue>();
+        Light_Hold_Blue LIGHTHOLDblue = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
         LIGHTHOLDblue.enabled = false;
 
 
-        Light_Hold_Green LIGHTHOLDgreen = GameObject.Find("flashlight").GetComponent<Light_Hold_Green>();
+        Light_Hold_Green LIGHTHOLDgreen = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
 
         LIGHTHOLDgreen.enabled = false;
 
@@ -160,17 +160,17 @@ public class Battery_Level : MonoBehaviour
         TorchLightBlue.gameObject.SetActive(true);
 
 
-        Battery_Level ThisScrtipt = GameObject.Find("flashlight").GetComponent<Battery_Level>();
+        Battery_Level ThisScrtipt = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();
 
         ThisScrtipt.enabled = true;
 
 
-        Light_Hold_Blue LIGHTHOLDBLUE = GameObject.Find("flashlight").GetComponent<Light_Hold_Blue>();
+        Light_Hold_Blue LIGHTHOLDBLUE = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
         LIGHTHOLDBLUE.enabled = true;
 
 
-        Light_Hold_Green LIGHTHOLDGREEN = GameObject.Find("flashlight").GetComponent<Light_Hold_Green>();
+        Light_Hold_Green LIGHTHOLDGREEN = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
 
         LIGHTHOLDGREEN.enabled = true;
 
@@ -196,10 +196,6 @@ public class Battery_Level : MonoBehaviour
 
 
     }
-
-
-
-
 
 
 

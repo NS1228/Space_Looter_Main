@@ -26,12 +26,12 @@ public class Turn_Off_TorchScript : MonoBehaviour
         {
 
 
-            Light_Hold_Blue B_Light = GameObject.Find("flashlight").GetComponent<Light_Hold_Blue>();
+            Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
             B_Light.enabled = false;
 
 
-            Light_Hold_Green G_Light = GameObject.Find("flashlight").GetComponent<Light_Hold_Green>();
+            Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
 
             G_Light.enabled = false;
 
@@ -59,12 +59,12 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
 
 
-            Light_Hold_Blue B_Light = GameObject.Find("flashlight").GetComponent<Light_Hold_Blue>();
+            Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
             B_Light.enabled = true;
 
 
-            Light_Hold_Green G_Light = GameObject.Find("flashlight").GetComponent<Light_Hold_Green>();
+            Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
 
             G_Light.enabled = true;
 
@@ -90,12 +90,12 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
         {
 
-            Light_Hold_Blue B_Light = GameObject.Find("flashlight").GetComponent<Light_Hold_Blue>();
+            Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
             B_Light.enabled = false;
 
 
-            Light_Hold_Green G_Light = GameObject.Find("flashlight").GetComponent<Light_Hold_Green>();
+            Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
 
             G_Light.enabled = false;
 
@@ -121,12 +121,12 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
         {
 
-            Light_Hold_Blue B_Light = GameObject.Find("flashlight").GetComponent<Light_Hold_Blue>();
+            Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
             B_Light.enabled = true;
 
 
-            Light_Hold_Green G_Light = GameObject.Find("flashlight").GetComponent<Light_Hold_Green>();
+            Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
 
             G_Light.enabled = true;
 

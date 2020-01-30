@@ -81,7 +81,7 @@ public class Speed_Power_UP : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(8.0f);
 
 
         GetComponent<MeshRenderer>().enabled = true;
