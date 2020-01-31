@@ -250,7 +250,7 @@ MonoBehaviour:
   minDist: 1
   speed: 5
   smoothTime: 2
-  runSpeed: 5
+  runSpeed: 7
   rand: 0
   go: 1
   waitTime: 0

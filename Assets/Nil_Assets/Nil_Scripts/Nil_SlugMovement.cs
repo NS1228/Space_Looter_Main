@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class Nil_Drone_Movement : MonoBehaviour
+
+public class Nil_SlugMovement : MonoBehaviour
 { 
-public NavMeshAgent agent;
+ public NavMeshAgent agent;
 public GameObject player;
 
 public GameObject[] waypoints;
@@ -14,11 +15,10 @@ public int num = 0;
 public float minDist;
 public float speed;
 public float smoothTime = 10.0f;
-public float runSpeed;
 //Vector3 used to store the velocity of the enemy
 private Vector3 smoothVelocity = Vector3.zero;
 
-    public bool rand = false;
+public bool rand = false;
 public bool go = true;
 
 public float waitTime;
@@ -29,8 +29,6 @@ public bool investigating;
 public float chaseTimer;
 public bool chase;
 
-    private Vector3 newYPos;
-    public static bool droneCanAttack;
 
 public enum State
 {
@@ -122,15 +120,15 @@ void Start()
 {
 
     agent = GetComponent<NavMeshAgent>();
-    state = Nil_Drone_Movement.State.PATROL;
+    state = Nil_SlugMovement.State.PATROL;
     alive = true;
     investigating = true;
     reInvestigate = false;
     notInvestigating = true;
     StartCoroutine("FSM");
-     notChasing = true;
+    notChasing = true;
 
-    }
+}
 
 // Update is called once per frame
 void Update()
@@ -146,17 +144,18 @@ void Update()
     {
 
         notChasing = false;
-       notInvestigating = true;
+        notInvestigating = true;
+            print("infov");
 
-
-        }
+    }
     else if (!isinFov)
     {
         if (Time.timeSinceLevelLoad >= timeSinceLastSeen)
         {
             notChasing = true;
-            notInvestigating = true;
-        }
+           notInvestigating = true;
+
+            }
         else
         {
             RunInvestigating();
@@ -173,13 +172,13 @@ void Update()
         RunPatrol();
         maxRadius = 15;
     }
-    else
+    else if (!notChasing && notInvestigating)
     {
-        if (!notChasing && notInvestigating)
-        {
+        
+        
             RunChase();
             maxRadius = 20;
-        }
+        
     }
 
 
@@ -211,16 +210,16 @@ IEnumerator FSM()
 
 void RunPatrol()
 {
-
-    float dist = Vector3.Distance(gameObject.transform.position, waypoints[num].transform.position);
+        
+        float dist = Vector3.Distance(gameObject.transform.position, waypoints[num].transform.position);
 
     if (go)
     {
         if (dist > minDist)
         {
 
-                state = Nil_Drone_Movement.State.PATROL;
-                
+            state = Nil_SlugMovement.State.PATROL;
+
 
         }
         else
@@ -255,8 +254,7 @@ void RunPatrol()
 
 void Patrol()
 {
-        investigating = true;
-        droneCanAttack = false;
+    investigating = true;
     if (Time.timeSinceLevelLoad >= waitTime)
     {
         gameObject.transform.LookAt(waypoints[num].transform.position);
@@ -267,7 +265,7 @@ void Patrol()
 void RunChase()
 {
 
-    state = Nil_Drone_Movement.State.CHASE;
+    state = Nil_SlugMovement.State.CHASE;
 
     if (reInvestigate && Time.timeSinceLevelLoad >= reInvestigateTimer && !isinFov)
     {
@@ -276,72 +274,58 @@ void RunChase()
 
 }
 
-    void Chase()
+void Chase()
+{
+    // Vector3 localPosition = player.transform.position - transform.position;
+    //localPosition = localPosition.normalized; // The normalized direction in LOCAL space
+    // transform.Translate(localPosition.x * Time.deltaTime * speed, localPosition.y * Time.deltaTime * speed, localPosition.z * Time.deltaTime * speed);
+    //gameObject.transform.LookAt(player.transform.position);
+
+    timeSinceLastSeen = Time.timeSinceLevelLoad + 5;
+
+    if (investigating)
     {
-        // Vector3 localPosition = player.transform.position - transform.position;
-        //localPosition = localPosition.normalized; // The normalized direction in LOCAL space
-        // transform.Translate(localPosition.x * Time.deltaTime * speed, localPosition.y * Time.deltaTime * speed, localPosition.z * Time.deltaTime * speed);
-        //gameObject.transform.LookAt(player.transform.position);
+        investigateTime = Time.timeSinceLevelLoad + 10f;
+        investigating = false;
 
-        float distance = Vector3.Distance(this.transform.position, Player.transform.position);
+        reInvestigate = true;
+        reInvestigateTimer = Time.timeSinceLevelLoad + 5;
 
-        timeSinceLastSeen = Time.timeSinceLevelLoad + 5;
-
-        if (investigating)
-        {
-            investigateTime = Time.timeSinceLevelLoad + 1.5f;
-            investigating = false;
-
-            reInvestigate = true;
-            reInvestigateTimer = Time.timeSinceLevelLoad + 5;
+        
 
 
 
-
-
-        }
-
-        transform.LookAt(Player);
-        if (Time.timeSinceLevelLoad >= investigateTime)
-        {
-            droneCanAttack = true;
-            if (distance >= 10)
-            {
-                newYPos = new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z);
-                transform.position = Vector3.MoveTowards(transform.position, newYPos, runSpeed * Time.deltaTime);
-            }
-            else if(distance < 6)
-            {
-                newYPos = new Vector3(Player.transform.position.x + 4, transform.position.y, Player.transform.position.z + 4);
-                transform.position = Vector3.MoveTowards(transform.position, newYPos, runSpeed * Time.deltaTime);
-
-            }
-        }
     }
+
+    transform.LookAt(Player);
+    if (Time.timeSinceLevelLoad >= investigateTime)
+    {
+        transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
+    }
+    else
+        {
+            transform.localScale = new Vector3(transform.localScale.x * 2f, transform.localScale.y * 2f, transform.localScale.z * 2f * Time.deltaTime);
+        }
+}
 
 void RunInvestigating()
 {
-    state = Nil_Drone_Movement.State.INVESTIGATE;
-}
+    state = Nil_SlugMovement.State.INVESTIGATE;
+        
+
+    }
 
 void Investigate()
 {
-        float distance = Vector3.Distance(this.transform.position, Player.transform.position);
-        if (Time.timeSinceLevelLoad <= timeSinceLastSeen)
+
+    if (Time.timeSinceLevelLoad <= timeSinceLastSeen)
     {
-            droneCanAttack = true;
-            transform.LookAt(Player);
-            if (distance >= 10)
-            {
-                newYPos = new Vector3(Player.transform.position.x, transform.position.y, Player.transform.position.z);
-                transform.position = Vector3.MoveTowards(transform.position, newYPos, runSpeed * Time.deltaTime);
-            }
-            else if(distance < 6)
-            {
-                newYPos = new Vector3(Player.transform.position.x + 4, transform.position.y, Player.transform.position.z + 4);
-                transform.position = Vector3.MoveTowards(transform.position, newYPos, runSpeed * Time.deltaTime);
-            }
-        }
+        transform.LookAt(Player);
+        transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
+
+    }
+
+
 }
 
    

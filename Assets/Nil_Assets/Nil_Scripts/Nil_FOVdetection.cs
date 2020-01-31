@@ -126,6 +126,7 @@ public class Nil_FOVdetection : MonoBehaviour
         reInvestigate = false;
         notInvestigating = true;
         StartCoroutine("FSM");
+        notChasing = true;
 
     }
 
@@ -137,17 +138,19 @@ public class Nil_FOVdetection : MonoBehaviour
 
 
         //checks if in fov (bool)
-        isinFov = inFOV(transform, Player, maxAngle, maxAngle);
-
+        isinFov = inFOV(transform, Player, maxAngle, maxRadius);
+        
         if (isinFov)
         {
           
             notChasing = false;
             notInvestigating = true;
+            print("inFOV");
 
         }
         else if (!isinFov)
         {
+            print("NOTinFOV");
             if (Time.timeSinceLevelLoad >= timeSinceLastSeen)
             {
                 notChasing = true;
@@ -171,7 +174,7 @@ public class Nil_FOVdetection : MonoBehaviour
         }
         else
         {
-            if (notInvestigating)
+            if (notInvestigating && !notChasing)
             {
                 RunChase();
                 maxRadius = 20;
