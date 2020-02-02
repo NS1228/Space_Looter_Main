@@ -11,6 +11,8 @@ TagManager:
   - SecondCamera
   - FirstCamera
   - FlashLight
+  - Waypoints
+  - Sound
   layers:
   - Default
   - TransparentFX
@@ -20,8 +22,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - Player
+  - Controller
   - 
   - 
   - 
