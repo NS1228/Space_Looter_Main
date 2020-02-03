@@ -6,38 +6,79 @@ public class Throwing_Script : MonoBehaviour
 {
 
 
-    public Transform ThrowingPosition;
+   // public Transform ThrowingPosition;
+
+    public bool HandIsEmpty = true;
+
+    private GameObject objectInHand;
+
+    private bool frameReset = false;
 
 
 
 
-    // Start is called before the first frame update
-    void Start()
+    private void ThrowObject()
+
     {
-        
-    }
 
-    // Update is called once per frame
-    void OnTriggerEnter (Collider other)
-    {
+        if (HandIsEmpty == false && Input.GetKeyDown(KeyCode.N) && frameReset == false)
 
+        {
 
+            HandIsEmpty = true;
 
+            objectInHand.GetComponent<Rigidbody>().AddForce(Vector3.forward * 1500);
 
-        if(other.CompareTag("Player"))
+            objectInHand.transform.SetParent(null);
 
+            objectInHand.GetComponent<Rigidbody>().useGravity = true;
+
+        }
+
+        if (frameReset == true)
 
         {
 
 
-            transform.position = ThrowingPosition.transform.position;
+            frameReset = false;
+
+        }
+    }
 
 
+
+    private void OnTriggerStay(Collider other)
+    {
+
+
+        if(other.CompareTag("PickUpObject") && Input.GetKeyDown(KeyCode.N) && HandIsEmpty == true)
+
+        {
+
+            HandIsEmpty = false;
+
+            frameReset = true;
+
+            other.GetComponent<Rigidbody>().useGravity = false;
+
+            other.transform.SetParent(transform);
+
+            objectInHand = other.gameObject;
 
 
 
         }
 
 
+
     }
+
+
+
+
+
+
+
+
+
 }

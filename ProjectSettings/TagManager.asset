@@ -13,6 +13,7 @@ TagManager:
   - FlashLight
   - Waypoints
   - Sound
+  - PickUpObject
   layers:
   - Default
   - TransparentFX

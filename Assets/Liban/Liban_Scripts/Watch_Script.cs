@@ -6,10 +6,13 @@ public class Watch_Script : MonoBehaviour
 {
 
 
-    public Transform YeahPlayer;
+    public GameObject YeahPlayer;
 
     public GameObject TheWatch;
 
+    public Transform CloningPoint;
+
+    public GameObject FakeYeahPlayer;
 
 
 
@@ -56,16 +59,21 @@ public class Watch_Script : MonoBehaviour
 
         TheWatch.GetComponent<MeshRenderer>().enabled = false;
 
+        GameObject CLO = Instantiate(FakeYeahPlayer, CloningPoint.position, CloningPoint.rotation);
 
 
 
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(5.0f);
 
 
         YeahPlayer.GetComponent<MeshRenderer>().enabled = true;
 
 
         TheWatch.GetComponent<MeshRenderer>().enabled = true;
+
+
+        Destroy(CLO);
+
 
        
 

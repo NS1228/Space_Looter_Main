@@ -7,7 +7,7 @@ public class Battery_Level : MonoBehaviour
 {
 
 
-    public int StartingBattery = 1000;
+    public int StartingBattery = 1900;
 
     public int CurrentBattery;
 
@@ -226,7 +226,7 @@ public class Battery_Level : MonoBehaviour
 
                 {
 
-                    CurrentBattery = 1000;
+                    CurrentBattery = 1900;
                 }
 
 

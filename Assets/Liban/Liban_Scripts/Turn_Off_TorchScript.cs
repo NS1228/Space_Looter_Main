@@ -106,7 +106,7 @@ public class Turn_Off_TorchScript : MonoBehaviour
             moving.MovementSpeed /= SpeedBoost;
 
            
-            ThePlayer.GetComponent<AudioSource>().maxDistance = 0.7f;
+            ThePlayer.GetComponent<AudioSource>().maxDistance = 0.79f;
 
 
 
