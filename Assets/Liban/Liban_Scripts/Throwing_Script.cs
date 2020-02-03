@@ -15,7 +15,13 @@ public class Throwing_Script : MonoBehaviour
     private bool frameReset = false;
 
 
+    private void Update()
+    {
 
+
+        ThrowObject();
+
+    }
 
     private void ThrowObject()
 
@@ -32,6 +38,8 @@ public class Throwing_Script : MonoBehaviour
             objectInHand.transform.SetParent(null);
 
             objectInHand.GetComponent<Rigidbody>().useGravity = true;
+
+            print("goodbye");
 
         }
 
@@ -65,6 +73,7 @@ public class Throwing_Script : MonoBehaviour
 
             objectInHand = other.gameObject;
 
+            print("yoyo");
 
 
         }

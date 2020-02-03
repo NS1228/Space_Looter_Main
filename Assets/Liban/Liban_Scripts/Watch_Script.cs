@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class Watch_Script : MonoBehaviour
 {
 
@@ -14,7 +15,7 @@ public class Watch_Script : MonoBehaviour
 
     public GameObject FakeYeahPlayer;
 
-
+    public ParticleSystem SmokeYEAH;
 
 
     void OnTriggerEnter (Collider other)
@@ -31,8 +32,6 @@ public class Watch_Script : MonoBehaviour
 
 
             StartCoroutine(InvisibleYEAH(other));
-
-            
 
 
         }
@@ -61,6 +60,7 @@ public class Watch_Script : MonoBehaviour
 
         GameObject CLO = Instantiate(FakeYeahPlayer, CloningPoint.position, CloningPoint.rotation);
 
+        SmokeYEAH.gameObject.SetActive(true);
 
 
         yield return new WaitForSeconds(5.0f);
