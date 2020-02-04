@@ -28,6 +28,8 @@ public class Nil_FOVdetection : MonoBehaviour
     public bool investigating;
     public float chaseTimer;
     public bool chase;
+    public bool soundDetected;
+    public float soundInvestigateTimer;
 
 
     public enum State
@@ -127,6 +129,8 @@ public class Nil_FOVdetection : MonoBehaviour
         notInvestigating = true;
         StartCoroutine("FSM");
         notChasing = true;
+        soundDetected = false;
+        
 
     }
 
@@ -155,6 +159,7 @@ public class Nil_FOVdetection : MonoBehaviour
             {
                 notChasing = true;
                 notInvestigating = true;
+                soundDetected = false;
             }
             else
             {
@@ -164,10 +169,14 @@ public class Nil_FOVdetection : MonoBehaviour
             }
        }
 
-        
+        if(soundDetected && notChasing)
+        {
+            RunInvestigating();
+            notInvestigating = false;
+        }
       
 
-        if (notChasing)
+        if (notChasing && !soundDetected)
         {
             RunPatrol();
             maxRadius = 15;
@@ -313,20 +322,50 @@ public class Nil_FOVdetection : MonoBehaviour
 
     void Investigate()
     {
-        
-        if (Time.timeSinceLevelLoad <= timeSinceLastSeen)
+        if (!soundDetected)
         {
-            transform.LookAt(Player);
-            transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
-            
+            if (Time.timeSinceLevelLoad <= timeSinceLastSeen)
+            {
+                transform.LookAt(Player);
+                transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
+
+            }
+        }
+        else if(soundDetected)
+        {
+            if (soundInvestigateTimer >= Time.timeSinceLevelLoad)
+            {
+                this.GetComponent<Rigidbody>().isKinematic = true;
+            }
+            else if (soundInvestigateTimer <= Time.timeSinceLevelLoad)
+            {
+                this.GetComponent<Rigidbody>().isKinematic = false;
+                if(Time.timeSinceLevelLoad <= timeSinceLastSeen)
+                {
+                    transform.LookAt(Player);
+                    transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
+                }
+            }
         }
 
         
     }
 
-   
+   void OnTriggerEnter(Collider theCollision)
+    {
+        if (theCollision.gameObject.tag == "Sound" && !soundDetected)
+        {
+            soundDetected = true;
+            timeSinceLastSeen = Time.timeSinceLevelLoad + 7f;
+            soundInvestigateTimer = Time.timeSinceLevelLoad + 2;
+            
+        }
+    }
 
-   
+
+
+
+
 }
 
 

@@ -11,6 +11,7 @@ public class Nil_ppManager : MonoBehaviour
    public float disorientatedTimer;
    public PostProcessingProfile Original;
    public PostProcessingProfile Disoreintate;
+   //public PostProcessingProfile MotionBlur;
     // Start is called before the first frame update
     void Start()
     {
