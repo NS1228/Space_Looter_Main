@@ -335,11 +335,11 @@ public class Nil_FOVdetection : MonoBehaviour
         {
             if (soundInvestigateTimer >= Time.timeSinceLevelLoad)
             {
-                this.GetComponent<Rigidbody>().isKinematic = true;
+               // this.GetComponent<Rigidbody>().isKinematic = true;
             }
             else if (soundInvestigateTimer <= Time.timeSinceLevelLoad)
             {
-                this.GetComponent<Rigidbody>().isKinematic = false;
+                //this.GetComponent<Rigidbody>().isKinematic = false;
                 if(Time.timeSinceLevelLoad <= timeSinceLastSeen)
                 {
                     transform.LookAt(Player);
