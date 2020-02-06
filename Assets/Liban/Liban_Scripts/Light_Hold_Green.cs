@@ -69,7 +69,7 @@ public class Light_Hold_Green : MonoBehaviour
                 GlassLightGreen.gameObject.SetActive(false);
 
 
-                LightSwitchSound.Play();
+              //  LightSwitchSound.Play();
 
 
             }

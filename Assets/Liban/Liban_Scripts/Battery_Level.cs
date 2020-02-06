@@ -29,6 +29,25 @@ public class Battery_Level : MonoBehaviour
 
 
 
+
+     void Update()
+
+
+
+    {
+
+      //  RunOut();
+
+      //  LowBattery();
+
+      //  Revive();
+
+
+    }
+
+
+
+
     void Start()
 
     {
@@ -188,11 +207,14 @@ public class Battery_Level : MonoBehaviour
     {
 
 
-       // FlashingDanger DangerRED = GameObject.Find("DangerTEXT").GetComponent<FlashingDanger>();
+        //FlashingDanger DangerRED = GameObject.Find("DangerTEXT").GetComponent<FlashingDanger>();
 
       //  DangerRED.enabled = true;
 
         DangerTextyeahyeah.gameObject.SetActive(true);
+
+
+
 
 
     }

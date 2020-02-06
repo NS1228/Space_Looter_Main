@@ -14,6 +14,7 @@ public class GogglesCollider : MonoBehaviour
 
     public Text PressOForNV;
 
+    public Text PressYforZoom;
 
 
 
@@ -30,13 +31,13 @@ public class GogglesCollider : MonoBehaviour
 
 
 
-            CameraSwitch SwitchSwitch = GameObject.Find("camera switch script empty object").GetComponent<CameraSwitch>();
+            CameraSwitch SwitchSwitch = GameObject.Find("camera switch script empty object new").GetComponent<CameraSwitch>();
 
             SwitchSwitch.enabled = true;
 
 
 
-          //  print("yo hi");
+            print("yo hi");
 
 
             StartCoroutine(ActivateTEXTS(other));
@@ -59,6 +60,8 @@ public class GogglesCollider : MonoBehaviour
 
         PressOForNV.gameObject.SetActive(true);
 
+        PressYforZoom.gameObject.SetActive(true);
+
 
 
         yield return new WaitForSeconds(4.5f);
@@ -68,7 +71,7 @@ public class GogglesCollider : MonoBehaviour
 
         PressOForNV.gameObject.SetActive(false);
 
-
+        PressYforZoom.gameObject.SetActive(false);
 
         AllYEAH.SetActive(false);
 
