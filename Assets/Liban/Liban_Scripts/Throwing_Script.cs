@@ -1,12 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Throwing_Script : MonoBehaviour
 {
 
 
-   // public Transform ThrowingPosition;
+    // public Transform ThrowingPosition;
 
     public bool HandIsEmpty = true;
 
@@ -14,6 +16,7 @@ public class Throwing_Script : MonoBehaviour
 
     private bool frameReset = false;
 
+    public Text PressN;
 
     private void Update()
     {
@@ -33,7 +36,7 @@ public class Throwing_Script : MonoBehaviour
 
             HandIsEmpty = true;
 
-            objectInHand.GetComponent<Rigidbody>().AddForce(Vector3.forward * 1500);
+            objectInHand.GetComponent<Rigidbody>().AddForce(Vector3.forward * 800);
 
             objectInHand.transform.SetParent(null);
 
@@ -59,7 +62,7 @@ public class Throwing_Script : MonoBehaviour
     {
 
 
-        if(other.CompareTag("PickUpObject") && Input.GetKeyDown(KeyCode.N) && HandIsEmpty == true)
+        if (other.CompareTag("PickUpObject") && Input.GetKeyDown(KeyCode.N) && HandIsEmpty == true)
 
         {
 
@@ -75,19 +78,32 @@ public class Throwing_Script : MonoBehaviour
 
             print("yoyo");
 
+            StartCoroutine(PressButtonToYEAH());
+
 
         }
 
-
+    
 
     }
 
 
 
+    IEnumerator PressButtonToYEAH()
 
 
+    {
 
 
+        PressN.gameObject.SetActive(true);
 
 
+        yield return new WaitForSeconds(2.5f);
+
+        PressN.gameObject.SetActive(false);
+
+
+    }
 }
+
+

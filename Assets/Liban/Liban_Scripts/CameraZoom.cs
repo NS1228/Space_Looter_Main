@@ -55,11 +55,6 @@ public class CameraZoom : MonoBehaviour
             GetComponent<Camera>().fieldOfView = Mathf.Lerp(GetComponent<Camera>().fieldOfView, Zoom, Time.deltaTime * SmoothYeah);
 
 
-          //  PostProcessingBehaviour ImageBlur = GameObject.Find("FPSMainCamera").GetComponent<PostProcessingBehaviour>();
-
-
-          //  ImageBlur.enabled = false;
-           
 
         }
 
@@ -76,16 +71,7 @@ public class CameraZoom : MonoBehaviour
             GetComponent<Camera>().fieldOfView = Mathf.Lerp(GetComponent<Camera>().fieldOfView, Normal, Time.deltaTime * SmoothYeah);
 
 
-           ZoomInSoundYeahYeah.Play();
-
-
-           // PostProcessingBehaviour ImageBlur = GameObject.Find("FPSMainCamera").GetComponent<PostProcessingBehaviour>();
-
-
-          //  ImageBlur.enabled = true;
-
-
-
+            ZoomInSoundYeahYeah.Play();
 
 
         }

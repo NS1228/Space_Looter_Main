@@ -61,7 +61,7 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
             //  VisualYeahYeah.enabled = false;
 
 
-            Moving_Blurr_Effect_X BlurrYEAHYEAHH = GameObject.Find("player").GetComponent<Moving_Blurr_Effect_X>();
+            Moving_Blurr_Effect_X BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<Moving_Blurr_Effect_X>();
 
             BlurrYEAHYEAHH.enabled = false;
           
@@ -92,7 +92,7 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
             //  VisualYeahYeah.enabled = true;
 
 
-            Moving_Blurr_Effect_X BlurrYEAHYEAHH = GameObject.Find("player").GetComponent<Moving_Blurr_Effect_X>();
+            Moving_Blurr_Effect_X BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<Moving_Blurr_Effect_X>();
 
             BlurrYEAHYEAHH.enabled = true;
 
