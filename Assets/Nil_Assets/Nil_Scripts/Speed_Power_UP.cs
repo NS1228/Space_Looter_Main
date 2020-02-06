@@ -6,7 +6,7 @@ public class Speed_Power_UP : MonoBehaviour
 {
 
 
-    public float Powerupspeed = 2.5f;
+  //  public float Powerupspeed = 2.5f;
 
     public Light ShoeLight;
 
@@ -19,6 +19,25 @@ public class Speed_Power_UP : MonoBehaviour
     public GameObject TLightBlue;
 
     public GameObject TLightGreen;
+
+    public GameObject TheShoe;
+
+    public bool CoolDownSpeed;
+
+    public float SpeedCoolDownTimer;
+
+
+
+
+     void Start()
+    {
+
+
+        CoolDownSpeed = false;
+
+
+    }
+
 
 
 
@@ -63,7 +82,7 @@ public class Speed_Power_UP : MonoBehaviour
         //  moving.MovementSpeed *= Powerupspeed;
 
 
-         GetComponent<MeshRenderer>().enabled = false;
+        TheShoe.GetComponent<MeshRenderer>().enabled = false;
 
 
          ShoeLight.gameObject.SetActive(false);
@@ -81,29 +100,58 @@ public class Speed_Power_UP : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(8.0f);
+        yield return new WaitForSeconds(3.7f);
 
 
-        GetComponent<MeshRenderer>().enabled = true;
+
+        TheShoe.GetComponent<MeshRenderer>().enabled = true;
 
 
-        //perhaps try to turn off the vetro on the flashlight object?
+        ShoeLight.gameObject.SetActive(true);
+
+        TheShoe.GetComponent<MeshCollider>().enabled = false;
 
 
 
         //  moving.MovementSpeed /= Powerupspeed;
 
 
-      //  ThePlayer.GetComponent<AudioSource>().maxDistance = 1.05f;
+        //  ThePlayer.GetComponent<AudioSource>().maxDistance = 1.05f;
 
 
 
-            Turn_Off_TorchScript TurnOff2 = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
+        Turn_Off_TorchScript TurnOff2 = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
 
             TurnOff2.enabled = false;
 
+           Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
-       
+           B_Light.enabled = true;
+
+
+         Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
+
+           G_Light.enabled = true;
+
+
+
+
+        //  TheShoe.GetComponent<MeshCollider>().enabled = false;
+
+
+        yield return new WaitForSeconds(10.0f);
+
+
+       // TheShoe.GetComponent<MeshCollider>().enabled = true;
+
+
+        Turn_Off_TorchScript TurnOff3 = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
+
+        TurnOff3.enabled = true;
+
+
+
+
 
 
 

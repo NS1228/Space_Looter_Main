@@ -7,9 +7,9 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
 
     public Transform ThePlayer;
 
-    public int Shrink = 3;
+    public float Shrink = 1.3f;
 
-    public int BackToNormal = 3;
+    public float BackToNormal = 1.3f;
 
     public Transform TorchForPlayer;
 

@@ -9,6 +9,8 @@ public class Watch_Script : MonoBehaviour
 
     public GameObject YeahPlayer;
 
+    public GameObject Face;
+
     public GameObject TheWatch;
 
     public Transform CloningPoint1;
@@ -64,6 +66,8 @@ public class Watch_Script : MonoBehaviour
 
         YeahPlayer.GetComponent<MeshRenderer>().enabled = false;
 
+        Face.GetComponent<MeshRenderer>().enabled = false;
+
         TheWatch.GetComponent<MeshRenderer>().enabled = false;
 
         TheWatch.GetComponent<BoxCollider>().enabled = false;
@@ -88,6 +92,9 @@ public class Watch_Script : MonoBehaviour
 
 
         TheWatch.GetComponent<BoxCollider>().enabled = true;
+
+
+        Face.GetComponent<MeshRenderer>().enabled = true;
 
 
         Destroy(CLO);
