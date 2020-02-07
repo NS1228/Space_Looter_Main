@@ -24,7 +24,9 @@ public class Speed_Power_UP : MonoBehaviour
 
     public bool CoolDownSpeed;
 
-    public float SpeedCoolDownTimer;
+
+    private float SpeedBoost = 1.1f;
+
 
 
 
@@ -33,7 +35,7 @@ public class Speed_Power_UP : MonoBehaviour
     {
 
 
-        CoolDownSpeed = false;
+       
 
 
     }
@@ -85,16 +87,25 @@ public class Speed_Power_UP : MonoBehaviour
         TheShoe.GetComponent<MeshRenderer>().enabled = false;
 
 
-         ShoeLight.gameObject.SetActive(false);
+        ShoeLight.gameObject.SetActive(false);
 
 
-       //  ThePlayer.GetComponent<AudioSource>().maxDistance = 7.0f;
+        //  ThePlayer.GetComponent<AudioSource>().maxDistance = 7.0f;
 
 
-         Turn_Off_TorchScript TurnOff = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
+        Turn_Off_TorchScript TurnOff = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
 
-         TurnOff.enabled = true;
+        TurnOff.enabled = true;
 
+
+        Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
+
+        B_Light.enabled = false;
+
+
+        Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
+
+        G_Light.enabled = false;
 
 
 
@@ -109,8 +120,6 @@ public class Speed_Power_UP : MonoBehaviour
 
         ShoeLight.gameObject.SetActive(true);
 
-        TheShoe.GetComponent<MeshCollider>().enabled = false;
-
 
 
         //  moving.MovementSpeed /= Powerupspeed;
@@ -120,40 +129,41 @@ public class Speed_Power_UP : MonoBehaviour
 
 
 
-        Turn_Off_TorchScript TurnOff2 = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
+          Turn_Off_TorchScript TurnOff2 = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
 
-            TurnOff2.enabled = false;
-
-           Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
-
-           B_Light.enabled = true;
-
-
-         Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
-
-           G_Light.enabled = true;
+           TurnOff2.enabled = false;
 
 
 
+        Light_Hold_Blue B_Light2 = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
-        //  TheShoe.GetComponent<MeshCollider>().enabled = false;
-
-
-        yield return new WaitForSeconds(10.0f);
+        B_Light2.enabled = true;
 
 
-       // TheShoe.GetComponent<MeshCollider>().enabled = true;
+        Light_Hold_Green G_Light2 = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
+
+        G_Light2.enabled = true;
 
 
-        Turn_Off_TorchScript TurnOff3 = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
+        Battery_Level Batteryyeah2 = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();
 
-        TurnOff3.enabled = true;
+        Batteryyeah2.enabled = true;
 
 
+
+        //  LemarMovment LCool = GameObject.Find("Playerlemar").GetComponent<LemarMovment>();
+
+        //  LCool.Speed /= SpeedBoost;
+
+
+
+
+
+       
 
 
 
 
 
     }
-    }
+}

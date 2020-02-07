@@ -40,7 +40,7 @@ public class Battery_Level : MonoBehaviour
 
       //  LowBattery();
 
-      //  Revive();
+       Revive();
 
 
     }
@@ -176,7 +176,7 @@ public class Battery_Level : MonoBehaviour
 
     {
 
-        TorchLightBlue.gameObject.SetActive(true);
+       // TorchLightBlue.gameObject.SetActive(true);
 
 
         Battery_Level ThisScrtipt = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();

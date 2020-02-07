@@ -11,7 +11,7 @@ public class Moving_Blurr_Effect_X : MonoBehaviour
     // public Camera FPSCAM;
 
 
-
+    public PostProcessingProfile Disorientate;
 
     
 
@@ -41,7 +41,7 @@ public class Moving_Blurr_Effect_X : MonoBehaviour
 
 
 
-        if (movingnowX != 0 || movingnowY != 0)
+        if (movingnowX != 0 || movingnowY != 0 && !this.GetComponent<PostProcessingBehaviour>().profile == Disorientate)
 
 
         {

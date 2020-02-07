@@ -12,6 +12,7 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
 
     public Transform ThePlayer;
 
+    public PostProcessingProfile Disorientate;
 
 
 
@@ -38,7 +39,6 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
 
 
 
-
         }
 
         if(isNightVisionYeah)
@@ -48,7 +48,7 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
 
              DeferredNightVisionEffect NightVisionYeah = GameObject.Find("FPSMainCamera").GetComponent<DeferredNightVisionEffect>();
 
-             NightVisionYeah.enabled = true;
+            NightVisionYeah.enabled = true;
 
 
 
@@ -63,7 +63,9 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
 
             Moving_Blurr_Effect_X BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<Moving_Blurr_Effect_X>();
 
-            BlurrYEAHYEAHH.enabled = false;
+            BlurrYEAHYEAHH.enabled = true;
+
+
           
 
         }
@@ -87,14 +89,10 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
             ThePlayer.GetComponent<AudioSource>().minDistance = 1.05f;
 
 
-            //   PostProcessingBehaviour VisualYeahYeah = GameObject.Find("FPSMainCamera").GetComponent<PostProcessingBehaviour>();
-
-            //  VisualYeahYeah.enabled = true;
-
 
             Moving_Blurr_Effect_X BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<Moving_Blurr_Effect_X>();
 
-            BlurrYEAHYEAHH.enabled = true;
+            BlurrYEAHYEAHH.enabled = false;
 
 
 
