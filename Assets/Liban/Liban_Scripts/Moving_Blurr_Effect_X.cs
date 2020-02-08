@@ -11,7 +11,7 @@ public class Moving_Blurr_Effect_X : MonoBehaviour
     // public Camera FPSCAM;
 
 
-    public PostProcessingProfile Disorientate;
+   // public PostProcessingProfile Disorientate;
 
     
 
@@ -37,11 +37,11 @@ public class Moving_Blurr_Effect_X : MonoBehaviour
 
         float movingnowY = Input.GetAxis("Vertical");
 
-       
+
+        // !this.GetComponent<PostProcessingBehaviour>().profile == Disorientate
 
 
-
-        if (movingnowX != 0 || movingnowY != 0 && !this.GetComponent<PostProcessingBehaviour>().profile == Disorientate)
+        if (movingnowX != 0 || movingnowY != 0)
 
 
         {
@@ -72,11 +72,14 @@ public class Moving_Blurr_Effect_X : MonoBehaviour
 
 
         }
-    
 
 
 
 
-       
+
+
+
+
+
     }
 }

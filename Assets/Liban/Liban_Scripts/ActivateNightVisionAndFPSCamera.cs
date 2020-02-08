@@ -12,7 +12,6 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
 
     public Transform ThePlayer;
 
-    public PostProcessingProfile Disorientate;
 
 
 
@@ -56,16 +55,13 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
 
 
 
-            //    PostProcessingBehaviour VisualYeahYeah = GameObject.Find("FPSMainCamera").GetComponent<PostProcessingBehaviour>();
 
-            //  VisualYeahYeah.enabled = false;
+            New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("player").GetComponent<New_Motion_XBlur>();
 
-
-            Moving_Blurr_Effect_X BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<Moving_Blurr_Effect_X>();
-
-            BlurrYEAHYEAHH.enabled = true;
+            BlurrYEAHYEAHH.enabled = false;
 
 
+            print("IT IS WORKING");
           
 
         }
@@ -90,9 +86,9 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
 
 
 
-            Moving_Blurr_Effect_X BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<Moving_Blurr_Effect_X>();
+            New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("player").GetComponent<New_Motion_XBlur>();
 
-            BlurrYEAHYEAHH.enabled = false;
+            BlurrYEAHYEAHH.enabled = true;
 
 
 
