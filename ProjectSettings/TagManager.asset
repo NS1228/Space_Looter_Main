@@ -14,6 +14,7 @@ TagManager:
   - Waypoints
   - Sound
   - PickUpObject
+  - SoundLocator
   layers:
   - Default
   - TransparentFX

@@ -528,35 +528,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7583743169754408137, guid: 9b84432b827d61b4cb83878a8d3f7018,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583743169754408137, guid: 9b84432b827d61b4cb83878a8d3f7018,
-        type: 3}
-      propertyPath: m_IsKinematic
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7583743169754408140, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
       propertyPath: m_Name
       value: Basicenemy
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583743169754408140, guid: 9b84432b827d61b4cb83878a8d3f7018,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583743169754408142, guid: 9b84432b827d61b4cb83878a8d3f7018,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583743169754408142, guid: 9b84432b827d61b4cb83878a8d3f7018,
-        type: 3}
-      propertyPath: m_AgentTypeID
-      value: -1372625422
       objectReference: {fileID: 0}
     - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
@@ -583,16 +558,6 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1949304116}
-    - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
-        type: 3}
-      propertyPath: maxRadius
-      value: 15
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
-        type: 3}
-      propertyPath: maxAngle
-      value: 45
-      objectReference: {fileID: 0}
     - target: {fileID: 7583743169754408149, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
       propertyPath: m_LocalPosition.x

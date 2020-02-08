@@ -111,7 +111,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!195 &7583743169754408142
 NavMeshAgent:
@@ -124,7 +124,7 @@ NavMeshAgent:
   m_AgentTypeID: -1372625422
   m_Radius: 0.5
   m_Speed: 3.5
-  m_Acceleration: 8
+  m_Acceleration: 0
   avoidancePriority: 50
   m_AngularSpeed: 120
   m_StoppingDistance: 0
@@ -149,6 +149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 7583743169754408142}
   player: {fileID: 0}
+  soundLocation: {fileID: 7635782783366472552, guid: d44953647bf504643afd50dcdf811b73,
+    type: 3}
+  moveToLocation: {fileID: 0}
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -166,6 +169,10 @@ MonoBehaviour:
   investigating: 0
   chaseTimer: 0
   chase: 0
+  soundDetected: 0
+  soundInvestigateTimer: 0
+  destroyMoveTo: 0
+  moveToDestroyTimer: 0
   notChasing: 1
   notInvestigating: 0
   state: 0
