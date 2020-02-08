@@ -2,34 +2,42 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 
 public class Nil_FOVdetection : MonoBehaviour
 {
     public NavMeshAgent agent;
     public GameObject player;
+    public GameObject soundLocation;
+    private GameObject moveToLocation;
 
     public GameObject[] waypoints;
     public int num = 0;
 
     public float minDist;
     public float speed;
+    //runspeed
     public float smoothTime = 10.0f;
     //Vector3 used to store the velocity of the enemy
     private Vector3 smoothVelocity = Vector3.zero;
-
+    //waypoint stuff
     public bool rand = false;
     public bool go = true;
 
-    public float waitTime;
-    public float investigateTime;
-    public bool reInvestigate;
-    public float reInvestigateTimer;
-    public bool investigating;
-    public float chaseTimer;
-    public bool chase;
-    public bool soundDetected;
-    public float soundInvestigateTimer;
+    //variables fo state machine
+    private float waitTime;
+    private float investigateTime;
+    private bool reInvestigate;
+    private float reInvestigateTimer;
+    private bool investigating;
+    private float chaseTimer;
+    private bool chase;
+    private bool soundDetected;
+    private float soundInvestigateTimer;
+
+    private bool destroyMoveTo;
+    private float moveToDestroyTimer;
 
 
     public enum State
@@ -42,8 +50,8 @@ public class Nil_FOVdetection : MonoBehaviour
 
     }
 
-    public bool notChasing;
-    public bool notInvestigating;
+    private bool notChasing;
+    private bool notInvestigating;
 
     public State state;
     private bool alive;
@@ -52,7 +60,7 @@ public class Nil_FOVdetection : MonoBehaviour
     public float maxAngle;
     public float maxRadius;
 
-    public float timeSinceLastSeen;
+    private float timeSinceLastSeen;
 
     private bool isinFov = false;
 
@@ -189,6 +197,8 @@ public class Nil_FOVdetection : MonoBehaviour
                 maxRadius = 20;
             }
         }
+
+
        
 
     }
@@ -290,6 +300,7 @@ public class Nil_FOVdetection : MonoBehaviour
         // transform.Translate(localPosition.x * Time.deltaTime * speed, localPosition.y * Time.deltaTime * speed, localPosition.z * Time.deltaTime * speed);
         //gameObject.transform.LookAt(player.transform.position);
 
+        soundDetected = false;
         timeSinceLastSeen = Time.timeSinceLevelLoad + 5;
 
         if (investigating)
@@ -342,8 +353,9 @@ public class Nil_FOVdetection : MonoBehaviour
                 //this.GetComponent<Rigidbody>().isKinematic = false;
                 if(Time.timeSinceLevelLoad <= timeSinceLastSeen)
                 {
-                    transform.LookAt(Player);
-                    transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
+                    moveToLocation = GameObject.FindGameObjectWithTag("SoundLocator");
+                    transform.LookAt(moveToLocation.transform.position);
+                    transform.position = Vector3.SmoothDamp(transform.position, moveToLocation.transform.position, ref smoothVelocity, smoothTime);
                 }
             }
         }
@@ -353,16 +365,30 @@ public class Nil_FOVdetection : MonoBehaviour
 
    void OnTriggerEnter(Collider theCollision)
     {
-        if (theCollision.gameObject.tag == "Sound" && !soundDetected)
+        if (theCollision.gameObject.tag == "Sound" && !soundDetected && Time.timeSinceLevelLoad >= timeSinceLastSeen)
         {
             soundDetected = true;
             timeSinceLastSeen = Time.timeSinceLevelLoad + 7f;
             soundInvestigateTimer = Time.timeSinceLevelLoad + 2;
+            moveToDestroyTimer = Time.timeSinceLevelLoad + 7f;
+            Instantiate(soundLocation, Player.transform.position, Player.transform.rotation);
             
+            destroyMoveTo = true;
+            
+
+         
+
+        }
+
+        if(theCollision.gameObject.tag == "Player")
+        {
+            SceneManager.LoadScene(0);
         }
     }
 
+    
 
+   
 
 
 

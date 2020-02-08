@@ -149,6 +149,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   agent: {fileID: 7583743169754408142}
   player: {fileID: 0}
+  soundLocation: {fileID: 7635782783366472552, guid: d44953647bf504643afd50dcdf811b73,
+    type: 3}
+  moveToLocation: {fileID: 0}
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -168,6 +171,8 @@ MonoBehaviour:
   chase: 0
   soundDetected: 0
   soundInvestigateTimer: 0
+  destroyMoveTo: 0
+  moveToDestroyTimer: 0
   notChasing: 1
   notInvestigating: 0
   state: 0
