@@ -157,12 +157,12 @@ public class Nil_FOVdetection : MonoBehaviour
           
             notChasing = false;
             notInvestigating = true;
-            print("inFOV");
+           // print("inFOV");
 
         }
         else if (!isinFov)
         {
-            print("NOTinFOV");
+           // print("NOTinFOV");
             if (Time.timeSinceLevelLoad >= timeSinceLastSeen)
             {
                 notChasing = true;
@@ -276,8 +276,16 @@ public class Nil_FOVdetection : MonoBehaviour
         investigating = true;
         if (Time.timeSinceLevelLoad >= waitTime)
         {
-            gameObject.transform.LookAt(waypoints[num].transform.position);
+
+            //gameObject.transform.LookAt(waypoints[num].transform.position);
             gameObject.transform.position += gameObject.transform.forward * speed * Time.deltaTime;
+
+            Vector3 targetPostition = new Vector3(waypoints[num].transform.position.x,
+                                       this.transform.position.y,
+                                       waypoints[num].transform.position.z);
+            this.transform.LookAt(targetPostition);
+
+
         }
     }
 
@@ -383,8 +391,14 @@ public class Nil_FOVdetection : MonoBehaviour
         if(theCollision.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(0);
+            print("coll");
         }
+
+
+
     }
+
+    
 
     
 
