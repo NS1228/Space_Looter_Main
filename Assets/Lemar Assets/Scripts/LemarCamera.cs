@@ -28,7 +28,7 @@ public class LemarCamera : MonoBehaviour
 
         transform.LookAt(Target);
 
-        if (Input.GetKey(KeyCode.LeftShift))
+        if (Input.GetKey(KeyCode.LeftControl))
         {
           Target.rotation = Quaternion.Euler(mouseY, mouseX, 0);
         }
@@ -36,8 +36,6 @@ public class LemarCamera : MonoBehaviour
         {
         Target.rotation = Quaternion.Euler(mouseY, mouseX, 0);
         Player.rotation = Quaternion.Euler(0, mouseX, 0);
-          
-           // TorchForPlayer.rotation = Quaternion.Euler(mouseX, mouseY, 0);
         }
 
     }

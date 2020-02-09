@@ -8,12 +8,16 @@ public class LemarMovment : MonoBehaviour
     public float Sprint;
     public float Walk;
     public float Crawl;
+    public float Thrust = 1.0f;
+
+    public Rigidbody rb;
 
     public bool Running;
     public bool Walking;
     public bool Crawling;
     public bool Stand;
     public bool Moving;
+    public bool Sprinting;
 
     public GameObject Player;
     public GameObject WNoise;
@@ -22,6 +26,9 @@ public class LemarMovment : MonoBehaviour
 
     public Vector3 curPos;
     public Vector3 lastPos;
+
+    public BoxCollider CrouchSize;
+    public CapsuleCollider StandSize;
 
 
 
@@ -37,6 +44,11 @@ public class LemarMovment : MonoBehaviour
         WNoise.SetActive(false);
         SNoise.SetActive(false);
         CNoise.SetActive(false);
+
+        CrouchSize = GetComponent<BoxCollider>();
+        StandSize = GetComponent<CapsuleCollider>();
+
+        rb = GetComponent<Rigidbody>();
     }
 
 
@@ -73,18 +85,20 @@ public class LemarMovment : MonoBehaviour
         Vector3 move = new Vector3(horizon, 0f, verti) * Speed * Time.deltaTime;
         transform.Translate(move, Space.Self);
 
-        if (Stand == true && Input.GetKey(KeyCode.Space))
+        if (Stand == true && Input.GetKey(KeyCode.LeftShift))
         {
             Speed = Sprint;
             Running = true;
             Walking = false;
+            Sprinting = true;
         }
         else
         {
             Speed = Walk;
             Running = false;
+            Sprinting = false;
         }
-        if (Stand == true && Input.GetKeyUp(KeyCode.Space))
+        if (Stand == true && Input.GetKeyUp(KeyCode.LeftShift))
         {
             Walking = true;
         }
@@ -98,8 +112,8 @@ public class LemarMovment : MonoBehaviour
     {
         Vector3 v = transform.rotation.eulerAngles;
         Vector3 n = Player.transform.position;
-        if (Input.GetKeyUp(KeyCode.E))
-        {
+        if (Input.GetKeyUp(KeyCode.C))
+        {  
             if (Stand == true)
             {
                 Player.transform.rotation = Quaternion.Euler(90, v.y, v.z);
@@ -107,6 +121,9 @@ public class LemarMovment : MonoBehaviour
                 Crawling = true;
                 Walking = false;
                 Running = false;
+                CrouchSize.isTrigger = false;
+                StandSize.isTrigger = true;
+
 
             }
             else
@@ -116,8 +133,16 @@ public class LemarMovment : MonoBehaviour
                     Stand = true;
                     Crawling = false;
                     Walking = true;
+                    CrouchSize.isTrigger = true;
+                    StandSize.isTrigger = false;
+                  
                 }
             }
+            if (Sprinting == true)
+            {
+                rb.AddForce(transform.forward * Thrust);
+            }
+
         }
     }
 
@@ -170,7 +195,7 @@ public class LemarMovment : MonoBehaviour
 
 
     }
-    
+
 }
 
 
