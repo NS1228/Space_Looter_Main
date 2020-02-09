@@ -82,7 +82,7 @@ public class New_Motion_XBlur : MonoBehaviour
             PPyeahyeah.enabled = true;
 
 
-            print("changed yeah yeah");
+            print("changed yeah yeah 32");
 
 
 
