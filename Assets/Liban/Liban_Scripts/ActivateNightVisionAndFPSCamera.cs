@@ -45,24 +45,30 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
 
         {
 
-             DeferredNightVisionEffect NightVisionYeah = GameObject.Find("FPSMainCamera").GetComponent<DeferredNightVisionEffect>();
+
+
+
+            DeferredNightVisionEffect NightVisionYeah = GameObject.Find("FPSMainCamera").GetComponent<DeferredNightVisionEffect>();
 
             NightVisionYeah.enabled = true;
 
 
-
-             ThePlayer.GetComponent<AudioSource>().minDistance = 10.0f;
-
-
-
-
-            New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("player").GetComponent<New_Motion_XBlur>();
+            New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Playerlemar").GetComponent<New_Motion_XBlur>();
 
             BlurrYEAHYEAHH.enabled = false;
 
 
-            print("IT IS WORKING");
-          
+
+            ThePlayer.GetComponent<AudioSource>().minDistance = 10.0f;
+
+
+
+            print("IT IS WORKING yeahyeah");
+
+
+
+
+        
 
         }
 
@@ -86,9 +92,13 @@ public class ActivateNightVisionAndFPSCamera : MonoBehaviour
 
 
 
-            New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("player").GetComponent<New_Motion_XBlur>();
+            New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Playerlemar").GetComponent<New_Motion_XBlur>();
 
             BlurrYEAHYEAHH.enabled = true;
+
+            print("IT IS WORKING yeahyeah223");
+
+
 
 
 

@@ -15,6 +15,7 @@ TagManager:
   - Sound
   - PickUpObject
   - SoundLocator
+  - LemarCamera
   layers:
   - Default
   - TransparentFX
