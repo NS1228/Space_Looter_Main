@@ -79,7 +79,7 @@ public class New_Motion_XBlur : MonoBehaviour
             PostProcessingBehaviour PPyeahyeah = GameObject.Find("FPSMainCamera").GetComponent<PostProcessingBehaviour>();
 
 
-            PPyeahyeah.enabled = true;
+            PPyeahyeah.enabled = false;
 
 
             print("changed yeah yeah 32");
@@ -91,26 +91,26 @@ public class New_Motion_XBlur : MonoBehaviour
         }
 
 
-        else
+       // else
 
 
-        {
-
-
-
-            PostProcessingBehaviour PPyeahyeah = GameObject.Find("FPSMainCamera").GetComponent<PostProcessingBehaviour>();
-
-
-            PPyeahyeah.enabled = false;
+      //  {
 
 
 
+        //    PostProcessingBehaviour PPyeahyeah = GameObject.Find("FPSMainCamera").GetComponent<PostProcessingBehaviour>();
+
+
+         //   PPyeahyeah.enabled = true;
 
 
 
 
 
-        }
+
+
+
+
 
 
 
