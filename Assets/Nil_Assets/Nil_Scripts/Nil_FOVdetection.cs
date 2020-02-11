@@ -24,9 +24,12 @@ public class Nil_FOVdetection : MonoBehaviour
     //waypoint stuff
     public bool rand = false;
     public bool go = true;
+    //rigidbodyshit
+    public float thrust = 1.0f;
+    public Rigidbody rb;
 
     //variables fo state machine
-    private float waitTime;
+    public float waitTime;
     private float investigateTime;
     private bool reInvestigate;
     private float reInvestigateTimer;
@@ -138,7 +141,8 @@ public class Nil_FOVdetection : MonoBehaviour
         StartCoroutine("FSM");
         notChasing = true;
         soundDetected = false;
-        
+        rb = GetComponent<Rigidbody>();
+
 
     }
 
@@ -198,7 +202,7 @@ public class Nil_FOVdetection : MonoBehaviour
             }
         }
 
-
+        print(state);
        
 
     }
@@ -329,6 +333,7 @@ public class Nil_FOVdetection : MonoBehaviour
         if (Time.timeSinceLevelLoad >= investigateTime)
         {
             transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
+            rb.AddForce(transform.forward * thrust);
         }
     }
 
