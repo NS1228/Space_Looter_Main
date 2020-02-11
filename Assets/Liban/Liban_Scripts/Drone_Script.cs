@@ -13,6 +13,8 @@ public class Drone_Script : MonoBehaviour
 
     public Light DroneLight;
 
+    public Slider DroneHealthSlider;
+
 
 
     void OnTriggerEnter(Collider other)
@@ -70,7 +72,18 @@ public class Drone_Script : MonoBehaviour
         DroneLight.gameObject.SetActive(false);
 
 
-        yield return new WaitForSeconds(4.0f);
+        DroneHealthSlider.gameObject.SetActive(true);
+
+
+        DroneHealth_Script DHealth = GameObject.Find("Drone Skin").GetComponent<DroneHealth_Script>();
+
+        DHealth.enabled = true;
+
+
+
+        yield return new WaitForSeconds(4.0f);    //kinda shows that spacing is important when it comes to this function
+
+
 
 
         Enemyyeah.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
@@ -94,9 +107,30 @@ public class Drone_Script : MonoBehaviour
         EnemiesDetected.gameObject.SetActive(false);
 
 
+       // GetComponent<MeshRenderer>().enabled = true;
+
+     //  DroneLight.gameObject.SetActive(true);
+
+
+
+        DroneHealthSlider.gameObject.SetActive(false);
+
+
+        DroneHealth_Script DHealth2 = GameObject.Find("Drone Skin").GetComponent<DroneHealth_Script>();
+
+        DHealth2.enabled = false;
+
+
+
+
+        yield return new WaitForSeconds(4.0f);
+
+
+
         GetComponent<MeshRenderer>().enabled = true;
 
         DroneLight.gameObject.SetActive(true);
+
 
 
     }

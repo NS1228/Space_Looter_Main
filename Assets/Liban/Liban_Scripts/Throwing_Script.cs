@@ -18,6 +18,13 @@ public class Throwing_Script : MonoBehaviour
 
     public Text PressN;
 
+   
+
+    //for the TheTarget transform, make sure you attach an empty gameobject to the player from far as that would be the target
+
+
+
+
     private void Update()
     {
 
@@ -25,6 +32,9 @@ public class Throwing_Script : MonoBehaviour
         ThrowObject();
 
     }
+
+
+
 
     private void ThrowObject()
 
@@ -36,13 +46,19 @@ public class Throwing_Script : MonoBehaviour
 
             HandIsEmpty = true;
 
-            objectInHand.GetComponent<Rigidbody>().AddForce(Vector3.forward * 800);
+          //  objectInHand.GetComponent<Rigidbody>().AddForce(Vector3.forward * 800);
 
             objectInHand.transform.SetParent(null);
 
             objectInHand.GetComponent<Rigidbody>().useGravity = true;
 
             print("goodbye");
+
+            Projectile_Donut ProjectileDD = GameObject.FindWithTag("PickUpObject").GetComponent<Projectile_Donut>();
+
+            ProjectileDD.enabled = true;
+
+
 
         }
 

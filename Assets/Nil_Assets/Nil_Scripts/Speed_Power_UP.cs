@@ -115,10 +115,10 @@ public class Speed_Power_UP : MonoBehaviour
 
 
 
-        TheShoe.GetComponent<MeshRenderer>().enabled = true;
+      //  TheShoe.GetComponent<MeshRenderer>().enabled = true;
 
 
-        ShoeLight.gameObject.SetActive(true);
+      //  ShoeLight.gameObject.SetActive(true);
 
 
 
@@ -151,15 +151,15 @@ public class Speed_Power_UP : MonoBehaviour
 
 
 
-        //  LemarMovment LCool = GameObject.Find("Playerlemar").GetComponent<LemarMovment>();
-
-        //  LCool.Speed /= SpeedBoost;
 
 
+        yield return new WaitForSeconds(3.0f);
 
 
+        TheShoe.GetComponent<MeshRenderer>().enabled = true;
 
-       
+
+        ShoeLight.gameObject.SetActive(true);
 
 
 

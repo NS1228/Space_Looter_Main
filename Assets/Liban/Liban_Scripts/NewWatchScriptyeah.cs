@@ -1,13 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
 
-public class Watch_Script : MonoBehaviour
+public class NewWatchScriptyeah : MonoBehaviour
 {
-
-
-    public GameObject YeahPlayer;
+       public GameObject YeahPlayer;
 
  //   public GameObject Face;
 
@@ -56,7 +53,7 @@ public class Watch_Script : MonoBehaviour
 
 
 
-    IEnumerator InvisibleYEAH (Collider Player)
+    IEnumerator InvisibleYEAH (Collider player)
 
 
 
