@@ -63,7 +63,7 @@ public class Nil_FOVdetection : MonoBehaviour
     public float maxAngle;
     public float maxRadius;
 
-    private float timeSinceLastSeen;
+    public float timeSinceLastSeen;
 
     private bool isinFov = false;
 
@@ -97,7 +97,7 @@ public class Nil_FOVdetection : MonoBehaviour
         Collider[] overlaps = new Collider[10];
         int count = Physics.OverlapSphereNonAlloc(checkingObject.position, maxRadius, overlaps);
 
-        for (int i = 0; i < count + 1; i++)
+        for (int i = 0; i < count; i++)
         {
             if (overlaps[i] != null)
             {
@@ -202,7 +202,7 @@ public class Nil_FOVdetection : MonoBehaviour
             }
         }
 
-        print(state);
+        print(Time.timeSinceLevelLoad);
        
 
     }
@@ -272,7 +272,7 @@ public class Nil_FOVdetection : MonoBehaviour
                     }
                 }
             }
-        }
+        } 
     }
 
     void Patrol()
@@ -282,14 +282,20 @@ public class Nil_FOVdetection : MonoBehaviour
         {
 
             //gameObject.transform.LookAt(waypoints[num].transform.position);
-            gameObject.transform.position += gameObject.transform.forward * speed * Time.deltaTime;
+            //  gameObject.transform.position += gameObject.transform.forward * speed * Time.deltaTime;
 
-            Vector3 targetPostition = new Vector3(waypoints[num].transform.position.x,
-                                       this.transform.position.y,
-                                       waypoints[num].transform.position.z);
-            this.transform.LookAt(targetPostition);
+            //  Vector3 targetPostition = new Vector3(waypoints[num].transform.position.x,
+            //                          this.transform.position.y,
+            //                            waypoints[num].transform.position.z);
+            // this.transform.LookAt(targetPostition);
 
+            agent.SetDestination(waypoints[num].transform.position);
+            agent.speed = 3;
 
+        }
+        else
+        {
+            agent.speed = 0;
         }
     }
 
@@ -323,17 +329,25 @@ public class Nil_FOVdetection : MonoBehaviour
             reInvestigate = true;
             reInvestigateTimer = Time.timeSinceLevelLoad + 5;
 
-            
-            
-            
+
+
+
 
         }
 
-        transform.LookAt(Player);
+         transform.LookAt(Player);
         if (Time.timeSinceLevelLoad >= investigateTime)
         {
-            transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
-            rb.AddForce(transform.forward * thrust);
+            // transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
+            //  rb.AddForce(transform.forward * thrust);
+
+            agent.SetDestination(Player.transform.position);
+            agent.speed = 10;
+
+        }
+        else
+        {
+            agent.speed = 0;
         }
     }
 
@@ -350,16 +364,22 @@ public class Nil_FOVdetection : MonoBehaviour
         {
             if (Time.timeSinceLevelLoad <= timeSinceLastSeen)
             {
-                transform.LookAt(Player);
-                transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
-
+                 transform.LookAt(Player);
+                // transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
+                agent.SetDestination(Player.transform.position);
+                agent.speed = 10;
+            }
+            else
+            {
+                agent.speed = 0;
             }
         }
         else if(soundDetected)
         {
             if (soundInvestigateTimer >= Time.timeSinceLevelLoad)
             {
-               // this.GetComponent<Rigidbody>().isKinematic = true;
+                // this.GetComponent<Rigidbody>().isKinematic = true;
+                agent.speed = 0;
             }
             else if (soundInvestigateTimer <= Time.timeSinceLevelLoad)
             {
@@ -367,8 +387,10 @@ public class Nil_FOVdetection : MonoBehaviour
                 if(Time.timeSinceLevelLoad <= timeSinceLastSeen)
                 {
                     moveToLocation = GameObject.FindGameObjectWithTag("SoundLocator");
-                    transform.LookAt(moveToLocation.transform.position);
-                    transform.position = Vector3.SmoothDamp(transform.position, moveToLocation.transform.position, ref smoothVelocity, smoothTime);
+                    //  transform.LookAt(moveToLocation.transform.position);
+                    // transform.position = Vector3.SmoothDamp(transform.position, moveToLocation.transform.position, ref smoothVelocity, smoothTime);
+                    agent.SetDestination(moveToLocation.transform.position);
+                    agent.speed = 6f;
                 }
             }
         }
