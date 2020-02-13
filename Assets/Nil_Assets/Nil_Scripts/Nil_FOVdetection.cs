@@ -7,42 +7,41 @@ using UnityEngine.SceneManagement;
 
 public class Nil_FOVdetection : MonoBehaviour
 {
+    //objects
+    [HeaderAttribute("Objects")]
     public NavMeshAgent agent;
     public GameObject player;
     public GameObject soundLocation;
     private GameObject moveToLocation;
+    public Transform Player;
 
-    public GameObject[] waypoints;
-    public int num = 0;
-
-    public float minDist;
-    public float speed;
-    //runspeed
-    public float smoothTime = 10.0f;
-    //Vector3 used to store the velocity of the enemy
-    private Vector3 smoothVelocity = Vector3.zero;
     //waypoint stuff
-    public bool rand = false;
-    public bool go = true;
-    //rigidbodyshit
-    public float thrust = 1.0f;
-    public Rigidbody rb;
-
-    //variables fo state machine
-    public float waitTime;
-    private float investigateTime;
-    private bool reInvestigate;
-    private float reInvestigateTimer;
-    private bool investigating;
-    private float chaseTimer;
-    private bool chase;
-    private bool soundDetected;
-    private float soundInvestigateTimer;
-
-    private bool destroyMoveTo;
-    private float moveToDestroyTimer;
+    [HeaderAttribute("Waypoints")]
+    public GameObject[] waypoints;
+    private int num = 0;
+    private float minDist;
+    private bool rand = true;
+    private bool go = true;
 
 
+    //speed variables
+    [HeaderAttribute("Speed")]
+    public float patrolSpeed;
+    public float invSoundSpeed;
+    public float chaseSpeed;
+    private float stopSpeed;
+    // private float speed;
+
+    //FOVstuff
+    [HeaderAttribute("Sight Detection")]
+    public float defaultRadius;
+    public float chaseRadius;
+    public float defaultAngle;
+    public float chaseAngle;
+    private float maxAngle;
+    private float maxRadius;
+
+    //Finite state machine
     public enum State
     {
         PATROL,
@@ -53,19 +52,30 @@ public class Nil_FOVdetection : MonoBehaviour
 
     }
 
+    [HeaderAttribute("AI State Variables")]
+    //variables fo state machine
+    private float waitTime;
+    private float investigateTime;
+    private bool reInvestigate;
+    private float reInvestigateTimer;
+    private bool investigating;
+    private float chaseTimer;
+    private bool chase;
+    private bool soundDetected;
+    private float soundInvestigateTimer;
+    private bool destroyMoveTo;
+    private float moveToDestroyTimer;
     private bool notChasing;
     private bool notInvestigating;
-
     public State state;
     private bool alive;
-
-    public Transform Player;
-    public float maxAngle;
-    public float maxRadius;
-
     public float timeSinceLastSeen;
-
     private bool isinFov = false;
+
+    // NOT USED
+    private Vector3 smoothVelocity = Vector3.zero;
+    private float thrust = 1.0f;
+    private Rigidbody rb;
 
     private void OnDrawGizmos()
     {
@@ -142,6 +152,9 @@ public class Nil_FOVdetection : MonoBehaviour
         notChasing = true;
         soundDetected = false;
         rb = GetComponent<Rigidbody>();
+        num = 1;
+        minDist = 1;
+        stopSpeed = 0;
 
 
     }
@@ -191,20 +204,22 @@ public class Nil_FOVdetection : MonoBehaviour
         if (notChasing && !soundDetected)
         {
             RunPatrol();
-            maxRadius = 15;
+            maxRadius = defaultRadius;
+            maxAngle = defaultAngle;
         }
         else
         {
             if (notInvestigating && !notChasing)
             {
                 RunChase();
-                maxRadius = 20;
+                maxRadius = chaseRadius;
+                maxAngle = chaseAngle;
             }
         }
 
         print(Time.timeSinceLevelLoad);
        
-
+      
     }
 
     IEnumerator FSM()
@@ -290,12 +305,12 @@ public class Nil_FOVdetection : MonoBehaviour
             // this.transform.LookAt(targetPostition);
 
             agent.SetDestination(waypoints[num].transform.position);
-            agent.speed = 3;
+            agent.speed = patrolSpeed;
 
         }
         else
         {
-            agent.speed = 0;
+            agent.speed = stopSpeed;
         }
     }
 
@@ -342,12 +357,12 @@ public class Nil_FOVdetection : MonoBehaviour
             //  rb.AddForce(transform.forward * thrust);
 
             agent.SetDestination(Player.transform.position);
-            agent.speed = 10;
+            agent.speed = chaseSpeed;
 
         }
         else
         {
-            agent.speed = 0;
+            agent.speed = stopSpeed;
         }
     }
 
@@ -367,11 +382,11 @@ public class Nil_FOVdetection : MonoBehaviour
                  transform.LookAt(Player);
                 // transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
                 agent.SetDestination(Player.transform.position);
-                agent.speed = 10;
+                agent.speed = chaseSpeed;
             }
             else
             {
-                agent.speed = 0;
+                agent.speed = stopSpeed;
             }
         }
         else if(soundDetected)
@@ -379,7 +394,7 @@ public class Nil_FOVdetection : MonoBehaviour
             if (soundInvestigateTimer >= Time.timeSinceLevelLoad)
             {
                 // this.GetComponent<Rigidbody>().isKinematic = true;
-                agent.speed = 0;
+                agent.speed = stopSpeed;
             }
             else if (soundInvestigateTimer <= Time.timeSinceLevelLoad)
             {
@@ -390,7 +405,7 @@ public class Nil_FOVdetection : MonoBehaviour
                     //  transform.LookAt(moveToLocation.transform.position);
                     // transform.position = Vector3.SmoothDamp(transform.position, moveToLocation.transform.position, ref smoothVelocity, smoothTime);
                     agent.SetDestination(moveToLocation.transform.position);
-                    agent.speed = 6f;
+                    agent.speed = invSoundSpeed;
                 }
             }
         }

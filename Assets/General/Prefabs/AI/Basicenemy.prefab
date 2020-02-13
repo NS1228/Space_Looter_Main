@@ -137,23 +137,19 @@ MonoBehaviour:
   player: {fileID: 0}
   soundLocation: {fileID: 7635782783366472552, guid: d44953647bf504643afd50dcdf811b73,
     type: 3}
+  Player: {fileID: 0}
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  num: 1
-  minDist: 1
-  speed: 5
-  smoothTime: 0.6
-  rand: 1
-  go: 1
-  thrust: 60000
-  rb: {fileID: 7583743169754408137}
-  waitTime: 0
+  patrolSpeed: 3
+  invSoundSpeed: 6
+  chaseSpeed: 10
+  defaultRadius: 15
+  chaseRadius: 20
+  defaultAngle: 45
+  chaseAngle: 45
   state: 0
-  Player: {fileID: 0}
-  maxAngle: 45
-  maxRadius: 15
   timeSinceLastSeen: 0
 --- !u!65 &1480877414
 BoxCollider:
