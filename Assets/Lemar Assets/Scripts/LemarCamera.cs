@@ -18,6 +18,7 @@ public class LemarCamera : MonoBehaviour
     void LateUpdate()
     {
         CamControl();
+
     }
 
     void CamControl()
@@ -28,7 +29,7 @@ public class LemarCamera : MonoBehaviour
 
         transform.LookAt(Target);
 
-        if (Input.GetKey(KeyCode.LeftControl))
+        if (Input.GetKey(KeyCode.LeftShift))
         {
           Target.rotation = Quaternion.Euler(mouseY, mouseX, 0);
         }

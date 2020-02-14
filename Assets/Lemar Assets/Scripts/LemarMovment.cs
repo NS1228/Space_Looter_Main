@@ -85,7 +85,7 @@ public class LemarMovment : MonoBehaviour
         Vector3 move = new Vector3(horizon, 0f, verti) * Speed * Time.deltaTime;
         transform.Translate(move, Space.Self);
 
-        if (Stand == true && Input.GetKey(KeyCode.LeftShift))
+        if (Stand == true && Input.GetKey(KeyCode.Space))
         {
             Speed = Sprint;
             Running = true;
@@ -98,7 +98,7 @@ public class LemarMovment : MonoBehaviour
             Running = false;
             Sprinting = false;
         }
-        if (Stand == true && Input.GetKeyUp(KeyCode.LeftShift))
+        if (Stand == true && Input.GetKeyUp(KeyCode.Space))
         {
             Walking = true;
         }
@@ -112,7 +112,7 @@ public class LemarMovment : MonoBehaviour
     {
         Vector3 v = transform.rotation.eulerAngles;
         Vector3 n = Player.transform.position;
-        if (Input.GetKeyUp(KeyCode.C))
+        if (Input.GetKeyUp(KeyCode.E))
         {  
             if (Stand == true)
             {
