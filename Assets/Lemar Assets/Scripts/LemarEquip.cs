@@ -8,6 +8,8 @@ public class LemarEquip : MonoBehaviour
 
     public GameObject EquipIcon;
     public bool Equipped;
+    public GameObject Gadget;
+    public GameObject EquippedGadget;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,7 @@ public class LemarEquip : MonoBehaviour
 
     void Update()
     {
-       
+
     }
 
 
@@ -30,6 +32,7 @@ public class LemarEquip : MonoBehaviour
         {
             EquipIcon.SetActive(false);
             Equipped = false;
+            Destroy(EquippedGadget);
 
         }
         else
@@ -37,6 +40,7 @@ public class LemarEquip : MonoBehaviour
 
             EquipIcon.SetActive(true);
             Equipped = true;
+            EquippedGadget = Instantiate(Gadget, transform.position, transform.rotation);
 
         }
     }
