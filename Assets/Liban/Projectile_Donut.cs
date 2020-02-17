@@ -5,48 +5,120 @@ using UnityEngine;
 public class Projectile_Donut : MonoBehaviour
 {
 
-    public Transform TheTarget;
+    public Rigidbody bulletPrefabs;
 
-    public float FiringAngle = 45.0f;
+    public GameObject cursor;
 
-    public float Gravity = 9.8f;
+    public LayerMask Layer;
 
-    public Transform Projectile;
+    private Camera Camyeahyeah;
 
-    private Transform myTransform;
-
-
+    public Transform shootingpoint;
 
     // Start is called before the first frame update
-    void awake()
+    void Start()
     {
 
-        myTransform = transform;
-        
+        Camyeahyeah = Camera.main;
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        Projectile.position = myTransform.position + new Vector3(0, 0.0f, 0);
+        Launch();
 
-        float target_distance = Vector3.Distance(Projectile.position, TheTarget.position);
-
-        float projectile_velocity = target_distance / (Mathf.Sin(2 * FiringAngle * Mathf.Deg2Rad) / Gravity);
+    }
 
 
-        float Vx = Mathf.Sqrt(projectile_velocity) * Mathf.Cos(FiringAngle * Mathf.Deg2Rad);
 
-        float Vy = Mathf.Sqrt(projectile_velocity) * Mathf.Sin(FiringAngle * Mathf.Deg2Rad);
+    void Launch()
 
-        float FlightDuration = target_distance / Vx;
+    {
 
-        Projectile.rotation = Quaternion.LookRotation(TheTarget.position - Projectile.position);
+        Ray camRay = Camyeahyeah.ScreenPointToRay(Input.mousePosition);
+        RaycastHit Hit;
+
+
+
+        if (Physics.Raycast(camRay, out Hit, 100f, Layer))
+
+
+        {
+
+            cursor.SetActive(true);
+            cursor.transform.position = Hit.point + Vector3.up * 1.1f;
+
+
+            Vector3 Vo = CalculateVelocity(Hit.point, shootingpoint.position, 1f);
+
+
+            transform.rotation = Quaternion.LookRotation(Vo);
+
+
+
+           
+
+            if (Input.GetMouseButton(0))
+
+            {
+
+
+                Rigidbody obj = Instantiate(bulletPrefabs, shootingpoint.position, Quaternion.identity);
+
+                obj.velocity = Vo;
+            }
+
+        }
+
+        else
+
+        {
+
+            cursor.SetActive(false);
+
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+
+    Vector3 CalculateVelocity(Vector3 target, Vector3 origin, float time)
+
+    {
+
+        Vector3 distance = target - origin;
+        Vector3 distanceXZ = distance;
+        distanceXZ.y = 0f;
+
+
+
+        float Sy = distance.y;
+        float Sxz = distanceXZ.magnitude;
+
+        float Vxz = Sxz / time;
+        float Vy = Sy / time + 0.5f * Mathf.Abs(Physics.gravity.y) * time;
+
+        Vector3 result = distanceXZ.normalized;
+        result *= Vxz;
+        result.y = Vy;
+
+
+       return result;
 
 
 
 
 
     }
+
+
 }
