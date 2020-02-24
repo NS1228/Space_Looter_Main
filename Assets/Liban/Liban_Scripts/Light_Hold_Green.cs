@@ -77,8 +77,48 @@ public class Light_Hold_Green : MonoBehaviour
 
 
 
+        void AIFlashReact()
 
 
+        {
+
+            if(AI_Reacting_To_GreenLight_Liban.SlowingDownEnemy == true)
+
+
+            {
+
+
+                Nil_FOVdetection.flashLightBlindingLight = true;
+
+
+            }
+
+
+            else
+
+            {
+
+
+                Nil_FOVdetection.flashLightBlindingLight = false;
+
+            }
+
+
+        }
+
+
+
+
+        if(TorchLightGreen.gameObject == false)
+
+
+
+        {
+
+            Nil_FOVdetection.flashLightBlindingLight = false;
+
+
+        }
 
 
     }

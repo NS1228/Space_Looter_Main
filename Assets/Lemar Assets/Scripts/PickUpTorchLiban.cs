@@ -5,7 +5,7 @@ using UnityEngine;
 public class PickUpTorchLiban : MonoBehaviour
 {
 
-    public GameObject DaTorch;
+    public Transform DaTorch;
 
 
     void OnTriggerEnter (Collider other)
@@ -18,10 +18,7 @@ public class PickUpTorchLiban : MonoBehaviour
         {
 
 
-            DaTorch.SetActive(true);
 
-
-            Destroy(gameObject);
 
 
         }
