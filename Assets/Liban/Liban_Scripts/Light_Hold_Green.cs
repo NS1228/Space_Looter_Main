@@ -29,7 +29,7 @@ public class Light_Hold_Green : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        AIFlashReact();
 
         if (Input.GetMouseButton(1))
 

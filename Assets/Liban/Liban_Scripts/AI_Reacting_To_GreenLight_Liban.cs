@@ -19,13 +19,13 @@ public class AI_Reacting_To_GreenLight_Liban : MonoBehaviour
     }
 
     // Update is called once per frame
-    void OnTriggerEnter (Collider other)
+    void OnTriggerEnter(Collider other)
     {
 
-        if(other.CompareTag("AI"))
+        if(other.gameObject.tag == "AI")
 
         {
-
+            print("COLL");
             SlowingDownEnemy = true;
 
 
@@ -44,11 +44,11 @@ public class AI_Reacting_To_GreenLight_Liban : MonoBehaviour
     {
 
 
-        if(other.CompareTag("AI"))
+        if(other.gameObject.tag == "AI")
 
         {
 
-
+            print("OFFCOLL");
             SlowingDownEnemy = false;
 
 

@@ -533,6 +533,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basicenemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7583743169754408140, guid: 9b84432b827d61b4cb83878a8d3f7018,
+        type: 3}
+      propertyPath: m_TagString
+      value: AI
+      objectReference: {fileID: 0}
     - target: {fileID: 7583743169754408142, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
       propertyPath: m_Speed

@@ -16,6 +16,7 @@ TagManager:
   - PickUpObject
   - SoundLocator
   - LemarCamera
+  - AI
   layers:
   - Default
   - TransparentFX
