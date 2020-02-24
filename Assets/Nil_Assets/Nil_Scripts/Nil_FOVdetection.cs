@@ -14,6 +14,7 @@ public class Nil_FOVdetection : MonoBehaviour
     public GameObject soundLocation;
     private GameObject moveToLocation;
     public Transform Player;
+    public Light lightSource;
 
     //waypoint stuff
     [HeaderAttribute("Waypoints")]
@@ -46,13 +47,20 @@ public class Nil_FOVdetection : MonoBehaviour
     private float maxAngle;
     private float maxRadius;
 
+    //stun stuff
+    public float stunTimer;
+    public static bool stunned;
+    private bool stunable;
+
+
     //Finite state machine
     public enum State
     {
         PATROL,
         CHASE,
         SEARCH,
-        INVESTIGATE
+        INVESTIGATE,
+        STUN
 
 
     }
@@ -76,6 +84,9 @@ public class Nil_FOVdetection : MonoBehaviour
     private bool alive;
     public float timeSinceLastSeen;
     private bool isinFov = false;
+
+
+
 
     //Gadget stuff
     public static bool flashLightBlindingLight;
@@ -146,6 +157,7 @@ public class Nil_FOVdetection : MonoBehaviour
 
         return false;
     }
+    
 
     // Start is called before the first frame update
     void Start()
@@ -164,6 +176,7 @@ public class Nil_FOVdetection : MonoBehaviour
         num = 1;
         minDist = 1;
         stopSpeed = 0;
+        stunable = true;
 
 
     }
@@ -177,40 +190,41 @@ public class Nil_FOVdetection : MonoBehaviour
 
         //checks if in fov (bool)
         isinFov = inFOV(transform, Player, maxAngle, maxRadius);
-        
-        if (isinFov)
+
+
+        if (isinFov && !stunned)
         {
-          
+
             notChasing = false;
             notInvestigating = true;
-           // print("inFOV");
+            // print("inFOV");
 
         }
-        else if (!isinFov)
+        else if (!isinFov && !stunned)
         {
-           // print("NOTinFOV");
+            // print("NOTinFOV");
             if (Time.timeSinceLevelLoad >= timeSinceLastSeen)
             {
                 notChasing = true;
                 notInvestigating = true;
                 soundDetected = false;
             }
-            else
+            else if(Time.timeSinceLevelLoad < timeSinceLastSeen)
             {
                 RunInvestigating();
                 notInvestigating = false;
-                
-            }
-       }
 
-        if(soundDetected && notChasing)
+            }
+        }
+
+        if (soundDetected && notChasing && !stunned)
         {
             RunInvestigating();
             notInvestigating = false;
         }
-      
 
-        if (notChasing && !soundDetected)
+
+        if (notChasing && !soundDetected && !stunned)
         {
             RunPatrol();
             maxRadius = defaultRadius;
@@ -218,7 +232,7 @@ public class Nil_FOVdetection : MonoBehaviour
         }
         else
         {
-            if (notInvestigating && !notChasing)
+            if (notInvestigating && !notChasing && !stunned)
             {
                 RunChase();
                 maxRadius = chaseRadius;
@@ -226,20 +240,27 @@ public class Nil_FOVdetection : MonoBehaviour
             }
         }
 
+        if(stunned && stunable)
+        {
+            RunStun();
+            stunTimer = Time.timeSinceLevelLoad + 3;
+            stunable = false;
+        }
+
         //print(Time.timeSinceLevelLoad);
 
-       /* if(Input.GetKey(KeyCode.L))
-        {
-            flashLightBlindingLight = true;
-        }
-        if (Input.GetKey(KeyCode.M))
-        {
-            flashLightBlindingLight = false;
-        } */
+        /* if(Input.GetKey(KeyCode.L))
+         {
+             flashLightBlindingLight = true;
+         }
+         if (Input.GetKey(KeyCode.M))
+         {
+             flashLightBlindingLight = false;
+         } */
 
 
+        //if (Vector3.Distance(transform.position, lightSource.transform.position) - lightSource.range <= 5)
         
-      
     }
 
     IEnumerator FSM()
@@ -256,6 +277,9 @@ public class Nil_FOVdetection : MonoBehaviour
                     break;
                 case State.INVESTIGATE:
                     Investigate();
+                    break;
+                case State.STUN:
+                   Stun();
                     break;
 
             }
@@ -461,7 +485,27 @@ public class Nil_FOVdetection : MonoBehaviour
         
     }
 
-   void OnTriggerEnter(Collider theCollision)
+    void RunStun()
+    {
+        state = Nil_FOVdetection.State.STUN;
+    }
+
+    void Stun()
+    {
+        if (stunTimer >= Time.timeSinceLevelLoad)
+        {
+            agent.speed = 0;
+            agent.angularSpeed = 0;
+            // something to stop looking at the player
+        }
+        else
+        {
+            stunned = false;
+            stunable = true;
+        }
+    }
+
+    void OnTriggerEnter(Collider theCollision)
     {
         if (theCollision.gameObject.tag == "Sound" && !soundDetected && Time.timeSinceLevelLoad >= timeSinceLastSeen)
         {
@@ -478,7 +522,12 @@ public class Nil_FOVdetection : MonoBehaviour
 
         }
 
-        if(theCollision.gameObject.tag == "Player")
+     
+
+
+
+
+            if (theCollision.gameObject.tag == "Player")
         {
             SceneManager.LoadScene(0);
             print("coll");

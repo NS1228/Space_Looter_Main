@@ -31,7 +31,7 @@ public class Light_Hold_Green : MonoBehaviour
     {
         AIFlashReact();
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButton(0))
 
         {
 
@@ -58,7 +58,7 @@ public class Light_Hold_Green : MonoBehaviour
         {
 
 
-            if (Input.GetMouseButtonUp(1))
+            if (Input.GetMouseButtonUp(0))
 
 
             {
@@ -109,7 +109,7 @@ public class Light_Hold_Green : MonoBehaviour
 
 
 
-        if(TorchLightGreen.gameObject == false)
+        if (TorchLightGreen.isActiveAndEnabled == false)
 
 
 
