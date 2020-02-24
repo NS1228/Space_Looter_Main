@@ -30,6 +30,11 @@ public class Nil_FOVdetection : MonoBehaviour
     public float invSoundSpeed;
     public float chaseSpeed;
     private float stopSpeed;
+    public float slowedPatrol;
+    public float slowedInvSound;
+    public float slowedChase;
+
+
     // private float speed;
 
     //FOVstuff
@@ -71,6 +76,10 @@ public class Nil_FOVdetection : MonoBehaviour
     private bool alive;
     public float timeSinceLastSeen;
     private bool isinFov = false;
+
+    //Gadget stuff
+    public static bool flashLightBlindingLight;
+   
 
     // NOT USED
     private Vector3 smoothVelocity = Vector3.zero;
@@ -218,7 +227,18 @@ public class Nil_FOVdetection : MonoBehaviour
         }
 
         print(Time.timeSinceLevelLoad);
-       
+
+        if(Input.GetKey(KeyCode.L))
+        {
+            flashLightBlindingLight = true;
+        }
+        if (Input.GetKey(KeyCode.M))
+        {
+            flashLightBlindingLight = false;
+        }
+
+
+        
       
     }
 
@@ -305,7 +325,20 @@ public class Nil_FOVdetection : MonoBehaviour
             // this.transform.LookAt(targetPostition);
 
             agent.SetDestination(waypoints[num].transform.position);
-            agent.speed = patrolSpeed;
+
+            if(flashLightBlindingLight)
+            {
+                agent.speed = slowedPatrol;
+            }
+            else
+            {
+                agent.speed = patrolSpeed;
+            }
+            
+               
+            
+
+            
 
         }
         else
@@ -357,8 +390,15 @@ public class Nil_FOVdetection : MonoBehaviour
             //  rb.AddForce(transform.forward * thrust);
 
             agent.SetDestination(Player.transform.position);
-            agent.speed = chaseSpeed;
 
+            if (flashLightBlindingLight)
+            {
+                agent.speed = slowedChase;
+            }
+            else
+            {
+                agent.speed = chaseSpeed;
+            }
         }
         else
         {
@@ -405,7 +445,15 @@ public class Nil_FOVdetection : MonoBehaviour
                     //  transform.LookAt(moveToLocation.transform.position);
                     // transform.position = Vector3.SmoothDamp(transform.position, moveToLocation.transform.position, ref smoothVelocity, smoothTime);
                     agent.SetDestination(moveToLocation.transform.position);
-                    agent.speed = invSoundSpeed;
+
+                    if (flashLightBlindingLight)
+                    {
+                        agent.speed = slowedInvSound;
+                    }
+                    else
+                    {
+                        agent.speed = invSoundSpeed;
+                    }
                 }
             }
         }
@@ -439,6 +487,8 @@ public class Nil_FOVdetection : MonoBehaviour
 
 
     }
+
+   
 
     
 

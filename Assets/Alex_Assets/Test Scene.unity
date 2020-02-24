@@ -6441,6 +6441,11 @@ PrefabInstance:
       objectReference: {fileID: 836802779}
     - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 836802784}
+    - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
+        type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 618685458}
@@ -6456,43 +6461,18 @@ PrefabInstance:
       objectReference: {fileID: 1466021812}
     - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
-      propertyPath: Player
-      value: 
-      objectReference: {fileID: 836802784}
-    - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
-        type: 3}
-      propertyPath: defaultRadius
-      value: 15
+      propertyPath: slowedPatrol
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
-      propertyPath: defaultAngle
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
-        type: 3}
-      propertyPath: chaseAngle
-      value: 45
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
-        type: 3}
-      propertyPath: chaseRadius
-      value: 20
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
-        type: 3}
-      propertyPath: patrolSpeed
+      propertyPath: slowedInvSound
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
-      propertyPath: invSoundSpeed
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
-        type: 3}
-      propertyPath: chaseSpeed
-      value: 10
+      propertyPath: slowedChase
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7583743169754408149, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}

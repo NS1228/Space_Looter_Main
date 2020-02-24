@@ -533,6 +533,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Basicenemy
       objectReference: {fileID: 0}
+    - target: {fileID: 7583743169754408142, guid: 9b84432b827d61b4cb83878a8d3f7018,
+        type: 3}
+      propertyPath: m_Speed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583743169754408142, guid: 9b84432b827d61b4cb83878a8d3f7018,
+        type: 3}
+      propertyPath: m_AngularSpeed
+      value: 120
+      objectReference: {fileID: 0}
     - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
       propertyPath: player
@@ -558,6 +568,21 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 1383203226}
+    - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
+        type: 3}
+      propertyPath: slowedPatrol
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
+        type: 3}
+      propertyPath: slowedInvSound
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
+        type: 3}
+      propertyPath: slowedChase
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7583743169754408149, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
       propertyPath: m_LocalPosition.x
