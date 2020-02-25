@@ -52,6 +52,15 @@ public class Nil_FOVdetection : MonoBehaviour
     public static bool stunned;
     private bool stunable;
 
+    //ghost mode
+    public static bool phantasm;
+
+    //evacuation
+    public static bool evacuate;
+    public Transform evacuationPoint;
+    public float evacuatestopTimer;
+
+
 
     //Finite state machine
     public enum State
@@ -60,7 +69,8 @@ public class Nil_FOVdetection : MonoBehaviour
         CHASE,
         SEARCH,
         INVESTIGATE,
-        STUN
+        STUN,
+        EVACUATE
 
 
     }
@@ -177,6 +187,7 @@ public class Nil_FOVdetection : MonoBehaviour
         minDist = 1;
         stopSpeed = 0;
         stunable = true;
+        evacuate = false;
 
 
     }
@@ -192,7 +203,7 @@ public class Nil_FOVdetection : MonoBehaviour
         isinFov = inFOV(transform, Player, maxAngle, maxRadius);
 
 
-        if (isinFov && !stunned)
+        if (isinFov && !stunned && !phantasm && !evacuate)
         {
 
             notChasing = false;
@@ -200,7 +211,7 @@ public class Nil_FOVdetection : MonoBehaviour
             // print("inFOV");
 
         }
-        else if (!isinFov && !stunned)
+        else if (!isinFov && !stunned && !evacuate)
         {
             // print("NOTinFOV");
             if (Time.timeSinceLevelLoad >= timeSinceLastSeen)
@@ -217,14 +228,14 @@ public class Nil_FOVdetection : MonoBehaviour
             }
         }
 
-        if (soundDetected && notChasing && !stunned)
+        if (soundDetected && notChasing && !stunned && !evacuate)
         {
             RunInvestigating();
             notInvestigating = false;
         }
 
 
-        if (notChasing && !soundDetected && !stunned)
+        if (notChasing && !soundDetected && !stunned && !evacuate)
         {
             RunPatrol();
             maxRadius = defaultRadius;
@@ -232,7 +243,7 @@ public class Nil_FOVdetection : MonoBehaviour
         }
         else
         {
-            if (notInvestigating && !notChasing && !stunned)
+            if (notInvestigating && !notChasing && !stunned && !phantasm && !evacuate)
             {
                 RunChase();
                 maxRadius = chaseRadius;
@@ -245,6 +256,11 @@ public class Nil_FOVdetection : MonoBehaviour
             RunStun();
             stunTimer = Time.timeSinceLevelLoad + 3;
             stunable = false;
+        }
+
+        if(evacuate && !stunned)
+        {
+            RunEvacuate();
         }
 
         //print(Time.timeSinceLevelLoad);
@@ -280,6 +296,9 @@ public class Nil_FOVdetection : MonoBehaviour
                     break;
                 case State.STUN:
                    Stun();
+                    break;
+                case State.EVACUATE:
+                    Evacuate();
                     break;
 
             }
@@ -439,7 +458,7 @@ public class Nil_FOVdetection : MonoBehaviour
 
     void Investigate()
     {
-        if (!soundDetected)
+        if (!soundDetected && !phantasm)
         {
             if (Time.timeSinceLevelLoad <= timeSinceLastSeen)
             {
@@ -505,6 +524,38 @@ public class Nil_FOVdetection : MonoBehaviour
         }
     }
 
+    void RunEvacuate()
+    {
+        state = Nil_FOVdetection.State.STUN;
+    }
+
+    void Evacuate ()
+    {
+
+        if(evacuatestopTimer >= Time.timeSinceLevelLoad)
+        {
+            agent.speed = 0;
+        }
+        else
+        {
+            evacuate = false;
+        }
+        
+
+        if (this.transform.position == evacuationPoint.transform.position)
+        {
+            evacuatestopTimer = Time.timeSinceLevelLoad + 2;
+
+        }
+        else
+        {
+            agent.SetDestination(evacuationPoint.transform.position);
+
+            
+        }
+       
+    }
+
     void OnTriggerEnter(Collider theCollision)
     {
         if (theCollision.gameObject.tag == "Sound" && !soundDetected && Time.timeSinceLevelLoad >= timeSinceLastSeen)
@@ -537,13 +588,16 @@ public class Nil_FOVdetection : MonoBehaviour
 
     }
 
-   
+ 
 
-    
 
-    
 
-   
+
+
+
+
+
+
 
 
 
