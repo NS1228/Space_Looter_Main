@@ -72,7 +72,7 @@ public class NewActivateNV : MonoBehaviour
 
                 New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
 
-                BlurrYEAHYEAHH.enabled = false;
+            BlurrYEAHYEAHH.enabled = false;
 
 
 
@@ -86,11 +86,6 @@ public class NewActivateNV : MonoBehaviour
                 Light_Hold_Blue LLLBLUE = GameObject.Find("FlashLight").GetComponent<Light_Hold_Blue>();
 
                 LLLBLUE.enabled = false;
-
-
-             //   Battery_Level batteryyeahyeah = GameObject.Find("FlashLight").GetComponent<Battery_Level>();
-
-              //  batteryyeahyeah.enabled = false;
 
 
 
@@ -122,7 +117,7 @@ public class NewActivateNV : MonoBehaviour
 
                 New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
 
-            BlurrYEAHYEAHH.enabled = false;
+            BlurrYEAHYEAHH.enabled = true;
 
                
             print("IT IS WORKING yeahyeah223");
@@ -172,9 +167,6 @@ public class NewActivateNV : MonoBehaviour
             isZoomInYeah = !isZoomInYeah;
 
 
-            New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
-
-            BlurrYEAHYEAHH.enabled = false;
 
 
         }
@@ -233,7 +225,9 @@ public class NewActivateNV : MonoBehaviour
             LGGREEn.enabled = false;
 
 
-           
+            New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
+
+            BlurrYEAHYEAHH.enabled = false;
 
 
         }

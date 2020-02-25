@@ -82,7 +82,7 @@ public class CameraSwitch : MonoBehaviour
 
                New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
 
-              BlurrYEAHYEAHH.enabled = false;
+            BlurrYEAHYEAHH.enabled = false;
 
         }
 
