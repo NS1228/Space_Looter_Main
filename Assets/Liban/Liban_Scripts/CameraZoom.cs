@@ -37,7 +37,7 @@ public class CameraZoom : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(KeyCode.Y))
+         if (Input.GetKeyDown(KeyCode.Y))
 
         {
 
