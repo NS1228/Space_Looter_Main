@@ -46,7 +46,7 @@ public class Light_Hold_Green : MonoBehaviour
             LightSwitchSound.Play();
 
 
-            GetComponent<Battery_Level>().TakeSomeBatteryGreen(TakeAwayBattery);
+        //    GetComponent<Battery_Level>().TakeSomeBatteryGreen(TakeAwayBattery);
 
 
 

@@ -17,9 +17,9 @@ public class Battery_Level : MonoBehaviour
 
     public Light TorchLightBlue;
 
-    public Light GlassLightBlue;
+  //  public Light GlassLightBlue;
 
-    public Light TorchLightGreen;
+  //  public Light TorchLightGreen;
 
     public Light GlassLightGreen;
 
@@ -38,7 +38,7 @@ public class Battery_Level : MonoBehaviour
 
       //  RunOut();
 
-      //  LowBattery();
+
 
        Revive();
 
@@ -90,6 +90,7 @@ public class Battery_Level : MonoBehaviour
 
 
         }
+    
 
 
 
@@ -98,37 +99,43 @@ public class Battery_Level : MonoBehaviour
         {
 
 
-            LowBattery();
+             LowBattery();
+
+           
 
 
-        }
+       }
 
 
-    }
+   }
 
 
 
-    public void TakeSomeBatteryGreen (int GreenAmount)
+
+
+    public void TakeSomeBatteryYellowFlashLight(int YellowFlashAmount)
 
     {
 
-        CurrentBattery -= GreenAmount;
+        CurrentBattery -= YellowFlashAmount;
 
         BatterySlider.value = CurrentBattery;
 
 
-        if(CurrentBattery <= 0)
+       if(CurrentBattery <= 0)
 
-        {
+
+       {
+
 
             RunOut();
 
         }
 
 
+   }
 
 
-    }
 
 
 
@@ -141,11 +148,11 @@ public class Battery_Level : MonoBehaviour
 
         TorchLightBlue.gameObject.SetActive(false);
 
-        GlassLightBlue.gameObject.SetActive(false);
+      //  GlassLightBlue.gameObject.SetActive(false);
 
-        TorchLightGreen.gameObject.SetActive(false);
+       // TorchLightGreen.gameObject.SetActive(false);
 
-        GlassLightGreen.gameObject.SetActive(false);
+      //  GlassLightGreen.gameObject.SetActive(false);
 
 
        //Battery_Level ThisScrtipt = GameObject.Find("flashlight").GetComponent<Battery_Level>();
@@ -153,14 +160,14 @@ public class Battery_Level : MonoBehaviour
        // ThisScrtipt.enabled = false;
 
 
-        Light_Hold_Blue LIGHTHOLDblue = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
+        Light_Hold_Blue LLLIGHTHOLDblue = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
-        LIGHTHOLDblue.enabled = false;
+        LLLIGHTHOLDblue.enabled = false;
 
 
-        Light_Hold_Green LIGHTHOLDgreen = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
+       // Light_Hold_Green LIGHTHOLDgreen = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
 
-        LIGHTHOLDgreen.enabled = false;
+       // LIGHTHOLDgreen.enabled = false;
 
 
 
@@ -202,14 +209,16 @@ public class Battery_Level : MonoBehaviour
 
 
 
-    void LowBattery()
+    public void LowBattery()
 
     {
 
 
-        //FlashingDanger DangerRED = GameObject.Find("DangerTEXT").GetComponent<FlashingDanger>();
+       // FlashingDanger DangerRED = GameObject.Find("DangerTEXT").GetComponent<FlashingDanger>();
 
-      //  DangerRED.enabled = true;
+       // DangerRED.enabled = true;
+
+       
 
         DangerTextyeahyeah.gameObject.SetActive(true);
 

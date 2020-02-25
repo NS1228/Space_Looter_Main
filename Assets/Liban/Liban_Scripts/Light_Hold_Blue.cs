@@ -9,7 +9,7 @@ public class Light_Hold_Blue : MonoBehaviour
 
     public Light TorchLightBlue;
 
-    public Light GlassLightBlue;
+  //  public Light GlassLightBlue;
 
     public AudioSource LightSwitchSound;
 
@@ -42,7 +42,7 @@ public class Light_Hold_Blue : MonoBehaviour
             TorchLightBlue.gameObject.SetActive(true);
 
 
-            GlassLightBlue.gameObject.SetActive(true);
+         //   GlassLightBlue.gameObject.SetActive(true);
 
           
             LightSwitchSound.Play();
@@ -68,7 +68,7 @@ public class Light_Hold_Blue : MonoBehaviour
                 TorchLightBlue.gameObject.SetActive(false);
 
 
-                GlassLightBlue.gameObject.SetActive(false);
+            //    GlassLightBlue.gameObject.SetActive(false);
 
 
               //  LightSwitchSound.Play();
