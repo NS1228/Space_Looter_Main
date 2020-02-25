@@ -115,9 +115,9 @@ public class NewActivateNV : MonoBehaviour
 
 
 
-                New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
+           //     New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
 
-            BlurrYEAHYEAHH.enabled = true;
+         //   BlurrYEAHYEAHH.enabled = true;
 
                
             print("IT IS WORKING yeahyeah223");
