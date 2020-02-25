@@ -10,6 +10,15 @@ public class NewActivateNV : MonoBehaviour
 
     public Transform ThePlayer;
 
+    private bool isZoomInYeah;
+
+    public int Zoom = 22;
+
+    public int Back = 70;
+
+    public float smooth = 8.0f;
+
+
 
 
 
@@ -24,9 +33,21 @@ public class NewActivateNV : MonoBehaviour
     {
 
 
+        RightCLick();
 
-        if (Input.GetKeyDown(KeyCode.O))
+        LeftClick();
 
+    }
+    
+
+
+        void LeftClick()
+
+
+        {
+
+
+        if (Input.GetMouseButtonDown(0))
 
         {
 
@@ -35,20 +56,120 @@ public class NewActivateNV : MonoBehaviour
 
 
 
-
         }
 
-        if (isNightVisionYeah)
+            if (isNightVisionYeah)
+
+
+            {
+
+
+
+                DeferredNightVisionEffect NightVisionYeah = GameObject.FindWithTag("LemarCamera").GetComponent<DeferredNightVisionEffect>();
+
+                NightVisionYeah.enabled = true;
+
+
+                New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
+
+                BlurrYEAHYEAHH.enabled = false;
+
+
+
+                ThePlayer.GetComponent<AudioSource>().minDistance = 10.0f;
+
+
+
+                print("IT IS WORKING yeahyeah");
+
+
+                Light_Hold_Blue LLLBLUE = GameObject.Find("FlashLight").GetComponent<Light_Hold_Blue>();
+
+                LLLBLUE.enabled = false;
+
+
+             //   Battery_Level batteryyeahyeah = GameObject.Find("FlashLight").GetComponent<Battery_Level>();
+
+              //  batteryyeahyeah.enabled = false;
+
+
+
+              //  CameraSwitch switcham = GameObject.Find("camera switch script empty object new").GetComponent<CameraSwitch>();
+
+
+              //  switcham.enabled = false;
+
+
+
+            }
+
+
+
+            else
+
+
+            {
+
+
+
+
+
+              //  DeferredNightVisionEffect NightVisionYeah = GameObject.FindWithTag("LemarCamera").GetComponent<DeferredNightVisionEffect>();
+
+              //  NightVisionYeah.enabled = false;
+
+
+
+                New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
+
+            BlurrYEAHYEAHH.enabled = false;
+
+               
+            print("IT IS WORKING yeahyeah223");
+
+
+                NightVisionActivationAudio.Play();
+
+
+                ThePlayer.GetComponent<AudioSource>().minDistance = 1.05f;
+
+
+
+                // print("IT IS WORKING yeahyeah223");
+
+
+            Light_Hold_Blue LLLBLUE = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
+
+            LLLBLUE.enabled = false;
+
+
+          //  Battery_Level batteryyeahyeah = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();
+
+          //  batteryyeahyeah.enabled = false;
+
+
+
+
+            }
+    }
+
+
+
+
+
+
+    void RightCLick()
+
+    {
+
+
+        if(Input.GetMouseButtonDown(1))
 
 
         {
 
 
-
-
-            DeferredNightVisionEffect NightVisionYeah = GameObject.FindWithTag("LemarCamera").GetComponent<DeferredNightVisionEffect>();
-
-            NightVisionYeah.enabled = true;
+            isZoomInYeah = !isZoomInYeah;
 
 
             New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
@@ -56,19 +177,43 @@ public class NewActivateNV : MonoBehaviour
             BlurrYEAHYEAHH.enabled = false;
 
 
-
-            ThePlayer.GetComponent<AudioSource>().minDistance = 10.0f;
-
-
-
-            print("IT IS WORKING yeahyeah");
+        }
 
 
 
 
+        if(isZoomInYeah)
+
+
+        {
+
+
+           
+
+
+            GetComponent<Camera>().fieldOfView = Mathf.Lerp(GetComponent<Camera>().fieldOfView, Zoom, Time.deltaTime * smooth);
+
+
+            Light_Hold_Green LGGREEn = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
+
+            LGGREEn.enabled = false;
+
+
+            DeferredNightVisionEffect NightVisionYeah = GameObject.FindWithTag("LemarCamera").GetComponent<DeferredNightVisionEffect>();
+
+            NightVisionYeah.enabled = false;
+
+
+            print("LETS GO!");
+
+
+            New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
+
+            BlurrYEAHYEAHH.enabled = true;
 
 
         }
+
 
 
 
@@ -78,35 +223,17 @@ public class NewActivateNV : MonoBehaviour
         {
 
 
-            DeferredNightVisionEffect NightVisionYeah = GameObject.FindWithTag("LemarCamera").GetComponent<DeferredNightVisionEffect>();
-
-            NightVisionYeah.enabled = false;
 
 
+            GetComponent<Camera>().fieldOfView = Mathf.Lerp(GetComponent<Camera>().fieldOfView, Back, Time.deltaTime * smooth);
+             
 
-            New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
+            Light_Hold_Green LGGREEn = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
 
-            BlurrYEAHYEAHH.enabled = true;
-
-            print("IT IS WORKING yeahyeah223");
-
-
-            NightVisionActivationAudio.Play();
+            LGGREEn.enabled = false;
 
 
-            ThePlayer.GetComponent<AudioSource>().minDistance = 1.05f;
-
-
-
-          //  New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
-
-          //  BlurrYEAHYEAHH.enabled = true;
-
-           // print("IT IS WORKING yeahyeah223");
-
-
-
-
+           
 
 
         }

@@ -24,13 +24,13 @@ public class New_Motion_XBlur : MonoBehaviour
 
         float movingnowX = Input.GetAxis("Horizontal");
 
-        float movingnowY = Input.GetAxis("Vertical");
+        float movingnowZ = Input.GetAxis("Vertical");
 
 
         // !this.GetComponent<PostProcessingBehaviour>().profile == Disorientate
 
 
-        if (movingnowX != 0 || movingnowY != 0)
+        if (movingnowX != 0 || movingnowZ != 0)
 
 
         {
