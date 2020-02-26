@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3855543845866664170}
   - component: {fileID: 3855543845866664169}
   - component: {fileID: 3855543845866664168}
-  - component: {fileID: 3855543845866664164}
+  - component: {fileID: 1645410734873791743}
   m_Layer: 0
   m_Name: watch
   m_TagString: Untagged
@@ -94,7 +94,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3855543845866664164
+--- !u!114 &1645410734873791743
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -103,18 +103,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3855543845866664175}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efe024732368c44f5a777dcba35a6ad6, type: 3}
+  m_Script: {fileID: 11500000, guid: 630c54a0015f8450fba29f36b59795c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  YeahPlayer: {fileID: 0}
-  Face: {fileID: 0}
-  TheWatch: {fileID: 3855543845866664175}
-  CloningPoint1: {fileID: 0}
-  CloningPoint2: {fileID: 0}
-  CloningPoint3: {fileID: 0}
-  FakeYeahPlayer: {fileID: 0}
-  SmokeYEAH: {fileID: 0}
-  Sike: {fileID: 0}
 --- !u!1 &3855543846066009804
 GameObject:
   m_ObjectHideFlags: 0

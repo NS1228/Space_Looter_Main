@@ -263,16 +263,16 @@ public class Nil_FOVdetection : MonoBehaviour
             RunEvacuate();
         }
 
-        //print(Time.timeSinceLevelLoad);
+        print(Time.timeSinceLevelLoad);
 
-        /* if(Input.GetKey(KeyCode.L))
+         if(Input.GetKey(KeyCode.L))
          {
-             flashLightBlindingLight = true;
+             phantasm = true;
          }
          if (Input.GetKey(KeyCode.M))
          {
-             flashLightBlindingLight = false;
-         } */
+             phantasm = false;
+         } 
 
 
         //if (Vector3.Distance(transform.position, lightSource.transform.position) - lightSource.range <= 5)

@@ -38,7 +38,7 @@ public class ActivateWatchAbilityTwo_Liban : MonoBehaviour
 
         {
 
-
+            Nil_FOVdetection.phantasm = true;
             StartCoroutine(ActivateTheGHOSTSSS());
 
 
@@ -94,7 +94,7 @@ public class ActivateWatchAbilityTwo_Liban : MonoBehaviour
 
 
 
-        Nil_FOVdetection.phantasm = true;
+     
 
 
 
