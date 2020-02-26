@@ -1389,7 +1389,7 @@ Light:
   serializedVersion: 9
   m_Type: 0
   m_Color: {r: 0.9245283, g: 0.5337757, b: 0, a: 1}
-  m_Intensity: 97
+  m_Intensity: 130
   m_Range: 30
   m_SpotAngle: 57.33983
   m_InnerSpotAngle: 21.80208
@@ -5615,7 +5615,7 @@ GameObject:
   - component: {fileID: 1901379929}
   m_Layer: 5
   m_Name: DangerTEXT
-  m_TagString: Untagged
+  m_TagString: Danger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6816,7 +6816,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.37
+      value: 13.378
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
