@@ -18,6 +18,7 @@ TagManager:
   - LemarCamera
   - AI
   - Light
+  - Danger
   layers:
   - Default
   - TransparentFX

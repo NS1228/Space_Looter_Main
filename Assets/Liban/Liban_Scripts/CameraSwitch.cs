@@ -31,7 +31,11 @@ public class CameraSwitch : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+
     {
+
+
+
 
         if (Input.GetMouseButtonDown(0))
 
@@ -62,29 +66,37 @@ public class CameraSwitch : MonoBehaviour
 
 
 
-              DeferredNightVisionEffect NightVisionYeah = GameObject.FindWithTag("LemarCamera").GetComponent<DeferredNightVisionEffect>();
+            DeferredNightVisionEffect NightVisionYeah = GameObject.FindWithTag("LemarCamera").GetComponent<DeferredNightVisionEffect>();
 
-               NightVisionYeah.enabled = true;
-
-
-
-            //    Battery_Level BL_Battery = BL_Battery = GameObject.FindWithTag("LemarCamera").GetComponent<Battery_Level>();
-
-            //    BL_Battery.enabled = true;
-
-
-               Light_Hold_Blue LLBLUE = GameObject.Find("FlashLight").GetComponent<Light_Hold_Blue>();
-
-               LLBLUE.enabled = false;
+            NightVisionYeah.enabled = true;
 
 
 
 
-               New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
+            Light_Hold_Blue LLBLUE = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
+
+            LLBLUE.enabled = false;
+
+
+
+
+            New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
 
             BlurrYEAHYEAHH.enabled = false;
 
+
+
+            CameraZoom Zoomy = GameObject.FindWithTag("LemarCamera").GetComponent<CameraZoom>();
+
+            Zoomy.enabled = true;
+
+
+
+
+
         }
+
+
 
 
 
@@ -100,45 +112,32 @@ public class CameraSwitch : MonoBehaviour
 
             //name of night vision script
 
-               DeferredNightVisionEffect NightVisionYeah = GameObject.FindWithTag("LemarCamera").GetComponent<DeferredNightVisionEffect>();
+            DeferredNightVisionEffect NightVisionYeah = GameObject.FindWithTag("LemarCamera").GetComponent<DeferredNightVisionEffect>();
 
-              NightVisionYeah.enabled = false;
+            NightVisionYeah.enabled = false;
 
-
-            //  Battery_Level BL_Battery = BL_Battery = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();
-
-            //  BL_Battery.enabled = false;
 
 
             Light_Hold_Blue LLBLUE = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
-            LLBLUE.enabled = false;    
-
-
-            Light_Hold_Green LGGREEn = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
-
-            LGGREEn.enabled = true;
+            LLBLUE.enabled = false;
 
 
 
 
-           New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
+            New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
 
-            BlurrYEAHYEAHH.enabled = false;
-
-
-
+            BlurrYEAHYEAHH.enabled = true;
 
 
         }
 
 
-
-
-
-
     }
+
 }
+
+
 
 
 

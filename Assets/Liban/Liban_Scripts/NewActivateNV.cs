@@ -10,7 +10,7 @@ public class NewActivateNV : MonoBehaviour
 
     public Transform ThePlayer;
 
-    private bool isZoomInYeah;
+    private bool isZoomInYeah2;
 
     public int Zoom = 22;
 
@@ -36,6 +36,7 @@ public class NewActivateNV : MonoBehaviour
         RightCLick();
 
         LeftClick();
+
 
     }
     
@@ -115,9 +116,9 @@ public class NewActivateNV : MonoBehaviour
 
 
 
-                New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
+           //     New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
 
-            BlurrYEAHYEAHH.enabled = true;
+         //   BlurrYEAHYEAHH.enabled = true;
 
                
             print("IT IS WORKING yeahyeah223");
@@ -164,7 +165,7 @@ public class NewActivateNV : MonoBehaviour
         {
 
 
-            isZoomInYeah = !isZoomInYeah;
+            isZoomInYeah2 = !isZoomInYeah2;
 
 
 
@@ -174,21 +175,13 @@ public class NewActivateNV : MonoBehaviour
 
 
 
-        if(isZoomInYeah)
+        if(isZoomInYeah2)
 
 
         {
 
 
-           
-
-
             GetComponent<Camera>().fieldOfView = Mathf.Lerp(GetComponent<Camera>().fieldOfView, Zoom, Time.deltaTime * smooth);
-
-
-            Light_Hold_Green LGGREEn = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
-
-            LGGREEn.enabled = false;
 
 
             DeferredNightVisionEffect NightVisionYeah = GameObject.FindWithTag("LemarCamera").GetComponent<DeferredNightVisionEffect>();
@@ -220,9 +213,7 @@ public class NewActivateNV : MonoBehaviour
             GetComponent<Camera>().fieldOfView = Mathf.Lerp(GetComponent<Camera>().fieldOfView, Back, Time.deltaTime * smooth);
              
 
-            Light_Hold_Green LGGREEn = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
 
-            LGGREEn.enabled = false;
 
 
             New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();

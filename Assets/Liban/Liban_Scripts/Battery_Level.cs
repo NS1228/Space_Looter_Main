@@ -17,33 +17,15 @@ public class Battery_Level : MonoBehaviour
 
     public Light TorchLightBlue;
 
-  //  public Light GlassLightBlue;
+    //  public Light GlassLightBlue;
 
-  //  public Light TorchLightGreen;
+    //  public Light TorchLightGreen;
 
-    public Light GlassLightGreen;
+   // public Light GlassLightGreen;
 
     public GameObject BatteryObject;
 
     public Text DangerTextyeahyeah;
-
-
-
-
-     void Update()
-
-
-
-    {
-
-      //  RunOut();
-
-
-
-       Revive();
-
-
-    }
 
 
 
@@ -56,8 +38,12 @@ public class Battery_Level : MonoBehaviour
 
         // CurrentBattery = TorchLight.intensity; 
 
-
     }
+
+
+
+
+
 
     public void TakeSomeBatteryBlue(int BlueAmount)
 
@@ -69,6 +55,9 @@ public class Battery_Level : MonoBehaviour
         BatterySlider.value = CurrentBattery;
 
 
+
+
+
         if (CurrentBattery <= 0)
 
 
@@ -78,10 +67,9 @@ public class Battery_Level : MonoBehaviour
 
         }
 
+    
 
-
-
-        if (CurrentBattery > 0)
+        if (CurrentBattery > 1)
 
 
         {
@@ -90,7 +78,7 @@ public class Battery_Level : MonoBehaviour
 
 
         }
-    
+
 
 
 
@@ -101,94 +89,108 @@ public class Battery_Level : MonoBehaviour
 
              LowBattery();
 
-           
+           // DangerTextyeahyeah.gameObject.SetActive(true);
 
-
-       }
-
-
-   }
-
-
-
-
-
-    public void TakeSomeBatteryYellowFlashLight(int YellowFlashAmount)
-
-    {
-
-        CurrentBattery -= YellowFlashAmount;
-
-        BatterySlider.value = CurrentBattery;
-
-
-       if(CurrentBattery <= 0)
-
-
-       {
-
-
-            RunOut();
 
         }
 
 
-   }
 
 
+        if(CurrentBattery >= 456)
+
+        {
 
 
+            //DangerTextyeahyeah.gameObject.SetActive(false);
+
+            AboveLowBattery();
 
 
-    void RunOut()
-
-
-    {
-
-
-        TorchLightBlue.gameObject.SetActive(false);
-
-      //  GlassLightBlue.gameObject.SetActive(false);
-
-       // TorchLightGreen.gameObject.SetActive(false);
-
-      //  GlassLightGreen.gameObject.SetActive(false);
-
-
-       //Battery_Level ThisScrtipt = GameObject.Find("flashlight").GetComponent<Battery_Level>();
-
-       // ThisScrtipt.enabled = false;
-
-
-        Light_Hold_Blue LLLIGHTHOLDblue = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
-
-        LLLIGHTHOLDblue.enabled = false;
-
-
-       // Light_Hold_Green LIGHTHOLDgreen = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
-
-       // LIGHTHOLDgreen.enabled = false;
-
-
-
-        CurrentBattery = 0;
+        }
 
 
     }
 
 
 
-    void Revive()
 
 
-    {
-
-       // TorchLightBlue.gameObject.SetActive(true);
 
 
-        Battery_Level ThisScrtipt = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();
+        public void TakeSomeBatteryYellowFlashLight(int YellowFlashAmount)
 
-        ThisScrtipt.enabled = true;
+
+        {
+
+            CurrentBattery -= YellowFlashAmount;
+
+            BatterySlider.value = CurrentBattery;
+
+
+            if (CurrentBattery <= 0)
+
+
+            {
+
+
+                RunOut();
+
+            }
+
+
+        }
+
+
+
+
+
+
+       void RunOut()
+
+
+        {
+
+
+            TorchLightBlue.gameObject.SetActive(false);
+
+            //  GlassLightBlue.gameObject.SetActive(false);
+
+
+          //  Battery_Level ThisScrtipt = GameObject.Find("flashlight").GetComponent<Battery_Level>();
+
+           //  ThisScrtipt.enabled = false;
+
+
+            Light_Hold_Blue LLLIGHTHOLDblue = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
+
+            LLLIGHTHOLDblue.enabled = false;
+
+
+
+            Stun_Light_Liban SLYellow = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
+
+            SLYellow.enabled = false;
+
+
+
+            CurrentBattery = 0;
+
+
+        }
+
+
+
+       void Revive()
+
+        {
+
+            // TorchLightBlue.gameObject.SetActive(true);
+
+
+           // Battery_Level ThisScrtipt = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();
+
+          //  ThisScrtipt.enabled = true;
 
 
         Light_Hold_Blue LIGHTHOLDBLUE = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
@@ -196,79 +198,92 @@ public class Battery_Level : MonoBehaviour
         LIGHTHOLDBLUE.enabled = true;
 
 
-        Light_Hold_Green LIGHTHOLDGREEN = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
-
-        LIGHTHOLDGREEN.enabled = true;
 
 
 
+        Stun_Light_Liban Yellowwww = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
 
-    }
-
-
-
+        Yellowwww.enabled = true;
 
 
-    public void LowBattery()
 
-    {
-
-
-       // FlashingDanger DangerRED = GameObject.Find("DangerTEXT").GetComponent<FlashingDanger>();
-
-       // DangerRED.enabled = true;
-
-       
-
-        DangerTextyeahyeah.gameObject.SetActive(true);
+        }
 
 
 
 
 
-    }
-
-
-
-
-
-
-    void OnTriggerEnter (Collider other)
-   
-
-    {
-
-        if(other.gameObject.tag == "Battery")
-        
+        void LowBattery()
 
         {
 
-            if(CurrentBattery < StartingBattery)
+
+
+
+            DangerTextyeahyeah.gameObject.SetActive(true);
+
+
+        }
+
+
+
+
+
+    void AboveLowBattery()
+
+
+    {
+
+
+
+
+        DangerTextyeahyeah.gameObject.SetActive(false);
+
+
+    }
+
+
+
+
+
+
+        void OnTriggerEnter(Collider other)
+
+
+        {
+
+            if (other.gameObject.tag == "Battery")
+
 
             {
 
-                print("got it!");
-
-                Destroy(other.gameObject);
-
-                CurrentBattery += BonusBattery;
-
-                if(CurrentBattery > StartingBattery)
+                if (CurrentBattery < StartingBattery)
 
                 {
 
-                    CurrentBattery = 1900;
+                    print("got it!");
+
+                    Destroy(other.gameObject);
+
+                    CurrentBattery += BonusBattery;
+
+                    if (CurrentBattery > StartingBattery)
+
+                    {
+
+                        CurrentBattery = 1900;
+                    }
+
+
+                    BatterySlider.value = CurrentBattery;
+
+
+
                 }
-
-
-                BatterySlider.value = CurrentBattery;
 
 
 
             }
-
-
-
         }
     }
 
@@ -276,5 +291,7 @@ public class Battery_Level : MonoBehaviour
 
 
 
-}
+
+
+
 

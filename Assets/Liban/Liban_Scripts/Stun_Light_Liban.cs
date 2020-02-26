@@ -55,7 +55,7 @@ public class Stun_Light_Liban : MonoBehaviour
             GetComponent<Battery_Level>().TakeSomeBatteryYellowFlashLight(TakeALotOfBattery);
 
 
-            CameraflashTimer = Time.timeSinceLevelLoad + 1;
+            CameraflashTimer = Time.timeSinceLevelLoad + 0.01f;
 
 
         }

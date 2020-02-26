@@ -37,7 +37,7 @@ public class CameraZoom : MonoBehaviour
     {
 
 
-         if (Input.GetKeyDown(KeyCode.Y))
+        if (Input.GetMouseButtonDown(1))
 
         {
 
@@ -55,11 +55,22 @@ public class CameraZoom : MonoBehaviour
             GetComponent<Camera>().fieldOfView = Mathf.Lerp(GetComponent<Camera>().fieldOfView, Zoom, Time.deltaTime * SmoothYeah);
 
 
+            DeferredNightVisionEffect NightVisionYeah2 = GameObject.FindWithTag("LemarCamera").GetComponent<DeferredNightVisionEffect>();
+
+            NightVisionYeah2.enabled = false;
+
+
+            New_Motion_XBlur BlurrYEAHYEAHH7 = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
+
+            BlurrYEAHYEAHH7.enabled = true;
+
+
+
 
         }
 
 
-                else
+        else
 
 
 
@@ -72,6 +83,17 @@ public class CameraZoom : MonoBehaviour
 
 
             ZoomInSoundYeahYeah.Play();
+
+
+            DeferredNightVisionEffect NightVisionYeah2 = GameObject.FindWithTag("LemarCamera").GetComponent<DeferredNightVisionEffect>();
+
+            NightVisionYeah2.enabled = true;
+
+
+            New_Motion_XBlur BlurrYEAHYEAHH7 = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
+
+            BlurrYEAHYEAHH7.enabled = false;
+
 
 
         }
