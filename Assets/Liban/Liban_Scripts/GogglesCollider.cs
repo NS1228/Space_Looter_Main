@@ -31,13 +31,14 @@ public class GogglesCollider : MonoBehaviour
 
 
 
-            CameraSwitch SwitchSwitch = GameObject.Find("camera switch script empty object new").GetComponent<CameraSwitch>();
+              CameraSwitch SwitchSwitch = GameObject.Find("camera switch script empty object new").GetComponent<CameraSwitch>();
 
-            SwitchSwitch.enabled = true;
+             SwitchSwitch.enabled = true;
 
 
 
-            print("yo hi");
+
+            print("yo hi hi hi");
 
 
             StartCoroutine(ActivateTEXTS(other));

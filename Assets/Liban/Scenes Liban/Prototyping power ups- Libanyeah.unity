@@ -4030,6 +4030,59 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1343975891
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1343975893}
+  - component: {fileID: 1343975892}
+  m_Layer: 0
+  m_Name: Activate the watch ability
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1343975892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343975891}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4a0dd915d64e4570ae16cf5c6c128b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TheFakePlayer: {fileID: 1155442860}
+  TheePlayer: {fileID: 8698471726756888668}
+  TheesFace: {fileID: 8698471725429433761}
+  ACloningPoint1: {fileID: 1841996341}
+  ACloningPoint2: {fileID: 988094257}
+  ACloningPoint3: {fileID: 864954664}
+  TheWatchYeah: {fileID: 1868459367}
+  TheSmoke: {fileID: 658756663}
+  TheGhoast: {fileID: 2100000, guid: 7dc12cc3a79394fbe87414fa274ec3be, type: 2}
+  TheNormal: {fileID: 2100000, guid: b2f6d2741b42947be8f09113cbfc77c9, type: 2}
+--- !u!4 &1343975893
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1343975891}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 13.593311, y: 4.23, z: 19.018456}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 48
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1366454949
 GameObject:
   m_ObjectHideFlags: 0
@@ -4329,6 +4382,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1499419886}
   m_CullTransparentMesh: 0
+--- !u!1 &1589799975 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3932333747502128117, guid: 603aa7640041eb64698d36ffad6c4bb8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3932333746289103164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1589799980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1589799975}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b51ea65d534e145108fe12b6154fa207, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Zoom: 22
+  Normal: 70
+  SmoothYeah: 7.8
+  ZoomInSoundYeahYeah: {fileID: 0}
 --- !u!20 &1602473740 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 3932333747503503825, guid: 603aa7640041eb64698d36ffad6c4bb8,
@@ -5503,16 +5578,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 630c54a0015f8450fba29f36b59795c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FakePlayer: {fileID: 1155442860}
-  ThePlayer: {fileID: 8698471726756888668}
-  Face: {fileID: 8698471725429433761}
-  CloningPoint1: {fileID: 1841996341}
-  CloningPoint2: {fileID: 988094257}
-  CloningPoint3: {fileID: 864954664}
-  Watchyeah: {fileID: 1868459367}
-  Smoke: {fileID: 658756663}
-  Ghost: {fileID: 2100000, guid: 7dc12cc3a79394fbe87414fa274ec3be, type: 2}
-  Normal: {fileID: 2100000, guid: b2f6d2741b42947be8f09113cbfc77c9, type: 2}
 --- !u!1 &1896464565 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7180053702555017480, guid: 94b8dda2e1f964a8db9722a1bf28b149,
@@ -6741,7 +6806,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.6
+      value: 12.89
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -6878,6 +6943,11 @@ PrefabInstance:
       propertyPath: OGCamera
       value: 
       objectReference: {fileID: 8698471726360059298}
+    - target: {fileID: 3932333747169664568, guid: 603aa7640041eb64698d36ffad6c4bb8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3932333747169664570, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: NightVisionActivationAudio
@@ -6891,6 +6961,7 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 3932333747169664570, guid: 603aa7640041eb64698d36ffad6c4bb8, type: 3}
     - {fileID: 3932333746803464655, guid: 603aa7640041eb64698d36ffad6c4bb8, type: 3}
+    - {fileID: 3932333747169664564, guid: 603aa7640041eb64698d36ffad6c4bb8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 603aa7640041eb64698d36ffad6c4bb8, type: 3}
 --- !u!1 &4608434749558657025 stripped
 GameObject:
