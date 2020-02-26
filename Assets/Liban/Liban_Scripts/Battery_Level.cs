@@ -41,6 +41,14 @@ public class Battery_Level : MonoBehaviour
     }
 
 
+     void Update()
+    {
+
+
+        Revive();
+
+    }
+
 
 
 
