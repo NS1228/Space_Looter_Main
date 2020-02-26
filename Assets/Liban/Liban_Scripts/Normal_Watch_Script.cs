@@ -40,9 +40,6 @@ public class Normal_Watch_Script : MonoBehaviour
 
         {
 
-            // StartCoroutine(GhostActivation(other));
-
-
             ActivateWatchAbility AAW = GameObject.Find("Activate the watch ability").GetComponent<ActivateWatchAbility>();
 
             AAW.enabled = true;
@@ -58,8 +55,16 @@ public class Normal_Watch_Script : MonoBehaviour
 
 
 
+            ActivateWatchAbilityTwo_Liban LYPTO = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
 
-            //activate the activatewatchability script in here
+
+            LYPTO.enabled = true;
+
+
+
+            Stun_Light_Liban STGH = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
+
+            STGH.enabled = false;
 
 
         }

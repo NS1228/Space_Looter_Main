@@ -22,9 +22,9 @@ public class ActivateWatchAbility : MonoBehaviour
 
     public ParticleSystem TheSmoke;
 
-    public Material TheGhoast;
+  //  public Material TheGhoast;
 
-    public Material TheNormal;
+  //  public Material TheNormal;
 
 
     // Start is called before the first frame update
@@ -45,7 +45,7 @@ public class ActivateWatchAbility : MonoBehaviour
         {
 
 
-            StartCoroutine(ActivateTheGhost());
+            StartCoroutine(ActivateTheCLONES());
 
 
 
@@ -57,7 +57,7 @@ public class ActivateWatchAbility : MonoBehaviour
 
 
 
-    IEnumerator ActivateTheGhost()
+    IEnumerator ActivateTheCLONES()
 
     {
 
@@ -82,20 +82,6 @@ public class ActivateWatchAbility : MonoBehaviour
 
 
 
-        TheePlayer.GetComponent<MeshRenderer>().material = TheGhoast;
-
-        TheesFace.GetComponent<MeshRenderer>().material = TheGhoast;
-
-
-
-
-
-      //  Light_Hold_Blue BBBB = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
-
-      // BBBB.enabled = false;
-
-
-
         ActivateWatchAbility ACVB = GameObject.Find("Activate the watch ability").GetComponent<ActivateWatchAbility>();
 
         ACVB.enabled = false;
@@ -103,7 +89,17 @@ public class ActivateWatchAbility : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(3.0f);
+
+        Light_Hold_Blue BBBB2 = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
+
+        BBBB2.enabled = false;
+
+
+
+
+
+
+        yield return new WaitForSeconds(5.0f);
 
 
 
@@ -115,27 +111,30 @@ public class ActivateWatchAbility : MonoBehaviour
 
 
 
-        TheePlayer.GetComponent<MeshRenderer>().material = TheNormal;
+       // TheePlayer.GetComponent<MeshRenderer>().material = TheNormal;
 
-        TheesFace.GetComponent<MeshRenderer>().material = TheNormal;
-
-
-        Light_Hold_Blue BBBB2 = GameObject.Find("torcia").GetComponent<Light_Hold_Blue>();
-
-        BBBB2.enabled = true;
+        //TheesFace.GetComponent<MeshRenderer>().material = TheNormal;
 
 
+        Light_Hold_Blue BBBB3 = GameObject.Find("torcia").GetComponent<Light_Hold_Blue>();
+
+        BBBB3.enabled = true;
 
 
 
 
-        yield return new WaitForSeconds(4.0f);
+
+
+        yield return new WaitForSeconds(6.0f);
 
 
 
         TheWatchYeah.GetComponent<MeshRenderer>().enabled = true;
 
         TheWatchYeah.GetComponent<BoxCollider>().enabled = true;
+
+
+
 
 
     }
