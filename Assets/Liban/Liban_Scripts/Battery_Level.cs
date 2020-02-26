@@ -77,6 +77,9 @@ public class Battery_Level : MonoBehaviour
             Revive();
 
 
+            Light_Hold_Blue LIGHTHOLDBLUE = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
+
+            LIGHTHOLDBLUE.enabled = true;
         }
 
 
