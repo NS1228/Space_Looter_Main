@@ -77,9 +77,7 @@ public class ActivateWatchAbility : MonoBehaviour
 
 
 
-        TheSmoke.gameObject.SetActive(true);
-
-
+     //   TheSmoke.gameObject.SetActive(true);
 
 
         ActivateWatchAbility ACVB = GameObject.Find("Activate the watch ability").GetComponent<ActivateWatchAbility>();
@@ -110,10 +108,6 @@ public class ActivateWatchAbility : MonoBehaviour
         Destroy(Clone3);
 
 
-
-       // TheePlayer.GetComponent<MeshRenderer>().material = TheNormal;
-
-        //TheesFace.GetComponent<MeshRenderer>().material = TheNormal;
 
 
         Light_Hold_Blue BBBB3 = GameObject.Find("torcia").GetComponent<Light_Hold_Blue>();

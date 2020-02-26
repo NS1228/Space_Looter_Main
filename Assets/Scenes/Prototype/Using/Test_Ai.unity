@@ -147,7 +147,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.5
+      value: 1.67
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -443,7 +443,7 @@ PrefabInstance:
     - target: {fileID: 2772023497398100335, guid: 33ed7a9281cb44d83a1600204acc8ac0,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.78
+      value: 2.36
       objectReference: {fileID: 0}
     - target: {fileID: 2772023497398100335, guid: 33ed7a9281cb44d83a1600204acc8ac0,
         type: 3}
@@ -2048,7 +2048,7 @@ PrefabInstance:
     - target: {fileID: 908746934969953254, guid: cde499c8a0752804f98f03fce9ab9d69,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3945845953891968983, guid: cde499c8a0752804f98f03fce9ab9d69,
         type: 3}
@@ -2105,6 +2105,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3994729043431021772, guid: cde499c8a0752804f98f03fce9ab9d69,
+        type: 3}
+      propertyPath: m_Name
+      value: Activate second watch ability
+      objectReference: {fileID: 0}
     - target: {fileID: 6139625148770195089, guid: cde499c8a0752804f98f03fce9ab9d69,
         type: 3}
       propertyPath: TheePlayer
@@ -2138,7 +2143,12 @@ PrefabInstance:
     - target: {fileID: 6139625148770195089, guid: cde499c8a0752804f98f03fce9ab9d69,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7803630636470820795, guid: cde499c8a0752804f98f03fce9ab9d69,
+        type: 3}
+      propertyPath: m_Name
+      value: Activate the watch ability
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cde499c8a0752804f98f03fce9ab9d69, type: 3}
