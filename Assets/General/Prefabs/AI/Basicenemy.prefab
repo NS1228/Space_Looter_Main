@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 7583743169754408142}
   - component: {fileID: 7583743169754408143}
   - component: {fileID: 1480877414}
+  - component: {fileID: 362193153}
   m_Layer: 0
   m_Name: Basicenemy
-  m_TagString: Untagged
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -109,7 +110,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: -1372625422
   m_Radius: 0.5
-  m_Speed: 2
+  m_Speed: 0
   m_Acceleration: 10
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -138,6 +139,7 @@ MonoBehaviour:
   soundLocation: {fileID: 7635782783366472552, guid: d44953647bf504643afd50dcdf811b73,
     type: 3}
   Player: {fileID: 0}
+  playerandClones: {fileID: 0}
   waypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -145,10 +147,16 @@ MonoBehaviour:
   patrolSpeed: 3
   invSoundSpeed: 6
   chaseSpeed: 10
+  slowedPatrol: 1.5
+  slowedInvSound: 3
+  slowedChase: 5
   defaultRadius: 15
   chaseRadius: 20
   defaultAngle: 45
   chaseAngle: 45
+  stunTimer: 0
+  evacuationPoint: {fileID: 0}
+  evacuatestopTimer: 0
   state: 0
   timeSinceLastSeen: 0
 --- !u!65 &1480877414
@@ -164,6 +172,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &362193153
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7583743169754408140}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d81d73303fb7e4e45b115d316569dc31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7583743171264312029
 GameObject:
   m_ObjectHideFlags: 0

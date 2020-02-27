@@ -14,7 +14,8 @@ public class Nil_FOVdetection : MonoBehaviour
     public GameObject soundLocation;
     private GameObject moveToLocation;
     public Transform Player;
-    public Light lightSource;
+    public GameObject playerandClones;
+   
 
     //waypoint stuff
     [HeaderAttribute("Waypoints")]
@@ -49,14 +50,12 @@ public class Nil_FOVdetection : MonoBehaviour
 
     //stun stuff
     public float stunTimer;
-    public static bool stunned;
     private bool stunable;
 
     //ghost mode
     public static bool phantasm;
 
     //evacuation
-    public static bool evacuate;
     public Transform evacuationPoint;
     public float evacuatestopTimer;
 
@@ -98,9 +97,13 @@ public class Nil_FOVdetection : MonoBehaviour
 
 
 
-    //Gadget stuff
+    //Gadget bools
     public static bool flashLightBlindingLight;
-   
+    public static bool stunned;
+    public static bool evacuate;
+    public static bool subterfuge;
+         
+
 
     // NOT USED
     private Vector3 smoothVelocity = Vector3.zero;
@@ -188,6 +191,7 @@ public class Nil_FOVdetection : MonoBehaviour
         stopSpeed = 0;
         stunable = true;
         evacuate = false;
+        subterfuge = true;
 
 
     }
@@ -272,11 +276,13 @@ public class Nil_FOVdetection : MonoBehaviour
          if (Input.GetKey(KeyCode.M))
          {
              stunned = false;
-         } 
+         }
 
 
-        //if (Vector3.Distance(transform.position, lightSource.transform.position) - lightSource.range <= 5)
-        
+        FindClosestEnemy();
+
+
+
     }
 
     IEnumerator FSM()
@@ -426,28 +432,67 @@ public class Nil_FOVdetection : MonoBehaviour
 
         }
 
-         transform.LookAt(Player);
-        if (Time.timeSinceLevelLoad >= investigateTime)
+        if (!subterfuge)
         {
-            // transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
-            //  rb.AddForce(transform.forward * thrust);
-
-            agent.SetDestination(Player.transform.position);
-
-            if (flashLightBlindingLight)
-            {
-                agent.speed = slowedChase;
-            }
-            else
-            {
-                agent.speed = chaseSpeed;
-            }
+            transform.LookAt(Player);
         }
         else
         {
-            agent.speed = stopSpeed;
+            transform.LookAt(playerandClones.transform.position);
         }
+
+        if (!subterfuge)
+        {
+            if (Time.timeSinceLevelLoad >= investigateTime)
+            {
+                // transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
+                //  rb.AddForce(transform.forward * thrust);
+
+                agent.SetDestination(Player.transform.position);
+
+                if (flashLightBlindingLight)
+                {
+                    agent.speed = slowedChase;
+                }
+                else
+                {
+                    agent.speed = chaseSpeed;
+                }
+            }
+            else
+            {
+                agent.speed = stopSpeed;
+            }
+        }
+        else if (subterfuge)
+        {
+            
+            if (Time.timeSinceLevelLoad >= investigateTime)
+            {
+                // transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
+                //  rb.AddForce(transform.forward * thrust);
+
+                agent.SetDestination(playerandClones.transform.position);
+
+                if (flashLightBlindingLight)
+                {
+                    agent.speed = slowedChase;
+                }
+                else
+                {
+                    agent.speed = chaseSpeed;
+                }
+            }
+            else
+            {
+                agent.speed = stopSpeed;
+            }
+        }
+       
+        
     }
+   
+
 
     void RunInvestigating ()
     {
@@ -458,51 +503,118 @@ public class Nil_FOVdetection : MonoBehaviour
 
     void Investigate()
     {
-        if (!soundDetected && !phantasm)
+        if (!subterfuge)
         {
-            if (Time.timeSinceLevelLoad <= timeSinceLastSeen)
+            if (!soundDetected && !phantasm)
             {
-                 transform.LookAt(Player);
-                // transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
-                agent.SetDestination(Player.transform.position);
-                agent.speed = chaseSpeed;
-            }
-            else
-            {
-                agent.speed = stopSpeed;
-            }
-        }
-        else if(soundDetected)
-        {
-            if (soundInvestigateTimer >= Time.timeSinceLevelLoad)
-            {
-                // this.GetComponent<Rigidbody>().isKinematic = true;
-                agent.speed = stopSpeed;
-            }
-            else if (soundInvestigateTimer <= Time.timeSinceLevelLoad)
-            {
-                //this.GetComponent<Rigidbody>().isKinematic = false;
-                if(Time.timeSinceLevelLoad <= timeSinceLastSeen)
+                if (Time.timeSinceLevelLoad <= timeSinceLastSeen)
                 {
-                    moveToLocation = GameObject.FindGameObjectWithTag("SoundLocator");
-                    //  transform.LookAt(moveToLocation.transform.position);
-                    // transform.position = Vector3.SmoothDamp(transform.position, moveToLocation.transform.position, ref smoothVelocity, smoothTime);
-                    agent.SetDestination(moveToLocation.transform.position);
-
+                    transform.LookAt(Player);
+                    // transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
+                    agent.SetDestination(Player.transform.position);
                     if (flashLightBlindingLight)
                     {
-                        agent.speed = slowedInvSound;
+                        agent.speed = slowedChase;
                     }
                     else
                     {
-                        agent.speed = invSoundSpeed;
+                        agent.speed = chaseSpeed;
+                    }
+                    
+                }
+                else
+                {
+                    agent.speed = stopSpeed;
+                }
+            }
+            else if (soundDetected)
+            {
+                if (soundInvestigateTimer >= Time.timeSinceLevelLoad)
+                {
+                    // this.GetComponent<Rigidbody>().isKinematic = true;
+                    agent.speed = stopSpeed;
+                }
+                else if (soundInvestigateTimer <= Time.timeSinceLevelLoad)
+                {
+                    //this.GetComponent<Rigidbody>().isKinematic = false;
+                    if (Time.timeSinceLevelLoad <= timeSinceLastSeen)
+                    {
+                        moveToLocation = GameObject.FindGameObjectWithTag("SoundLocator");
+                        //  transform.LookAt(moveToLocation.transform.position);
+                        // transform.position = Vector3.SmoothDamp(transform.position, moveToLocation.transform.position, ref smoothVelocity, smoothTime);
+                        agent.SetDestination(moveToLocation.transform.position);
+
+                        if (flashLightBlindingLight)
+                        {
+                            agent.speed = slowedInvSound;
+                        }
+                        else
+                        {
+                            agent.speed = invSoundSpeed;
+                        }
                     }
                 }
             }
         }
+        else if (subterfuge)
+        {
+            if (!soundDetected && !phantasm)
+            {
+                if (Time.timeSinceLevelLoad <= timeSinceLastSeen)
+                {
+                    transform.LookAt(playerandClones.transform.position);
+                    // transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
+                    agent.SetDestination(playerandClones.transform.position);
+                    if (flashLightBlindingLight)
+                    {
+                        agent.speed = slowedChase;
+                    }
+                    else
+                    {
+                        agent.speed = chaseSpeed;
+                    }
+                }
+                else
+                {
+                    agent.speed = stopSpeed;
+                }
+            }
+            else if (soundDetected)
+            {
+                if (soundInvestigateTimer >= Time.timeSinceLevelLoad)
+                {
+                    // this.GetComponent<Rigidbody>().isKinematic = true;
+                    agent.speed = stopSpeed;
+                }
+                else if (soundInvestigateTimer <= Time.timeSinceLevelLoad)
+                {
+                    //this.GetComponent<Rigidbody>().isKinematic = false;
+                    if (Time.timeSinceLevelLoad <= timeSinceLastSeen)
+                    {
+                        moveToLocation = GameObject.FindGameObjectWithTag("SoundLocator");
+                        //  transform.LookAt(moveToLocation.transform.position);
+                        // transform.position = Vector3.SmoothDamp(transform.position, moveToLocation.transform.position, ref smoothVelocity, smoothTime);
+                        agent.SetDestination(moveToLocation.transform.position);
 
-        
+                        if (flashLightBlindingLight)
+                        {
+                            agent.speed = slowedInvSound;
+                        }
+                        else
+                        {
+                            agent.speed = invSoundSpeed;
+                        }
+                    }
+                }
+            }
+
+
+        }
+
     }
+        
+       
+    
 
     void RunStun()
     {
@@ -588,7 +700,27 @@ public class Nil_FOVdetection : MonoBehaviour
 
     }
 
- 
+    public GameObject FindClosestEnemy()
+    {
+        GameObject[] gos;
+        gos = GameObject.FindGameObjectsWithTag("Player");
+        GameObject closest = null;
+        float distance = Mathf.Infinity;
+        Vector3 position = transform.position;
+        foreach (GameObject go in gos)
+        {
+            Vector3 diff = go.transform.position - position;
+            float curDistance = diff.sqrMagnitude;
+            if (curDistance < distance)
+            {
+                closest = go;
+                distance = curDistance;
+                playerandClones = closest.gameObject;
+            }
+        }
+        return closest;
+       
+    }
 
 
 
