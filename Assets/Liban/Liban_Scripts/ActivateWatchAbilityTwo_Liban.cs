@@ -94,6 +94,10 @@ public class ActivateWatchAbilityTwo_Liban : MonoBehaviour
 
 
 
+        ActivateWatchAbility TYUI = GameObject.Find("Activate the watch ability").GetComponent<ActivateWatchAbility>();
+
+        TYUI.enabled = false;
+
      
 
 
@@ -146,6 +150,21 @@ public class ActivateWatchAbilityTwo_Liban : MonoBehaviour
 
         TheWatchYEAHYEAH.GetComponent<BoxCollider>().enabled = true;
 
+
+
+
+
+        ActivateWatchAbilityTwo_Liban AVWA2 = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
+
+        AVWA2.enabled = true;
+
+
+
+
+
+        ActivateWatchAbility POIU = GameObject.Find("Activate the watch ability").GetComponent<ActivateWatchAbility>();
+
+        POIU.enabled = true;
 
 
 

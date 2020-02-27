@@ -95,6 +95,13 @@ public class ActivateWatchAbility : MonoBehaviour
 
 
 
+        ActivateWatchAbilityTwo_Liban CVBNM = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
+
+        CVBNM.enabled = false;
+
+
+
+
 
 
         yield return new WaitForSeconds(5.0f);
@@ -128,6 +135,19 @@ public class ActivateWatchAbility : MonoBehaviour
         TheWatchYeah.GetComponent<BoxCollider>().enabled = true;
 
 
+
+
+        ActivateWatchAbility AVBCN = GameObject.Find("Activate the watch ability").GetComponent<ActivateWatchAbility>();
+
+        AVBCN.enabled = true;
+
+
+
+
+        ActivateWatchAbilityTwo_Liban ASDF = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
+
+
+        ASDF.enabled = true;
 
 
 

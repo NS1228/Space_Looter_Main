@@ -1999,7 +1999,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 792379924}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 01b37abcc45b848ea88e501563690115, type: 3}
   m_Name: 
@@ -4186,7 +4186,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1343975891}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e4a0dd915d64e4570ae16cf5c6c128b0, type: 3}
   m_Name: 
@@ -6757,7 +6757,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2772023497398100328, guid: 33ed7a9281cb44d83a1600204acc8ac0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 33ed7a9281cb44d83a1600204acc8ac0, type: 3}
 --- !u!1001 &3283683930037972451
 PrefabInstance:
