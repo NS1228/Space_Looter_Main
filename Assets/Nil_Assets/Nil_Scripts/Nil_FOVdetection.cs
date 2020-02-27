@@ -263,15 +263,15 @@ public class Nil_FOVdetection : MonoBehaviour
             RunEvacuate();
         }
 
-        print(Time.timeSinceLevelLoad);
+       // print(Time.timeSinceLevelLoad);
 
          if(Input.GetKey(KeyCode.L))
          {
-             phantasm = true;
+             stunned = true;
          }
          if (Input.GetKey(KeyCode.M))
          {
-             phantasm = false;
+             stunned = false;
          } 
 
 
