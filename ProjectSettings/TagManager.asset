@@ -19,6 +19,7 @@ TagManager:
   - AI
   - Light
   - Danger
+  - EnemyDrone
   layers:
   - Default
   - TransparentFX

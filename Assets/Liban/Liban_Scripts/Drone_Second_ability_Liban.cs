@@ -5,6 +5,9 @@ using UnityEngine;
 public class Drone_Second_ability_Liban : MonoBehaviour
 {
     
+    public GameObject AmazingDrone;
+
+
 
 
 
@@ -40,28 +43,28 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-        Outline O1 = GameObject.Find("enemy sphere 2").GetComponent<Outline>();
+    //    Outline O1 = GameObject.Find("enemy sphere 2").GetComponent<Outline>();
 
-        O1.enabled = true;
-
-
-
-
-
-
-        Outline O2 = GameObject.Find("enemy sphere 3").GetComponent<Outline>();
-
-
-        O2.enabled = true;
+    //   O1.enabled = true;
 
 
 
 
 
-        Outline O3 = GameObject.Find("enemy sphere 4").GetComponent<Outline>();
+
+      //  Outline O2 = GameObject.Find("enemy sphere 3").GetComponent<Outline>();
 
 
-        O3.enabled = true;
+     //   O2.enabled = true;
+
+
+
+
+
+      //  Outline O3 = GameObject.Find("enemy sphere 4").GetComponent<Outline>();
+
+
+     //  O3.enabled = true;
 
 
 
@@ -97,11 +100,29 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
+        AmazingDrone.GetComponent<SphereCollider>().radius = 8460;
+
+
+
+
+
+
+
+
+      //  Drone_Exposing_Enemies_Liban EXXXLiban = GameObject.Find("Drone Skin").GetComponent<Drone_Exposing_Enemies_Liban>();
+
+
+     //   EXXXLiban.enabled = true;
+
+
+
+
+
+
+
 
 
         yield return new WaitForSeconds(5.0f);
-
-
 
 
 
@@ -152,6 +173,23 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
+
+
+
+
+        AmazingDrone.GetComponent<SphereCollider>().radius = 521.5f;
+
+
+
+
+
+
+
+
+      //  Drone_Exposing_Enemies_Liban EXLiban = GameObject.Find("Drone Skin").GetComponent<Drone_Exposing_Enemies_Liban>();
+
+
+      //  EXLiban.enabled = false;
 
 
 

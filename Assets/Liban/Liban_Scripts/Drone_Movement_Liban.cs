@@ -7,7 +7,7 @@ public class Drone_Movement_Liban : MonoBehaviour
 
 
 
-    public int Speed = 3;
+    public int Speed = 6;
 
 
     public Transform TheeeDrone;

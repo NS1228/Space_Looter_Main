@@ -47,7 +47,11 @@ public class Drone_First_Ability_Liban : MonoBehaviour
     {
 
 
-        ThaaaEnemyy.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+      //  ThaaaEnemyy.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+
+
+
+
 
 
 
@@ -63,10 +67,17 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
+
+
+
         Light_Hold_Blue JKL = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
 
         JKL.enabled = false;
+
+
+
+
 
 
 
@@ -96,7 +107,7 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
-        ThaaaEnemyy.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+      //  ThaaaEnemyy.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
 
 

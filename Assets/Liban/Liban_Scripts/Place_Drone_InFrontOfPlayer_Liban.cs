@@ -1,19 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 {
 
 
 
-    public Transform DaDrone;
+    public GameObject DaDrone;
 
     public Transform WhereTheDroneWillSpawn;
 
     public Camera DroneCamera;
 
-    public Camera ThePlayersCamera; 
+    public Camera ThePlayersCamera;
+
+    public bool ChangeCamera = false;
+
+    public RawImage DroneCameraLIVE;
 
 
     // Start is called before the first frame update
@@ -31,14 +37,19 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-        if(Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
 
 
         {
 
 
 
-            DaDrone.transform.position = WhereTheDroneWillSpawn.transform.position;
+
+              DaDrone.transform.position = WhereTheDroneWillSpawn.transform.position;
+
+
+          //  GameObject Spot =  Instantiate(DaDrone, WhereTheDroneWillSpawn.position, WhereTheDroneWillSpawn.rotation);
+
 
 
 
@@ -67,7 +78,10 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
             LemarMovment LMovementyh = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
 
 
-            LMovementyh.enabled = false; 
+            LMovementyh.enabled = false;
+
+
+            DroneCameraLIVE.gameObject.SetActive(true);
 
 
 
