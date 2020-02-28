@@ -140,6 +140,10 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
+
+
+
+
         Stun_Light_Liban Stttttun = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
 
 
