@@ -15,7 +15,7 @@ public class cubeeeVeclocity : MonoBehaviour
     {
 
 
-        GetComponent<Rigidbody>().velocity = new Vector3(-3, 0, 0);
+        GetComponent<Rigidbody>().velocity = new Vector3(-2, 0, 0);
         
     }
 }

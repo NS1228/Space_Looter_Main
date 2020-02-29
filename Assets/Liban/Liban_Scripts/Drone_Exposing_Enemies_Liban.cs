@@ -6,6 +6,10 @@ public class Drone_Exposing_Enemies_Liban : MonoBehaviour
 {
 
 
+    public SphereCollider Spherecolforexposing;
+
+
+
     void OnTriggerEnter (Collider other)
     {
 
@@ -38,6 +42,9 @@ public class Drone_Exposing_Enemies_Liban : MonoBehaviour
             OL3.enabled = true;
 
 
+
+
+
         }
 
 
@@ -55,28 +62,34 @@ public class Drone_Exposing_Enemies_Liban : MonoBehaviour
 
 
 
-        Outline OL1 = GameObject.Find("enemy sphere 2").GetComponent<Outline>();
+        if (other.CompareTag("EnemyDrone"))
 
 
-        OL1.enabled = false;
+        {
 
 
+            Outline OL1 = GameObject.Find("enemy sphere 2").GetComponent<Outline>();
 
 
-        Outline OL2 = GameObject.Find("enemy sphere 3").GetComponent<Outline>();
-
-
-        OL2.enabled = false;
+            OL1.enabled = false;
 
 
 
 
-        Outline OL3 = GameObject.Find("enemy sphere 4").GetComponent<Outline>();
+            Outline OL2 = GameObject.Find("enemy sphere 3").GetComponent<Outline>();
 
 
-        OL3.enabled = false;
+            OL2.enabled = false;
 
 
+
+
+            Outline OL3 = GameObject.Find("enemy sphere 4").GetComponent<Outline>();
+
+
+            OL3.enabled = false;
+
+        }
 
 
 

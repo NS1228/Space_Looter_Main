@@ -61,7 +61,7 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-            ThePlayersCamera.gameObject.SetActive(false);
+           // ThePlayersCamera.gameObject.SetActive(false);
 
 
 
@@ -82,6 +82,30 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
             DroneCameraLIVE.gameObject.SetActive(true);
+
+
+
+
+            LemarCamera LCAM = GameObject.Find("Main Camera").GetComponent<LemarCamera>();
+
+
+            LCAM.RotateSpeed = 0f;
+
+
+
+
+            Drone_First_Ability_Liban GVBN3434 = GameObject.Find("Activate Drone first ability").GetComponent<Drone_First_Ability_Liban>();
+
+
+            GVBN3434.enabled = true;
+
+
+
+
+            Drone_Second_ability_Liban QWERTY = GameObject.Find("Activate Drone second ability").GetComponent<Drone_Second_ability_Liban>();
+
+
+            QWERTY.enabled = true;
 
 
 

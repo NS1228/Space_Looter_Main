@@ -12,6 +12,45 @@ public class Drone_First_Ability_Liban : MonoBehaviour
     public Text EnemyFrozenText;
 
 
+    public GameObject TheAmazingDrone;
+
+
+
+    public Transform DAENEMY1;
+
+
+    public Transform DAENEMY2;
+
+
+
+    //new size
+
+    private float SizeX = 15000.1f;
+
+    private float SizeY = 15000.1f;
+
+    private float SizeZ = 15000.1f;
+
+
+
+    //original size
+
+
+    private float OriginalSizeX = 830.96f;
+
+    private float OriginalSizeY = 725.79f;
+
+    private float OriginalSizeZ = 948.65f;
+
+
+
+
+   // public SphereCollider ColliderForFirstAbility;
+
+
+  // public SphereCollider ColliderForSecondAbility; 
+
+
 
 
 
@@ -47,7 +86,20 @@ public class Drone_First_Ability_Liban : MonoBehaviour
     {
 
 
-      //  ThaaaEnemyy.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
+
+
+
+
+
+        Drone_First_Ability_Liban F2367 = GameObject.Find("Activate Drone first ability").GetComponent<Drone_First_Ability_Liban>();
+
+
+        F2367.enabled = true;
+
+
+
+
+
 
 
 
@@ -59,6 +111,9 @@ public class Drone_First_Ability_Liban : MonoBehaviour
         ActivateWatchAbility ERT = GameObject.Find("Activate the watch ability").GetComponent<ActivateWatchAbility>();
 
         ERT.enabled = false;
+
+
+
 
 
 
@@ -84,15 +139,42 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
-        Drone_First_Ability_Liban F2367 = GameObject.Find("Activate Drone first ability").GetComponent<Drone_First_Ability_Liban>();
 
 
-        F2367.enabled = false;
+        Drone_Second_ability_Liban SECSEC = GameObject.Find("Activate Drone second ability").GetComponent<Drone_Second_ability_Liban>();
+
+
+        SECSEC.enabled = false;
+
+
+
 
 
 
 
         EnemyFrozenText.gameObject.SetActive(true);
+
+
+
+
+        // TheAmazingDrone.GetComponent<BoxCollider>().enabled = true;
+
+
+
+
+
+
+        TheAmazingDrone.GetComponent<BoxCollider>().enabled = true;
+
+
+
+        TheAmazingDrone.GetComponent<BoxCollider>().size = new Vector3(SizeX, SizeY, SizeZ);
+
+
+
+
+        TheAmazingDrone.GetComponent<SphereCollider>().enabled = false;
+
 
 
 
@@ -124,8 +206,46 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
+        TheAmazingDrone.GetComponent<BoxCollider>().size = new Vector3(OriginalSizeX, OriginalSizeY, OriginalSizeZ);
+
+
+
+
+
 
         EnemyFrozenText.gameObject.SetActive(false);
+
+
+
+
+
+        DAENEMY1.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+
+
+
+        DAENEMY2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+
+
+
+
+
+
+
+      //  ColliderForFirstAbility.enabled = false;
+
+
+
+
+      //  ColliderForSecondAbility.enabled = true;
+
+
+
+
+
+
+       // ColliderForFirstAbility.radius = 521.5f;
+
+
 
 
 
@@ -136,6 +256,22 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
         yield return new WaitForSeconds(5.5f);
+
+
+
+
+
+        Drone_Second_ability_Liban RTY = GameObject.Find("Activate Drone second ability").GetComponent<Drone_Second_ability_Liban>();
+
+
+        RTY.enabled = true;
+
+
+
+
+
+
+
 
 
 
@@ -155,10 +291,27 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
+
+
+
+
         Light_Hold_Blue QAS = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
 
         QAS.enabled = true;
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
