@@ -1810,8 +1810,8 @@ MonoBehaviour:
   ThaaaEnemyy: {fileID: 1916766710}
   EnemyFrozenText: {fileID: 1236250844}
   TheAmazingDrone: {fileID: 1695054800}
-  DAENEMY1: {fileID: 0}
-  DAENEMY2: {fileID: 0}
+  DAENEMY1: {fileID: 1916766710}
+  DAENEMY2: {fileID: 1086352916}
 --- !u!4 &677413766
 Transform:
   m_ObjectHideFlags: 0
@@ -3859,14 +3859,14 @@ RectTransform:
   m_GameObject: {fileID: 1206329788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.4711, y: 1.3463, z: 1}
+  m_LocalScale: {x: 8.188782, y: 4.461396, z: 3.3138201}
   m_Children: []
   m_Father: {fileID: 915265620}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -292, y: 125}
+  m_AnchoredPosition: {x: -534, y: 288}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1206329790
@@ -5272,7 +5272,7 @@ RectTransform:
   m_GameObject: {fileID: 1614512094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.0597458, y: 2.0597458, z: 2.0597458}
   m_Children:
   - {fileID: 1499419887}
   - {fileID: 1443365222}
@@ -5283,7 +5283,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21, y: 157}
+  m_AnchoredPosition: {x: -587, y: -5}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1614512096
@@ -6364,14 +6364,14 @@ RectTransform:
   m_GameObject: {fileID: 1901379927}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.5317218, y: 2.5974636, z: 2.5974636}
   m_Children: []
   m_Father: {fileID: 915265620}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -325.6, y: -177.6}
+  m_AnchoredPosition: {x: -658, y: -512.05}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1901379929
@@ -6836,7 +6836,7 @@ RectTransform:
   m_GameObject: {fileID: 1956874137}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.95261, y: 1, z: 1}
+  m_LocalScale: {x: 2.5692427, y: 2.6970563, z: 2.6970563}
   m_Children:
   - {fileID: 840543662}
   - {fileID: 661292079}
@@ -6847,7 +6847,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -354.1, y: -154}
+  m_AnchoredPosition: {x: -719, y: -444}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1956874139
@@ -7054,6 +7054,7 @@ MonoBehaviour:
   ThePlayersCamera: {fileID: 8698471726360059298}
   ChangeCamera: 0
   DroneCameraLIVE: {fileID: 1206329790}
+  DHealth: {fileID: 1614512094}
 --- !u!1 &2049306641
 GameObject:
   m_ObjectHideFlags: 0

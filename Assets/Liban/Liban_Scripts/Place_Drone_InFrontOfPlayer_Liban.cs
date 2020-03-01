@@ -21,10 +21,19 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
     public RawImage DroneCameraLIVE;
 
+    public GameObject DHealth;
+
+
+
 
     // Start is called before the first frame update
     void Start()
     {
+
+
+
+    
+
         
     }
 
@@ -36,6 +45,22 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
         //activate the drone movmeent script in here 
 
 
+        YeahChangeCam();
+
+
+
+    }
+
+
+
+
+
+    void YeahChangeCam()
+
+
+    {
+
+
 
         if (Input.GetKeyDown(KeyCode.Q))
 
@@ -44,11 +69,40 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
+            ChangeCamera = !ChangeCamera;
 
-              DaDrone.transform.position = WhereTheDroneWillSpawn.transform.position;
+
+         
+            GameObject Spot = Instantiate(DaDrone, WhereTheDroneWillSpawn.position, WhereTheDroneWillSpawn.rotation);
 
 
-          //  GameObject Spot =  Instantiate(DaDrone, WhereTheDroneWillSpawn.position, WhereTheDroneWillSpawn.rotation);
+        }
+
+
+
+
+
+        if(ChangeCamera)
+
+
+        {
+
+
+
+            //   DaDrone.transform.position = WhereTheDroneWillSpawn.transform.position;
+
+
+
+
+
+            //   GameObject Spot =  Instantiate(DaDrone, WhereTheDroneWillSpawn.position, WhereTheDroneWillSpawn.rotation);
+
+
+
+
+
+
+         //   DaDrone.transform.localScale /= 5;
 
 
 
@@ -58,6 +112,7 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
             DroneCamera.gameObject.SetActive(true);
+
 
 
 
@@ -110,10 +165,97 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
+            DHealth.gameObject.SetActive(true);
+
+
+
+
+            LemarCamera DroneCAMM = GameObject.Find("Drone Camera").GetComponent<LemarCamera>();
+
+
+            DroneCAMM.RotateSpeed = 2;
+
+
+
+
 
         }
 
 
-        
+        else
+
+
+        {
+
+
+
+
+
+            Drone_Movement_Liban LibanDrone = GameObject.Find("Drone Skin").GetComponent<Drone_Movement_Liban>();
+
+
+            LibanDrone.enabled = false;
+
+
+
+            LemarMovment LMovementyh = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+
+
+            LMovementyh.enabled = true;
+
+
+
+
+
+            DroneCameraLIVE.gameObject.SetActive(false);
+
+
+
+
+
+
+            Drone_First_Ability_Liban GVBN3434 = GameObject.Find("Activate Drone first ability").GetComponent<Drone_First_Ability_Liban>();
+
+
+            GVBN3434.enabled = false;
+
+
+
+
+
+
+            Drone_Second_ability_Liban QWERTY = GameObject.Find("Activate Drone second ability").GetComponent<Drone_Second_ability_Liban>();
+
+
+            QWERTY.enabled = false;
+
+
+
+
+            DHealth.gameObject.SetActive(false);
+
+
+
+
+
+            LemarCamera LCAM = GameObject.Find("Main Camera").GetComponent<LemarCamera>();
+
+
+            LCAM.RotateSpeed = 10f;
+
+
+
+
+            LemarCamera DroneCAMM = GameObject.Find("Drone Camera").GetComponent<LemarCamera>();
+
+
+            DroneCAMM.RotateSpeed = 0;
+
+
+
+        }
+
+
+
     }
 }

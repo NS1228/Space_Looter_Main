@@ -77,10 +77,10 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-     //   Drone_Second_ability_Liban XCV = GameObject.Find("Activate Drone second ability").GetComponent<Drone_Second_ability_Liban>();
+        Drone_Second_ability_Liban XCV = GameObject.Find("Activate Drone second ability").GetComponent<Drone_Second_ability_Liban>();
 
 
-     //   XCV.enabled = true;
+        XCV.enabled = true;
 
 
 
@@ -96,10 +96,10 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-        ActivateWatchAbilityTwo_Liban AWQ123 = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
+       ActivateWatchAbilityTwo_Liban AWQ123 = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
 
 
-        AWQ123.enabled = true;
+        AWQ123.enabled = false;
 
 
 
@@ -125,6 +125,9 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
+
+
+
         Drone_Exposing_Enemies_Liban EXXXLiban = GameObject.Find("Drone Skin").GetComponent<Drone_Exposing_Enemies_Liban>();
 
 
@@ -137,7 +140,7 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-
+        //cancels out ability
 
 
         yield return new WaitForSeconds(5.0f);
@@ -150,29 +153,29 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-        Outline O12 = GameObject.Find("enemy sphere 2").GetComponent<Outline>();
+      //  Outline O12 = GameObject.Find("enemy sphere 2").GetComponent<Outline>();
 
 
-        O12.enabled = false;
-
-
-
-
-
-
-        Outline O13 = GameObject.Find("enemy sphere 3").GetComponent<Outline>();
-
-
-        O13.enabled = false;
+     //  O12.enabled = false;
 
 
 
 
 
-        Outline O14 = GameObject.Find("enemy sphere 4").GetComponent<Outline>();
+
+     //   Outline O13 = GameObject.Find("enemy sphere 3").GetComponent<Outline>();
 
 
-        O14.enabled = false;
+     //   O13.enabled = false;
+
+
+
+
+
+      //  Outline O14 = GameObject.Find("enemy sphere 4").GetComponent<Outline>();
+
+
+     //   O14.enabled = false;
 
 
 
@@ -195,7 +198,7 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-         AmazingDrone.GetComponent<SphereCollider>().radius = 521.5f;
+      //   AmazingDrone.GetComponent<SphereCollider>().radius = 521.5f;
 
 
 
@@ -205,19 +208,9 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-        // Drone_Exposing_Enemies_Liban EXLiban = GameObject.Find("Drone Skin").GetComponent<Drone_Exposing_Enemies_Liban>();
 
 
-        //  EXLiban.enabled = false;
-
-
-
-
-        AmazingDrone.GetComponent<SphereCollider>().enabled = false;
-
-
-
-
+      //  AmazingDrone.GetComponent<SphereCollider>().enabled = false;
 
 
 
@@ -238,19 +231,6 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-
-
-
-
-
-
-
-
-
-        Drone_Second_ability_Liban ZXC = GameObject.Find("Activate Drone second ability").GetComponent<Drone_Second_ability_Liban>();
-
-
-        ZXC.enabled = true;
 
 
 
