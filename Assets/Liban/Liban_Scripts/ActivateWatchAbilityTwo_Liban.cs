@@ -18,6 +18,10 @@ public class ActivateWatchAbilityTwo_Liban : MonoBehaviour
 
     public Transform YoFace;
 
+    public float smoothhhh;
+
+
+
 
 
     // Start is called before the first frame update
@@ -62,12 +66,15 @@ public class ActivateWatchAbilityTwo_Liban : MonoBehaviour
 
 
 
-        TheeeePlayer.GetComponent<MeshRenderer>().material = Ghoooooost;
+         TheeeePlayer.GetComponent<MeshRenderer>().material = Ghoooooost;
 
 
-        YoFace.GetComponent<MeshRenderer>().material = Ghoooooost;
+          YoFace.GetComponent<MeshRenderer>().material = Ghoooooost;
 
 
+
+
+       
 
 
 

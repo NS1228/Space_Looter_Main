@@ -73,7 +73,8 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
          
-            GameObject Spot = Instantiate(DaDrone, WhereTheDroneWillSpawn.position, WhereTheDroneWillSpawn.rotation);
+          //  GameObject Spot = Instantiate(DaDrone, WhereTheDroneWillSpawn.position, WhereTheDroneWillSpawn.rotation);
+
 
 
         }
@@ -89,21 +90,7 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-            //   DaDrone.transform.position = WhereTheDroneWillSpawn.transform.position;
-
-
-
-
-
-            //   GameObject Spot =  Instantiate(DaDrone, WhereTheDroneWillSpawn.position, WhereTheDroneWillSpawn.rotation);
-
-
-
-
-
-
-         //   DaDrone.transform.localScale /= 5;
-
+            DaDrone.transform.position = WhereTheDroneWillSpawn.transform.position;
 
 
 
@@ -116,16 +103,23 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-           // ThePlayersCamera.gameObject.SetActive(false);
+            // ThePlayersCamera.gameObject.SetActive(false);
 
 
 
 
 
-            Drone_Movement_Liban LibanDrone = GameObject.Find("Drone Skin").GetComponent<Drone_Movement_Liban>();
+            // Drone_Movement_Liban LibanDrone = GameObject.Find("Drone Skin").GetComponent<Drone_Movement_Liban>();
 
 
-            LibanDrone.enabled = true;
+            //  LibanDrone.enabled = true;
+
+
+
+
+            NewMovementScript DRNEMV = GameObject.Find("Drone Skin").GetComponent<NewMovementScript>();
+
+            DRNEMV.enabled = true;
 
 
 
@@ -179,6 +173,7 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
+
         }
 
 
@@ -191,10 +186,10 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-            Drone_Movement_Liban LibanDrone = GameObject.Find("Drone Skin").GetComponent<Drone_Movement_Liban>();
+          //  Drone_Movement_Liban LibanDrone = GameObject.Find("Drone Skin").GetComponent<Drone_Movement_Liban>();
 
 
-            LibanDrone.enabled = false;
+           // LibanDrone.enabled = false;
 
 
 
@@ -250,6 +245,14 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
             DroneCAMM.RotateSpeed = 0;
+
+
+
+
+            NewMovementScript DRNEMV = GameObject.Find("Drone Skin").GetComponent<NewMovementScript>();
+
+            DRNEMV.enabled = false;
+
 
 
 
