@@ -173,7 +173,7 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
-        TheAmazingDrone.GetComponent<SphereCollider>().enabled = false;
+       // TheAmazingDrone.GetComponent<SphereCollider>().enabled = false;
 
 
 
