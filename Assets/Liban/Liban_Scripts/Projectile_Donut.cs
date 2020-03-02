@@ -11,7 +11,7 @@ public class Projectile_Donut : MonoBehaviour
 
     public LayerMask Layer;
 
-    private Camera Camyeahyeah;
+    public Camera Camyeahyeah;      // if doesn't work, then revert back to private
 
     public Transform shootingpoint;
 
@@ -19,11 +19,13 @@ public class Projectile_Donut : MonoBehaviour
 
     public int linesegment = 12;
 
+    private float speed = 50.3f;
+
     // Start is called before the first frame update
     void Start()
     {
 
-        Camyeahyeah = Camera.main;
+              //if doesn't work, then uncomment this line
 
 
         TheLine.positionCount = linesegment;
@@ -55,10 +57,10 @@ public class Projectile_Donut : MonoBehaviour
         {
 
             cursor.SetActive(true);
-            cursor.transform.position = Hit.point + Vector3.up * 1.1f;
+            cursor.transform.position = Hit.point + Vector3.up * 1.5f;
 
 
-            Vector3 Vo = CalculateVelocity(Hit.point, shootingpoint.position, 1f);
+            Vector3 Vo = CalculateVelocity(Hit.point, shootingpoint.position, 2.3f);
 
 
             Visualize(Vo);
@@ -70,7 +72,7 @@ public class Projectile_Donut : MonoBehaviour
 
            
 
-            if (Input.GetMouseButton(0))
+            if (Input.GetMouseButtonUp(0))
 
             {
 
@@ -78,6 +80,8 @@ public class Projectile_Donut : MonoBehaviour
                 Rigidbody obj = Instantiate(bulletPrefabs, shootingpoint.position, shootingpoint.rotation);
 
                 obj.velocity = Vo;
+
+
             }
 
         }
