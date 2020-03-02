@@ -15,11 +15,18 @@ public class Projectile_Donut : MonoBehaviour
 
     public Transform shootingpoint;
 
+    public LineRenderer TheLine;
+
+    public int linesegment = 12;
+
     // Start is called before the first frame update
     void Start()
     {
 
         Camyeahyeah = Camera.main;
+
+
+        TheLine.positionCount = linesegment;
 
     }
 
@@ -54,6 +61,9 @@ public class Projectile_Donut : MonoBehaviour
             Vector3 Vo = CalculateVelocity(Hit.point, shootingpoint.position, 1f);
 
 
+            Visualize(Vo);
+
+
             transform.rotation = Quaternion.LookRotation(Vo);
 
 
@@ -65,24 +75,39 @@ public class Projectile_Donut : MonoBehaviour
             {
 
 
-                Rigidbody obj = Instantiate(bulletPrefabs, shootingpoint.position, Quaternion.identity);
+                Rigidbody obj = Instantiate(bulletPrefabs, shootingpoint.position, shootingpoint.rotation);
 
                 obj.velocity = Vo;
             }
 
         }
 
-        else
+    }
+
+
+
+
+    void Visualize (Vector3 vo)
+
+
+
+    {
+
+        for (int i = 0; i < linesegment; i++)
 
         {
 
-            cursor.SetActive(false);
+            Vector3 pos = Calculatepositionintime(vo, i / (float)linesegment);
+
+
+            TheLine.SetPosition(i, pos);
+
+
 
         }
-
-
-
     }
+
+
 
 
 
@@ -117,6 +142,34 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
+
+    }
+
+
+
+
+
+
+    Vector3 Calculatepositionintime(Vector3 vo, float time)
+
+
+    {
+
+
+        Vector3 VXZ = vo;
+
+        VXZ.y = 0f;
+
+
+
+        Vector3 result = shootingpoint.position + vo * time;
+
+        float sY = (-0.5f * Mathf.Abs(Physics.gravity.y) * (time * time)) + (vo.y * time) + shootingpoint.position.y;
+
+        result.y = sY;
+
+
+        return result;
 
     }
 
