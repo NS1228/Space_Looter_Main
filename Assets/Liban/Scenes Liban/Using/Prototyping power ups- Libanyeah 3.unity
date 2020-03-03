@@ -2735,6 +2735,7 @@ MonoBehaviour:
   TrajectoryCAM: {fileID: 0}
   CursorScript: {fileID: 0}
   WhereTheCamWillSpawn: {fileID: 0}
+  TrajectoryTimer: 0
 --- !u!1 &840543661
 GameObject:
   m_ObjectHideFlags: 0

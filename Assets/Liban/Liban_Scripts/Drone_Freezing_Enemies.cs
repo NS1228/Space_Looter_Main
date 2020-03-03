@@ -16,12 +16,12 @@ public class Drone_Freezing_Enemies : MonoBehaviour
 
 
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter (Collider other)
     {
 
 
 
-        if (other.CompareTag("EnemyDroneCube"))
+        if ( other.CompareTag("AI"))
 
 
         {
@@ -39,34 +39,7 @@ public class Drone_Freezing_Enemies : MonoBehaviour
 
     }
 
-
-
-
-
-    void OnTriggerExit(Collider other)
-
-
-    {
-
-
-        if (other.CompareTag("EnemyDroneCube"))
-
-
-        {
-
-
-
-            ThaaaaEnemy.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-
-
-
-            ThaaaaEnemy2.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-
-
-        }
-
-
-
-    }
-
 }
+
+
+

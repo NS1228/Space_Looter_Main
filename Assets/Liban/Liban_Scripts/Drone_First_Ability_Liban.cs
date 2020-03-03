@@ -91,6 +91,11 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
+
+
+
+
+
         Drone_First_Ability_Liban F2367 = GameObject.Find("Activate Drone first ability").GetComponent<Drone_First_Ability_Liban>();
 
 
@@ -139,6 +144,14 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
+        Nil_FOVdetection.immobilosingRipple = true;
+
+
+
+
+
+
+
 
 
         Drone_Second_ability_Liban SECSEC = GameObject.Find("Activate Drone second ability").GetComponent<Drone_Second_ability_Liban>();
@@ -174,6 +187,13 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
        // TheAmazingDrone.GetComponent<SphereCollider>().enabled = false;
+
+
+
+
+
+
+
 
 
 
@@ -231,19 +251,29 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
-      //  ColliderForFirstAbility.enabled = false;
+        //  ColliderForFirstAbility.enabled = false;
 
 
 
 
-      //  ColliderForSecondAbility.enabled = true;
+        //  ColliderForSecondAbility.enabled = true;
 
 
 
 
 
 
-       // ColliderForFirstAbility.radius = 521.5f;
+        // ColliderForFirstAbility.radius = 521.5f;
+
+
+
+
+
+
+        Nil_FOVdetection.immobilosingRipple = false;
+
+
+
 
 
 
@@ -256,6 +286,10 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
         yield return new WaitForSeconds(5.5f);
+
+
+
+
 
 
 

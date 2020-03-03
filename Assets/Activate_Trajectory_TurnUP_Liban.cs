@@ -21,6 +21,12 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
     public Transform WhereTheCamWillSpawn;
 
 
+    public float TrajectoryTimer;
+
+
+    public GameObject OGPlayer;
+
+
 
 
 
@@ -32,81 +38,118 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-        if(Input.GetKeyDown(KeyCode.V))
+        TrajectoryTimeTime();
+
+
+
+
+        if (Input.GetKeyDown(KeyCode.L))
 
 
         {
 
 
-            StartCoroutine(TrajectoryActivation());
 
-            print("LOL");
+
+            Rigidbody YOOOOOO = GameObject.Find("newPlayer").GetComponent<Rigidbody>();
+
+
+            YOOOOOO.constraints = RigidbodyConstraints.FreezeAll;
+
+
+
+
+
+            TrajectoryTimer = Time.timeSinceLevelLoad + 5.0f;
+
+
+
+
+            print("LOOOOOL OH MYYYY");
+
+
 
 
         }
 
-        
+
+
+
+
+        void TrajectoryTimeTime()
+
+
+
+        {
+
+
+            if (Time.timeSinceLevelLoad >= TrajectoryTimer)
+
+
+            {
+
+
+
+
+                Rigidbody YO434 = GameObject.Find("newPlayer").GetComponent<Rigidbody>();
+
+
+                YO434.constraints = RigidbodyConstraints.None;
+
+
+
+
+            }
+
+
+
+
+
+        }
     }
-
-
-
-
-
-
-
-    IEnumerator TrajectoryActivation()
-
-
-
-    {
-
-
-
-        Rigidbody LMLM = GameObject.Find("newPlayer").GetComponent<Rigidbody>();
-
-
-
-        LMLM.isKinematic = true;
-
-
-
-
-
-
-
-
-
-        yield return new WaitForSeconds(4.0f);
-
-
-
-
-
-
-
-
-
-
-        Rigidbody LMLM2 = GameObject.Find("newPlayer").GetComponent<Rigidbody>();
-
-
-        LMLM2.isKinematic = true;
-
-
-
-
-
-
-
-
-
-
-
-    }
-
-
-
-
-
-
 }
+
+
+
+
+    
+
+
+
+
+
+
+
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    

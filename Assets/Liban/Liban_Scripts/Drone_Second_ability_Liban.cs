@@ -140,6 +140,18 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
+
+        Nil_FOVdetection.droneIntel = true;
+
+
+
+
+
+
+
+
+
+
         //cancels out ability
 
 
@@ -198,7 +210,7 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-      //   AmazingDrone.GetComponent<SphereCollider>().radius = 521.5f;
+        //   AmazingDrone.GetComponent<SphereCollider>().radius = 521.5f;
 
 
 
@@ -210,12 +222,18 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-      //  AmazingDrone.GetComponent<SphereCollider>().enabled = false;
+        //  AmazingDrone.GetComponent<SphereCollider>().enabled = false;
 
 
 
 
-  
+
+
+
+
+
+        Nil_FOVdetection.droneIntel = false;
+
 
 
 
