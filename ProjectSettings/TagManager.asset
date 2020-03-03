@@ -21,6 +21,7 @@ TagManager:
   - Danger
   - EnemyDrone
   - EnemyDroneCube
+  - Drone
   layers:
   - Default
   - TransparentFX

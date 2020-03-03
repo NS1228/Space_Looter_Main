@@ -42,7 +42,7 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
     private float OriginalSizeZ = 948.65f;
 
-
+    public static bool freeze;
 
 
    // public SphereCollider ColliderForFirstAbility;
@@ -94,7 +94,7 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
-
+        freeze = true;
 
         Drone_First_Ability_Liban F2367 = GameObject.Find("Activate Drone first ability").GetComponent<Drone_First_Ability_Liban>();
 
@@ -144,7 +144,8 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
-        Nil_FOVdetection.immobilosingRipple = true;
+        //Nil_FOVdetection.immobilosingRipple = true;
+        
 
 
 
@@ -201,11 +202,11 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(10.0f);
 
 
 
-
+        freeze = false;
 
 
 
@@ -270,7 +271,7 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
-        Nil_FOVdetection.immobilosingRipple = false;
+        //Nil_FOVdetection.immobilosingRipple = false;
 
 
 

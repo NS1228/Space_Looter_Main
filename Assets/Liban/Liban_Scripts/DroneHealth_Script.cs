@@ -27,6 +27,11 @@ public class DroneHealth_Script : MonoBehaviour
 
     // Update is called once per frame
 
+    void Update ()
+    {
+       
+    }
+
 
 
     public void EnemyTakingDamage(float amount)

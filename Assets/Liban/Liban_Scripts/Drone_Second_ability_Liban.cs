@@ -7,7 +7,7 @@ public class Drone_Second_ability_Liban : MonoBehaviour
     
     public GameObject AmazingDrone;
 
-
+    public static bool expose;
    // public SphereCollider ColliderForSecondAbility;
 
 
@@ -50,31 +50,31 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-    //    Outline O1 = GameObject.Find("enemy sphere 2").GetComponent<Outline>();
+        //    Outline O1 = GameObject.Find("enemy sphere 2").GetComponent<Outline>();
 
-    //   O1.enabled = true;
-
-
-
-
-
-
-      //  Outline O2 = GameObject.Find("enemy sphere 3").GetComponent<Outline>();
-
-
-     //   O2.enabled = true;
+        //   O1.enabled = true;
 
 
 
 
 
-      //  Outline O3 = GameObject.Find("enemy sphere 4").GetComponent<Outline>();
+
+        //  Outline O2 = GameObject.Find("enemy sphere 3").GetComponent<Outline>();
 
 
-     //  O3.enabled = true;
+        //   O2.enabled = true;
 
 
 
+
+
+        //  Outline O3 = GameObject.Find("enemy sphere 4").GetComponent<Outline>();
+
+
+        //  O3.enabled = true;
+
+
+        expose = true;
 
 
         Drone_Second_ability_Liban XCV = GameObject.Find("Activate Drone second ability").GetComponent<Drone_Second_ability_Liban>();
@@ -141,7 +141,7 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-        Nil_FOVdetection.droneIntel = true;
+        //Nil_FOVdetection.droneIntel = true;
 
 
 
@@ -160,7 +160,7 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-
+        expose = false;
 
 
 
@@ -232,7 +232,7 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-        Nil_FOVdetection.droneIntel = false;
+        //Nil_FOVdetection.droneIntel = false;
 
 
 

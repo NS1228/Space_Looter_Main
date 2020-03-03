@@ -17,6 +17,7 @@ public class Nil_FOVdetection : MonoBehaviour
     public GameObject playerandClones;
     public GameObject detectionMeter;
     public GameObject drone;
+    public GameObject emptyDrone;
    
 
     //waypoint stuff
@@ -54,13 +55,19 @@ public class Nil_FOVdetection : MonoBehaviour
     private float maxRadius;
 
     //Gadget bools
+    [HeaderAttribute("Gadget Bools")]
     public static bool flashLightBlindingLight;
     public static bool stunned;
     public static bool evacuate;
     public static bool subterfuge;
-    public static bool immobilosingRipple;
-    public static bool droneIntel;
-    private bool killDrone;
+    public  bool immobilosingRipple;
+    public bool droneIntel;
+    public bool killDrone;
+
+    //Gadget floats
+    [HeaderAttribute("Gadget floats")]
+    public float fakOffDrone;
+
 
     //stun stuff
     private float stunTimer;
@@ -234,7 +241,7 @@ public class Nil_FOVdetection : MonoBehaviour
             // print("inFOV");
 
         }
-        else if (!isinFov && !stunned && !evacuate && !killDrone)
+        else if (!isinFov && !stunned && !evacuate)
         {
             // print("NOTinFOV");
             if (Time.timeSinceLevelLoad >= timeSinceLastSeen)
@@ -251,14 +258,14 @@ public class Nil_FOVdetection : MonoBehaviour
             }
         }
 
-        if (soundDetected && notChasing && !stunned && !evacuate && !killDrone)
+        if (soundDetected && notChasing && !stunned && !evacuate)
         {
             RunInvestigating();
             notInvestigating = false;
         }
 
 
-        if (notChasing && !soundDetected && !stunned && !evacuate && !killDrone)
+        if (notChasing && !soundDetected && !stunned && !evacuate)
         {
             RunPatrol();
             maxRadius = defaultRadius;
@@ -286,15 +293,7 @@ public class Nil_FOVdetection : MonoBehaviour
             RunEvacuate();
         }
 
-        if(immobilosingRipple)
-        {
-          //  killDrone = true;
-        }
-
-        if(droneIntel)
-        {
-           // killDrone = true;
-        }
+      
 
         if(killDrone && notChasing && !isinFov && !evacuate && !stunned)
         {
@@ -305,15 +304,20 @@ public class Nil_FOVdetection : MonoBehaviour
 
          if(Input.GetKey(KeyCode.L))
          {
-             immobilosingRipple = true;
+            killDrone = true;
          }
          if (Input.GetKey(KeyCode.M))
          {
-             immobilosingRipple = false;
+             killDrone = false;
          }
 
 
         FindClosestEnemy();
+        DroneStuff();
+
+       
+
+        
 
 
 
@@ -771,10 +775,26 @@ public class Nil_FOVdetection : MonoBehaviour
 
    void Drone_Termination()
     {
+        
         agent.SetDestination(drone.transform.position);
-        agent.speed = chaseSpeed;
-        agent.angularSpeed = angularSpeed;
-           
+        transform.LookAt(drone.transform.position);
+
+       if (flashLightBlindingLight && !immobilosingRipple)
+        {
+            agent.speed = slowedChase;
+            agent.angularSpeed = angularSpeed;
+        }
+        else if (immobilosingRipple)
+        {
+            agent.speed = immobolisedSpeed;
+            agent.angularSpeed = immobolisedAngular;
+        }
+        else if (!flashLightBlindingLight && !immobilosingRipple)
+        {
+            agent.speed = chaseSpeed;
+            agent.angularSpeed = angularSpeed;
+        }
+
     }
 
     void OnTriggerEnter(Collider theCollision)
@@ -807,11 +827,19 @@ public class Nil_FOVdetection : MonoBehaviour
 
             if(theCollision.gameObject.tag == "Drone")
         {
-            //destroy it;
+            Destroy(theCollision.gameObject);
         }
 
 
 
+    }
+
+    void OnCollisionEnter (Collision coll)
+    {
+        if(coll.gameObject.tag == "Drone")
+        {
+            Destroy(coll.gameObject);
+        }
     }
 
     public GameObject FindClosestEnemy()
@@ -834,6 +862,32 @@ public class Nil_FOVdetection : MonoBehaviour
         }
         return closest;
        
+    }
+
+    public void DroneStuff()
+    {
+        if (GameObject.FindGameObjectWithTag("Drone") == null)
+        {
+            drone = emptyDrone;
+            immobilosingRipple = false;
+            this.GetComponent<Outline>().enabled = false;
+            droneIntel = false;
+            killDrone = false;
+        }
+        else
+        {
+            drone = GameObject.FindGameObjectWithTag("Drone");
+        }
+
+        var distance = Vector3.Distance(this.transform.position, drone.transform.position);
+        if (distance >= fakOffDrone)
+        {
+            immobilosingRipple = false;
+            this.GetComponent<Outline>().enabled = false;
+            droneIntel = false;
+            killDrone = false;
+
+        }
     }
 
 

@@ -15,7 +15,7 @@ public class Drone_Exposing_Enemies_Liban : MonoBehaviour
 
 
 
-        if(other.CompareTag("EnemyDrone"))
+        if(other.CompareTag("AI") && Drone_Second_ability_Liban.expose)
 
 
         {
@@ -43,7 +43,14 @@ public class Drone_Exposing_Enemies_Liban : MonoBehaviour
 
 
 
+            Outline OL4 = GameObject.Find("Basicenemy").GetComponent<Outline>();
 
+
+            OL4.enabled = true;
+
+
+            other.gameObject.GetComponent<Nil_FOVdetection>().killDrone = true;
+            other.gameObject.GetComponent<Nil_FOVdetection>().droneIntel = true;
 
         }
 
@@ -62,7 +69,7 @@ public class Drone_Exposing_Enemies_Liban : MonoBehaviour
 
 
 
-        if (other.CompareTag("EnemyDrone"))
+        if (other.CompareTag("AI"))
 
 
         {
@@ -88,6 +95,14 @@ public class Drone_Exposing_Enemies_Liban : MonoBehaviour
 
 
             OL3.enabled = false;
+
+            Outline OL4 = GameObject.Find("Basicenemy").GetComponent<Outline>();
+
+
+            OL4.enabled = false;
+
+            other.gameObject.GetComponent<Nil_FOVdetection>().killDrone = true;
+            other.gameObject.GetComponent<Nil_FOVdetection>().droneIntel = true;
 
         }
 
