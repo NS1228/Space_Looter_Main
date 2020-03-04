@@ -24,12 +24,25 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
     public float TrajectoryTimer;
 
 
-    public GameObject OGPlayer;
+    public Transform OGPlayer;
+
+
+
+
+    public Vector3 backtorot;
+
+
+    public Transform Torch;
+
+
+    public Vector3 Torchbacktorot;
 
 
 
 
 
+
+ 
 
 
     // Update is called once per frame
@@ -38,7 +51,6 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-        TrajectoryTimeTime();
 
 
 
@@ -50,64 +62,172 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-
-            Rigidbody YOOOOOO = GameObject.Find("newPlayer").GetComponent<Rigidbody>();
-
-
-            YOOOOOO.constraints = RigidbodyConstraints.FreezeAll;
-
-
-
-
-
-            TrajectoryTimer = Time.timeSinceLevelLoad + 5.0f;
-
-
-
-
-            print("LOOOOOL OH MYYYY");
-
+            StartCoroutine(TURNIT());
 
 
 
         }
 
+    }
 
 
 
 
-        void TrajectoryTimeTime()
+    IEnumerator TURNIT()
+
+
+
+
+    {
+
+
+
+
+        TrajectoryCAM.transform.parent = null;
+
+
+
+        TrajectoryCAM.gameObject.SetActive(true);
+
+
+
+        ThirdCam.gameObject.SetActive(false);
+
+
+
+        CursorScript.gameObject.SetActive(true);
+
+
+
+
+
+        RBFPS.gameObject.SetActive(false);
+
+
+
+
+
+        Projectile_Donut GalacticDonut = GameObject.Find("Character").GetComponent<Projectile_Donut>();
+
+
+
+        GalacticDonut.enabled = true;
+
+
+
+
+
+
+
+        print("LOOOOOL yoyoyoyoo OH MYYYY");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        yield return new WaitForSeconds(6.0f);
+
+
+
+
+
+
+        REturnRotation();
+
+
+
+
+
+        TrajectoryCAM.gameObject.SetActive(false);
+
+
+
+        TrajectoryCAM.transform.position = WhereTheCamWillSpawn.position;
+
+
+
+
+        ThirdCam.gameObject.SetActive(true);
+
+
+
+
+        RBFPS.gameObject.SetActive(true);
+
+
+
+
+
+
+        Projectile_Donut GalacticDonut22 = GameObject.Find("Character").GetComponent<Projectile_Donut>();
+
+
+        GalacticDonut22.enabled = false;
+
+
+
+
+
+
+
+        LineRenderer LR = GameObject.Find("Character").GetComponent<LineRenderer>();
+
+
+        LR.enabled = false;
+
+
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+    void REturnRotation()
+
+    {
+
+        if (OGPlayer.transform.eulerAngles != backtorot)
 
 
 
         {
 
-
-            if (Time.timeSinceLevelLoad >= TrajectoryTimer)
-
-
-            {
+            OGPlayer.transform.rotation = Quaternion.Euler(backtorot.y, backtorot.y, backtorot.z);
 
 
 
-
-                Rigidbody YO434 = GameObject.Find("newPlayer").GetComponent<Rigidbody>();
-
-
-                YO434.constraints = RigidbodyConstraints.None;
-
-
-
-
-            }
-
+            Torch.transform.rotation = Quaternion.Euler(Torchbacktorot.x, Torchbacktorot.y, Torchbacktorot.z);
 
 
 
 
         }
+
+
+
     }
+
 }
+        
+
 
 
 

@@ -66,7 +66,7 @@ public class Projectile_Donut : MonoBehaviour
             Visualize(Vo);
 
 
-            transform.rotation = Quaternion.LookRotation(Vo);
+         //   transform.rotation = Quaternion.LookRotation(Vo);
 
 
 

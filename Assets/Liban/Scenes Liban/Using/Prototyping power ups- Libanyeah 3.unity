@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2224,14 +2224,13 @@ GameObject:
   - component: {fileID: 817803291}
   - component: {fileID: 817803290}
   - component: {fileID: 817803289}
-  - component: {fileID: 817803293}
   m_Layer: 0
   m_Name: turn up grenade gadget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &817803289
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2305,25 +2304,59 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 59
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &817803293
+--- !u!1 &822027455
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 822027457}
+  - component: {fileID: 822027456}
+  m_Layer: 0
+  m_Name: 'turn up grenade activation '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &822027456
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 817803288}
+  m_GameObject: {fileID: 822027455}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6ada79d410da54792b7c419c4a406181, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RBFPS: {fileID: 0}
-  ThirdCam: {fileID: 0}
-  TrajectoryCAM: {fileID: 0}
-  CursorScript: {fileID: 0}
-  WhereTheCamWillSpawn: {fileID: 0}
+  RBFPS: {fileID: 994969408}
+  ThirdCam: {fileID: 8698471726360059298}
+  TrajectoryCAM: {fileID: 1554115270}
+  CursorScript: {fileID: 20424264}
+  WhereTheCamWillSpawn: {fileID: 1820784394}
   TrajectoryTimer: 0
-  OGPlayer: {fileID: 0}
+  OGPlayer: {fileID: 4608434749558657031}
+  backtorot: {x: 0, y: 0, z: 0}
+  Torch: {fileID: 5006512736403596276}
+  Torchbacktorot: {x: 0, y: -82.819, z: 0}
+--- !u!4 &822027457
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 822027455}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 71.57836, y: 4.4782004, z: 13.377286}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 65
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &840543661
 GameObject:
   m_ObjectHideFlags: 0
@@ -2622,6 +2655,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: -89.539, z: 0}
+--- !u!1 &951413000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 951413001}
+  m_Layer: 8
+  m_Name: SetBackToRotation
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &951413001
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 951413000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8698471726756888668}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &962762789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2747,6 +2810,12 @@ Transform:
 --- !u!4 &988094257 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3932333745640754701, guid: 603aa7640041eb64698d36ffad6c4bb8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3932333746289103164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &994969408 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3932333747502128119, guid: 603aa7640041eb64698d36ffad6c4bb8,
     type: 3}
   m_PrefabInstance: {fileID: 3932333746289103164}
   m_PrefabAsset: {fileID: 0}
@@ -5893,7 +5962,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!120 &1733679933
 LineRenderer:
   m_ObjectHideFlags: 0
@@ -8481,6 +8550,16 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 677235708055077177, guid: 603aa7640041eb64698d36ffad6c4bb8,
+        type: 3}
+      propertyPath: m_Constraints
+      value: 112
+      objectReference: {fileID: 0}
+    - target: {fileID: 677235708055077177, guid: 603aa7640041eb64698d36ffad6c4bb8,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8539,6 +8618,11 @@ PrefabInstance:
     - target: {fileID: 677235708055077180, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: Stand
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 677235708055077180, guid: 603aa7640041eb64698d36ffad6c4bb8,
+        type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077181, guid: 603aa7640041eb64698d36ffad6c4bb8,
@@ -8676,10 +8760,40 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5631005073926017376, guid: 603aa7640041eb64698d36ffad6c4bb8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631005073926017376, guid: 603aa7640041eb64698d36ffad6c4bb8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631005073926017376, guid: 603aa7640041eb64698d36ffad6c4bb8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631005073926017376, guid: 603aa7640041eb64698d36ffad6c4bb8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631005073926017376, guid: 603aa7640041eb64698d36ffad6c4bb8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5631005073926017379, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: Walking
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5631005073926017380, guid: 603aa7640041eb64698d36ffad6c4bb8,
+        type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5631005073926017382, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -9141,10 +9255,35 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 915265620}
     m_Modifications:
+    - target: {fileID: 6942067885963858514, guid: 0e3501ace49022743bfc2c8c92dc7030,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942067885963858514, guid: 0e3501ace49022743bfc2c8c92dc7030,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942067886217332883, guid: 0e3501ace49022743bfc2c8c92dc7030,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 23.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942067886217332884, guid: 0e3501ace49022743bfc2c8c92dc7030,
+        type: 3}
+      propertyPath: m_Text
+      value: Drone Battery
+      objectReference: {fileID: 0}
     - target: {fileID: 6942067887012522910, guid: 0e3501ace49022743bfc2c8c92dc7030,
         type: 3}
       propertyPath: m_Name
       value: DroneHealthSlider
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942067887012522910, guid: 0e3501ace49022743bfc2c8c92dc7030,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6942067887012522911, guid: 0e3501ace49022743bfc2c8c92dc7030,
         type: 3}
@@ -9250,6 +9389,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942067887185072286, guid: 0e3501ace49022743bfc2c8c92dc7030,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942067887185072286, guid: 0e3501ace49022743bfc2c8c92dc7030,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942067887185072286, guid: 0e3501ace49022743bfc2c8c92dc7030,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e3501ace49022743bfc2c8c92dc7030, type: 3}
