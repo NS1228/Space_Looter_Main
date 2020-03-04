@@ -27,6 +27,7 @@ public class AI_Reacting_To_GreenLight_Liban : MonoBehaviour
         {
            // print("COLL");
             SlowingDownEnemy = true;
+            other.gameObject.GetComponent<Nil_FOVdetection>().flashLightBlindingLight = true;
 
 
         }
@@ -51,6 +52,7 @@ public class AI_Reacting_To_GreenLight_Liban : MonoBehaviour
 
             //print("OFFCOLL");
             SlowingDownEnemy = false;
+            other.gameObject.GetComponent<Nil_FOVdetection>().flashLightBlindingLight = false;
 
 
         }

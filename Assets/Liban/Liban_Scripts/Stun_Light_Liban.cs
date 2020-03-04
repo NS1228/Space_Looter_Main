@@ -113,7 +113,7 @@ public class Stun_Light_Liban : MonoBehaviour
             {
 
 
-                Nil_FOVdetection.stunned = true;
+                //Nil_FOVdetection.stunned = true;
 
 
                 AI_Camera_FlashStun_React_Liban.StunningEnemy = false;

@@ -278,6 +278,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3932333745630590738, guid: 603aa7640041eb64698d36ffad6c4bb8,
+        type: 3}
+      propertyPath: m_TagString
+      value: BlueLight
+      objectReference: {fileID: 0}
     - target: {fileID: 3932333746803464653, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_Enabled
@@ -980,6 +985,11 @@ PrefabInstance:
       objectReference: {fileID: 1268884581}
     - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
+      propertyPath: emptyDrone
+      value: 
+      objectReference: {fileID: 1834771325}
+    - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
+        type: 3}
       propertyPath: waypoints.Array.data[0]
       value: 
       objectReference: {fileID: 1216012679}
@@ -993,6 +1003,11 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[2]
       value: 
       objectReference: {fileID: 255678362}
+    - target: {fileID: 7583743169754408143, guid: 9b84432b827d61b4cb83878a8d3f7018,
+        type: 3}
+      propertyPath: blindingLightObject
+      value: 
+      objectReference: {fileID: 637700319}
     - target: {fileID: 7583743169754408149, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2402,6 +2417,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5631005073926017376, guid: 603aa7640041eb64698d36ffad6c4bb8,
     type: 3}
   m_PrefabInstance: {fileID: 24704706}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1834771325 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1709878713, guid: 2486757400a0d714189fe92737329987,
+    type: 3}
+  m_PrefabInstance: {fileID: 1074471902}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1876194794 stripped
 GameObject:

@@ -88,7 +88,7 @@ public class Light_Hold_Green : MonoBehaviour
             {
 
 
-                Nil_FOVdetection.flashLightBlindingLight = true;
+               // Nil_FOVdetection.flashLightBlindingLight = true;
 
 
             }
@@ -99,7 +99,7 @@ public class Light_Hold_Green : MonoBehaviour
             {
 
 
-                Nil_FOVdetection.flashLightBlindingLight = false;
+                //Nil_FOVdetection.flashLightBlindingLight = false;
 
             }
 
@@ -115,7 +115,7 @@ public class Light_Hold_Green : MonoBehaviour
 
         {
 
-            Nil_FOVdetection.flashLightBlindingLight = false;
+           // Nil_FOVdetection.flashLightBlindingLight = false;
 
 
         }

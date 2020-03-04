@@ -141,8 +141,7 @@ MonoBehaviour:
     type: 3}
   Player: {fileID: 0}
   playerandClones: {fileID: 0}
-  detectionMeter: {fileID: 1622115035967885367, guid: dcb42c5a1cf29dd43b3b045bc3ed97ff,
-    type: 3}
+  detectionMeter: {fileID: 0}
   drone: {fileID: 0}
   emptyDrone: {fileID: 0}
   waypoints:

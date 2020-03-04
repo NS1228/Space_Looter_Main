@@ -56,8 +56,8 @@ public class Nil_FOVdetection : MonoBehaviour
 
     //Gadget bools
     [HeaderAttribute("Gadget Bools")]
-    public static bool flashLightBlindingLight;
-    public static bool stunned;
+    public  bool flashLightBlindingLight;
+    public  bool stunned;
     public static bool evacuate;
     public static bool subterfuge;
     public  bool immobilosingRipple;
@@ -67,6 +67,10 @@ public class Nil_FOVdetection : MonoBehaviour
     //Gadget floats
     [HeaderAttribute("Gadget floats")]
     public float fakOffDrone;
+
+    //Gadget Objects
+    [HeaderAttribute("Gadget Objects")]
+    public GameObject blindingLightObject;
 
 
     //stun stuff
@@ -314,10 +318,11 @@ public class Nil_FOVdetection : MonoBehaviour
 
         FindClosestEnemy();
         DroneStuff();
+        UnSlowEnemies();
 
-       
 
-        
+
+
 
 
 
@@ -891,7 +896,16 @@ public class Nil_FOVdetection : MonoBehaviour
     }
 
 
+    public void UnSlowEnemies()
+    {
 
+        blindingLightObject = GameObject.FindGameObjectWithTag("BlueLight");
+       
+        if (blindingLightObject == null)
+        {
+            flashLightBlindingLight = false;
+        }
+    }
 
 
 

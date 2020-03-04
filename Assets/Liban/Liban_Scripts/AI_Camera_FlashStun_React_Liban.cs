@@ -22,7 +22,7 @@ public class AI_Camera_FlashStun_React_Liban : MonoBehaviour
 
 
             StunningEnemy = true;
-
+            other.GetComponent<Nil_FOVdetection>().stunned = true;
 
         }
 
