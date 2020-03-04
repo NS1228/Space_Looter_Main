@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 1208034248911352872}
   - component: {fileID: 908746934969953254}
   m_Layer: 0
-  m_Name: watchstuff2
+  m_Name: Activate second watch ability
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -80,6 +80,7 @@ MonoBehaviour:
   Normallll: {fileID: 2100000, guid: b2f6d2741b42947be8f09113cbfc77c9, type: 2}
   TheWatchYEAHYEAH: {fileID: 0}
   YoFace: {fileID: 0}
+  smoothhhh: 0
 --- !u!1 &7803630636470820795
 GameObject:
   m_ObjectHideFlags: 0
@@ -91,7 +92,7 @@ GameObject:
   - component: {fileID: 5258571028869758634}
   - component: {fileID: 6139625148770195089}
   m_Layer: 0
-  m_Name: watchstuff1
+  m_Name: Activate the watch ability
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +124,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e4a0dd915d64e4570ae16cf5c6c128b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TheFakePlayer: {fileID: 0}
+  TheFakePlayer: {fileID: 3777492112243713438, guid: e15240a964efd514e857f23a29e68720,
+    type: 3}
   TheePlayer: {fileID: 0}
   TheesFace: {fileID: 0}
   ACloningPoint1: {fileID: 0}

@@ -60,7 +60,7 @@ public class Nil_FOVdetection : MonoBehaviour
     public  bool stunned;
     public static bool evacuate;
     public static bool subterfuge;
-    public  bool immobilosingRipple;
+    public bool immobilosingRipple;
     public bool droneIntel;
     public bool killDrone;
 

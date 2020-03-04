@@ -18,6 +18,8 @@ public class ActivateWatchAbility : MonoBehaviour
 
     public Transform ACloningPoint3;
 
+    public Transform ACloningPoint4;
+
     public GameObject TheWatchYeah;
 
     public ParticleSystem TheSmoke;
@@ -74,10 +76,12 @@ public class ActivateWatchAbility : MonoBehaviour
 
         GameObject Clone3 = Instantiate(TheFakePlayer, ACloningPoint3.position, ACloningPoint3.rotation);
 
+        GameObject Clone4 = Instantiate(TheFakePlayer, ACloningPoint4.position, ACloningPoint4.rotation);
 
 
 
-     //   TheSmoke.gameObject.SetActive(true);
+
+        //   TheSmoke.gameObject.SetActive(true);
 
 
         ActivateWatchAbility ACVB = GameObject.Find("Activate the watch ability").GetComponent<ActivateWatchAbility>();
@@ -113,6 +117,8 @@ public class ActivateWatchAbility : MonoBehaviour
         Destroy(Clone2);
 
         Destroy(Clone3);
+
+        Destroy(Clone4);
 
 
 
