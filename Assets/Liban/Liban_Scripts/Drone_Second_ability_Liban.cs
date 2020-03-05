@@ -2,12 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Drone_Second_ability_Liban : MonoBehaviour
+public class Drone_Second_ability_Liban : MonoBehaviour 
 {
     
     public GameObject AmazingDrone;
 
     public static bool expose;
+
+
+
    // public SphereCollider ColliderForSecondAbility;
 
 

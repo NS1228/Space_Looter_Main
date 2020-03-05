@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2330,7 +2330,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 822027455}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ada79d410da54792b7c419c4a406181, type: 3}
+  m_Script: {fileID: 11500000, guid: c61731621c5144fecb46bac5bff0438d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   RBFPS: {fileID: 994969408}
@@ -2339,10 +2339,10 @@ MonoBehaviour:
   CursorScript: {fileID: 20424264}
   WhereTheCamWillSpawn: {fileID: 1820784394}
   TrajectoryTimer: 0
-  OGPlayer: {fileID: 4608434749558657031}
+  OGPlayer: {fileID: 0}
   backtorot: {x: 0, y: 0, z: 0}
-  Torch: {fileID: 5006512736403596276}
-  Torchbacktorot: {x: 0, y: -82.819, z: 0}
+  Torch: {fileID: 0}
+  Torchbacktorot: {x: 0, y: 0, z: 0}
 --- !u!4 &822027457
 Transform:
   m_ObjectHideFlags: 0
@@ -4809,6 +4809,7 @@ MonoBehaviour:
   ACloningPoint1: {fileID: 1841996341}
   ACloningPoint2: {fileID: 988094257}
   ACloningPoint3: {fileID: 864954664}
+  ACloningPoint4: {fileID: 0}
   TheWatchYeah: {fileID: 1868459367}
   TheSmoke: {fileID: 658756663}
 --- !u!4 &1343975893
