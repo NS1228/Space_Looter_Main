@@ -27,6 +27,12 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
     public Transform OGPlayer;
 
 
+    public GameObject TrajectCursor;
+
+
+    public GameObject GRText;
+
+
 
 
     public Vector3 backtorot;
@@ -82,7 +88,6 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-
         TrajectoryCAM.transform.parent = null;
 
 
@@ -103,6 +108,14 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
         RBFPS.gameObject.SetActive(false);
 
+        TrajectCursor.gameObject.SetActive(true);
+
+        GRText.gameObject.SetActive(true);
+
+
+
+
+
 
 
 
@@ -119,7 +132,67 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
+
+
         print("LOOOOOL yoyoyoyoo OH MYYYY");
+
+
+
+
+
+
+
+
+
+
+        LineRenderer LR4 = GameObject.Find("Character").GetComponent<LineRenderer>();
+
+
+        LR4.enabled = true;
+
+
+
+
+
+
+
+
+
+
+
+        Activate_Trajectory_TurnUP_Liban HKJLG = GameObject.FindWithTag("ACTGRE").GetComponent<Activate_Trajectory_TurnUP_Liban>();
+
+        HKJLG.enabled = false;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Grenade_Timer_Text_Liban GT_Timer = GameObject.Find("Grenade Timer Text").GetComponent<Grenade_Timer_Text_Liban>();
+
+
+
+        GT_Timer.enabled = true;
+
+
+
+
+
+
+
 
 
 
@@ -143,7 +216,45 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-        REturnRotation();
+
+
+
+
+        Grenade_Timer_Text_Liban GT_Timer3 = GameObject.Find("Grenade Timer Text").GetComponent<Grenade_Timer_Text_Liban>();
+
+
+        GT_Timer3.GrenadeTimerTimer = 6.0f;
+
+
+
+
+
+
+
+
+
+
+
+        Grenade_Timer_Text_Liban GT_Timer2 = GameObject.Find("Grenade Timer Text").GetComponent<Grenade_Timer_Text_Liban>();
+
+
+        GT_Timer2.enabled = false;
+
+
+
+
+
+
+     
+
+
+
+
+
+        TrajectCursor.gameObject.SetActive(false);
+
+
+
 
 
 
@@ -166,6 +277,16 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
         RBFPS.gameObject.SetActive(true);
 
 
+        GRText.gameObject.SetActive(false);
+
+
+
+
+
+
+
+
+
 
 
 
@@ -174,6 +295,13 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
         GalacticDonut22.enabled = false;
+
+
+
+
+
+
+
 
 
 
@@ -193,6 +321,83 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
+
+        CursorScript.gameObject.SetActive(false);
+
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        yield return new WaitForSeconds(6.0f);
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Activate_Trajectory_TurnUP_Liban ATURHN3 = GameObject.FindWithTag("ACTGRE").GetComponent<Activate_Trajectory_TurnUP_Liban>();
+
+
+        ATURHN3.enabled = true;
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
 
 
@@ -200,30 +405,9 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-    void REturnRotation()
+   
 
-    {
-
-        if (OGPlayer.transform.eulerAngles != backtorot)
-
-
-
-        {
-
-            OGPlayer.transform.rotation = Quaternion.Euler(backtorot.y, backtorot.y, backtorot.z);
-
-
-
-            Torch.transform.rotation = Quaternion.Euler(Torchbacktorot.x, Torchbacktorot.y, Torchbacktorot.z);
-
-
-
-
-        }
-
-
-
-    }
+    
 
 }
         

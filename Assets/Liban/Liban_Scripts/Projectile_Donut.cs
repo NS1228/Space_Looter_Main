@@ -21,6 +21,17 @@ public class Projectile_Donut : MonoBehaviour
 
     private float speed = 50.3f;
 
+    private bool readyToThrowyeah = true;
+
+    private int grenadeamountCounter = 1;
+
+    private float TheTimer = 7.2f;
+
+    
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,6 +48,9 @@ public class Projectile_Donut : MonoBehaviour
     {
 
         Launch();
+
+
+        ShootAgainTR();
 
     }
 
@@ -66,15 +80,16 @@ public class Projectile_Donut : MonoBehaviour
             Visualize(Vo);
 
 
-         //   transform.rotation = Quaternion.LookRotation(Vo);
+            //   transform.rotation = Quaternion.LookRotation(Vo);
 
 
 
-           
 
-            if (Input.GetMouseButtonUp(0))
+
+            if (Input.GetMouseButtonUp(0) && readyToThrowyeah && grenadeamountCounter > 0)
 
             {
+
 
 
                 Rigidbody obj = Instantiate(bulletPrefabs, shootingpoint.position, shootingpoint.rotation);
@@ -82,7 +97,29 @@ public class Projectile_Donut : MonoBehaviour
                 obj.velocity = Vo;
 
 
+                readyToThrowyeah = false;
+
+
+
+                
+
+
+
+                TheTimer = Time.timeSinceLevelLoad + 7.0f;
+
+
+
+
+
+
             }
+
+
+          
+            
+
+         
+            
 
         }
 
@@ -176,6 +213,42 @@ public class Projectile_Donut : MonoBehaviour
         return result;
 
     }
+
+
+
+
+
+
+
+
+    void ShootAgainTR()
+
+
+    {
+
+
+
+
+        if(Time.timeSinceLevelLoad >= TheTimer && readyToThrowyeah == false)
+
+
+        {
+
+
+            readyToThrowyeah = true;
+
+
+
+
+        }
+
+
+
+
+    }
+
+
+
 
 
 }

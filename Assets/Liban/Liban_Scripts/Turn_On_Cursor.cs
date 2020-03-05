@@ -22,6 +22,13 @@ public class Turn_On_Cursor : MonoBehaviour
     {
 
 
+
+        Cursor.visible = true;
+
+
+        Cursor.lockState = CursorLockMode.None;
+
+
        
     }
 }
