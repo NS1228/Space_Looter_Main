@@ -615,6 +615,50 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 3932333746289103164}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &314026131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 314026133}
+  - component: {fileID: 314026132}
+  m_Layer: 0
+  m_Name: ChildAudioStun
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!135 &314026132
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314026131}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &314026133
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 314026131}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2431401775552577096}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &320534051
 GameObject:
   m_ObjectHideFlags: 0
@@ -7689,11 +7733,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2431401775086308152, guid: 851800106b8ff40e8852cef9d471fa22,
+        type: 3}
+      propertyPath: MinDistance
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2431401775086308153, guid: 851800106b8ff40e8852cef9d471fa22,
         type: 3}
       propertyPath: WoahGoku
       value: 
       objectReference: {fileID: 368299551}
+    - target: {fileID: 2431401775086308153, guid: 851800106b8ff40e8852cef9d471fa22,
+        type: 3}
+      propertyPath: ChildAudioStun
+      value: 
+      objectReference: {fileID: 314026131}
     - target: {fileID: 2431401775086308154, guid: 851800106b8ff40e8852cef9d471fa22,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7756,6 +7810,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 851800106b8ff40e8852cef9d471fa22, type: 3}
+--- !u!4 &2431401775552577096 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2431401775086308154, guid: 851800106b8ff40e8852cef9d471fa22,
+    type: 3}
+  m_PrefabInstance: {fileID: 2431401775552577095}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2534866580801267871 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1061823235684386172, guid: ee0dc51ed9af8410c99b815b5db84183,

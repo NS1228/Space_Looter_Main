@@ -13,6 +13,8 @@ public class Collision_Activates_Audio_Grenade_Ability2_Liban : MonoBehaviour
     public AudioSource WoahGoku;
 
 
+    public GameObject ChildAudioStun;
+
 
 
 
@@ -49,8 +51,16 @@ public class Collision_Activates_Audio_Grenade_Ability2_Liban : MonoBehaviour
 
 
 
+            ChildAudioStun.gameObject.SetActive(true);
+
+            ChildAudioStun.GetComponent<SphereCollider>().radius = 7.5f;
 
 
+            ChildAudioStun.GetComponent<SphereCollider>().enabled = true;
+
+
+
+           
 
 
         }
