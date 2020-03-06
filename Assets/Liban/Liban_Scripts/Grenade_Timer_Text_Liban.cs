@@ -30,7 +30,7 @@ public class Grenade_Timer_Text_Liban : MonoBehaviour
     void Update()
     {
 
-
+        LessThanZero();
 
 
         LessThanFive();
@@ -102,6 +102,43 @@ public class Grenade_Timer_Text_Liban : MonoBehaviour
 
 
          //   LTFS2.enabled = false;
+
+
+
+
+        }
+
+
+
+
+    }
+
+
+
+
+
+
+    void LessThanZero()
+
+
+    {
+
+
+
+
+        if(GrenadeTimerTimer <= 0)
+
+
+
+        {
+
+
+
+            GrenadeTimerTimer = 10.0f;
+
+
+
+            GrenadeTimerTextyh.gameObject.SetActive(true);
 
 
 

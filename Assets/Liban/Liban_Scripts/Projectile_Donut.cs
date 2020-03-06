@@ -73,7 +73,7 @@ public class Projectile_Donut : MonoBehaviour
         {
 
             cursor.SetActive(true);
-            cursor.transform.position = Hit.point + Vector3.up * 1.5f;
+            cursor.transform.position = Hit.point + Vector3.up * 0.5f;
 
 
             Vector3 Vo = CalculateVelocity(Hit.point, shootingpoint.position, 2.3f);

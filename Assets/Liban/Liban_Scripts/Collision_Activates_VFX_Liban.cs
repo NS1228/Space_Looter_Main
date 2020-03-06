@@ -23,11 +23,11 @@ public class Collision_Activates_VFX_Liban : MonoBehaviour
     }
 
     // Update is called once per frame
-    void OnTriggerEnter(Collider other)
+    void OnCollisionEnter(Collision other)
     {
 
 
-        if (other.gameObject.tag == "TheCursor")
+        if (other.gameObject.tag == "Ground")
 
 
         {

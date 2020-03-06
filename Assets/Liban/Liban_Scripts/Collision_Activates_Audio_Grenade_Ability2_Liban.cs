@@ -23,13 +23,13 @@ public class Collision_Activates_Audio_Grenade_Ability2_Liban : MonoBehaviour
     }
 
     // Update is called once per frame
-    void OnTriggerEnter (Collider other)
+    void OnCollisionEnter (Collision other)
     {
 
 
 
 
-        if(other.gameObject.tag == ("TheCursor"))
+        if(other.gameObject.tag == ("Ground"))
 
 
 

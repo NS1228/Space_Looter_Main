@@ -67,11 +67,13 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
         {
 
+            
 
 
+            Final_Drone_Movement_Liban FDM45 = GameObject.Find("Drone Skin").GetComponent<Final_Drone_Movement_Liban>();
 
 
-
+            FDM45.enabled = true;
 
 
 
@@ -95,10 +97,10 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-            Drone_Movement_Liban LibanDrone = GameObject.FindWithTag("Dronee").GetComponent<Drone_Movement_Liban>();
+          //  Drone_Movement_Liban LibanDrone = GameObject.FindWithTag("Dronee").GetComponent<Drone_Movement_Liban>();
 
 
-            LibanDrone.enabled = true;
+           // LibanDrone.enabled = true;
 
 
 
@@ -170,95 +172,7 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-
         
-
-
-        {
-
-
-
-
-
-            Drone_Movement_Liban LibanDrone = GameObject.FindWithTag("Dronee").GetComponent<Drone_Movement_Liban>();
-
-
-            LibanDrone.enabled = false;
-
-
-
-            LemarMovment LMovementyh = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
-
-
-            LMovementyh.enabled = true;
-
-
-
-
-
-            DroneCameraLIVE.gameObject.SetActive(false);
-
-
-
-
-
-
-            Drone_First_Ability_Liban GVBN3434 = GameObject.Find("Activate Drone first ability").GetComponent<Drone_First_Ability_Liban>();
-
-
-            GVBN3434.enabled = false;
-
-
-
-
-
-
-            Drone_Second_ability_Liban QWERTY = GameObject.Find("Activate Drone second ability").GetComponent<Drone_Second_ability_Liban>();
-
-
-            QWERTY.enabled = false;
-
-
-
-
-            DHealth.gameObject.SetActive(false);
-
-
-
-
-
-            LemarCamera LCAM = GameObject.Find("Main Camera").GetComponent<LemarCamera>();
-
-
-            LCAM.RotateSpeed = 10f;
-
-
-
-
-            LemarCamera DroneCAMM = GameObject.Find("Drone Camera").GetComponent<LemarCamera>();
-
-
-            DroneCAMM.RotateSpeed = 0;
-
-
-
-
-            // NewMovementScript DRNEMV = GameObject.FindWithTag("Dronee").GetComponent<NewMovementScript>();
-
-            // DRNEMV.enabled = false;
-
-
-
-
-            DroneHealth_Script DDHEEALLTH = GameObject.FindWithTag("Dronee").GetComponent<DroneHealth_Script>();
-
-
-            DDHEEALLTH.enabled = false; 
-
-
-
-        }
-
 
 
     }
