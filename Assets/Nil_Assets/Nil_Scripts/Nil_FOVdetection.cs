@@ -63,6 +63,7 @@ public class Nil_FOVdetection : MonoBehaviour
     public bool immobilosingRipple;
     public bool droneIntel;
     public bool killDrone;
+    
 
     //Gadget floats
     [HeaderAttribute("Gadget floats")]
@@ -845,6 +846,8 @@ public class Nil_FOVdetection : MonoBehaviour
         {
             Destroy(coll.gameObject);
         }
+
+        
     }
 
     public GameObject FindClosestEnemy()

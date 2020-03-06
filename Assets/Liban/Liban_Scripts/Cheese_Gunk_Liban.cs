@@ -15,7 +15,7 @@ public class Cheese_Gunk_Liban : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -23,7 +23,7 @@ public class Cheese_Gunk_Liban : MonoBehaviour
     {
 
 
-        if(Input.GetMouseButton(1))
+        if (Input.GetMouseButton(1))
 
 
         {
@@ -40,15 +40,73 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
 
 
-            if(InstanitationTimerr <= 0)
+            if (InstanitationTimerr <= 0)
 
 
 
-            { 
+            {
 
 
 
-          GameObject Gunkyyy = Instantiate(Gunk, GunkSpot.position, Quaternion.identity);
+                GameObject Gunkyyy = Instantiate(Gunk, GunkSpot.position, Quaternion.identity);
+
+
+
+
+            }
+
+
+
+        }
+
+
+
+
+        IEnumerator TheCheeseGunk()
+
+
+
+        {
+
+
+
+
+
+            //  GameObject Gunky = Instantiate(Gunk, GunkSpot.position, GunkSpot.rotation);
+
+
+
+
+
+
+            ActivateWatchAbilityTwo_Liban AZX = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
+
+            AZX.enabled = false;
+
+
+
+
+
+
+
+            yield return new WaitForSeconds(4.5f);
+
+
+
+
+
+
+
+            ActivateWatchAbilityTwo_Liban AZX2 = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
+
+            AZX2.enabled = true;
+
+
+
+
+
+
+            // Destroy(Gunky);
 
 
 
@@ -56,64 +114,7 @@ public class Cheese_Gunk_Liban : MonoBehaviour
         }
 
 
-        
-    }
-
-
-
-
-    IEnumerator TheCheeseGunk()
-
-
-
-    {
-
-
-
-
-
-      //  GameObject Gunky = Instantiate(Gunk, GunkSpot.position, GunkSpot.rotation);
-
-
-
-
-
-
-       ActivateWatchAbilityTwo_Liban AZX = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
-
-        AZX.enabled = false;
-
-
-
-
-
-
-
-        yield return new WaitForSeconds(4.5f);
-
-
-
-
-
-
-
-        ActivateWatchAbilityTwo_Liban AZX2 = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
-
-        AZX2.enabled = true;
-
-
-
-
-
-
-       // Destroy(Gunky);
-
-
 
 
     }
-
-
-
-
 }

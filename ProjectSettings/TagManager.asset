@@ -27,6 +27,7 @@ TagManager:
   - TheCursor
   - TimerTEXT
   - Dronee
+  - Gunk
   layers:
   - Default
   - TransparentFX
@@ -40,7 +41,7 @@ TagManager:
   - Controller
   - Wall
   - Lighty
-  - 
+  - Cheese
   - 
   - 
   - 
