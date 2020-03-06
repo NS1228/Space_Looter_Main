@@ -63,11 +63,13 @@ public class Nil_FOVdetection : MonoBehaviour
     public bool immobilosingRipple;
     public bool droneIntel;
     public bool killDrone;
+    public bool gunkTrail;
     
 
     //Gadget floats
     [HeaderAttribute("Gadget floats")]
     public float fakOffDrone;
+    public float gunkTimer;
 
     //Gadget Objects
     [HeaderAttribute("Gadget Objects")]
@@ -320,7 +322,7 @@ public class Nil_FOVdetection : MonoBehaviour
         FindClosestEnemy();
         DroneStuff();
         UnSlowEnemies();
-
+        GunkStuff();
 
 
 
@@ -429,7 +431,7 @@ public class Nil_FOVdetection : MonoBehaviour
 
             agent.SetDestination(waypoints[num].transform.position);
 
-            if(flashLightBlindingLight && !immobilosingRipple)
+            if(flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
             {
                 agent.speed = slowedPatrol;
                 agent.angularSpeed = angularSpeed;
@@ -439,7 +441,12 @@ public class Nil_FOVdetection : MonoBehaviour
                 agent.speed = immobolisedSpeed;
                 agent.angularSpeed = immobolisedAngular;
             }
-            else if(!flashLightBlindingLight && !immobilosingRipple)
+            else if(gunkTrail && !immobilosingRipple)
+            {
+                agent.speed = immobolisedSpeed;
+                agent.angularSpeed = angularSpeed;
+            }
+            else if(!flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
             {
                 agent.speed = patrolSpeed;
                 agent.angularSpeed = angularSpeed;
@@ -517,7 +524,7 @@ public class Nil_FOVdetection : MonoBehaviour
 
                 agent.SetDestination(Player.transform.position);
 
-                if (flashLightBlindingLight && !immobilosingRipple)
+                if (flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
                 {
                     agent.speed = slowedChase;
                     agent.angularSpeed = angularSpeed;
@@ -527,7 +534,12 @@ public class Nil_FOVdetection : MonoBehaviour
                     agent.speed = immobolisedSpeed;
                     agent.angularSpeed = immobolisedAngular;
                 }
-                else if (!flashLightBlindingLight && !immobilosingRipple)
+                else if (gunkTrail && !immobilosingRipple)
+                {
+                    agent.speed = immobolisedSpeed;
+                    agent.angularSpeed = angularSpeed;
+                }
+                else if (!flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
                 {
                     agent.speed = chaseSpeed;
                     agent.angularSpeed = angularSpeed;
@@ -548,7 +560,7 @@ public class Nil_FOVdetection : MonoBehaviour
                 //  rb.AddForce(transform.forward * thrust);
 
                 agent.SetDestination(playerandClones.transform.position);
-                if (flashLightBlindingLight && !immobilosingRipple)
+                if (flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
                 {
                     agent.speed = slowedChase;
                     agent.angularSpeed = angularSpeed;
@@ -558,7 +570,13 @@ public class Nil_FOVdetection : MonoBehaviour
                     agent.speed = immobolisedSpeed;
                     agent.angularSpeed = immobolisedAngular;
                 }
-                else if (!flashLightBlindingLight && !immobilosingRipple)
+                else if (gunkTrail && !immobilosingRipple)
+                {
+                    agent.speed = 0;
+                    agent.angularSpeed = angularSpeed;
+
+                }
+                else if (!flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
                 {
                     agent.speed = chaseSpeed;
                     agent.angularSpeed = angularSpeed;
@@ -590,7 +608,7 @@ public class Nil_FOVdetection : MonoBehaviour
         {
             if (!soundDetected && !phantasm)
             {
-                if (flashLightBlindingLight && !immobilosingRipple)
+                if (flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
                 {
                     agent.speed = slowedChase;
                     agent.angularSpeed = angularSpeed;
@@ -600,13 +618,18 @@ public class Nil_FOVdetection : MonoBehaviour
                     agent.speed = immobolisedSpeed;
                     agent.angularSpeed = immobolisedAngular;
                 }
-                else if (!flashLightBlindingLight && !immobilosingRipple)
+                else if (gunkTrail && !immobilosingRipple)
+                {
+                    agent.speed = immobolisedSpeed;
+                    agent.angularSpeed = angularSpeed;
+                }
+                else if (!flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
                 {
                     agent.speed = chaseSpeed;
                     agent.angularSpeed = angularSpeed;
                 }
-            
-            else
+
+                else
             {
                 agent.speed = stopSpeed;
             }
@@ -628,7 +651,7 @@ public class Nil_FOVdetection : MonoBehaviour
                         // transform.position = Vector3.SmoothDamp(transform.position, moveToLocation.transform.position, ref smoothVelocity, smoothTime);
                         agent.SetDestination(moveToLocation.transform.position);
 
-                        if (flashLightBlindingLight && !immobilosingRipple)
+                        if (flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
                         {
                             agent.speed = slowedInvSound;
                             agent.angularSpeed = angularSpeed;
@@ -638,7 +661,12 @@ public class Nil_FOVdetection : MonoBehaviour
                             agent.speed = immobolisedSpeed;
                             agent.angularSpeed = immobolisedAngular;
                         }
-                        else if (!flashLightBlindingLight && !immobilosingRipple)
+                        else if (gunkTrail && !immobilosingRipple)
+                        {
+                            agent.speed = immobolisedSpeed;
+                            agent.angularSpeed = angularSpeed;
+                        }
+                        else if (!flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
                         {
                             agent.speed = invSoundSpeed;
                             agent.angularSpeed = angularSpeed;
@@ -656,7 +684,7 @@ public class Nil_FOVdetection : MonoBehaviour
                     transform.LookAt(playerandClones.transform.position);
                     // transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
                     agent.SetDestination(playerandClones.transform.position);
-                    if (flashLightBlindingLight && !immobilosingRipple)
+                    if (flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
                     {
                         agent.speed = slowedChase;
                         agent.angularSpeed = angularSpeed;
@@ -666,7 +694,12 @@ public class Nil_FOVdetection : MonoBehaviour
                         agent.speed = immobolisedSpeed;
                         agent.angularSpeed = immobolisedAngular;
                     }
-                    else if (!flashLightBlindingLight && !immobilosingRipple)
+                    else if (gunkTrail && !immobilosingRipple)
+                    {
+                        agent.speed = immobolisedSpeed;
+                        agent.angularSpeed = angularSpeed;
+                    }
+                    else if (!flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
                     {
                         agent.speed = chaseSpeed;
                         agent.angularSpeed = angularSpeed;
@@ -694,7 +727,7 @@ public class Nil_FOVdetection : MonoBehaviour
                         // transform.position = Vector3.SmoothDamp(transform.position, moveToLocation.transform.position, ref smoothVelocity, smoothTime);
                         agent.SetDestination(moveToLocation.transform.position);
 
-                        if (flashLightBlindingLight && !immobilosingRipple)
+                        if (flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
                         {
                             agent.speed = slowedInvSound;
                             agent.angularSpeed = angularSpeed;
@@ -704,7 +737,12 @@ public class Nil_FOVdetection : MonoBehaviour
                             agent.speed = immobolisedSpeed;
                             agent.angularSpeed = immobolisedAngular;
                         }
-                        else if (!flashLightBlindingLight && !immobilosingRipple)
+                        else if (gunkTrail && !immobilosingRipple)
+                        {
+                            agent.speed = immobolisedSpeed;
+                            agent.angularSpeed = angularSpeed;
+                        }
+                        else if (!flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
                         {
                             agent.speed = invSoundSpeed;
                             agent.angularSpeed = angularSpeed;
@@ -847,9 +885,25 @@ public class Nil_FOVdetection : MonoBehaviour
             Destroy(coll.gameObject);
         }
 
-        
+        if(coll.gameObject.tag == "Gunk")
+        {
+            gunkTrail = true;
+            print(gunkTrail);
+            gunkTimer = Time.timeSinceLevelLoad + 3;
+        }
+
+       
+
+
     }
 
+    void GunkStuff ()
+    {
+        if(gunkTrail && Time.timeSinceLevelLoad >= gunkTimer)
+        {
+            gunkTrail = false;
+        }
+    }
     public GameObject FindClosestEnemy()
     {
         GameObject[] gos;
