@@ -110,6 +110,7 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
         TrajectCursor.gameObject.SetActive(true);
 
+
         GRText.gameObject.SetActive(true);
 
 
@@ -209,7 +210,9 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(6.0f);
+
+
+        yield return new WaitForSeconds(10.0f);
 
 
 
@@ -223,7 +226,7 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
         Grenade_Timer_Text_Liban GT_Timer3 = GameObject.Find("Grenade Timer Text").GetComponent<Grenade_Timer_Text_Liban>();
 
 
-        GT_Timer3.GrenadeTimerTimer = 6.0f;
+        GT_Timer3.GrenadeTimerTimer = 10.0f;
 
 
 

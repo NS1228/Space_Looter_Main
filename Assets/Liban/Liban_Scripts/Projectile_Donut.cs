@@ -105,7 +105,7 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
-                TheTimer = Time.timeSinceLevelLoad + 7.0f;
+                TheTimer = Time.timeSinceLevelLoad + 11.0f;
 
 
 

@@ -120,12 +120,31 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &7651072 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1700404263669884, guid: 779aa8c25fbd0e1488637639c9fff976,
+    type: 3}
+  m_PrefabInstance: {fileID: 829883427}
+  m_PrefabAsset: {fileID: 0}
 --- !u!198 &7651075 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 198602024190292886, guid: 779aa8c25fbd0e1488637639c9fff976,
     type: 3}
   m_PrefabInstance: {fileID: 829883427}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &7651076
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7651072}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.35
+  m_Center: {x: 0, y: -0.00000011920929, z: 0.13473488}
 --- !u!1 &18142590
 GameObject:
   m_ObjectHideFlags: 0
@@ -2134,12 +2153,31 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &765298590 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1817684891897198, guid: 779aa8c25fbd0e1488637639c9fff976,
+    type: 3}
+  m_PrefabInstance: {fileID: 829883427}
+  m_PrefabAsset: {fileID: 0}
 --- !u!198 &765298591 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 198679353919739006, guid: 779aa8c25fbd0e1488637639c9fff976,
     type: 3}
   m_PrefabInstance: {fileID: 829883427}
   m_PrefabAsset: {fileID: 0}
+--- !u!135 &765298592
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 765298590}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.55
+  m_Center: {x: 0, y: -0.000000029802322, z: -0.0120022325}
 --- !u!1 &778531103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2491,6 +2529,16 @@ PrefabInstance:
     - target: {fileID: 198679353919739006, guid: 779aa8c25fbd0e1488637639c9fff976,
         type: 3}
       propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198679353919739006, guid: 779aa8c25fbd0e1488637639c9fff976,
+        type: 3}
+      propertyPath: CollisionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198679353919739006, guid: 779aa8c25fbd0e1488637639c9fff976,
+        type: 3}
+      propertyPath: TriggerModule.enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -4991,6 +5039,7 @@ GameObject:
   - component: {fileID: 1362990177}
   - component: {fileID: 1362990176}
   - component: {fileID: 1362990175}
+  - component: {fileID: 1362990178}
   m_Layer: 5
   m_Name: Grenade Timer Text
   m_TagString: Untagged
@@ -5071,6 +5120,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1362990173}
   m_CullTransparentMesh: 0
+--- !u!114 &1362990178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1362990173}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0f61a9b948d94778b6232b6ee26d24a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TheTimerTExt: {fileID: 1362990176}
 --- !u!1 &1366454949
 GameObject:
   m_ObjectHideFlags: 0
@@ -6012,7 +6074,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.57
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &1661411079
 MeshRenderer:
@@ -6068,7 +6130,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1661411077}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 71.8, y: 1.07, z: 19.61}
+  m_LocalPosition: {x: 71.8, y: -50.9, z: 19.61}
   m_LocalScale: {x: 1.769152, y: 1.769152, z: 1.769152}
   m_Children:
   - {fileID: 676343118}
@@ -6105,6 +6167,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   SmokeySmokey: {fileID: 7651075}
   ExplosionExplosion: {fileID: 765298591}
+  TheeeeGrenadeyh: {fileID: 1661411077}
 --- !u!1001 &1710149864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8379,10 +8442,20 @@ PrefabInstance:
       propertyPath: DroneHealthBar
       value: 
       objectReference: {fileID: 1614512096}
+    - target: {fileID: 1271445694744710164, guid: 2486757400a0d714189fe92737329987,
+        type: 3}
+      propertyPath: DroneHealth
+      value: 9000
+      objectReference: {fileID: 0}
     - target: {fileID: 1271445694744710175, guid: 2486757400a0d714189fe92737329987,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3408266563481214223, guid: 2486757400a0d714189fe92737329987,
+        type: 3}
+      propertyPath: m_TagString
+      value: Dronee
       objectReference: {fileID: 0}
     - target: {fileID: 6115784741755767438, guid: 2486757400a0d714189fe92737329987,
         type: 3}
@@ -8444,7 +8517,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: drone
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1271445694744710169, guid: 2486757400a0d714189fe92737329987, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2486757400a0d714189fe92737329987, type: 3}
 --- !u!1 &2534866580801267871 stripped
 GameObject:
@@ -9651,6 +9725,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942067887012522912, guid: 0e3501ace49022743bfc2c8c92dc7030,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 9000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942067887012522912, guid: 0e3501ace49022743bfc2c8c92dc7030,
+        type: 3}
+      propertyPath: m_Value
+      value: 9000
       objectReference: {fileID: 0}
     - target: {fileID: 6942067887185072286, guid: 0e3501ace49022743bfc2c8c92dc7030,
         type: 3}

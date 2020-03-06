@@ -11,18 +11,23 @@ public class Collision_Activates_VFX_Liban : MonoBehaviour
     public ParticleSystem ExplosionExplosion;
 
 
+    public GameObject TheeeeGrenadeyh;
+
+   // private float RespawnTimeAfterExplosion;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
-    void OnTriggerEnter (Collider other)
+    void OnTriggerEnter(Collider other)
     {
 
 
-        if(other.gameObject.tag == "TheCursor")
+        if (other.gameObject.tag == "TheCursor")
 
 
         {
@@ -39,9 +44,18 @@ public class Collision_Activates_VFX_Liban : MonoBehaviour
 
 
 
+          //  TheeeeGrenadeyh.GetComponent<SphereCollider>().radius = 5.7f;
+
+
+
         }
 
-
-
     }
+
 }
+
+
+
+
+
+ 

@@ -25,6 +25,8 @@ TagManager:
   - BlueLight
   - ACTGRE
   - TheCursor
+  - TimerTEXT
+  - Dronee
   layers:
   - Default
   - TransparentFX

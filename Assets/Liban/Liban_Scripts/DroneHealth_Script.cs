@@ -8,11 +8,15 @@ public class DroneHealth_Script : MonoBehaviour
 {
 
 
-    public float DroneHealth = 90.0f;
+    public float DroneHealth = 9000.0f;
 
     public float CurrentDroneHealth;
 
     public Slider DroneHealthBar;
+
+    public float DroneBatteryDraineryh = 0.000000002f;
+
+    private float DroneBatteryTimer;
 
 
     // Start is called before the first frame update
@@ -20,16 +24,32 @@ public class DroneHealth_Script : MonoBehaviour
     {
 
 
+
+
         CurrentDroneHealth = DroneHealth;
+
+
+        
 
         
     }
 
     // Update is called once per frame
 
-    void Update ()
+    void Update()
     {
-       
+
+
+        DrainDroneBattery();
+
+
+       // DieDie();
+
+
+
+
+
+
     }
 
 
@@ -40,10 +60,15 @@ public class DroneHealth_Script : MonoBehaviour
         DroneHealthBar.value = CurrentDroneHealth;
 
 
+
+
         if(DroneHealth <= 0)
 
 
         {
+
+
+
 
 
             DieDie();
@@ -66,6 +91,47 @@ public class DroneHealth_Script : MonoBehaviour
 
 
     }
+
+
+
+
+    void DrainDroneBattery()
+
+
+
+    {
+
+
+
+        DroneBatteryDraineryh = Time.timeSinceLevelLoad + 1.0f;
+
+
+
+
+
+
+        if (Time.deltaTime >= DroneBatteryTimer)
+
+        {
+
+
+            CurrentDroneHealth -= DroneBatteryDraineryh;
+
+
+            DroneHealthBar.value = CurrentDroneHealth;
+
+
+
+
+          //  DieDie();
+
+        }
+
+
+
+
+    }
+
 
 
 

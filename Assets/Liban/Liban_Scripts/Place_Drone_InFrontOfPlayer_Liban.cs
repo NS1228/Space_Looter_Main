@@ -109,17 +109,17 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-            // Drone_Movement_Liban LibanDrone = GameObject.Find("Drone Skin").GetComponent<Drone_Movement_Liban>();
+             Drone_Movement_Liban LibanDrone = GameObject.FindWithTag("Dronee").GetComponent<Drone_Movement_Liban>();
 
 
-            //  LibanDrone.enabled = true;
+              LibanDrone.enabled = true;
 
 
 
 
-            NewMovementScript DRNEMV = GameObject.Find("Drone Skin").GetComponent<NewMovementScript>();
+           // NewMovementScript DRNEMV = GameObject.FindWithTag("Dronee").GetComponent<NewMovementScript>();
 
-            DRNEMV.enabled = true;
+           // DRNEMV.enabled = true;
 
 
 
@@ -173,6 +173,11 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
+            DroneHealth_Script DHEALTHHyhyh = GameObject.FindWithTag("Dronee").GetComponent<DroneHealth_Script>();
+
+            DHEALTHHyhyh.enabled = true;
+
+
 
         }
 
@@ -186,10 +191,10 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-          //  Drone_Movement_Liban LibanDrone = GameObject.Find("Drone Skin").GetComponent<Drone_Movement_Liban>();
+            Drone_Movement_Liban LibanDrone = GameObject.FindWithTag("Dronee").GetComponent<Drone_Movement_Liban>();
 
 
-           // LibanDrone.enabled = false;
+            LibanDrone.enabled = false;
 
 
 
@@ -249,10 +254,17 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-            NewMovementScript DRNEMV = GameObject.Find("Drone Skin").GetComponent<NewMovementScript>();
+            // NewMovementScript DRNEMV = GameObject.FindWithTag("Dronee").GetComponent<NewMovementScript>();
 
-            DRNEMV.enabled = false;
+            // DRNEMV.enabled = false;
 
+
+
+
+            DroneHealth_Script DDHEEALLTH = GameObject.FindWithTag("Dronee").GetComponent<DroneHealth_Script>();
+
+
+            DDHEEALLTH.enabled = false; 
 
 
 
