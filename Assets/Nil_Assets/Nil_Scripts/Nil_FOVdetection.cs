@@ -58,7 +58,7 @@ public class Nil_FOVdetection : MonoBehaviour
     [HeaderAttribute("Gadget Bools")]
     public  bool flashLightBlindingLight;
     public  bool stunned;
-    public static bool evacuate;
+    public  bool evacuate;
     public static bool subterfuge;
     public bool immobilosingRipple;
     public bool droneIntel;
@@ -288,14 +288,14 @@ public class Nil_FOVdetection : MonoBehaviour
             }
         }
 
-        if(stunned && stunable)
+        if(stunned && stunable && !evacuate)
         {
             RunStun();
             stunTimer = Time.timeSinceLevelLoad + 3;
             stunable = false;
         }
 
-        if(evacuate && !stunned)
+        if(evacuate)
         {
             RunEvacuate();
         }
