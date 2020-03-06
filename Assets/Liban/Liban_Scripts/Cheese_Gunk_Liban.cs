@@ -9,6 +9,8 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
     public Transform GunkSpot;
 
+    private float InstanitationTimerr = 0.3f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -21,14 +23,32 @@ public class Cheese_Gunk_Liban : MonoBehaviour
     {
 
 
-        if(Input.GetMouseButtonDown(1))
+        if(Input.GetMouseButton(1))
 
 
         {
 
 
 
+            InstanitationTimerr -= Time.deltaTime;
+
+
+
+
             StartCoroutine(TheCheeseGunk());
+
+
+
+
+            if(InstanitationTimerr <= 0)
+
+
+
+            { 
+
+
+
+          GameObject Gunkyyy = Instantiate(Gunk, GunkSpot.position, Quaternion.identity);
 
 
 
@@ -50,7 +70,9 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
 
 
-        GameObject Gunky = Instantiate(Gunk, GunkSpot.position, GunkSpot.rotation);
+
+
+      //  GameObject Gunky = Instantiate(Gunk, GunkSpot.position, GunkSpot.rotation);
 
 
 
@@ -84,7 +106,7 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
 
 
-        Destroy(Gunky);
+       // Destroy(Gunky);
 
 
 

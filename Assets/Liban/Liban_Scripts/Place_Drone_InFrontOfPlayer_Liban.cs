@@ -32,9 +32,9 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-    
 
-        
+
+
     }
 
     // Update is called once per frame
@@ -69,24 +69,10 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-            ChangeCamera = !ChangeCamera;
-
-
-         
-          //  GameObject Spot = Instantiate(DaDrone, WhereTheDroneWillSpawn.position, WhereTheDroneWillSpawn.rotation);
-
-
-
-        }
 
 
 
 
-
-        if(ChangeCamera)
-
-
-        {
 
 
 
@@ -109,17 +95,17 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-             Drone_Movement_Liban LibanDrone = GameObject.FindWithTag("Dronee").GetComponent<Drone_Movement_Liban>();
+            Drone_Movement_Liban LibanDrone = GameObject.FindWithTag("Dronee").GetComponent<Drone_Movement_Liban>();
 
 
-              LibanDrone.enabled = true;
+            LibanDrone.enabled = true;
 
 
 
 
-           // NewMovementScript DRNEMV = GameObject.FindWithTag("Dronee").GetComponent<NewMovementScript>();
+            // NewMovementScript DRNEMV = GameObject.FindWithTag("Dronee").GetComponent<NewMovementScript>();
 
-           // DRNEMV.enabled = true;
+            // DRNEMV.enabled = true;
 
 
 
@@ -178,11 +164,14 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
             DHEALTHHyhyh.enabled = true;
 
 
-
         }
+    
 
 
-        else
+
+
+
+        
 
 
         {
