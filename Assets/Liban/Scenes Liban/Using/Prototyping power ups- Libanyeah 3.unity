@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311953, g: 0.38074014, b: 0.3587274, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -994,10 +994,9 @@ GameObject:
   - component: {fileID: 436496660}
   - component: {fileID: 436496659}
   - component: {fileID: 436496658}
-  - component: {fileID: 436496662}
   m_Layer: 0
   m_Name: platform
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1013,7 +1012,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Size: {x: 1, y: -1.2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!23 &436496659
 MeshRenderer:
@@ -1075,35 +1074,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &436496662
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 436496657}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_AgentTypeID: -1372625422
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
-  m_BuildHeightMesh: 0
-  m_NavMeshData: {fileID: 23800000, guid: 1a0cdb0c49d7b23498dc11249fb7dfaf, type: 2}
 --- !u!1 &440372062 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -927199367670048503, guid: d2a439416fa644c5faa1137f7e19e8b9,
@@ -4874,7 +4844,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1445293166}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.58, y: 0, z: 0}
+  m_LocalPosition: {x: 50.4, y: 0, z: 0}
   m_LocalScale: {x: 0.98430365, y: 9.4681, z: 9.4681}
   m_Children: []
   m_Father: {fileID: 1653512838}
@@ -5275,7 +5245,7 @@ PrefabInstance:
     - target: {fileID: 7583743169754408149, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.78787327
+      value: 42.2
       objectReference: {fileID: 0}
     - target: {fileID: 7583743169754408149, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
@@ -5295,7 +5265,7 @@ PrefabInstance:
     - target: {fileID: 7583743169754408149, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.74672097
       objectReference: {fileID: 0}
     - target: {fileID: 7583743169754408149, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
@@ -5305,7 +5275,7 @@ PrefabInstance:
     - target: {fileID: 7583743169754408149, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.6651375
       objectReference: {fileID: 0}
     - target: {fileID: 7583743169754408149, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
@@ -5320,7 +5290,7 @@ PrefabInstance:
     - target: {fileID: 7583743169754408149, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 96.614006
       objectReference: {fileID: 0}
     - target: {fileID: 7583743169754408149, guid: 9b84432b827d61b4cb83878a8d3f7018,
         type: 3}
@@ -7480,6 +7450,16 @@ PrefabInstance:
       propertyPath: DroneHealth
       value: 9000
       objectReference: {fileID: 0}
+    - target: {fileID: 1271445694744710164, guid: 2486757400a0d714189fe92737329987,
+        type: 3}
+      propertyPath: DroneBatteryDraineryh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1271445694744710164, guid: 2486757400a0d714189fe92737329987,
+        type: 3}
+      propertyPath: StartingDroneHealth
+      value: 300
+      objectReference: {fileID: 0}
     - target: {fileID: 1271445694744710175, guid: 2486757400a0d714189fe92737329987,
         type: 3}
       propertyPath: m_Enabled
@@ -7684,12 +7664,23 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1796487656810839154, guid: ef33707ad99f71e4491428139e69e88b,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1796487656810839154, guid: ef33707ad99f71e4491428139e69e88b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1796487656810839167, guid: ef33707ad99f71e4491428139e69e88b,
         type: 3}
       propertyPath: m_Name
       value: cursor
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1796487656810839154, guid: ef33707ad99f71e4491428139e69e88b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ef33707ad99f71e4491428139e69e88b, type: 3}
 --- !u!1001 &2431401775552577095
 PrefabInstance:
@@ -8241,7 +8232,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 71.58
+      value: 66.88
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -8261,7 +8252,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.06374512
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -8271,7 +8262,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99796623
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -8286,7 +8277,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 7.3100004
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -8331,6 +8322,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1271445693218502597}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &4533310075038509783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4533310075038509770}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e4b32e0252eaa4550be770fbc7445539, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DroneSpeed: 0
 --- !u!1 &4608434749558657025 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 677235708055077181, guid: 603aa7640041eb64698d36ffad6c4bb8,
@@ -8956,12 +8960,17 @@ PrefabInstance:
     - target: {fileID: 6942067887012522912, guid: 0e3501ace49022743bfc2c8c92dc7030,
         type: 3}
       propertyPath: m_MaxValue
-      value: 9000
+      value: 300
       objectReference: {fileID: 0}
     - target: {fileID: 6942067887012522912, guid: 0e3501ace49022743bfc2c8c92dc7030,
         type: 3}
       propertyPath: m_Value
-      value: 9000
+      value: 300
+      objectReference: {fileID: 0}
+    - target: {fileID: 6942067887012522912, guid: 0e3501ace49022743bfc2c8c92dc7030,
+        type: 3}
+      propertyPath: m_WholeNumbers
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6942067887185072286, guid: 0e3501ace49022743bfc2c8c92dc7030,
         type: 3}

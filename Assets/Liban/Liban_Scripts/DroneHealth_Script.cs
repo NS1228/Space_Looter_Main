@@ -8,45 +8,41 @@ public class DroneHealth_Script : MonoBehaviour
 {
 
 
-    public float DroneHealth = 9000.0f;
+    public float StartingDroneHealth = 300.0f;
 
     public float CurrentDroneHealth;
 
     public Slider DroneHealthBar;
 
-    public float DroneBatteryDraineryh = 0.000000002f;
+    public float DroneBatteryDraineryh = 400.0f;
 
-    private float DroneBatteryTimer;
+    private float DroneBatteryTimer = 0.3f;
 
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
 
 
 
 
-        //  CurrentDroneHealth = DroneHealth;
+          CurrentDroneHealth = StartingDroneHealth;
 
 
-        DroneHealth = CurrentDroneHealth;
+     
 
 
     }
 
-    // Update is called once per frame
 
-    void Update()
+
+
+     void Update()
     {
 
+        TakeBattery();
 
-        DrainDroneBattery();
-
-
-        //   DieDie();
-
-
-
+       // DeathDeath();
 
 
 
@@ -56,42 +52,12 @@ public class DroneHealth_Script : MonoBehaviour
 
 
 
-    void DieDie()
+     void TakeBattery()
 
 
     {
 
-
-
-        if (DroneHealth <= 0)
-
-        {
-
-
-
-
-            Destroy(gameObject);
-
-
-        }
-
-    }
-
-
-
-
-    void DrainDroneBattery()
-
-
-
-    {
-
-
-
-        DroneBatteryDraineryh = Time.timeSinceLevelLoad + 1.0f;
-
-
-
+        DroneBatteryTimer -= Time.deltaTime;
 
 
 
@@ -106,26 +72,71 @@ public class DroneHealth_Script : MonoBehaviour
             DroneHealthBar.value = CurrentDroneHealth;
 
 
+
         }
 
+        if(CurrentDroneHealth <= 0)
 
-
-        if (CurrentDroneHealth <= 0)
 
 
         {
 
 
-            DieDie();
+
+            DeathDeath();
+
+
+
+            LemarCamera LMKJH = GameObject.Find("Main Camera").GetComponent<LemarCamera>();
+
+
+            LMKJH.RotateSpeed = 10;
+
+
+
+
+            LemarMovment TYU4567 = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+
+
+            TYU4567.enabled = true;
+
+
+
 
         }
-
-
 
 
     }
 
 
-}
+
+
+
+
+
+
+
+     void DeathDeath()
+
+
+    {
+
+
+
+        Destroy(gameObject);
+
+
+    }
+
+
+
+      
+  }
+
+
+    
+
+
+
 
       
