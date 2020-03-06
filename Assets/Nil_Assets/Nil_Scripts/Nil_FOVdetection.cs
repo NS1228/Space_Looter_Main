@@ -59,11 +59,13 @@ public class Nil_FOVdetection : MonoBehaviour
     public  bool flashLightBlindingLight;
     public  bool stunned;
     public  bool evacuate;
+    private bool evacuateStop;
     public static bool subterfuge;
     public bool immobilosingRipple;
     public bool droneIntel;
     public bool killDrone;
     public bool gunkTrail;
+    
     
 
     //Gadget floats
@@ -781,33 +783,28 @@ public class Nil_FOVdetection : MonoBehaviour
 
     void RunEvacuate()
     {
-        state = Nil_FOVdetection.State.STUN;
+        state = Nil_FOVdetection.State.EVACUATE;
     }
 
     void Evacuate ()
     {
 
-        if(evacuatestopTimer >= Time.timeSinceLevelLoad)
-        {
-            agent.speed = 0;
-        }
-        else
+        if(evacuatestopTimer <= Time.timeSinceLevelLoad && evacuateStop)
         {
             evacuate = false;
+            evacuateStop = false;
         }
-        
 
-        if (this.transform.position == evacuationPoint.transform.position)
-        {
-            evacuatestopTimer = Time.timeSinceLevelLoad + 2;
 
-        }
-        else
+
+        if (!evacuateStop)
         {
             agent.SetDestination(evacuationPoint.transform.position);
-
-            
+            agent.speed = chaseSpeed;
+            agent.angularSpeed = angularSpeed;
         }
+            
+        
        
     }
 
@@ -855,6 +852,15 @@ public class Nil_FOVdetection : MonoBehaviour
             
 
          
+
+        }
+
+        if(theCollision.gameObject.tag == "Evacuate")
+        {
+            evacuatestopTimer = Time.timeSinceLevelLoad + 2;
+            agent.speed = 0;
+            agent.angularSpeed = 0;
+            evacuateStop = true;
 
         }
 

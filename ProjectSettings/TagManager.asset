@@ -29,6 +29,7 @@ TagManager:
   - Dronee
   - Gunk
   - Ground
+  - Evacuate
   layers:
   - Default
   - TransparentFX
