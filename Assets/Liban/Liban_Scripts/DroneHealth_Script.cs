@@ -26,12 +26,12 @@ public class DroneHealth_Script : MonoBehaviour
 
 
 
-        CurrentDroneHealth = DroneHealth;
+        //  CurrentDroneHealth = DroneHealth;
 
 
-        
+        DroneHealth = CurrentDroneHealth;
 
-        
+
     }
 
     // Update is called once per frame
@@ -43,7 +43,7 @@ public class DroneHealth_Script : MonoBehaviour
         DrainDroneBattery();
 
 
-       // DieDie();
+        //   DieDie();
 
 
 
@@ -54,41 +54,26 @@ public class DroneHealth_Script : MonoBehaviour
 
 
 
-    public void EnemyTakingDamage(float amount)
+
+
+    void DieDie()
+
+
     {
 
-        DroneHealthBar.value = CurrentDroneHealth;
 
 
-
-
-        if(DroneHealth <= 0)
-
+        if (DroneHealth <= 0)
 
         {
 
 
 
 
-
-            DieDie();
+            Destroy(gameObject);
 
 
         }
-        
-    }
-
-
-
-    public void DieDie()
-
-
-    {
-
-
-
-        Destroy(gameObject);
-
 
     }
 
@@ -121,9 +106,17 @@ public class DroneHealth_Script : MonoBehaviour
             DroneHealthBar.value = CurrentDroneHealth;
 
 
+        }
 
 
-          //  DieDie();
+
+        if (CurrentDroneHealth <= 0)
+
+
+        {
+
+
+            DieDie();
 
         }
 
@@ -133,6 +126,6 @@ public class DroneHealth_Script : MonoBehaviour
     }
 
 
-
-
 }
+
+      

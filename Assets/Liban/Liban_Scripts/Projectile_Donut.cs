@@ -7,6 +7,8 @@ public class Projectile_Donut : MonoBehaviour
 
     public Rigidbody bulletPrefabs;
 
+    public Rigidbody secondBulletPrefabs;
+
     public GameObject cursor;
 
     public LayerMask Layer;
@@ -27,7 +29,7 @@ public class Projectile_Donut : MonoBehaviour
 
     private float TheTimer = 7.2f;
 
-    
+
 
 
 
@@ -36,7 +38,7 @@ public class Projectile_Donut : MonoBehaviour
     void Start()
     {
 
-              //if doesn't work, then uncomment this line
+        //if doesn't work, then uncomment this line
 
 
         TheLine.positionCount = linesegment;
@@ -50,7 +52,7 @@ public class Projectile_Donut : MonoBehaviour
         Launch();
 
 
-        ShootAgainTR();
+          ShootAgainTR();
 
     }
 
@@ -101,8 +103,6 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
-                
-
 
 
                 TheTimer = Time.timeSinceLevelLoad + 11.0f;
@@ -115,11 +115,42 @@ public class Projectile_Donut : MonoBehaviour
             }
 
 
-          
-            
 
-         
-            
+
+
+            if (Input.GetMouseButtonUp(1) && readyToThrowyeah && grenadeamountCounter > 0)
+
+
+            {
+
+
+                Rigidbody obj2 = Instantiate(secondBulletPrefabs, shootingpoint.position, shootingpoint.rotation);
+
+
+                obj2.velocity = Vo;
+
+
+
+                readyToThrowyeah = false;
+
+
+
+                TheTimer = Time.timeSinceLevelLoad + 11.0f;
+
+
+
+
+
+
+
+            }
+
+
+
+
+
+
+
 
         }
 
@@ -128,7 +159,7 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
-    void Visualize (Vector3 vo)
+    void Visualize(Vector3 vo)
 
 
 
@@ -178,7 +209,7 @@ public class Projectile_Donut : MonoBehaviour
         result.y = Vy;
 
 
-       return result;
+        return result;
 
 
 
@@ -229,13 +260,17 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
-        if(Time.timeSinceLevelLoad >= TheTimer && readyToThrowyeah == false)
+        if (Time.timeSinceLevelLoad >= TheTimer && readyToThrowyeah == false)
 
 
         {
 
 
             readyToThrowyeah = true;
+
+
+
+
 
 
 
@@ -248,7 +283,8 @@ public class Projectile_Donut : MonoBehaviour
     }
 
 
-
-
-
 }
+
+
+
+
