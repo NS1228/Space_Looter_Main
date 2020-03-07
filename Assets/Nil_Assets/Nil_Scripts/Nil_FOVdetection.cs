@@ -128,6 +128,8 @@ public class Nil_FOVdetection : MonoBehaviour
     private bool alive;
     public float timeSinceLastSeen;
     private bool isinFov = false;
+    private bool atSoundLocation;
+    private float soundDuration;
     
 
 
@@ -223,10 +225,11 @@ public class Nil_FOVdetection : MonoBehaviour
         stopSpeed = 0;
         stunable = true;
         evacuate = false;
-        subterfuge = true;
+        subterfuge = false;
         immobilosingRipple = false;
         immobolisedAngular = 0;
         immobolisedSpeed = 0;
+        atSoundLocation = false;
 
 
     }
@@ -651,28 +654,46 @@ public class Nil_FOVdetection : MonoBehaviour
                         moveToLocation = GameObject.FindGameObjectWithTag("SoundLocator");
                         //  transform.LookAt(moveToLocation.transform.position);
                         // transform.position = Vector3.SmoothDamp(transform.position, moveToLocation.transform.position, ref smoothVelocity, smoothTime);
-                        agent.SetDestination(moveToLocation.transform.position);
+                        if (!atSoundLocation)
+                        {
+                            agent.SetDestination(moveToLocation.transform.position);
 
-                        if (flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
-                        {
-                            agent.speed = slowedInvSound;
-                            agent.angularSpeed = angularSpeed;
+                            if (flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
+                            {
+                                agent.speed = slowedInvSound;
+                                agent.angularSpeed = angularSpeed;
+                            }
+                            else if (immobilosingRipple)
+                            {
+                                agent.speed = immobolisedSpeed;
+                                agent.angularSpeed = immobolisedAngular;
+                            }
+                            else if (gunkTrail && !immobilosingRipple)
+                            {
+                                agent.speed = immobolisedSpeed;
+                                agent.angularSpeed = angularSpeed;
+                            }
+                            else if (!flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
+                            {
+                                agent.speed = invSoundSpeed;
+                                agent.angularSpeed = angularSpeed;
+                            }
+
                         }
-                        else if (immobilosingRipple)
+                        else
                         {
-                            agent.speed = immobolisedSpeed;
-                            agent.angularSpeed = immobolisedAngular;
+                            agent.speed = 0;
+                            agent.angularSpeed = 0;
+
+                            if(Time.timeSinceLevelLoad >= soundDuration)
+                            {
+                                atSoundLocation = false;
+                            }
                         }
-                        else if (gunkTrail && !immobilosingRipple)
-                        {
-                            agent.speed = immobolisedSpeed;
-                            agent.angularSpeed = angularSpeed;
-                        }
-                        else if (!flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
-                        {
-                            agent.speed = invSoundSpeed;
-                            agent.angularSpeed = angularSpeed;
-                        }
+
+                        
+                        
+                        
                     }
                 }
             }
@@ -727,27 +748,41 @@ public class Nil_FOVdetection : MonoBehaviour
                         moveToLocation = GameObject.FindGameObjectWithTag("SoundLocator");
                         //  transform.LookAt(moveToLocation.transform.position);
                         // transform.position = Vector3.SmoothDamp(transform.position, moveToLocation.transform.position, ref smoothVelocity, smoothTime);
-                        agent.SetDestination(moveToLocation.transform.position);
+                        if (!atSoundLocation)
+                        {
+                            agent.SetDestination(moveToLocation.transform.position);
 
-                        if (flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
-                        {
-                            agent.speed = slowedInvSound;
-                            agent.angularSpeed = angularSpeed;
+                            if (flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
+                            {
+                                agent.speed = slowedInvSound;
+                                agent.angularSpeed = angularSpeed;
+                            }
+                            else if (immobilosingRipple)
+                            {
+                                agent.speed = immobolisedSpeed;
+                                agent.angularSpeed = immobolisedAngular;
+                            }
+                            else if (gunkTrail && !immobilosingRipple)
+                            {
+                                agent.speed = immobolisedSpeed;
+                                agent.angularSpeed = angularSpeed;
+                            }
+                            else if (!flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
+                            {
+                                agent.speed = invSoundSpeed;
+                                agent.angularSpeed = angularSpeed;
+                            }
+
                         }
-                        else if (immobilosingRipple)
+                        else
                         {
-                            agent.speed = immobolisedSpeed;
-                            agent.angularSpeed = immobolisedAngular;
-                        }
-                        else if (gunkTrail && !immobilosingRipple)
-                        {
-                            agent.speed = immobolisedSpeed;
-                            agent.angularSpeed = angularSpeed;
-                        }
-                        else if (!flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
-                        {
-                            agent.speed = invSoundSpeed;
-                            agent.angularSpeed = angularSpeed;
+                            agent.speed = 0;
+                            agent.angularSpeed = 0;
+
+                            if (Time.timeSinceLevelLoad >= soundDuration)
+                            {
+                                atSoundLocation = false;
+                            }
                         }
                     }
                 }
@@ -864,6 +899,17 @@ public class Nil_FOVdetection : MonoBehaviour
 
         }
 
+        if(theCollision.gameObject.tag == "SoundLocator")
+        {
+            atSoundLocation = true;
+            soundDuration = Time.timeSinceLevelLoad + 2;
+            print("COLL");
+           
+
+        }
+
+       
+
      
 
 
@@ -957,6 +1003,9 @@ public class Nil_FOVdetection : MonoBehaviour
 
         }
     }
+
+ 
+   
 
 
     public void UnSlowEnemies()
