@@ -10,17 +10,17 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
     // Update is called once per frame
-    void OnTriggerEnter (Collider other)
+    void OnCollisionEnter (Collision other)
     {
 
 
-        if(other.CompareTag("Wall"))
+        if(other.gameObject.tag == "Wall")
 
 
         {
 
 
-            Device.transform.position = transform.position;
+            
 
             print("It Stuck");
 

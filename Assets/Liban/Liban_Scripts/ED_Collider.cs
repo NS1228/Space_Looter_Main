@@ -25,7 +25,11 @@ public class ED_Collider : MonoBehaviour
             OUTLINERYEAH.enabled = true;
 
 
-            ElecDevice.SetActive(false);
+        
+
+
+           
+
 
 
         }

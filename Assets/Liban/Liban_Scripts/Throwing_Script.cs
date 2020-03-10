@@ -94,9 +94,12 @@ public class Throwing_Script : MonoBehaviour
 
           objectInHand = other.gameObject;
 
-          print("yoyoyoyoyoyoyoyo");
+          print("LOL");
 
           StartCoroutine(PressButtonToYEAH());
+
+
+            other.GetComponent<BoxCollider>().isTrigger = false;
 
 
       }

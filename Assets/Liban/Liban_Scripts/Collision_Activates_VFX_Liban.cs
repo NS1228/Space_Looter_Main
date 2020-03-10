@@ -1,19 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class Collision_Activates_VFX_Liban : MonoBehaviour
 {
 
 
-    public ParticleSystem SmokeySmokey;
+    public GameObject SmokeySmokey;
 
-    public ParticleSystem ExplosionExplosion;
+    public GameObject ExplosionExplosion;
 
 
     public GameObject TheeeeGrenadeyh;
 
-   // private float RespawnTimeAfterExplosion;
+
+    public AudioSource Explosionbrrr;
+
+
+
 
 
     // Start is called before the first frame update
@@ -36,17 +41,21 @@ public class Collision_Activates_VFX_Liban : MonoBehaviour
 
 
 
-            // SmokeySmokey.gameObject.SetActive(true);
+             SmokeySmokey.gameObject.SetActive(true);
 
 
 
-          //   ExplosionExplosion.gameObject.SetActive(true);
+              ExplosionExplosion.gameObject.SetActive(true);
 
 
             //  TheeeeGrenadeyh.GetComponent<SphereCollider>().radius = 5.7f;
 
 
-           // gameObject.SetActive(false);
+            gameObject.SetActive(false);
+
+
+
+            Explosionbrrr.Play();
 
 
 

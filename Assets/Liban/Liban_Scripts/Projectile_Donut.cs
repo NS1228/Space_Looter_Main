@@ -21,7 +21,7 @@ public class Projectile_Donut : MonoBehaviour
 
     public int linesegment = 12;
 
-    private float speed = 50.3f;
+    private float speed = 10.3f;
 
     private bool readyToThrowyeah = true;
 
@@ -76,7 +76,7 @@ public class Projectile_Donut : MonoBehaviour
             cursor.transform.position = Hit.point + Vector3.up * 0.5f;
 
 
-            Vector3 Vo = CalculateVelocity(Hit.point, shootingpoint.position, 2.3f);
+            Vector3 Vo = CalculateVelocity(Hit.point, shootingpoint.position, 2.2f);
 
 
             Visualize(Vo);
@@ -150,15 +150,15 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
-                Light_Hold_Blue JKL = GameObject.Find("torcia").GetComponent<Light_Hold_Blue>();
-
-                JKL.enabled = false;
-
-
-
                 Stun_Light_Liban STLInb = GameObject.Find("torcia").GetComponent<Stun_Light_Liban>();
 
                 STLInb.enabled = false;
+
+
+
+
+
+                
 
 
 
@@ -301,6 +301,8 @@ public class Projectile_Donut : MonoBehaviour
             STLInb.enabled = true;
 
 
+
+           
 
 
         }
