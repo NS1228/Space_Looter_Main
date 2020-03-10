@@ -6,6 +6,9 @@ public class ED_Collider : MonoBehaviour
 {
 
 
+    public GameObject ElecDevicePos;
+
+
     public GameObject ElecDevice;
 
 
@@ -25,14 +28,34 @@ public class ED_Collider : MonoBehaviour
             OUTLINERYEAH.enabled = true;
 
 
-        
 
 
+
+            ElecDevice.transform.SetParent(ElecDevicePos.transform); 
            
 
 
 
         }
+
+
+
+
+
+        if(other.CompareTag("Wall"))
+
+
+                {
+
+
+
+
+            ElecDevice.transform.SetParent(null);
+
+
+
+        }
+
 
         
     }
