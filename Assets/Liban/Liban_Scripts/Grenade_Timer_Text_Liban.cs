@@ -23,7 +23,7 @@ public class Grenade_Timer_Text_Liban : MonoBehaviour
 
         GrenadeTimerTimer = 10.0f;
 
-        
+
     }
 
     // Update is called once per frame
@@ -33,7 +33,7 @@ public class Grenade_Timer_Text_Liban : MonoBehaviour
         LessThanZero();
 
 
-        LessThanFive();
+
 
 
 
@@ -56,62 +56,14 @@ public class Grenade_Timer_Text_Liban : MonoBehaviour
         GrenadeTimerTextyh.text = GTimerString;
 
 
-        GrenadeTimerTextyh.gameObject.SetActive(true);
-
-
-
-        
-    }
-
-
-
-    void LessThanFive()
-
-
-
-    {
-
-
-        if(GrenadeTimerTimer <= 5)
-
-
-        {
-
-            
-
-
-
-            LessTanFiveSeconds_Toggle_Liban LTFS = GameObject.Find("Grenade Timer Text").GetComponent<LessTanFiveSeconds_Toggle_Liban>();
-
-
-            LTFS.enabled = true;
-
-
-
-
-      //  }
-
-
-      //  else
-
-
-
-       // {
-
-         //   LessTanFiveSeconds_Toggle_Liban LTFS2 = GameObject.Find("Grenade Timer Text").GetComponent<LessTanFiveSeconds_Toggle_Liban>();
-
-
-         //   LTFS2.enabled = false;
-
-
-
-
-        }
+        this.gameObject.GetComponent<Text>().enabled = true;
 
 
 
 
     }
+
+
 
 
 
@@ -142,6 +94,7 @@ public class Grenade_Timer_Text_Liban : MonoBehaviour
 
 
 
+            
 
         }
 

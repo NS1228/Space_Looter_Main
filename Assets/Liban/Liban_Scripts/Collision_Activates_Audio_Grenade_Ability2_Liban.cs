@@ -59,6 +59,9 @@ public class Collision_Activates_Audio_Grenade_Ability2_Liban : MonoBehaviour
             ChildAudioStun.GetComponent<SphereCollider>().enabled = true;
 
 
+            gameObject.SetActive(false);
+
+
 
            
 

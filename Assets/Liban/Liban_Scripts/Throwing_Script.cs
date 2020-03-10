@@ -25,34 +25,36 @@ public class Throwing_Script : MonoBehaviour
 
 
 
-    private void Update()
-    {
+    //private void Update()
+    //{
 
 
-        ThrowObject();
+       // ThrowObject();
 
-    }
-
-
+  //  }
 
 
-    private void ThrowObject()
 
-    {
 
-        if (HandIsEmpty == false && Input.GetKeyDown(KeyCode.N) && frameReset == false)
+   // private void ThrowObject()
 
-        {
+   // {
 
-            HandIsEmpty = true;
+       // if (HandIsEmpty == false && Input.GetKeyDown(KeyCode.N) && frameReset == false)
 
-            objectInHand.GetComponent<Rigidbody>().AddForce(Vector3.forward * 800);
+       // {
 
-            objectInHand.transform.SetParent(null);
+          //  HandIsEmpty = true;
 
-            objectInHand.GetComponent<Rigidbody>().useGravity = true;
+          //  objectInHand.GetComponent<Rigidbody>().AddForce(Vector3.forward * 800);
 
-            print("goodbye");
+
+          //  objectInHand.transform.SetParent(null);
+
+
+          //  objectInHand.GetComponent<Rigidbody>().useGravity = true;
+
+           // print("goodbye");
 
             //Projectile_Donut ProjectileDD = GameObject.FindWithTag("PickUpObject").GetComponent<Projectile_Donut>();
 
@@ -60,66 +62,67 @@ public class Throwing_Script : MonoBehaviour
 
 
 
-        }
+        //}
 
-        if (frameReset == true)
+       // if (frameReset == true)
 
-        {
-
-
-            frameReset = false;
-
-        }
-    }
+       // {
 
 
+         //   frameReset = false;
 
-    private void OnTriggerStay(Collider other)
-    {
-
-
-        if (other.CompareTag("PickUpObject") && Input.GetKeyDown(KeyCode.N) && HandIsEmpty == true)
-
-        {
-
-            HandIsEmpty = false;
-
-            frameReset = true;
-
-            other.GetComponent<Rigidbody>().useGravity = false;
-
-            other.transform.SetParent(transform);
-
-            objectInHand = other.gameObject;
-
-            print("yoyo");
-
-            StartCoroutine(PressButtonToYEAH());
-
-
-        }
-
-    
-
-    }
+       // }
+   // }
 
 
 
-    IEnumerator PressButtonToYEAH()
+  private void OnTriggerStay(Collider other)
+  {
 
 
-    {
+      if (other.CompareTag("PickUpObject") && Input.GetKeyDown(KeyCode.N) && HandIsEmpty == true)
+
+      {
+
+          HandIsEmpty = false;
+
+          frameReset = true;
+
+         // other.GetComponent<Rigidbody>().useGravity = false;
+
+          other.transform.SetParent(transform);
+
+          objectInHand = other.gameObject;
+
+          print("yoyoyoyoyoyoyoyo");
+
+          StartCoroutine(PressButtonToYEAH());
 
 
-        PressN.gameObject.SetActive(true);
+      }
 
 
-        yield return new WaitForSeconds(2.5f);
 
-        PressN.gameObject.SetActive(false);
+ }
 
 
-    }
+
+  IEnumerator PressButtonToYEAH()
+
+
+  {
+
+
+      PressN.gameObject.SetActive(true);
+
+
+      yield return new WaitForSeconds(2.5f);
+
+
+      PressN.gameObject.SetActive(false);
+
+
+  }
 }
 
 

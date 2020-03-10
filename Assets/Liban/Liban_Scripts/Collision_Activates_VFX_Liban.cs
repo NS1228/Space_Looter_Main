@@ -36,15 +36,17 @@ public class Collision_Activates_VFX_Liban : MonoBehaviour
 
 
 
-            SmokeySmokey.gameObject.SetActive(true);
+            // SmokeySmokey.gameObject.SetActive(true);
 
 
 
-            ExplosionExplosion.gameObject.SetActive(true);
+          //   ExplosionExplosion.gameObject.SetActive(true);
 
 
+            //  TheeeeGrenadeyh.GetComponent<SphereCollider>().radius = 5.7f;
 
-          //  TheeeeGrenadeyh.GetComponent<SphereCollider>().radius = 5.7f;
+
+           // gameObject.SetActive(false);
 
 
 

@@ -110,6 +110,16 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
+                Light_Hold_Blue JKL = GameObject.Find("torcia").GetComponent<Light_Hold_Blue>();
+
+                JKL.enabled = false;
+
+
+
+                Stun_Light_Liban STLInb = GameObject.Find("torcia").GetComponent<Stun_Light_Liban>();
+
+                STLInb.enabled = false;
+
 
 
             }
@@ -139,6 +149,16 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
+
+                Light_Hold_Blue JKL = GameObject.Find("torcia").GetComponent<Light_Hold_Blue>();
+
+                JKL.enabled = false;
+
+
+
+                Stun_Light_Liban STLInb = GameObject.Find("torcia").GetComponent<Stun_Light_Liban>();
+
+                STLInb.enabled = false;
 
 
 
@@ -270,7 +290,15 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
+            Light_Hold_Blue JKL = GameObject.Find("torcia").GetComponent<Light_Hold_Blue>();
 
+            JKL.enabled = true;
+
+
+
+            Stun_Light_Liban STLInb = GameObject.Find("torcia").GetComponent<Stun_Light_Liban>();
+
+            STLInb.enabled = true;
 
 
 

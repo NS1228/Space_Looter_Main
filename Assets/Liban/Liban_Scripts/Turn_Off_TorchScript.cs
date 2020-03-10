@@ -5,7 +5,7 @@ using UnityEngine;
 public class Turn_Off_TorchScript : MonoBehaviour
 {
 
-    public float SpeedBoost = 1.1f;
+    public float SpeedBoost = 4.1f;
 
     public Transform ThePlayer;
 
@@ -15,13 +15,14 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
     public GameObject WalkSound;
 
-   
+    
+
     // Start is called before the first frame update
     void Start()
     {
 
 
-       
+
 
 
     }
@@ -30,6 +31,9 @@ public class Turn_Off_TorchScript : MonoBehaviour
     void Update()
     {
 
+
+
+       
 
 
         // change back to Getmousebutton if doesnt work 
@@ -57,9 +61,11 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
 
 
-            LemarMovment LMoving1 = GameObject.Find("Player").GetComponent<LemarMovment>();
+            LemarMovment LMoving1 = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
 
             LMoving1.Walk += SpeedBoost;
+
+
 
 
             RunSound.GetComponent<AudioSource>().maxDistance = 8.0f;
@@ -71,6 +77,11 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
 
 
+            
+
+
+
+
 
         }
 
@@ -78,39 +89,38 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
 
 
-         if (Input.GetMouseButtonUp(0))
+        if (Input.GetMouseButtonUp(0))
 
 
-           {
-
-
-
-           Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
-
-           B_Light.enabled = true;
-
-
-         Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
-
-           G_Light.enabled = true;
+        {
 
 
 
-            LemarMovment LMoving = GameObject.Find("Player").GetComponent<LemarMovment>();
+            Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
+
+            B_Light.enabled = true;
+
+
+            Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
+
+            G_Light.enabled = true;
+
+
+
+            LemarMovment LMoving = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
 
             LMoving.Walk -= SpeedBoost;
 
-        // LMoving.Speed /= SpeedBoost;
 
 
-          RunSound.GetComponent<AudioSource>().maxDistance = 1.05f;
+            RunSound.GetComponent<AudioSource>().maxDistance = 1.05f;
 
-          WalkSound.GetComponent<AudioSource>().maxDistance = 1.05f;
+            WalkSound.GetComponent<AudioSource>().maxDistance = 1.05f;
 
-          CrawlSound.GetComponent<AudioSource>().maxDistance = 1.05f;
+            CrawlSound.GetComponent<AudioSource>().maxDistance = 1.05f;
 
 
-            
+
 
 
 
@@ -133,7 +143,7 @@ public class Turn_Off_TorchScript : MonoBehaviour
             B_Light.enabled = false;
 
 
-            Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
+            Stun_Light_Liban G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
 
             G_Light.enabled = false;
 
@@ -145,20 +155,11 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
 
 
-            //   NewMovementScript moving = GameObject.Find("player").GetComponent<NewMovementScript>();
 
-              // moving.MovementSpeed -= SpeedBoost;
-
-
-           //  ThePlayer.GetComponent<AudioSource>().maxDistance = 0.79f;
-
-
-
-            LemarMovment LMoving2 = GameObject.Find("Player").GetComponent<LemarMovment>();
+            LemarMovment LMoving2 = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
 
             LMoving2.Walk -= SpeedBoost;
 
-            //  LMoving2.Speed /= SpeedBoost;
 
 
             RunSound.GetComponent<AudioSource>().maxDistance = 0f;
@@ -185,17 +186,17 @@ public class Turn_Off_TorchScript : MonoBehaviour
             B_Light.enabled = true;
 
 
-            Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
+            Stun_Light_Liban G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
 
             G_Light.enabled = true;
 
 
 
-            LemarMovment LMoving = GameObject.Find("Player").GetComponent<LemarMovment>();
+            LemarMovment LMoving = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
 
             LMoving.Walk += SpeedBoost;
 
-           // LMoving.Speed *= SpeedBoost;
+            // LMoving.Speed *= SpeedBoost;
 
 
             RunSound.GetComponent<AudioSource>().maxDistance = 1.05f;
@@ -210,12 +211,21 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
         }
 
-    
+
 
 
 
     }
+
+
+
+
 }
+
+
+
+
+
 
 
 

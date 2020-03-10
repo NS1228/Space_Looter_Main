@@ -126,6 +126,11 @@ public class DroneHealth_Script : MonoBehaviour
         Destroy(gameObject);
 
 
+
+        DroneHealthBar.gameObject.SetActive(false);
+
+
+
     }
 
 

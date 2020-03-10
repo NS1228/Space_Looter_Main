@@ -12,20 +12,13 @@ public class Speed_Power_UP : MonoBehaviour
 
     public Transform ThePlayer;
 
-    public GameObject GLightBlue;
-
-    public GameObject GLightGreen;
-
-    public GameObject TLightBlue;
-
-    public GameObject TLightGreen;
-
     public GameObject TheShoe;
 
     public bool CoolDownSpeed;
 
 
-    private float SpeedBoost = 1.1f;
+
+    
 
 
 
@@ -69,14 +62,7 @@ public class Speed_Power_UP : MonoBehaviour
 
 
 
-        GLightBlue.SetActive(false);
-
-        GLightGreen.SetActive(false);
-
-        TLightBlue.SetActive(false);
-
-        TLightGreen.SetActive(false);
-
+       
 
 
         // NewMovementScript moving = player.GetComponent<NewMovementScript>();
@@ -103,7 +89,7 @@ public class Speed_Power_UP : MonoBehaviour
         B_Light.enabled = false;
 
 
-        Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
+        Stun_Light_Liban G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
 
         G_Light.enabled = false;
 
@@ -111,28 +97,53 @@ public class Speed_Power_UP : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(3.7f);
 
 
 
-      //  TheShoe.GetComponent<MeshRenderer>().enabled = true;
-
-
-      //  ShoeLight.gameObject.SetActive(true);
 
 
 
-        //  moving.MovementSpeed /= Powerupspeed;
+        yield return new WaitForSeconds(3.9f);
 
 
-        //  ThePlayer.GetComponent<AudioSource>().maxDistance = 1.05f;
+       
 
 
 
-          Turn_Off_TorchScript TurnOff2 = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
 
-           TurnOff2.enabled = false;
 
+
+        LemarMovment POPO = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+
+        POPO.Speed = 15;
+
+
+
+
+
+
+        Turn_Off_TorchScript TurnOff3 = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
+
+        TurnOff3.enabled = false;
+
+
+
+
+
+
+
+
+
+        yield return new WaitForSeconds(4.2f);
+
+
+
+
+
+
+        Turn_Off_TorchScript TurnOff2 = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
+
+        TurnOff2.enabled = false;
 
 
         Light_Hold_Blue B_Light2 = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
@@ -140,7 +151,7 @@ public class Speed_Power_UP : MonoBehaviour
         B_Light2.enabled = true;
 
 
-        Light_Hold_Green G_Light2 = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
+        Stun_Light_Liban G_Light2 = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
 
         G_Light2.enabled = true;
 
@@ -148,6 +159,16 @@ public class Speed_Power_UP : MonoBehaviour
         Battery_Level Batteryyeah2 = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();
 
         Batteryyeah2.enabled = true;
+
+
+
+        LemarMovment POPO2 = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+
+        POPO.Speed = 15;
+
+
+
+
 
 
 

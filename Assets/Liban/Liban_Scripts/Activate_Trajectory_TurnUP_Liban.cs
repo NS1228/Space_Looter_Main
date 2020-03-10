@@ -48,15 +48,13 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
- 
 
 
-    // Update is called once per frame
+
+
+
     void Update()
     {
-
-
-
 
 
 
@@ -71,18 +69,15 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
             StartCoroutine(TURNIT());
 
 
-
         }
+
+
 
     }
 
 
 
-
     IEnumerator TURNIT()
-
-
-
 
     {
 
@@ -108,13 +103,18 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
         RBFPS.gameObject.SetActive(false);
 
+
+
+
+
         TrajectCursor.gameObject.SetActive(true);
 
 
+
+
+
+
         GRText.gameObject.SetActive(true);
-
-
-
 
 
 
@@ -131,15 +131,7 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-
-
-
-
         print("LOOOOOL yoyoyoyoo OH MYYYY");
-
-
-
-
 
 
 
@@ -155,28 +147,9 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-
-
-
-
-
-
         Activate_Trajectory_TurnUP_Liban HKJLG = GameObject.FindWithTag("ACTGRE").GetComponent<Activate_Trajectory_TurnUP_Liban>();
 
         HKJLG.enabled = false;
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -195,6 +168,9 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
+        Light_Hold_Blue VBN = GameObject.Find("torcia").GetComponent<Light_Hold_Blue>();
+
+        VBN.TorchLightBlue.gameObject.SetActive(false);
 
 
 
@@ -212,10 +188,24 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(10.0f);
+
+
+        yield return new WaitForSeconds(10.1f);
 
 
 
+
+
+
+
+
+
+
+
+        Projectile_Donut GalacticDonut22 = GameObject.Find("Character").GetComponent<Projectile_Donut>();
+
+
+        GalacticDonut22.enabled = false;
 
 
 
@@ -238,27 +228,7 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-        Grenade_Timer_Text_Liban GT_Timer2 = GameObject.Find("Grenade Timer Text").GetComponent<Grenade_Timer_Text_Liban>();
-
-
-        GT_Timer2.enabled = false;
-
-
-
-
-
-
-     
-
-
-
-
-
         TrajectCursor.gameObject.SetActive(false);
-
-
-
-
 
 
 
@@ -287,24 +257,9 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
+        Light_Hold_Blue GF = GameObject.Find("torcia").GetComponent<Light_Hold_Blue>();
 
-
-
-
-
-
-
-        Projectile_Donut GalacticDonut22 = GameObject.Find("Character").GetComponent<Projectile_Donut>();
-
-
-        GalacticDonut22.enabled = false;
-
-
-
-
-
-
-
+        GF.TorchLightBlue.gameObject.SetActive(true);
 
 
 
@@ -333,33 +288,7 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+       
 
 
 
@@ -375,6 +304,14 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
+
+
+        TrajectoryCAM.transform.SetParent(OGPlayer);
+
+
+        TrajectoryCAM.transform.position = WhereTheCamWillSpawn.transform.position;
+
+     
 
 
 
@@ -394,14 +331,42 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-
-
-
-
-
-
-
     }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -410,9 +375,11 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
    
 
+   
+
     
 
-}
+
         
 
 
