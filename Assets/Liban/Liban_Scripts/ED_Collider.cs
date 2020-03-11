@@ -12,51 +12,44 @@ public class ED_Collider : MonoBehaviour
     public GameObject ElecDevice;
 
 
+    private float EDTimer;
+
+
+
+
+
+
+  
+
+
+
     // Update is called once per frame
-    void OnTriggerEnter (Collider other)
+    void OnTriggerEnter(Collider other)
     {
 
 
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
 
 
         {
 
 
-            Outline OUTLINERYEAH = GameObject.Find("enemy sphere").GetComponent<Outline>();
+            //  Outline OUTLINERYEAH = GameObject.Find("enemy sphere").GetComponent<Outline>();
 
-            OUTLINERYEAH.enabled = true;
-
-
+            //  OUTLINERYEAH.enabled = true;
 
 
 
-            ElecDevice.transform.SetParent(ElecDevicePos.transform); 
-           
+
+
+            ElecDevice.transform.SetParent(ElecDevicePos.transform);
+
 
 
 
         }
 
-
-
-
-
-        if(other.CompareTag("Wall"))
-
-
-                {
-
-
-
-
-            ElecDevice.transform.SetParent(null);
-
-
-
-        }
-
-
-        
     }
 }
+
+

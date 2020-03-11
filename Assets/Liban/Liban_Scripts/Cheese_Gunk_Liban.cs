@@ -11,6 +11,10 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
     private float InstanitationTimerr = 0.3f;
 
+    private int InstanCounter = 1;
+
+    private bool IsInst;
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,34 +34,20 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
 
 
-            InstanitationTimerr -= Time.deltaTime;
-
-
-
-
             StartCoroutine(TheCheeseGunk());
 
 
+           
 
-
-            if (InstanitationTimerr <= 0)
-
-
-
-            {
-
-
-
-                GameObject Gunkyyy = Instantiate(Gunk, GunkSpot.position, Quaternion.identity);
-
-
-
+            
 
             }
 
 
 
         }
+    
+
 
 
 
@@ -72,7 +62,7 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
 
 
-            //  GameObject Gunky = Instantiate(Gunk, GunkSpot.position, GunkSpot.rotation);
+             GameObject Gunky = Instantiate(Gunk, GunkSpot.position, Quaternion.identity);
 
 
 
@@ -117,4 +107,3 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
 
     }
-}

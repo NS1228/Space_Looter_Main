@@ -6,26 +6,39 @@ public class AttachToWall_Liban : MonoBehaviour
 {
 
 
-    public GameObject Device;
+    public GameObject ElecDevice;
+
+    
 
 
-    // Update is called once per frame
-    void OnCollisionEnter (Collision other)
+
+
+
+    void OnTriggerEnter(Collider other)
     {
 
 
-        if(other.gameObject.tag == "Wall")
+
+
+
+
+        if (other.CompareTag("Wall"))
 
 
         {
 
 
-            
-
-            print("It Stuck");
 
 
+            ElecDevice.transform.SetParent(null);
 
+
+
+
+
+            ITD_TimerScript_Liban ITDITD = GameObject.FindWithTag("PickUpObject").GetComponent<ITD_TimerScript_Liban>();
+
+            ITDITD.enabled = true;
 
 
 
@@ -34,5 +47,19 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
+
+        }
+
+
+
+
     }
-}
+
+
+
+
+    
+
+
+
+ 
