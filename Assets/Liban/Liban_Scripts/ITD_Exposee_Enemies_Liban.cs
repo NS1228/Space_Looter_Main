@@ -22,10 +22,15 @@ public class ITD_Exposee_Enemies_Liban : MonoBehaviour
 
 
 
-            Outline OTY5 = GameObject.Find("Cylinder3").GetComponent<Outline>();
+            // Outline OTY5 = GameObject.Find("Cylinder3").GetComponent<Outline>();
 
 
-            OTY5.enabled = true;
+            // OTY5.enabled = true;
+
+
+            other.GetComponent<Outline>().enabled = true;
+
+
 
 
 
@@ -58,13 +63,13 @@ public class ITD_Exposee_Enemies_Liban : MonoBehaviour
         {
 
 
-            Outline OTY7 = GameObject.Find("Cylinder3").GetComponent<Outline>();
+
+            //  Outline OTY7 = GameObject.Find("Cylinder3").GetComponent<Outline>();
+
+            //  OTY7.enabled = false;
 
 
-            OTY7.enabled = false;
-
-
-
+            other.GetComponent<Outline>().enabled = false;
 
 
 

@@ -9,11 +9,7 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
     public Transform GunkSpot;
 
-    private float InstanitationTimerr = 0.3f;
-
-    private int InstanCounter = 1;
-
-    private bool IsInst;
+    
 
 
     // Start is called before the first frame update
@@ -27,7 +23,7 @@ public class Cheese_Gunk_Liban : MonoBehaviour
     {
 
 
-        if (Input.GetMouseButton(1))
+        if (Input.GetKeyDown(KeyCode.H))
 
 
         {
@@ -62,7 +58,25 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
 
 
-             GameObject Gunky = Instantiate(Gunk, GunkSpot.position, Quaternion.identity);
+
+         
+           INstant_Liban I_L = GameObject.FindWithTag("Gunk Loc").GetComponent<INstant_Liban>();
+
+
+           I_L.enabled = true;
+
+             
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -79,7 +93,40 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
             yield return new WaitForSeconds(4.5f);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -96,7 +143,22 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
 
 
-            // Destroy(Gunky);
+
+
+
+
+
+
+
+
+
+
+
+            INstant_Liban _IL2 = GameObject.FindWithTag("Gunk Loc").GetComponent<INstant_Liban>();
+
+            _IL2.enabled = false; 
+
+
 
 
 

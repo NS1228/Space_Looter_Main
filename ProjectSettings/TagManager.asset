@@ -32,6 +32,8 @@ TagManager:
   - Evacuate
   - Wall
   - ExposeEnemy
+  - ObjectSpawn
+  - Gunk Loc
   layers:
   - Default
   - TransparentFX
