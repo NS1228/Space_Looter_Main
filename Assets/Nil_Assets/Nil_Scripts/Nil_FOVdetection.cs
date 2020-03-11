@@ -230,7 +230,7 @@ public class Nil_FOVdetection : MonoBehaviour
         immobolisedAngular = 0;
         immobolisedSpeed = 0;
         atSoundLocation = false;
-
+        flashLightBlindingLight = false;
 
     }
 
@@ -613,31 +613,37 @@ public class Nil_FOVdetection : MonoBehaviour
         {
             if (!soundDetected && !phantasm)
             {
-                if (flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
+                if (Time.timeSinceLevelLoad <= timeSinceLastSeen)
                 {
-                    agent.speed = slowedChase;
-                    agent.angularSpeed = angularSpeed;
-                }
-                else if (immobilosingRipple)
-                {
-                    agent.speed = immobolisedSpeed;
-                    agent.angularSpeed = immobolisedAngular;
-                }
-                else if (gunkTrail && !immobilosingRipple)
-                {
-                    agent.speed = immobolisedSpeed;
-                    agent.angularSpeed = angularSpeed;
-                }
-                else if (!flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
-                {
-                    agent.speed = chaseSpeed;
-                    agent.angularSpeed = angularSpeed;
+                    transform.LookAt(playerandClones.transform.position);
+                    // transform.position = Vector3.SmoothDamp(transform.position, Player.position, ref smoothVelocity, smoothTime);
+                    agent.SetDestination(playerandClones.transform.position);
+                    if (flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
+                    {
+                        agent.speed = slowedChase;
+                        agent.angularSpeed = angularSpeed;
+                    }
+                    else if (immobilosingRipple)
+                    {
+                        agent.speed = immobolisedSpeed;
+                        agent.angularSpeed = immobolisedAngular;
+                    }
+                    else if (gunkTrail && !immobilosingRipple)
+                    {
+                        agent.speed = immobolisedSpeed;
+                        agent.angularSpeed = angularSpeed;
+                    }
+                    else if (!flashLightBlindingLight && !immobilosingRipple && !gunkTrail)
+                    {
+                        agent.speed = chaseSpeed;
+                        agent.angularSpeed = angularSpeed;
+                    }
                 }
 
                 else
-            {
-                agent.speed = stopSpeed;
-            }
+                {
+                    agent.speed = stopSpeed;
+                }
             }
             else if (soundDetected)
             {
@@ -685,15 +691,15 @@ public class Nil_FOVdetection : MonoBehaviour
                             agent.speed = 0;
                             agent.angularSpeed = 0;
 
-                            if(Time.timeSinceLevelLoad >= soundDuration)
+                            if (Time.timeSinceLevelLoad >= soundDuration)
                             {
                                 atSoundLocation = false;
                             }
                         }
 
-                        
-                        
-                        
+
+
+
                     }
                 }
             }
