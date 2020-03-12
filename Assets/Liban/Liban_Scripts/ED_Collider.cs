@@ -6,10 +6,15 @@ public class ED_Collider : MonoBehaviour
 {
 
 
-    public GameObject ElecDevicePos;
+    public GameObject ThAPlayer;
+
+    public GameObject ElecPos;
 
 
     public GameObject ElecDevice;
+
+
+    public GameObject NewSphere;
 
 
     private float EDTimer;
@@ -34,16 +39,24 @@ public class ED_Collider : MonoBehaviour
         {
 
 
-            //  Outline OUTLINERYEAH = GameObject.Find("enemy sphere").GetComponent<Outline>();
-
-            //  OUTLINERYEAH.enabled = true;
+           
 
 
 
+            ElecDevice.transform.SetParent(ElecPos.transform);
 
 
-            ElecDevice.transform.SetParent(ElecDevicePos.transform);
 
+           // ElecDevice.transform.position = ElecPos.transform.position;
+
+
+
+          //  NewSphere.GetComponent<SphereCollider>().center = new Vector3(0, 0, -4);
+
+
+
+
+            print("gotcha");
 
 
 

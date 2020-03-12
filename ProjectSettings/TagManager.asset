@@ -34,6 +34,7 @@ TagManager:
   - ExposeEnemy
   - ObjectSpawn
   - Gunk Loc
+  - SphereCol
   layers:
   - Default
   - TransparentFX

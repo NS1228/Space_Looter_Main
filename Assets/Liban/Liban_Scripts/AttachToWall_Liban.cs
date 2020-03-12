@@ -43,6 +43,13 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
+            ElecDevice.GetComponent<SphereCollider>().enabled = false;
+
+
+
+            
+
+
         }
 
 

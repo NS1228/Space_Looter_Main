@@ -80,12 +80,11 @@ public class ITD_TimerScript_Liban : MonoBehaviour
 
 
 
-            ITD_Device.GetComponent<SphereCollider>().center = new Vector3(0, 0, -3);
+            ITD_Device.GetComponent<SphereCollider>().center = new Vector3(0, 0, -4);
 
 
 
-
-
+          
 
 
 
