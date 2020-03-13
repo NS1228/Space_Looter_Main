@@ -9,6 +9,7 @@ public class Collision_Activates_VFX_Liban : MonoBehaviour
 
     public GameObject SmokeySmokey;
 
+
     public GameObject ExplosionExplosion;
 
 
@@ -17,7 +18,9 @@ public class Collision_Activates_VFX_Liban : MonoBehaviour
 
     public AudioSource Explosionbrrr;
 
-    private bool isTimeon;
+
+
+
 
 
 
@@ -48,15 +51,23 @@ public class Collision_Activates_VFX_Liban : MonoBehaviour
 
         {
 
+
+
+
+
+
+
+
+
+            StartCoroutine(Boom());
+
+
+
             print("yeahyeah");
 
 
 
-            SmokeySmokey.gameObject.SetActive(true);
-
-
-
-            ExplosionExplosion.gameObject.SetActive(true);
+          
 
 
             //  TheeeeGrenadeyh.GetComponent<SphereCollider>().radius = 5.7f;
@@ -72,15 +83,8 @@ public class Collision_Activates_VFX_Liban : MonoBehaviour
 
 
 
-              Grenade_VFX_Timer_Liban VVFFXX = GameObject.Find("TheRealGrenade").GetComponent<Grenade_VFX_Timer_Liban>();
+           
 
-               VVFFXX.enabled = true;
-
-
-
-
-
-            this.gameObject.SetActive(false);
 
 
 
@@ -91,7 +95,61 @@ public class Collision_Activates_VFX_Liban : MonoBehaviour
 
 
 
+
         }
+
+
+
+
+ }
+
+
+
+
+
+
+    IEnumerator Boom()
+
+
+
+    {
+
+
+
+
+         SmokeySmokey.gameObject.SetActive(true);
+
+
+
+         ExplosionExplosion.gameObject.SetActive(true);
+
+
+
+
+
+
+
+         
+
+
+
+
+
+        yield return new WaitForSeconds(1.8f);
+
+
+
+
+
+
+
+
+
+        this.gameObject.SetActive(false);
+
+
+
+
 
 
 
@@ -100,6 +158,7 @@ public class Collision_Activates_VFX_Liban : MonoBehaviour
 
 
     }
+
 
 
 }

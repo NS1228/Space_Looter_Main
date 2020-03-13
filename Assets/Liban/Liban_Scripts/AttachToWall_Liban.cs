@@ -36,16 +36,34 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
-            ITD_TimerScript_Liban ITDITD = GameObject.FindWithTag("PickUpObject").GetComponent<ITD_TimerScript_Liban>();
+        //    ITD_TimerScript_Liban ITDITD = GameObject.FindWithTag("ITDTimer").GetComponent<ITD_TimerScript_Liban>();
 
-            ITDITD.enabled = true;
-
-
+          //  ITDITD.enabled = true;
 
 
-            ElecDevice.GetComponent<SphereCollider>().enabled = false;
 
 
+            //   ElecDevice.GetComponent<SphereCollider>().enabled = false;
+
+
+
+
+            ElecDevice.GetComponent<BoxCollider>().isTrigger = false;
+
+
+
+
+
+
+            //try a startcoroutine here
+
+
+            //below the coroutine, turn on the outline scripts and turn off the IT_exposee_enemiesLiban as that script doesn't work for some reason  
+
+
+
+
+            StartCoroutine(ActActElec());
 
             
 
@@ -56,6 +74,50 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
         }
+
+
+
+
+
+
+
+
+    IEnumerator ActActElec()
+
+
+    {
+
+
+
+
+
+
+        ITD_TimerScript_Liban ITDDTIME = GameObject.FindWithTag("ITDTimer").GetComponent<ITD_TimerScript_Liban>();
+
+
+        ITDDTIME.enabled = true;
+
+       
+
+
+
+
+
+        yield return new WaitForSeconds(3.0f);
+
+
+
+
+
+
+        print("hello");
+     
+
+
+
+
+    }
+
 
 
 

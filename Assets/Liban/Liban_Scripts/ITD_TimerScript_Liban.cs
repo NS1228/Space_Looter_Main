@@ -10,9 +10,9 @@ public class ITD_TimerScript_Liban : MonoBehaviour
 
     private float EDTimerr;
 
-    public Text EDtexttt;
+   // public Text EDtexttt;
 
-    public GameObject ITD_Device;
+    public GameObject ITDCubee_Device;
 
 
 
@@ -22,7 +22,7 @@ public class ITD_TimerScript_Liban : MonoBehaviour
 
 
 
-        EDTimerr = 4.5f;
+        EDTimerr = 4.8f;
 
         
     }
@@ -46,11 +46,11 @@ public class ITD_TimerScript_Liban : MonoBehaviour
 
 
 
-        string EDtext = string.Format("{0:0}", seconds);
+      //  string EDtext = string.Format("{0:0}", seconds);
 
 
 
-        EDtexttt.text = EDtext;
+     //   EDtexttt.text = EDtext;
 
 
         
@@ -76,20 +76,24 @@ public class ITD_TimerScript_Liban : MonoBehaviour
 
 
 
-            ITD_Device.GetComponent<SphereCollider>().enabled = true;
+            //  ITD_Device.GetComponent<SphereCollider>().enabled = true;
 
 
 
-            ITD_Device.GetComponent<SphereCollider>().radius = 10.0f;
+            //  ITD_Device.GetComponent<SphereCollider>().radius = 10.0f;
 
 
 
-            ITD_Device.GetComponent<SphereCollider>().center = new Vector3(-0.79f, 0, 0);
+            // ITD_Device.GetComponent<SphereCollider>().center = new Vector3(-0.79f, 0, 0);
+
+
+            ITDCubee_Device.gameObject.SetActive(true);
 
 
 
-            
-          
+            ITDCubee_Device.transform.SetParent(null);
+
+
 
 
 

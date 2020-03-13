@@ -35,6 +35,8 @@ TagManager:
   - ObjectSpawn
   - Gunk Loc
   - SphereCol
+  - Explosion_A
+  - ITDTimer
   layers:
   - Default
   - TransparentFX

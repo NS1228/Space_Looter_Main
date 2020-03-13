@@ -29,10 +29,14 @@ public class ITD_Exposee_Enemies_Liban : MonoBehaviour
 
 
 
-            Outline OT5 = GameObject.Find("Cylinder 3").GetComponent<Outline>();
+             Outline OT5 = GameObject.FindWithTag("ExposeEnemy").GetComponent<Outline>();
 
 
-            OT5.enabled = true;
+             OT5.enabled = true;
+
+
+
+            
 
             
 
