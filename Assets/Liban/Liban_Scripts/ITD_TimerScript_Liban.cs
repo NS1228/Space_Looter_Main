@@ -76,14 +76,19 @@ public class ITD_TimerScript_Liban : MonoBehaviour
 
 
 
+            ITD_Device.GetComponent<SphereCollider>().enabled = true;
+
+
+
             ITD_Device.GetComponent<SphereCollider>().radius = 10.0f;
 
 
 
-            ITD_Device.GetComponent<SphereCollider>().center = new Vector3(0, 0, -4);
+            ITD_Device.GetComponent<SphereCollider>().center = new Vector3(-0.79f, 0, 0);
 
 
 
+            
           
 
 

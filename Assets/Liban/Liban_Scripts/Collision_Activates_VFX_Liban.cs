@@ -17,6 +17,12 @@ public class Collision_Activates_VFX_Liban : MonoBehaviour
 
     public AudioSource Explosionbrrr;
 
+    private bool isTimeon;
+
+
+
+  
+
 
 
 
@@ -24,6 +30,11 @@ public class Collision_Activates_VFX_Liban : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+
+        
+
+
 
     }
 
@@ -41,32 +52,57 @@ public class Collision_Activates_VFX_Liban : MonoBehaviour
 
 
 
-             SmokeySmokey.gameObject.SetActive(true);
+            SmokeySmokey.gameObject.SetActive(true);
 
 
 
-              ExplosionExplosion.gameObject.SetActive(true);
+            ExplosionExplosion.gameObject.SetActive(true);
 
 
             //  TheeeeGrenadeyh.GetComponent<SphereCollider>().radius = 5.7f;
 
 
-            gameObject.SetActive(false);
 
 
 
             Explosionbrrr.Play();
 
 
+          
+
+
+
+              Grenade_VFX_Timer_Liban VVFFXX = GameObject.Find("TheRealGrenade").GetComponent<Grenade_VFX_Timer_Liban>();
+
+               VVFFXX.enabled = true;
+
+
+
+
+
+            this.gameObject.SetActive(false);
+
+
+
+
+            
+
+
+
+
 
         }
 
+
+
+
+
+
+
     }
 
+
 }
-
-
-
 
 
  
