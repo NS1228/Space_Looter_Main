@@ -33,7 +33,7 @@ public class ED_Collider : MonoBehaviour
     {
 
 
-        if (other.CompareTag("Player"))
+        if (other.gameObject.name == ("Character"))
 
 
         {
