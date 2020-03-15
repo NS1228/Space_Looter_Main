@@ -51,7 +51,7 @@ public class AttachToWall_Liban : MonoBehaviour
             ElecDevice.GetComponent<BoxCollider>().isTrigger = false;
 
 
-            
+
 
 
 
@@ -103,7 +103,7 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(3.0f);
 
 
 

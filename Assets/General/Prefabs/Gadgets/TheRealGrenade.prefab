@@ -1,30 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!135 &3012117420399144644
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3011564923947940873}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.87
-  m_Center: {x: 0.0000009536743, y: -0.00000023841858, z: 0.23584229}
---- !u!114 &7592763758020843831
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3011564923947940873}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a6a0d2c7d6c3844598b7ce6d653d0ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!135 &3012117419429884742
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -165,6 +140,19 @@ MonoBehaviour:
   ExplosionExplosion: {fileID: 3011577712174604571}
   TheeeeGrenadeyh: {fileID: 3012117419867482344}
   Explosionbrrr: {fileID: 0}
+--- !u!135 &3012117420399144644
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3011564923947940873}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.87
+  m_Center: {x: 0.0000009536743, y: -0.00000023841858, z: 0.23584229}
 --- !u!1001 &3012117419816463477
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175,6 +163,10 @@ PrefabInstance:
     - target: {fileID: 1150934714579380, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
       propertyPath: m_Name
       value: Explosion_A
+      objectReference: {fileID: 0}
+    - target: {fileID: 1150934714579380, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1150934714579380, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
       propertyPath: m_TagString
@@ -269,16 +261,16 @@ PrefabInstance:
       value: 7.6031513
       objectReference: {fileID: 0}
     - target: {fileID: 4856418394321008, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.672
+      objectReference: {fileID: 0}
+    - target: {fileID: 4856418394321008, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
       propertyPath: m_LocalPosition.x
       value: 3.98
       objectReference: {fileID: 0}
     - target: {fileID: 4856418394321008, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
       propertyPath: m_LocalPosition.y
       value: -2.6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4856418394321008, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 8.672
       objectReference: {fileID: 0}
     - target: {fileID: 4856418394321008, guid: 779aa8c25fbd0e1488637639c9fff976, type: 3}
       propertyPath: m_LocalScale.x

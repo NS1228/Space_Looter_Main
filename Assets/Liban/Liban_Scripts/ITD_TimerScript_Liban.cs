@@ -91,7 +91,7 @@ public class ITD_TimerScript_Liban : MonoBehaviour
 
 
 
-         //   ITDCubee_Device.transform.SetParent(null);
+            ITDCubee_Device.transform.SetParent(null);
 
 
 

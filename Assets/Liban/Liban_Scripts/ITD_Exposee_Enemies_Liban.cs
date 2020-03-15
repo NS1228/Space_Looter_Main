@@ -16,11 +16,7 @@ public class ITD_Exposee_Enemies_Liban : MonoBehaviour
 
 
 
-<<<<<<< Updated upstream
-        if (other.CompareTag("AI"))
-=======
-        if (other.CompareTag("yo"))
->>>>>>> Stashed changes
+        if (other.CompareTag("ExposeEnemy"))
 
         {
 
@@ -33,20 +29,16 @@ public class ITD_Exposee_Enemies_Liban : MonoBehaviour
 
 
 
-<<<<<<< Updated upstream
-             Outline OT5 = GameObject.FindWithTag("AI").GetComponent<Outline>();
-=======
-            Outline OT5 = GameObject.FindWithTag("yo").GetComponent<Outline>();
->>>>>>> Stashed changes
+             Outline OT5 = GameObject.FindWithTag("ExposeEnemy").GetComponent<Outline>();
 
 
-            OT5.enabled = true;
+             OT5.enabled = true;
 
 
 
+            
 
-
-
+            
 
 
 
@@ -64,4 +56,27 @@ public class ITD_Exposee_Enemies_Liban : MonoBehaviour
 
 
 
+    void OnTriggerExit(Collider other)
+
+    {
+
+
+        if (other.CompareTag("ExposeEnemy"))
+
+
+        {
+
+
+
+            
+
+
+            other.GetComponent<Outline>().enabled = false;
+
+
+
+        }
+
+
+    }
 }

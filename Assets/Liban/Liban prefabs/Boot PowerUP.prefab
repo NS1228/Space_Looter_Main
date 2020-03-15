@@ -110,6 +110,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShoeLight: {fileID: 3283683929766737219}
   ThePlayer: {fileID: 0}
+  GLightBlue: {fileID: 0}
+  GLightGreen: {fileID: 0}
+  TLightBlue: {fileID: 0}
+  TLightGreen: {fileID: 0}
   TheShoe: {fileID: 1061823235684386172}
   CoolDownSpeed: 0
 --- !u!114 &3283683928283795161
@@ -145,7 +149,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3283683929766737276
 Transform:
   m_ObjectHideFlags: 0

@@ -251,7 +251,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1271445694012359410
 Transform:
   m_ObjectHideFlags: 0
@@ -504,10 +504,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df635b353ba9347af9aeec704bd70da3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingDroneHealth: 300
+  DroneHealth: 90
   CurrentDroneHealth: 0
   DroneHealthBar: {fileID: 0}
-  DroneBatteryDraineryh: 400
 --- !u!114 &1271445694744710166
 MonoBehaviour:
   m_ObjectHideFlags: 0
