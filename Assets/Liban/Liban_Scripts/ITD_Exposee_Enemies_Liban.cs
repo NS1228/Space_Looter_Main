@@ -16,7 +16,7 @@ public class ITD_Exposee_Enemies_Liban : MonoBehaviour
 
 
 
-        if (other.CompareTag("ExposeEnemy"))
+        if (other.CompareTag("AI"))
 
         {
 
@@ -29,7 +29,7 @@ public class ITD_Exposee_Enemies_Liban : MonoBehaviour
 
 
 
-             Outline OT5 = GameObject.FindWithTag("ExposeEnemy").GetComponent<Outline>();
+             Outline OT5 = GameObject.FindWithTag("AI").GetComponent<Outline>();
 
 
              OT5.enabled = true;
