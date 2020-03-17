@@ -12,7 +12,7 @@ public class ITD_TimerScript_Liban : MonoBehaviour
 
    // public Text EDtexttt;
 
-    public GameObject ITDCubee_Device;
+    public GameObject ITD_Deviceee;
 
 
 
@@ -22,7 +22,7 @@ public class ITD_TimerScript_Liban : MonoBehaviour
 
 
 
-        EDTimerr = 4.8f;
+        EDTimerr = 1.8f;
 
         
     }
@@ -76,22 +76,15 @@ public class ITD_TimerScript_Liban : MonoBehaviour
 
 
 
-            //  ITD_Device.GetComponent<SphereCollider>().enabled = true;
+
+            //    ITD_Deviceee.GetComponent<BoxCollider>().size = new Vector3(20, 20, 20);
 
 
 
-            //  ITD_Device.GetComponent<SphereCollider>().radius = 10.0f;
+            ITD_Exposee_Enemies_Liban Enemy_EXLIB = GameObject.Find("PickUpObject").GetComponent<ITD_Exposee_Enemies_Liban>();
 
+            Enemy_EXLIB.enabled = true;
 
-
-            // ITD_Device.GetComponent<SphereCollider>().center = new Vector3(-0.79f, 0, 0);
-
-
-            ITDCubee_Device.gameObject.SetActive(true);
-
-
-
-            ITDCubee_Device.transform.SetParent(null);
 
 
 

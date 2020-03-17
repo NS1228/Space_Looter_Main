@@ -1,9 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class ITD_Exposee_Enemies_Liban : MonoBehaviour
 {
+
+
+    public AudioSource MAgCheeseyhyh;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -11,16 +17,14 @@ public class ITD_Exposee_Enemies_Liban : MonoBehaviour
     }
 
     // Update is called once per frame
-    void OnTriggerEnter(Collider other)
+    void Update()
     {
 
 
 
-        if (other.CompareTag("ExposeEnemy"))
+        if (MAgCheeseyhyh.isPlaying)
 
         {
-
-
 
 
 
@@ -29,16 +33,16 @@ public class ITD_Exposee_Enemies_Liban : MonoBehaviour
 
 
 
-             Outline OT5 = GameObject.FindWithTag("ExposeEnemy").GetComponent<Outline>();
+               Outline OT5 = GameObject.FindWithTag("Light").GetComponent<Outline>();
 
 
-             OT5.enabled = true;
+                OT5.enabled = true;
 
 
-
-            
 
             
+
+
 
 
 
@@ -46,36 +50,28 @@ public class ITD_Exposee_Enemies_Liban : MonoBehaviour
 
 
 
-
-
-    }
-
-
-
-
-
-
-
-    void OnTriggerExit(Collider other)
-
-    {
-
-
-        if (other.CompareTag("ExposeEnemy"))
+        else
 
 
         {
 
 
 
-            
+            Outline OT5 = GameObject.FindWithTag("Light").GetComponent<Outline>();
 
 
-            other.GetComponent<Outline>().enabled = false;
+            OT5.enabled = false;
+
+
+
+
 
 
 
         }
+
+
+
 
 
     }

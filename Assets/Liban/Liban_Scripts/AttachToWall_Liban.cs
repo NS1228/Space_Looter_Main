@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
+
 
 public class AttachToWall_Liban : MonoBehaviour
 {
@@ -8,8 +10,8 @@ public class AttachToWall_Liban : MonoBehaviour
 
     public GameObject ElecDevice;
 
-    
 
+    public AudioSource ElecAudioyh;
 
 
 
@@ -36,19 +38,19 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
-        //    ITD_TimerScript_Liban ITDITD = GameObject.FindWithTag("ITDTimer").GetComponent<ITD_TimerScript_Liban>();
+            ITD_TimerScript_Liban ITDITD = GameObject.FindWithTag("ITDTimer").GetComponent<ITD_TimerScript_Liban>();
 
-          //  ITDITD.enabled = true;
-
-
-
-
-            //   ElecDevice.GetComponent<SphereCollider>().enabled = false;
+            ITDITD.enabled = true;
 
 
 
 
-            ElecDevice.GetComponent<BoxCollider>().isTrigger = false;
+            print("attached");
+
+
+
+
+           
 
 
 
@@ -89,6 +91,11 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
+        yield return new WaitForSeconds(1.0f);
+
+
+
+
 
 
 
@@ -97,21 +104,45 @@ public class AttachToWall_Liban : MonoBehaviour
 
         ITDDTIME.enabled = true;
 
+
+
+
+
+        ElecAudioyh.Play();
+
+
+
+
+
+        ElecAudioyh.loop = true;
+
+
+
+
+
+        
+
+
        
 
 
 
 
 
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(9.0f);
 
 
 
 
 
 
-        print("hello");
-     
+
+
+        ElecAudioyh.loop = false;
+
+
+
+        print("yhyh");
 
 
 
