@@ -38,6 +38,7 @@ TagManager:
   - ITDTimer
   - LightCol
   - yo
+  - rngCUBE
   layers:
   - Default
   - TransparentFX

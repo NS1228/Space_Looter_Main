@@ -16,7 +16,7 @@ public class Nil_FOVdetection : MonoBehaviour
     public Transform Player;
     public GameObject playerandClones;
     public GameObject detectionMeter;
-    public GameObject drone;
+    private GameObject drone;
     public GameObject emptyDrone;
    
 
@@ -55,7 +55,7 @@ public class Nil_FOVdetection : MonoBehaviour
     private float maxRadius;
 
     //Gadget bools
-    [HeaderAttribute("Gadget Bools")]
+    [HeaderAttribute("Gadget Bools [IGNORE]")]
     public  bool flashLightBlindingLight;
     public  bool stunned;
     public  bool evacuate;
@@ -71,7 +71,7 @@ public class Nil_FOVdetection : MonoBehaviour
     //Gadget floats
     [HeaderAttribute("Gadget floats")]
     public float fakOffDrone;
-    public float gunkTimer;
+    private float gunkTimer;
 
     //Gadget Objects
     [HeaderAttribute("Gadget Objects")]
