@@ -32,7 +32,7 @@ public class Nil_DroneStun : MonoBehaviour
     {
         float distance = Vector3.Distance(this.transform.position, Player.transform.position);
 
-        if(distance <= 10f && Nil_Drone_Movement.droneCanAttack)
+        if(distance <= 10f && this.GetComponent<Nil_Drone_Movement>().droneCanAttack)
         {
             if (canStun && Time.timeSinceLevelLoad >= stunTimer)
             {

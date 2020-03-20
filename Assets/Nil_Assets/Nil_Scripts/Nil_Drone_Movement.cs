@@ -30,7 +30,7 @@ public float chaseTimer;
 public bool chase;
 
     private Vector3 newYPos;
-    public static bool droneCanAttack;
+    public  bool droneCanAttack;
 
 public enum State
 {
