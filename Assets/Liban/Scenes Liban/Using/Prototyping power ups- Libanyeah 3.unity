@@ -9423,7 +9423,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.75
+      value: 59.6
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -9433,7 +9433,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 5.6
+      value: 11.66
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -9443,7 +9443,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.03988251
+      value: 0.6769617
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -9453,7 +9453,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.99920434
+      value: -0.73601824
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -9468,7 +9468,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: -355.429
+      value: -445.213
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -9593,6 +9593,11 @@ PrefabInstance:
       propertyPath: AmazingDrone
       value: 
       objectReference: {fileID: 4533310075038509770}
+    - target: {fileID: 5249387653293340000, guid: dc8e71504c5a7564fb9b68574b7a05f7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5249387653293340001, guid: dc8e71504c5a7564fb9b68574b7a05f7,
         type: 3}
       propertyPath: m_Name
@@ -9747,6 +9752,11 @@ PrefabInstance:
       propertyPath: DAENEMY2
       value: 
       objectReference: {fileID: 1086352916}
+    - target: {fileID: 5886659337186897523, guid: 8047e15c93e9fe946ad19598e98633f7,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8047e15c93e9fe946ad19598e98633f7, type: 3}
 --- !u!1001 &6466591269796068158
