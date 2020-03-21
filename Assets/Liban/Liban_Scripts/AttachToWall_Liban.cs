@@ -14,6 +14,9 @@ public class AttachToWall_Liban : MonoBehaviour
     public AudioSource ElecAudioyh;
 
 
+    private GameObject[] ManyObjects;
+
+
 
 
     void OnTriggerEnter(Collider other)
@@ -50,8 +53,8 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
-           
 
+            ElecDevice.GetComponent<BoxCollider>().isTrigger = false;
 
 
 
@@ -91,7 +94,7 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
 
 
 
@@ -120,16 +123,53 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
+
+
+
+
+
+
+
+
+        //  Outline OUTTTYHHHH = GameObject.FindGameObjectsWithTag("AI").GetComponent<Outline>();
+
+        //  OUTTTYHHHH.enabled = true;
+
+
+        ManyObjects = GameObject.FindGameObjectsWithTag ("AI");
+
+
+        
+
         
 
 
-       
+
+
+
+
 
 
 
 
 
         yield return new WaitForSeconds(9.0f);
+
+
+
+
+
+
+
+
+
+
+
+        Outline OUTTTYHHHH3 = GameObject.FindGameObjectWithTag("AI").GetComponent<Outline>();
+
+        OUTTTYHHHH3.enabled = false;
+
+
 
 
 

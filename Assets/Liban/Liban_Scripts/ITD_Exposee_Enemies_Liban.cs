@@ -28,7 +28,7 @@ public class ITD_Exposee_Enemies_Liban : MonoBehaviour
 
 
 
-            print("hmmmmm");
+            print("hmmmm yyoyoy");
 
 
 
@@ -50,27 +50,7 @@ public class ITD_Exposee_Enemies_Liban : MonoBehaviour
 
 
 
-        else
-
-
-        {
-
-
-
-            Outline OT5 = GameObject.FindWithTag("Light").GetComponent<Outline>();
-
-
-            OT5.enabled = false;
-
-
-
-
-
-
-
-        }
-
-
+       
 
 
 

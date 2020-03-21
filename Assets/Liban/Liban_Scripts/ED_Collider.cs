@@ -61,9 +61,9 @@ public class ED_Collider : MonoBehaviour
 
 
 
-            ITD_Exposee_Enemies_Liban Enemy_EXLIB = GameObject.Find("PickUpObject").GetComponent<ITD_Exposee_Enemies_Liban>();
+           // ITD_Exposee_Enemies_Liban Enemy_EXLIB = GameObject.Find("PickUpObject").GetComponent<ITD_Exposee_Enemies_Liban>();
 
-            Enemy_EXLIB.enabled = true;
+          //  Enemy_EXLIB.enabled = true;
 
 
 
