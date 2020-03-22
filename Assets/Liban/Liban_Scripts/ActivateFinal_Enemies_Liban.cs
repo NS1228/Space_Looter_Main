@@ -4,15 +4,42 @@ using UnityEngine;
 
 public class ActivateFinal_Enemies_Liban : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+
+
+
+    void OnTriggerEnter(Collider other)
     {
-        
+
+
+        if (other.CompareTag("AI"))
+
+        {
+
+
+            print("loplop");
+
+
+
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("AI");
+
+
+
+            foreach (GameObject go in enemies)
+
+            {
+
+                go.GetComponent<Outline>().enabled = true;
+
+
+            }
+
+
+        }
+
+
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

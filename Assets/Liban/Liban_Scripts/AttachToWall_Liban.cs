@@ -123,10 +123,7 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
-
-
-
-
+       
 
 
 
@@ -135,16 +132,16 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
-        foreach (GameObject go in enemies)
+          foreach (GameObject go in enemies)
 
 
-        {
-            go.GetComponent<Outline>().enabled = true;
-        }
-        
+          {
+              go.GetComponent<Outline>().enabled = true;
+          }
 
 
-           
+
+
 
 
 
@@ -168,12 +165,11 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
-      //  Outline OUTTTYHHHH3 = GameObject.FindGameObjectWithTag("AI").GetComponent<Outline>();
-
-       // OUTTTYHHHH3.enabled = false;
+        GameObject[] enemies1 = GameObject.FindGameObjectsWithTag("AI");
 
 
-        foreach (GameObject go in enemies)
+
+        foreach (GameObject go in enemies1)
 
         {
 
