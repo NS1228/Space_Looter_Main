@@ -14,7 +14,7 @@ public class AttachToWall_Liban : MonoBehaviour
     public AudioSource ElecAudioyh;
 
 
-    private GameObject[] ManyObjects;
+   // private GameObject[] ManyObjects;
 
 
 
@@ -131,17 +131,20 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
-        //  Outline OUTTTYHHHH = GameObject.FindGameObjectsWithTag("AI").GetComponent<Outline>();
-
-        //  OUTTTYHHHH.enabled = true;
+        GameObject [] enemies = GameObject.FindGameObjectsWithTag ("AI");
 
 
-        ManyObjects = GameObject.FindGameObjectsWithTag ("AI");
+
+        foreach (GameObject go in enemies)
 
 
+        {
+            go.GetComponent<Outline>().enabled = true;
+        }
         
 
-        
+
+           
 
 
 
@@ -165,12 +168,19 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
-        Outline OUTTTYHHHH3 = GameObject.FindGameObjectWithTag("AI").GetComponent<Outline>();
+      //  Outline OUTTTYHHHH3 = GameObject.FindGameObjectWithTag("AI").GetComponent<Outline>();
 
-        OUTTTYHHHH3.enabled = false;
+       // OUTTTYHHHH3.enabled = false;
 
 
+        foreach (GameObject go in enemies)
 
+        {
+
+            go.GetComponent<Outline>().enabled = false;
+
+
+        }
 
 
 
