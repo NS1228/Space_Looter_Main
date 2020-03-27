@@ -22,8 +22,8 @@ public class Attachment : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             Torch.transform.parent = Player.transform;
-            Torch.transform.localPosition = new Vector3(0.8f, 0f, 0f);
-            Torch.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            Torch.transform.localPosition = new Vector3(0.8f, -1f, 0f);
+            Torch.transform.localRotation = Quaternion.Euler(0, -90, 0);
         }
     }
 }
