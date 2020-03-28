@@ -173,7 +173,7 @@ MonoBehaviour:
   Player: {fileID: 0}
   playerandClones: {fileID: 0}
   detectionMeter: {fileID: 0}
-  emptyDrone: {fileID: 2014506390}
+  emptyDrone: {fileID: 0}
   waypoints:
   - {fileID: 0}
   - {fileID: 0}

@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 4608434748378994736}
   m_Layer: 9
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,9 +27,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4608434748378994738}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.76, y: 2.39, z: 2.01}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.32795656, y: 0.32795656, z: 0.32795656}
   m_Children:
   - {fileID: 4608434749071256353}
   - {fileID: 4608434748411185035}
@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a78764861217f9458bd32ca2b64bef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 15
+  Speed: 4
   Sprint: 0
   Walk: 0
   Crawl: 0
@@ -14906,7 +14906,7 @@ GameObject:
   - component: {fileID: 8698471725101266922}
   m_Layer: 0
   m_Name: Target
-  m_TagString: Untagged
+  m_TagString: Equip
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -15041,7 +15041,7 @@ GameObject:
   - component: {fileID: 8698471725843564651}
   m_Layer: 8
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
