@@ -61,7 +61,7 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(2.4f);
+        yield return new WaitForSeconds(6.4f);
 
 
        // TorchForPlayer.SetActive(true);
