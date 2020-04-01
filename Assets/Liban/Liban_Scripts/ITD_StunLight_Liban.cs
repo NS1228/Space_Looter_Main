@@ -28,7 +28,7 @@ public class ITD_StunLight_Liban : MonoBehaviour
 
 
 
-        if(Input.GetKeyDown(KeyCode.X))
+        if(Input.GetMouseButtonDown(0))
 
 
         {

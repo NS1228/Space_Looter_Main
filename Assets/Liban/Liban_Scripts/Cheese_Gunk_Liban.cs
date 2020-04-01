@@ -23,7 +23,7 @@ public class Cheese_Gunk_Liban : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetMouseButtonDown(0))
 
 
         {

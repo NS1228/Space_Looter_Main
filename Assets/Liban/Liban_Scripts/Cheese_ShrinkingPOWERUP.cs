@@ -29,7 +29,7 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
     {
 
 
-        if(other.CompareTag("Player"))
+        if(Input.GetMouseButtonDown(1))
 
         {
 

@@ -38,7 +38,7 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
         // change back to Getmousebutton if doesnt work 
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButton(0))
 
 
         {
