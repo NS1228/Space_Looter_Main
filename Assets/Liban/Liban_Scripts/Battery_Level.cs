@@ -98,9 +98,9 @@ public class Battery_Level : MonoBehaviour
         {
 
 
-             LowBattery();
+             LowwwBattery();
 
-           // DangerTextyeahyeah.gameObject.SetActive(true);
+            DangerTextyeahyeah.gameObject.SetActive(true);
 
 
         }
@@ -113,7 +113,7 @@ public class Battery_Level : MonoBehaviour
         {
 
 
-            //DangerTextyeahyeah.gameObject.SetActive(false);
+            DangerTextyeahyeah.gameObject.SetActive(false);
 
             AboveLowBattery();
 
@@ -165,12 +165,7 @@ public class Battery_Level : MonoBehaviour
 
             TorchLightBlue.gameObject.SetActive(false);
 
-            //  GlassLightBlue.gameObject.SetActive(false);
 
-
-          //  Battery_Level ThisScrtipt = GameObject.Find("flashlight").GetComponent<Battery_Level>();
-
-           //  ThisScrtipt.enabled = false;
 
 
             Light_Hold_Blue LLLIGHTHOLDblue = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
@@ -179,7 +174,7 @@ public class Battery_Level : MonoBehaviour
 
 
 
-            Stun_Light_Liban SLYellow = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
+            Stun_Light_Liban SLYellow = GameObject.Find("torcia").GetComponent<Stun_Light_Liban>();
 
             SLYellow.enabled = false;
 
@@ -224,7 +219,7 @@ public class Battery_Level : MonoBehaviour
 
 
 
-        void LowBattery()
+        void LowwwBattery()
 
         {
 
