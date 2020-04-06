@@ -42,6 +42,12 @@ public class Nil_FOVdetection : MonoBehaviour
     private float immobolisedSpeed;
     private float immobolisedAngular;
 
+    [HeaderAttribute("Combat")]
+    public float damage;
+    public float attackSpeed;
+    public GameObject attackIdentifier;
+    private bool attack;
+
 
     // private float speed;
 
@@ -118,10 +124,10 @@ public class Nil_FOVdetection : MonoBehaviour
     private bool investigating;
     private float chaseTimer;
     private bool chase;
-    private bool soundDetected;
-    private float soundInvestigateTimer;
-    private bool destroyMoveTo;
-    private float moveToDestroyTimer;
+    public bool soundDetected;
+    public float soundInvestigateTimer;
+    public bool destroyMoveTo;
+    public float moveToDestroyTimer;
     private bool notChasing;
     private bool notInvestigating;
     public State state;
@@ -487,6 +493,14 @@ public class Nil_FOVdetection : MonoBehaviour
         //localPosition = localPosition.normalized; // The normalized direction in LOCAL space
         // transform.Translate(localPosition.x * Time.deltaTime * speed, localPosition.y * Time.deltaTime * speed, localPosition.z * Time.deltaTime * speed);
         //gameObject.transform.LookAt(player.transform.position);
+
+
+        if(attack)
+        {
+            player.GetComponent<Nil_Playerhealth>().health -= damage * attackSpeed * Time.deltaTime;
+            
+        }
+       
 
         if(!detected)
         {
@@ -923,8 +937,10 @@ public class Nil_FOVdetection : MonoBehaviour
 
             if (theCollision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(0);
+           // SceneManager.LoadScene(0);
             print("coll");
+            attackIdentifier.SetActive(true);
+            attack = true;
         }
 
             if(theCollision.gameObject.tag == "Drone")
@@ -934,6 +950,17 @@ public class Nil_FOVdetection : MonoBehaviour
 
 
 
+    }
+
+    void OnTriggerExit(Collider theCollision)
+    {
+        if (theCollision.gameObject.tag == "Player")
+        {
+            // SceneManager.LoadScene(0);
+            print("coll");
+            attackIdentifier.SetActive(false);
+            attack = false;
+        }
     }
 
     void OnCollisionEnter (Collision coll)
