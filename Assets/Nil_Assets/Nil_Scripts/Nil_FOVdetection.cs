@@ -136,7 +136,7 @@ public class Nil_FOVdetection : MonoBehaviour
     private bool isinFov = false;
     private bool atSoundLocation;
     private float soundDuration;
-    
+    public bool soundColl;
 
 
 
@@ -334,8 +334,9 @@ public class Nil_FOVdetection : MonoBehaviour
         DroneStuff();
         UnSlowEnemies();
         GunkStuff();
+        SoundThang();
 
-
+        
 
 
 
@@ -897,13 +898,13 @@ public class Nil_FOVdetection : MonoBehaviour
     {
         if (theCollision.gameObject.tag == "Sound" && !soundDetected && Time.timeSinceLevelLoad >= timeSinceLastSeen)
         {
-            soundDetected = true;
-            timeSinceLastSeen = Time.timeSinceLevelLoad + 7f;
-            soundInvestigateTimer = Time.timeSinceLevelLoad + 2;
-            moveToDestroyTimer = Time.timeSinceLevelLoad + 7f;
-            Instantiate(soundLocation, Player.transform.position, Player.transform.rotation);
+           // soundDetected = true;
+           // timeSinceLastSeen = Time.timeSinceLevelLoad + 7f;
+           // soundInvestigateTimer = Time.timeSinceLevelLoad + 2;
+           // moveToDestroyTimer = Time.timeSinceLevelLoad + 7f;
+           // Instantiate(soundLocation, Player.transform.position, Player.transform.rotation);
             
-            destroyMoveTo = true;
+           // destroyMoveTo = true;
             
 
          
@@ -923,7 +924,7 @@ public class Nil_FOVdetection : MonoBehaviour
         {
             atSoundLocation = true;
             soundDuration = Time.timeSinceLevelLoad + 2;
-            print("COLL");
+            //print("COLL");
            
 
         }
@@ -1051,6 +1052,22 @@ public class Nil_FOVdetection : MonoBehaviour
             flashLightBlindingLight = false;
         }
     }
+
+    public void SoundThang()
+    {
+        if (soundColl && !soundDetected && Time.timeSinceLevelLoad >= timeSinceLastSeen)
+        {
+            soundDetected = true;
+            timeSinceLastSeen = Time.timeSinceLevelLoad + 7f;
+            soundInvestigateTimer = Time.timeSinceLevelLoad + 2;
+            moveToDestroyTimer = Time.timeSinceLevelLoad + 7f;
+            Instantiate(soundLocation, Player.transform.position, Player.transform.rotation);
+
+            destroyMoveTo = true;
+            soundColl = false;
+        }
+    }
+
 
 
 
