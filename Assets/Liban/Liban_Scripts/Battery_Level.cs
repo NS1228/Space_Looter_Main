@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class Battery_Level : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class Battery_Level : MonoBehaviour
     public GameObject BatteryObject;
 
     public GameObject DangerTextyeahyeah;
+
+    public AudioSource LowBatterySoudEffect;
 
 
 
@@ -56,7 +59,9 @@ public class Battery_Level : MonoBehaviour
 
             DangerTextyeahyeah.gameObject.SetActive(false);
 
+            LowBatterySoudEffect.Stop();
 
+            LowBatterySoudEffect.loop = false;
 
 
         }
@@ -117,6 +122,10 @@ public class Battery_Level : MonoBehaviour
              
 
             DangerTextyeahyeah.gameObject.SetActive(true);
+
+            LowBatterySoudEffect.Play();
+
+            LowBatterySoudEffect.loop = true;
 
 
         }
