@@ -73,20 +73,31 @@ public class CameraSwitch : MonoBehaviour
 
 
 
-            Light_Hold_Blue LLBLUE = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
-            LLBLUE.enabled = false;
+            GameObject[] da_troch3 = GameObject.FindGameObjectsWithTag("FlashLight");
+
+
+            foreach (GameObject gos in da_troch3)
+
+            {
+
+                gos.GetComponent<Stun_Light_Liban>().enabled = false;
+
+                gos.GetComponent<Light_Hold_Blue>().enabled = false;
+
+
+            }
 
 
 
 
             New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
 
-            BlurrYEAHYEAHH.enabled = false;
+            BlurrYEAHYEAHH.enabled = true;
 
 
 
-            CameraZoom Zoomy = GameObject.FindWithTag("LemarCamera").GetComponent<CameraZoom>();
+            CameraZoom Zoomy = GameObject.Find("FPSMainCamera").GetComponent<CameraZoom>();
 
             Zoomy.enabled = true;
 
@@ -102,7 +113,14 @@ public class CameraSwitch : MonoBehaviour
 
         else
 
+
+
+
+
         {
+
+
+            print("ghgh");
 
 
             OriginalCamera.gameObject.SetActive(true);
@@ -110,11 +128,17 @@ public class CameraSwitch : MonoBehaviour
             FirstPersonCamera.gameObject.SetActive(false);
 
 
-            //name of night vision script
+
+
+
+
 
             DeferredNightVisionEffect NightVisionYeah = GameObject.FindWithTag("LemarCamera").GetComponent<DeferredNightVisionEffect>();
 
             NightVisionYeah.enabled = false;
+
+
+
 
 
 
@@ -125,18 +149,41 @@ public class CameraSwitch : MonoBehaviour
 
 
 
-            New_Motion_XBlur BlurrYEAHYEAHH = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
 
-            BlurrYEAHYEAHH.enabled = true;
+
+           
+
+
+
+
+
 
 
         }
 
+    }
+
 
     }
 
-}
 
+
+
+
+   
+
+
+    
+
+
+
+
+
+
+
+
+
+ 
 
 
 

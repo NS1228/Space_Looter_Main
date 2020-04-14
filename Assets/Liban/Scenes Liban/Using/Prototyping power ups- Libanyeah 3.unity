@@ -1376,83 +1376,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 64
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &418990000
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 418990001}
-  - component: {fileID: 418990003}
-  - component: {fileID: 418990002}
-  m_Layer: 5
-  m_Name: press n
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!224 &418990001
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418990000}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 915265620}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 38.5, y: -4.125}
-  m_SizeDelta: {x: 603.2, y: 38.25}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &418990002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418990000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0.35857958, g: 0.9376171, b: 0.9622642, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 28
-    m_FontStyle: 3
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 40
-    m_Alignment: 0
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: Press 'N' to grab and press again to throw.
---- !u!222 &418990003
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 418990000}
-  m_CullTransparentMesh: 0
 --- !u!1 &436496657
 GameObject:
   m_ObjectHideFlags: 0
@@ -3280,12 +3203,11 @@ RectTransform:
   - {fileID: 1271636850}
   - {fileID: 1913781489}
   - {fileID: 2049306642}
-  - {fileID: 418990001}
   - {fileID: 1056734641}
-  - {fileID: 1614512095}
   - {fileID: 1236250843}
-  - {fileID: 1206329789}
+  - {fileID: 1614512095}
   - {fileID: 1362990174}
+  - {fileID: 1206329789}
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4096,7 +4018,7 @@ GameObject:
   - component: {fileID: 1056734643}
   - component: {fileID: 1056734642}
   m_Layer: 5
-  m_Name: PressY
+  m_Name: Press Right Click Zoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4114,12 +4036,12 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 915265620}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -264.71, y: -81.59}
-  m_SizeDelta: {x: 290.79, y: 33.8}
+  m_AnchoredPosition: {x: -198.3, y: -82.7}
+  m_SizeDelta: {x: 423.6, y: 36}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1056734642
 MonoBehaviour:
@@ -4152,7 +4074,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "Y" to Zoom in
+  m_Text: Press "Right Click" to Zoom in
 --- !u!222 &1056734643
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5203,7 +5125,7 @@ RectTransform:
   m_LocalScale: {x: 1.7332, y: 1.7332, z: 1.7332}
   m_Children: []
   m_Father: {fileID: 915265620}
-  m_RootOrder: 8
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -5506,7 +5428,7 @@ GameObject:
   - component: {fileID: 1271636852}
   - component: {fileID: 1271636851}
   m_Layer: 5
-  m_Name: PressJ
+  m_Name: Press Left Click Switch Cameras
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5528,8 +5450,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -207, y: 4}
-  m_SizeDelta: {x: 400.41, y: 33.58}
+  m_AnchoredPosition: {x: -139.1, y: 2.895}
+  m_SizeDelta: {x: 536.3, y: 35.79}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271636851
 MonoBehaviour:
@@ -5562,7 +5484,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "J" to switch Cameras
+  m_Text: 'Press "Letf Click" to switch cameras
+
+'
 --- !u!222 &1271636852
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5868,7 +5792,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 915265620}
-  m_RootOrder: 10
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8013,7 +7937,6 @@ GameObject:
   - component: {fileID: 1901379928}
   - component: {fileID: 1901379931}
   - component: {fileID: 1901379930}
-  - component: {fileID: 1901379929}
   m_Layer: 5
   m_Name: DangerTEXT
   m_TagString: Danger
@@ -8040,19 +7963,6 @@ RectTransform:
   m_AnchoredPosition: {x: -658, y: -512.05}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1901379929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1901379927}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 33b5e03cdcdcc4a8babb88fcffa908f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Danger: {fileID: 1901379930}
 --- !u!114 &1901379930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8289,7 +8199,7 @@ GameObject:
   - component: {fileID: 1913781491}
   - component: {fileID: 1913781490}
   m_Layer: 5
-  m_Name: PressO
+  m_Name: Press Left Click Night Vision
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8311,8 +8221,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -166.6, y: -40}
-  m_SizeDelta: {x: 481.3, y: 33.5}
+  m_AnchoredPosition: {x: -60.6, y: -43.97}
+  m_SizeDelta: {x: 693.3, y: 41.44}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1913781490
 MonoBehaviour:
@@ -8345,7 +8255,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press "O" to Activate Night Vision
+  m_Text: Press "Left Click" again to Activate Night Vision
 --- !u!222 &1913781491
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10369,7 +10279,8 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 056b8378eaa9abc4099799b460ca1f78, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3283683928283795162, guid: ee0dc51ed9af8410c99b815b5db84183, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ee0dc51ed9af8410c99b815b5db84183, type: 3}
 --- !u!1001 &3405424338391279171
 PrefabInstance:
@@ -10578,6 +10489,10 @@ PrefabInstance:
       propertyPath: cursor
       value: 
       objectReference: {fileID: 1070010631}
+    - target: {fileID: 1589799980, guid: 603aa7640041eb64698d36ffad6c4bb8, type: 3}
+      propertyPath: ZoomInSoundYeahYeah
+      value: 
+      objectReference: {fileID: 997001633}
     - target: {fileID: 1820784394, guid: 603aa7640041eb64698d36ffad6c4bb8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.09999847
@@ -10589,7 +10504,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.48
+      value: -23.15
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -10599,7 +10514,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 18.2
+      value: 20.87
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -10656,11 +10571,16 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3932333746295666988, guid: 603aa7640041eb64698d36ffad6c4bb8,
+        type: 3}
+      propertyPath: DaFPSCamera
+      value: 
+      objectReference: {fileID: 1602473740}
     - target: {fileID: 3932333746295666989, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: PressN
       value: 
-      objectReference: {fileID: 418990002}
+      objectReference: {fileID: 0}
     - target: {fileID: 3932333746398352577, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_Enabled
@@ -10685,7 +10605,7 @@ PrefabInstance:
         type: 3}
       propertyPath: DangerTextyeahyeah
       value: 
-      objectReference: {fileID: 1901379930}
+      objectReference: {fileID: 1901379927}
     - target: {fileID: 3932333747502128119, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_IsActive
@@ -10707,9 +10627,15 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.02
       objectReference: {fileID: 0}
+    - target: {fileID: 8085552013884647036, guid: 603aa7640041eb64698d36ffad6c4bb8,
+        type: 3}
+      propertyPath: ZoomInSoundYeahYeah
+      value: 
+      objectReference: {fileID: 997001633}
     m_RemovedComponents:
     - {fileID: 3932333746295666989, guid: 603aa7640041eb64698d36ffad6c4bb8, type: 3}
     - {fileID: 3932333746803464655, guid: 603aa7640041eb64698d36ffad6c4bb8, type: 3}
+    - {fileID: 8085552013884647036, guid: 603aa7640041eb64698d36ffad6c4bb8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 603aa7640041eb64698d36ffad6c4bb8, type: 3}
 --- !u!1 &4533310075038509770 stripped
 GameObject:
@@ -10953,7 +10879,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PressN
       value: 
-      objectReference: {fileID: 418990002}
+      objectReference: {fileID: 0}
     - target: {fileID: 6466591269554829328, guid: de79e9d85d8514484b4c1dbf52dc360b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11461,7 +11387,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PressN
       value: 
-      objectReference: {fileID: 418990002}
+      objectReference: {fileID: 0}
     - target: {fileID: 7180053704395160462, guid: 94b8dda2e1f964a8db9722a1bf28b149,
         type: 3}
       propertyPath: Disorientate

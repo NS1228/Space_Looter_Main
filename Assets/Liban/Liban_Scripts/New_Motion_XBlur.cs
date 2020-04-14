@@ -91,30 +91,8 @@ public class New_Motion_XBlur : MonoBehaviour
         }
 
 
-       // else
 
-
-      //  {
-
-
-
-        //    PostProcessingBehaviour PPyeahyeah = GameObject.Find("FPSMainCamera").GetComponent<PostProcessingBehaviour>();
-
-
-         //   PPyeahyeah.enabled = true;
-
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
 
 

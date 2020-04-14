@@ -19,7 +19,7 @@ public class CameraZoom : MonoBehaviour
 
     public AudioSource ZoomInSoundYeahYeah;
 
-   // public AudioSource ZoomInSoundYeahYeah2;
+    // public AudioSource ZoomInSoundYeahYeah2;
 
 
 
@@ -29,7 +29,7 @@ public class CameraZoom : MonoBehaviour
     {
 
 
-       
+
     }
 
     // Update is called once per frame
@@ -60,9 +60,31 @@ public class CameraZoom : MonoBehaviour
             NightVisionYeah2.enabled = false;
 
 
+
+
+
+            GameObject[] da_troch = GameObject.FindGameObjectsWithTag("FlashLight");
+
+
+            foreach (GameObject gos in da_troch)
+
+            {
+
+                gos.GetComponent<Stun_Light_Liban>().enabled = false;
+
+                gos.GetComponent<Light_Hold_Blue>().enabled = false;
+
+
+            }
+
+
+
+
             New_Motion_XBlur BlurrYEAHYEAHH7 = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
 
-            BlurrYEAHYEAHH7.enabled = true;
+            BlurrYEAHYEAHH7.enabled = false;
+
+
 
 
 
@@ -75,7 +97,7 @@ public class CameraZoom : MonoBehaviour
 
 
 
-            {
+        {
 
 
 
@@ -85,21 +107,31 @@ public class CameraZoom : MonoBehaviour
             ZoomInSoundYeahYeah.Play();
 
 
-            DeferredNightVisionEffect NightVisionYeah2 = GameObject.FindWithTag("LemarCamera").GetComponent<DeferredNightVisionEffect>();
-
-            NightVisionYeah2.enabled = true;
 
 
-            New_Motion_XBlur BlurrYEAHYEAHH7 = GameObject.Find("Character").GetComponent<New_Motion_XBlur>();
 
-            BlurrYEAHYEAHH7.enabled = false;
+
+            //   New_Motion_XBlur BlurrYEAHYEAHH7 = GameObject.FindWithTag("Player").GetComponent<New_Motion_XBlur>();
+
+            //    BlurrYEAHYEAHH7.enabled = true;
+
+
+
+
+
+
+
 
 
 
         }
 
-    }
-        
+
+
+
 
     }
+
+
+}
 
