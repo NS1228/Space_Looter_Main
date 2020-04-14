@@ -43,6 +43,7 @@ TagManager:
   - Great
   - Good
   - Equip
+  - Boot
   layers:
   - Default
   - TransparentFX

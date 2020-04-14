@@ -38,7 +38,7 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
         // change back to Getmousebutton if doesnt work 
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButtonDown(0))
 
 
         {
@@ -49,9 +49,9 @@ public class Turn_Off_TorchScript : MonoBehaviour
             B_Light.enabled = false;
 
 
-            Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
+          //  Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
 
-            G_Light.enabled = false;
+          //  G_Light.enabled = false;
 
 
             Battery_Level Batteryyeah = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();
@@ -77,7 +77,22 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
 
 
-            
+            GameObject[] enemiess = GameObject.FindGameObjectsWithTag("FlashLight");
+
+
+            foreach (GameObject gogo in enemiess)
+
+            {
+
+                gogo.GetComponent<Light_Hold_Blue>().enabled = false;
+
+                gogo.GetComponent<Battery_Level>().enabled = false;
+                
+
+            }
+
+
+
 
 
 
@@ -101,9 +116,9 @@ public class Turn_Off_TorchScript : MonoBehaviour
             B_Light.enabled = true;
 
 
-            Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
+           // Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
 
-            G_Light.enabled = true;
+          //  G_Light.enabled = true;
 
 
 

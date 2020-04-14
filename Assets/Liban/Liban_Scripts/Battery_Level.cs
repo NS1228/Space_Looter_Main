@@ -174,7 +174,7 @@ public class Battery_Level : MonoBehaviour
 
 
 
-            Stun_Light_Liban SLYellow = GameObject.Find("torcia").GetComponent<Stun_Light_Liban>();
+            Stun_Light_Liban SLYellow = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
 
             SLYellow.enabled = false;
 

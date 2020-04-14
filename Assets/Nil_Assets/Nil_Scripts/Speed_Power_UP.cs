@@ -6,7 +6,7 @@ public class Speed_Power_UP : MonoBehaviour
 {
 
 
-  //  public float Powerupspeed = 2.5f;
+    //  public float Powerupspeed = 2.5f;
 
     public Light ShoeLight;
 
@@ -18,17 +18,18 @@ public class Speed_Power_UP : MonoBehaviour
 
 
 
-    
 
 
 
 
 
-     void Start()
+
+    void Start()
     {
 
 
-       
+
+
 
 
     }
@@ -46,8 +47,7 @@ public class Speed_Power_UP : MonoBehaviour
         {
 
 
-            StartCoroutine(PowerUPNOW(other));
-
+          //  StartCoroutine(PowerUPNOW(other));
 
         }
 
@@ -62,12 +62,6 @@ public class Speed_Power_UP : MonoBehaviour
 
 
 
-       
-
-
-        // NewMovementScript moving = player.GetComponent<NewMovementScript>();
-
-        //  moving.MovementSpeed *= Powerupspeed;
 
 
         TheShoe.GetComponent<MeshRenderer>().enabled = false;
@@ -76,7 +70,7 @@ public class Speed_Power_UP : MonoBehaviour
         ShoeLight.gameObject.SetActive(false);
 
 
-        //  ThePlayer.GetComponent<AudioSource>().maxDistance = 7.0f;
+
 
 
         Turn_Off_TorchScript TurnOff = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
@@ -103,28 +97,8 @@ public class Speed_Power_UP : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(3.9f);
 
-
-       
-
-
-
-
-
-
-        LemarMovment POPO = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
-
-        POPO.Speed = 15;
-
-
-
-
-
-
-        Turn_Off_TorchScript TurnOff3 = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
-
-        TurnOff3.enabled = false;
+        yield return new WaitForSeconds(5.9f);
 
 
 
@@ -133,8 +107,9 @@ public class Speed_Power_UP : MonoBehaviour
 
 
 
+       // print("yhyhyhyh");
 
-        yield return new WaitForSeconds(4.2f);
+
 
 
 
@@ -146,14 +121,23 @@ public class Speed_Power_UP : MonoBehaviour
         TurnOff2.enabled = false;
 
 
+
+
+
         Light_Hold_Blue B_Light2 = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
         B_Light2.enabled = true;
 
 
+
+
+
         Stun_Light_Liban G_Light2 = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
 
         G_Light2.enabled = true;
+
+
+
 
 
         Battery_Level Batteryyeah2 = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();
@@ -162,9 +146,6 @@ public class Speed_Power_UP : MonoBehaviour
 
 
 
-        LemarMovment POPO2 = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
-
-        POPO.Speed = 15;
 
 
 
@@ -174,17 +155,38 @@ public class Speed_Power_UP : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(3.0f);
-
-
-        TheShoe.GetComponent<MeshRenderer>().enabled = true;
-
-
-        ShoeLight.gameObject.SetActive(true);
 
 
 
 
+        
 
-    }
-}
+
+
+
+
+
+
+
+      
+
+
+            yield return new WaitForSeconds(1.0f);
+
+
+
+
+                TheShoe.GetComponent<MeshRenderer>().enabled = true;
+
+
+                ShoeLight.gameObject.SetActive(true);
+
+
+            }
+
+
+
+
+
+        }
+    
