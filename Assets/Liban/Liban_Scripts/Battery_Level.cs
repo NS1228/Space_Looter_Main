@@ -30,6 +30,8 @@ public class Battery_Level : MonoBehaviour
 
     public AudioSource LowBatterySoudEffect;
 
+    public Light StunLightYellow;
+
 
 
 
@@ -202,6 +204,9 @@ public class Battery_Level : MonoBehaviour
         Stun_Light_Liban SLYellow = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
 
         SLYellow.enabled = false;
+
+
+        StunLightYellow.gameObject.SetActive(false);
 
 
 

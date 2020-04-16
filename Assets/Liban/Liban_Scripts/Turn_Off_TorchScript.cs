@@ -7,6 +7,8 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
     public float SpeedBoost = 4.1f;
 
+    private float Slowerboost = 4.5f;
+
     public Transform ThePlayer;
 
     public GameObject CrawlSound;
@@ -168,12 +170,25 @@ public class Turn_Off_TorchScript : MonoBehaviour
             Batteryyeah.enabled = false;
 
 
+            print("slower slower...");
+
+
+            // LemarMovment LMoving2 = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+
+            //  LMoving2.Walk -= SpeedBoost;
 
 
 
-            LemarMovment LMoving2 = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+            GameObject[] slowerslower = GameObject.FindGameObjectsWithTag("Player");
 
-            LMoving2.Walk -= SpeedBoost;
+                foreach (GameObject plpl in slowerslower)
+
+            {
+                plpl.GetComponent<LemarMovment>().Walk -= Slowerboost;
+
+            }
+
+
 
 
 

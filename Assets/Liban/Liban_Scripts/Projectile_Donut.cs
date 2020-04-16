@@ -29,6 +29,22 @@ public class Projectile_Donut : MonoBehaviour
 
     private float TheTimer = 7.2f;
 
+    public GameObject TrajectoryGroundCursor;
+
+    public Camera TheTrajectoryCamera;
+
+    public Camera TheThirdPErsonCamera;
+
+    public Transform WhereTheCameraWillSpawn;
+
+    public GameObject FP_RigidB;
+
+    public GameObject TheCursorScript;
+
+    public GameObject GrenadeText;
+
+    public AudioSource CountdownSoundEffect;
+
 
 
 
@@ -110,6 +126,91 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
+                 Grenade_Timer_Text_Liban GT_Timer3 = GameObject.Find("Grenade Timer Text").GetComponent<Grenade_Timer_Text_Liban>();
+
+
+                 GT_Timer3.GrenadeTimerTimer = 11.0f;
+
+
+
+
+                TrajectoryGroundCursor.gameObject.SetActive(false);
+
+
+
+
+                TheTrajectoryCamera.gameObject.SetActive(false);
+
+
+
+                TheTrajectoryCamera.transform.position = WhereTheCameraWillSpawn.position;
+
+
+
+
+                TheThirdPErsonCamera.gameObject.SetActive(true);
+
+
+
+
+                FP_RigidB.gameObject.SetActive(true);
+
+
+                GrenadeText.gameObject.SetActive(false);
+
+
+
+
+                CountdownSoundEffect.Stop();
+
+
+
+
+                Light_Hold_Blue GF = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
+
+
+                GF.TorchLightBlue.gameObject.SetActive(true);
+
+
+
+
+
+
+
+                LineRenderer LR = GameObject.Find("Character").GetComponent<LineRenderer>();
+
+
+                LR.enabled = false;
+
+
+
+
+
+                ActivateWatchAbilityTwo_Liban TREW2 = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
+
+
+                TREW2.enabled = true;
+
+
+
+                TheCursorScript.gameObject.SetActive(false);
+
+
+
+                Stun_Light_Liban STRE67 = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
+
+                STRE67.enabled = false;
+
+
+
+
+
+
+
+
+
+
+
 
             }
 
@@ -137,13 +238,85 @@ public class Projectile_Donut : MonoBehaviour
                 TheTimer = Time.timeSinceLevelLoad + 11.0f;
 
 
+                Grenade_Timer_Text_Liban GT_Timer3 = GameObject.Find("Grenade Timer Text").GetComponent<Grenade_Timer_Text_Liban>();
 
+
+                GT_Timer3.GrenadeTimerTimer = 11.0f;
+
+
+
+
+                TrajectoryGroundCursor.gameObject.SetActive(false);
+
+
+
+
+                TheTrajectoryCamera.gameObject.SetActive(false);
+
+
+
+                TheTrajectoryCamera.transform.position = WhereTheCameraWillSpawn.position;
+
+
+
+
+                TheThirdPErsonCamera.gameObject.SetActive(true);
+
+
+
+
+                FP_RigidB.gameObject.SetActive(true);
+
+
+                GrenadeText.gameObject.SetActive(false);
+
+
+                CountdownSoundEffect.Stop();
 
                
 
 
 
-                
+               // Light_Hold_Blue GF = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
+
+
+               // GF.TorchLightBlue.gameObject.SetActive(true);
+
+
+
+
+
+
+
+                LineRenderer LR = GameObject.Find("Character").GetComponent<LineRenderer>();
+
+
+                LR.enabled = false;
+
+
+
+
+
+                ActivateWatchAbilityTwo_Liban TREW2 = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
+
+
+                TREW2.enabled = true;
+
+
+
+                TheCursorScript.gameObject.SetActive(false);
+
+
+
+                Stun_Light_Liban STRE67 = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
+
+                STRE67.enabled = false;
+
+
+
+
+
+
 
 
 
