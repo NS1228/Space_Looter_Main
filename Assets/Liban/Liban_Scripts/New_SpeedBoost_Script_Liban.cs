@@ -30,7 +30,7 @@ public class New_SpeedBoost_Script_Liban : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
 
     {
 
@@ -91,33 +91,12 @@ public class New_SpeedBoost_Script_Liban : MonoBehaviour
         }
 
 
-        if (PowerUpTimer <= 11)
+        if (PowerUpTimer <= 10)
 
 
         {
 
-            Light_Hold_Blue B_Light2 = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
-
-            B_Light2.enabled = true;
-
-
-
-
-
-            Stun_Light_Liban G_Light2 = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
-
-            G_Light2.enabled = true;
-
-
-
-
-
-            Battery_Level Batteryyeah2 = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();
-
-            Batteryyeah2.enabled = true;
-
-
-
+           
 
 
 
@@ -141,11 +120,11 @@ public class New_SpeedBoost_Script_Liban : MonoBehaviour
 
 
 
-       
 
 
 
-        if(PowerUpTimer <= 8 && GameObject.Find("newPlayer").GetComponent<LemarMovment>().Speed > 15 || GameObject.Find("newPlayer").GetComponent<LemarMovment>().Speed < 15)
+
+        if (PowerUpTimer <= 8 && GameObject.Find("newPlayer").GetComponent<LemarMovment>().Speed > 15 || GameObject.Find("newPlayer").GetComponent<LemarMovment>().Speed < 15)
 
 
         {
@@ -160,17 +139,52 @@ public class New_SpeedBoost_Script_Liban : MonoBehaviour
 
 
 
-            
+            print("ioioioiioio");
 
 
 
-           
 
 
-            print("tototottoo");
+        }
+
+    
+        //cooldown
+
+        if (PowerUpTimer <= 6)
 
 
-            
+        {
+
+          //  print("ioioioiioio");
+
+
+            //  this.gameObject.SetActive(false);
+
+
+            this.gameObject.GetComponent<MeshCollider>().enabled = false;
+
+
+
+            Light_Hold_Blue B_Light2 = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
+
+            B_Light2.enabled = true;
+
+
+
+
+
+            Stun_Light_Liban G_Light2 = GameObject.Find("torcia").GetComponent<Stun_Light_Liban>();
+
+            G_Light2.enabled = true;
+
+
+
+
+
+            Battery_Level Batteryyeah2 = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();
+
+            Batteryyeah2.enabled = true;
+
 
 
         }
@@ -178,32 +192,49 @@ public class New_SpeedBoost_Script_Liban : MonoBehaviour
 
 
 
+
+
         if (PowerUpTimer <= 1)
 
-
         {
+
+
+
 
             PowerUpTimer = 16;
 
 
 
 
+            print("back up and running yay");
 
-            GameObject[] playershoess = GameObject.FindGameObjectsWithTag("Boot");
 
 
-            foreach (GameObject gosss in playershoess)
+
+
+            this.gameObject.GetComponent<MeshCollider>().enabled = true;
+
+
+
+
+
+
+
+            GameObject[] playershoesss = GameObject.FindGameObjectsWithTag("Boot");
+
+
+            foreach (GameObject gossss in playershoesss)
 
             {
 
-                gosss.GetComponent<New_SpeedBoost_Script_Liban>().enabled = false;
+                gossss.GetComponent<New_SpeedBoost_Script_Liban>().enabled = false;
+
+                gossss.GetComponent<New_SlowDownScriptBoot_Liban>().enabled = false;
 
 
             }
 
 
-
-            print("gogogogogoo");
         }
 
 

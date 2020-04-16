@@ -27,6 +27,13 @@ public class Activate_NewPowerUP_Script_Liban : MonoBehaviour
             POLPOLPOL.enabled = true;
 
 
+
+
+            New_SlowDownScriptBoot_Liban SLOSLOSLO = GameObject.Find("Boot Skin").GetComponent<New_SlowDownScriptBoot_Liban>();
+
+            SLOSLOSLO.enabled = true;
+
+
         }
 
 

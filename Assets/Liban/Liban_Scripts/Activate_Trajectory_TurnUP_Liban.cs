@@ -227,16 +227,16 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-       // Grenade_Timer_Text_Liban GT_Timer3 = GameObject.Find("Grenade Timer Text").GetComponent<Grenade_Timer_Text_Liban>();
+        // Grenade_Timer_Text_Liban GT_Timer3 = GameObject.Find("Grenade Timer Text").GetComponent<Grenade_Timer_Text_Liban>();
 
 
-       // GT_Timer3.GrenadeTimerTimer = 10.0f;
-
-
-
+        // GT_Timer3.GrenadeTimerTimer = 10.0f;
 
 
 
+
+
+        CountdownSoundEffect.Stop();
 
 
 

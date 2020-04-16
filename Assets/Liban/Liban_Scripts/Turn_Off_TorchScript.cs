@@ -5,9 +5,7 @@ using UnityEngine;
 public class Turn_Off_TorchScript : MonoBehaviour
 {
 
-    public float SpeedBoost = 4.1f;
-
-    private float Slowerboost = 4.5f;
+    public float SpeedBoost = 5.5f;
 
     public Transform ThePlayer;
 
@@ -35,7 +33,7 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
 
 
-       
+
 
 
         // change back to Getmousebutton if doesnt work 
@@ -46,14 +44,22 @@ public class Turn_Off_TorchScript : MonoBehaviour
         {
 
 
-            Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
-
-            B_Light.enabled = false;
 
 
-          //  Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
 
-          //  G_Light.enabled = false;
+
+          print("faster faster...");
+
+
+
+
+
+           // Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
+
+          //  B_Light.enabled = false;
+
+
+           
 
 
             Battery_Level Batteryyeah = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();
@@ -89,7 +95,7 @@ public class Turn_Off_TorchScript : MonoBehaviour
                 gogo.GetComponent<Light_Hold_Blue>().enabled = false;
 
                 gogo.GetComponent<Battery_Level>().enabled = false;
-                
+
 
             }
 
@@ -113,14 +119,14 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
 
 
-            Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
+          //  Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
-            B_Light.enabled = true;
+           // B_Light.enabled = true;
 
 
-           // Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
+            // Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
 
-          //  G_Light.enabled = true;
+            //  G_Light.enabled = true;
 
 
 
@@ -150,94 +156,6 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
 
 
-        if (Input.GetMouseButtonDown(1))
-
-
-        {
-
-            Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
-
-            B_Light.enabled = false;
-
-
-            Stun_Light_Liban G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
-
-            G_Light.enabled = false;
-
-
-            Battery_Level Batteryyeah = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();
-
-            Batteryyeah.enabled = false;
-
-
-            print("slower slower...");
-
-
-            // LemarMovment LMoving2 = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
-
-            //  LMoving2.Walk -= SpeedBoost;
-
-
-
-            GameObject[] slowerslower = GameObject.FindGameObjectsWithTag("Player");
-
-                foreach (GameObject plpl in slowerslower)
-
-            {
-                plpl.GetComponent<LemarMovment>().Walk -= Slowerboost;
-
-            }
-
-
-
-
-
-            RunSound.GetComponent<AudioSource>().maxDistance = 0f;
-
-            WalkSound.GetComponent<AudioSource>().maxDistance = 0f;
-
-            CrawlSound.GetComponent<AudioSource>().maxDistance = 0f;
-
-
-
-        }
-
-
-
-
-        if (Input.GetMouseButtonUp(1))
-
-
-
-        {
-
-            Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
-
-            B_Light.enabled = true;
-
-
-            Stun_Light_Liban G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
-
-            G_Light.enabled = true;
-
-
-
-            LemarMovment LMoving = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
-
-            LMoving.Walk += SpeedBoost;
-
-            // LMoving.Speed *= SpeedBoost;
-
-
-            RunSound.GetComponent<AudioSource>().maxDistance = 1.05f;
-
-            WalkSound.GetComponent<AudioSource>().maxDistance = 1.05f;
-
-            CrawlSound.GetComponent<AudioSource>().maxDistance = 1.05f;
-
-
-
-
 
         }
 
@@ -250,7 +168,7 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
 
 
-}
+
 
 
 

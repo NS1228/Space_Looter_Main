@@ -10257,6 +10257,22 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3283683930037972451}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2534866580801267877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2534866580801267871}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8af03ec2faad7497dbdc13bf6142f585, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ThePlayeeer: {fileID: 4608434749558657031}
+  CrawlllSound: {fileID: 3564080878044694489}
+  RunnnSound: {fileID: 3564080877514931971}
+  WalkkkSound: {fileID: 3564080876534407208}
 --- !u!114 &2534866580801267878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12047,7 +12063,7 @@ PrefabInstance:
     - target: {fileID: 3821325363543688678, guid: dc41b4ad26df4479db77cda96ca04ebb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.51
+      value: -30.01
       objectReference: {fileID: 0}
     - target: {fileID: 3821325363543688678, guid: dc41b4ad26df4479db77cda96ca04ebb,
         type: 3}
