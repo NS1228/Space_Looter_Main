@@ -494,6 +494,8 @@ MonoBehaviour:
   TorchLightBlue: {fileID: 2695897809190357859}
   BatteryObject: {fileID: 0}
   DangerTextyeahyeah: {fileID: 0}
+  LowBatterySoudEffect: {fileID: 0}
+  StunLightYellow: {fileID: 0}
 --- !u!114 &2695897810634302880
 MonoBehaviour:
   m_ObjectHideFlags: 0
