@@ -65,6 +65,7 @@ public class Battery_Level : MonoBehaviour
 
             LowBatterySoudEffect.loop = false;
 
+          
 
         }
 
@@ -128,6 +129,8 @@ public class Battery_Level : MonoBehaviour
             LowBatterySoudEffect.Play();
 
             LowBatterySoudEffect.loop = true;
+
+           
 
 
         }
