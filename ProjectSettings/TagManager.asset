@@ -44,6 +44,7 @@ TagManager:
   - Good
   - Equip
   - Boot
+  - Final
   layers:
   - Default
   - TransparentFX

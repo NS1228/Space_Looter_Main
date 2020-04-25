@@ -271,10 +271,10 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-        Light_Hold_Blue GF = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
+      //  Light_Hold_Blue GF = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
 
-        GF.TorchLightBlue.gameObject.SetActive(true);
+      //  GF.TorchLightBlue.gameObject.SetActive(true);
 
 
 
