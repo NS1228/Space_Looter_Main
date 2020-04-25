@@ -14,7 +14,10 @@ public class AttachToWall_Liban : MonoBehaviour
     public AudioSource ElecAudioyh;
 
 
-   // private GameObject[] ManyObjects;
+    // private GameObject[] ManyObjects;
+
+
+    public Transform BackToPositionSpawn;
 
 
 
@@ -60,17 +63,49 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
-            //try a startcoroutine here
 
 
-            //below the coroutine, turn on the outline scripts and turn off the IT_exposee_enemiesLiban as that script doesn't work for some reason  
+            Final_ExposeEnemies_ITD_Liban FTREW = GameObject.FindWithTag("Final").GetComponent<Final_ExposeEnemies_ITD_Liban>();
+
+            FTREW.enabled = true;
+
+
+
+
+            GameObject[] YHHH6 = GameObject.FindGameObjectsWithTag("FlashLight");
+
+
+            foreach (GameObject gosere in YHHH6)
+
+            {
+                gosere.GetComponent<Stun_Light_Liban>().enabled = false;
+
+            }
+
 
 
 
 
             StartCoroutine(ActActElec());
 
+
+
+
+            GameObject[] YHHH = GameObject.FindGameObjectsWithTag("Light");
+
+
+            foreach(GameObject gosee in YHHH)
+
+            {
+                gosee.GetComponent<ITD_StunLight_Liban>().enabled = true;
+
+            }
+
+
+
+
             
+
 
 
         }
@@ -94,7 +129,7 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(2.0f);
+   
 
 
 
@@ -128,20 +163,16 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
-        GameObject [] enemies = GameObject.FindGameObjectsWithTag ("AI");
+     //   GameObject [] enemies = GameObject.FindGameObjectsWithTag ("AI");
 
 
 
-          foreach (GameObject go in enemies)
+        //  foreach (GameObject go in enemies)
+//
 
-
-          {
-              go.GetComponent<Outline>().enabled = true;
-          }
-
-
-
-
+        //  {
+          //    go.GetComponent<Outline>().enabled = true;
+        //  }
 
 
 
@@ -153,7 +184,11 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(9.0f);
+
+
+
+
+        yield return new WaitForSeconds(6.0f);
 
 
 
@@ -181,14 +216,42 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
 
-
+        
 
 
         ElecAudioyh.loop = false;
 
 
 
-        print("yhyh");
+        print("back where it is");
+
+
+
+
+        ElecDevice.transform.position = BackToPositionSpawn.transform.position;
+
+
+
+       // Final_ExposeEnemies_ITD_Liban FTREW = GameObject.Find("Expose Enemy Location ITD Device").GetComponent<Final_ExposeEnemies_ITD_Liban>();
+
+       // FTREW.enabled = false;
+
+
+
+
+
+
+
+
+        yield return new WaitForSeconds(4.0f);
+
+
+
+
+        ElecDevice.GetComponent<BoxCollider>().isTrigger = true;
+
+
+        print("available to use");
 
 
 
