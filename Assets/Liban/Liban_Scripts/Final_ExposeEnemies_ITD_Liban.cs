@@ -20,7 +20,7 @@ public class Final_ExposeEnemies_ITD_Liban : MonoBehaviour
     {
 
 
-        FinalTimer = 10.0f;
+        FinalTimer = 8.0f;
         
     }
 
@@ -78,7 +78,7 @@ public class Final_ExposeEnemies_ITD_Liban : MonoBehaviour
             YHYHITD2.enabled = false;
 
 
-            FinalTimer = 10.0f;
+            FinalTimer = 8.0f;
 
         }
 
@@ -129,7 +129,7 @@ public class Final_ExposeEnemies_ITD_Liban : MonoBehaviour
 
 
 
-            FinalTimer = 10.0f;
+            FinalTimer = 8.0f;
 
 
             WaveeeSound.Stop();
