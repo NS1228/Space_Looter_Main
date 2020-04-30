@@ -898,13 +898,13 @@ public class Nil_FOVdetection : MonoBehaviour
     {
         if (theCollision.gameObject.tag == "Sound" && !soundDetected && Time.timeSinceLevelLoad >= timeSinceLastSeen)
         {
-           // soundDetected = true;
-           // timeSinceLastSeen = Time.timeSinceLevelLoad + 7f;
-           // soundInvestigateTimer = Time.timeSinceLevelLoad + 2;
-           // moveToDestroyTimer = Time.timeSinceLevelLoad + 7f;
-           // Instantiate(soundLocation, Player.transform.position, Player.transform.rotation);
+            soundDetected = true;
+            timeSinceLastSeen = Time.timeSinceLevelLoad + 7f;
+            soundInvestigateTimer = Time.timeSinceLevelLoad + 2;
+            moveToDestroyTimer = Time.timeSinceLevelLoad + 7f;
+            Instantiate(soundLocation, Player.transform.position, Player.transform.rotation);
             
-           // destroyMoveTo = true;
+            destroyMoveTo = true;
             
 
          
@@ -1057,14 +1057,14 @@ public class Nil_FOVdetection : MonoBehaviour
     {
         if (soundColl && !soundDetected && Time.timeSinceLevelLoad >= timeSinceLastSeen)
         {
-            soundDetected = true;
-            timeSinceLastSeen = Time.timeSinceLevelLoad + 7f;
-            soundInvestigateTimer = Time.timeSinceLevelLoad + 2;
-            moveToDestroyTimer = Time.timeSinceLevelLoad + 7f;
-            Instantiate(soundLocation, Player.transform.position, Player.transform.rotation);
+           // soundDetected = true;
+          //  timeSinceLastSeen = Time.timeSinceLevelLoad + 7f;
+          //  soundInvestigateTimer = Time.timeSinceLevelLoad + 2;
+          //  moveToDestroyTimer = Time.timeSinceLevelLoad + 7f;
+           // Instantiate(soundLocation, Player.transform.position, Player.transform.rotation);
 
-            destroyMoveTo = true;
-            soundColl = false;
+           // destroyMoveTo = true;
+          //  soundColl = false;
         }
     }
 
