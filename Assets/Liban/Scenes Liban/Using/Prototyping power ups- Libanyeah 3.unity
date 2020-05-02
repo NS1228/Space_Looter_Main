@@ -8769,14 +8769,14 @@ PrefabInstance:
       objectReference: {fileID: 1362990173}
     - target: {fileID: 1281170835465144654, guid: 5e2f1275c9b814ee69444f167e9077af,
         type: 3}
+      propertyPath: Torchyh
+      value: 
+      objectReference: {fileID: 1660956362}
+    - target: {fileID: 1281170835465144654, guid: 5e2f1275c9b814ee69444f167e9077af,
+        type: 3}
       propertyPath: CountdownSoundEffect
       value: 
       objectReference: {fileID: 1882191790}
-    - target: {fileID: 1281170835465144654, guid: 5e2f1275c9b814ee69444f167e9077af,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1281170835465144655, guid: 5e2f1275c9b814ee69444f167e9077af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9578,11 +9578,6 @@ PrefabInstance:
       propertyPath: ZoomInSoundYeahYeah
       value: 
       objectReference: {fileID: 997001633}
-    - target: {fileID: 677235708055077177, guid: 603aa7640041eb64698d36ffad6c4bb8,
-        type: 3}
-      propertyPath: m_UseGravity
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9668,16 +9663,6 @@ PrefabInstance:
       propertyPath: LowBatterySoudEffect
       value: 
       objectReference: {fileID: 45051010}
-    - target: {fileID: 8748072157924592534, guid: 603aa7640041eb64698d36ffad6c4bb8,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 5.19
-      objectReference: {fileID: 0}
-    - target: {fileID: 8748072157924592534, guid: 603aa7640041eb64698d36ffad6c4bb8,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 603aa7640041eb64698d36ffad6c4bb8, type: 3}
 --- !u!1001 &4178021125513465110

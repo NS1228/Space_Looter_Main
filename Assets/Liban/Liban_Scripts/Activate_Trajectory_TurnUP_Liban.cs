@@ -33,7 +33,7 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
     public GameObject GRText;
 
 
-
+    public GameObject Torchyh;
 
     public Vector3 backtorot;
 
@@ -68,7 +68,7 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
             StartCoroutine(TURNIT());
 
-
+            Torchyh.SetActive(false);
         }
 
 
@@ -196,7 +196,7 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-
+        Torchyh.SetActive(true);
 
 
         // Grenade_Timer_Text_Liban GT_Timer3 = GameObject.Find("Grenade Timer Text").GetComponent<Grenade_Timer_Text_Liban>();
