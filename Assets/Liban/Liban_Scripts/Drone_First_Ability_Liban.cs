@@ -69,6 +69,7 @@ public class Drone_First_Ability_Liban : MonoBehaviour
             StartCoroutine(StartTheFirstAbility());
 
 
+            print("yo");
 
         }
 

@@ -133,10 +133,16 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-            Drone_First_Ability_Liban GVBN3434 = GameObject.Find("Activate Drone first ability").GetComponent<Drone_First_Ability_Liban>();
+              Drone_First_Ability_Liban GVBN3434 = GameObject.Find("Activate Drone first ability").GetComponent<Drone_First_Ability_Liban>();
 
 
-            GVBN3434.enabled = true;
+              GVBN3434.enabled = true;
+
+
+
+           // Final_First_Ability_Drone_Liban POI2 = GameObject.Find("Activate Drone First Ability").GetComponent<Final_First_Ability_Drone_Liban>();
+
+          //  POI2.enabled = true;
 
 
 

@@ -8980,7 +8980,7 @@ PrefabInstance:
         type: 3}
       propertyPath: EnemyFrozenText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1236250844}
     - target: {fileID: 1714190210452048317, guid: fdce74944db104e3f9dcfbde473e9a1d,
         type: 3}
       propertyPath: TheAmazingDrone
@@ -9592,7 +9592,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2
+      value: -29.88
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -9602,7 +9602,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 6
+      value: 23.2
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
