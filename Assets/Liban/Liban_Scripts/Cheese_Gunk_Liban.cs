@@ -9,7 +9,9 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
     public Transform GunkSpot;
 
-    
+    public GameObject TheTorch;
+
+
 
 
     // Start is called before the first frame update
@@ -30,163 +32,70 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
 
 
-            StartCoroutine(TheCheeseGunk());
+            StartCoroutine(GunkGunk());
 
 
-           
 
-            
-
-            }
 
 
 
         }
-    
 
 
 
-
-
-        IEnumerator TheCheeseGunk()
-
-
+        IEnumerator GunkGunk()
 
         {
 
+            TheTorch.SetActive(false);
 
 
+            INstant_Liban IL = GameObject.FindWithTag("Gunk Loc").GetComponent<INstant_Liban>();
 
+            IL.enabled = true;
 
 
-         
-           INstant_Liban I_L = GameObject.FindWithTag("Gunk Loc").GetComponent<INstant_Liban>();
 
 
-           I_L.enabled = true;
 
+            yield return new WaitForSeconds(4.0f);
 
 
 
 
+            Cheese_Gunk_Liban CG = GameObject.FindWithTag("CheesePowerUp").GetComponent<Cheese_Gunk_Liban>();
 
+            CG.enabled = false;
 
 
-        
+            INstant_Liban IL6 = GameObject.FindWithTag("Gunk Loc").GetComponent<INstant_Liban>();
 
+            IL6.enabled = false;
 
 
+            TheTorch.SetActive(true);
 
 
 
 
 
+            
 
 
-            ActivateWatchAbilityTwo_Liban AZX = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
 
-            AZX.enabled = false;
+        }
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            yield return new WaitForSeconds(4.5f);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            ActivateWatchAbilityTwo_Liban AZX2 = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
-
-            AZX2.enabled = true;
-
-
-
-
-
-
-
-
-
-
-
-        GetComponent<Cheese_Gunk_Liban>().enabled = false;
-
-
-
-
-
-            INstant_Liban _IL2 = GameObject.FindWithTag("Gunk Loc").GetComponent<INstant_Liban>();
-
-            _IL2.enabled = false;
-
-
-
-
-
-
-
-
-
-
-        yield return new WaitForSeconds(5.0f);
-
-
-
-
-
-        GetComponent<Cheese_Gunk_Liban>().enabled = true;
-
-
-
-
-
-
-        print("ok");
 
 
 
     }
 
 
+}
 
 
-    }

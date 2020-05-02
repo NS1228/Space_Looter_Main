@@ -3142,6 +3142,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: -89.539, z: 0}
+--- !u!1 &943192392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 943192394}
+  - component: {fileID: 943192393}
+  m_Layer: 0
+  m_Name: ff
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &943192393
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943192392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fc2f8ecfba3b4ee999c1c5a6661b669, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &943192394
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943192392}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.4000988, y: 5.2027493, z: 26.233438}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 96
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &962762789
 GameObject:
   m_ObjectHideFlags: 0
@@ -6032,6 +6075,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1660956362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5022526935789404379, guid: 603aa7640041eb64698d36ffad6c4bb8,
+    type: 3}
+  m_PrefabInstance: {fileID: 3932333746289103164}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1710149864
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8589,6 +8638,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Activate second watch ability
       objectReference: {fileID: 0}
+    - target: {fileID: 1091814293989050280, guid: e90e52b89857d411a9708befba533f22,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1091814293989050281, guid: e90e52b89857d411a9708befba533f22,
         type: 3}
       propertyPath: TheeeePlayer
@@ -8604,11 +8658,6 @@ PrefabInstance:
       propertyPath: YoFace
       value: 
       objectReference: {fileID: 8698471725429433761}
-    - target: {fileID: 1091814293989050281, guid: e90e52b89857d411a9708befba533f22,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1091814293989050282, guid: e90e52b89857d411a9708befba533f22,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8723,6 +8772,11 @@ PrefabInstance:
       propertyPath: CountdownSoundEffect
       value: 
       objectReference: {fileID: 1882191790}
+    - target: {fileID: 1281170835465144654, guid: 5e2f1275c9b814ee69444f167e9077af,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1281170835465144655, guid: 5e2f1275c9b814ee69444f167e9077af,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9090,6 +9144,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1937312927, guid: 5c2ed57b38d1a4d24a724f574acd7b08, type: 3}
+      propertyPath: TorchPlayer
+      value: 
+      objectReference: {fileID: 1660956362}
     - target: {fileID: 1830834173916073152, guid: 5c2ed57b38d1a4d24a724f574acd7b08,
         type: 3}
       propertyPath: ThePlayer
@@ -9097,9 +9155,9 @@ PrefabInstance:
       objectReference: {fileID: 8698471726756888668}
     - target: {fileID: 1830834173916073152, guid: 5c2ed57b38d1a4d24a724f574acd7b08,
         type: 3}
-      propertyPath: TorchForPlayer
+      propertyPath: TheTorchl
       value: 
-      objectReference: {fileID: 5006512736403596276}
+      objectReference: {fileID: 1660956362}
     - target: {fileID: 1830834175223780855, guid: 5c2ed57b38d1a4d24a724f574acd7b08,
         type: 3}
       propertyPath: Gunk
@@ -9110,6 +9168,11 @@ PrefabInstance:
       propertyPath: GunkSpot
       value: 
       objectReference: {fileID: 305230120}
+    - target: {fileID: 1830834175223780855, guid: 5c2ed57b38d1a4d24a724f574acd7b08,
+        type: 3}
+      propertyPath: TheTorch
+      value: 
+      objectReference: {fileID: 1660956362}
     - target: {fileID: 6634604025468708828, guid: 5c2ed57b38d1a4d24a724f574acd7b08,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9292,7 +9355,7 @@ PrefabInstance:
     - target: {fileID: 2656816175027528894, guid: 64d74dbdf841e4c3aa88c6f9d24e54c5,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 64d74dbdf841e4c3aa88c6f9d24e54c5, type: 3}
@@ -9316,9 +9379,9 @@ PrefabInstance:
       objectReference: {fileID: 1614512096}
     - target: {fileID: 3323907217519421830, guid: 3fe540bbfcdd048749b0227bcd21761b,
         type: 3}
-      propertyPath: StartingDroneHealth
-      value: 400
-      objectReference: {fileID: 0}
+      propertyPath: DaTorch
+      value: 
+      objectReference: {fileID: 1660956362}
     - target: {fileID: 6701647713490099471, guid: 3fe540bbfcdd048749b0227bcd21761b,
         type: 3}
       propertyPath: m_Name
@@ -9515,10 +9578,15 @@ PrefabInstance:
       propertyPath: ZoomInSoundYeahYeah
       value: 
       objectReference: {fileID: 997001633}
+    - target: {fileID: 677235708055077177, guid: 603aa7640041eb64698d36ffad6c4bb8,
+        type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 116.4
+      value: -2.4
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -9528,7 +9596,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 9.7
+      value: 20.59
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -9684,6 +9752,11 @@ PrefabInstance:
       propertyPath: AmazingDrone
       value: 
       objectReference: {fileID: 4533310075038509770}
+    - target: {fileID: 4178021124064601307, guid: 7fd59dc6df28144b28c4f653be1bb5d5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fd59dc6df28144b28c4f653be1bb5d5, type: 3}
 --- !u!1001 &4238538554056681507
@@ -10040,12 +10113,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7be5dbd219e004b96b32d0ff1c1179c1, type: 3}
---- !u!4 &5006512736403596276 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8352137147047342792, guid: 603aa7640041eb64698d36ffad6c4bb8,
-    type: 3}
-  m_PrefabInstance: {fileID: 3932333746289103164}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5150037179583803098
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10140,9 +10207,9 @@ PrefabInstance:
       objectReference: {fileID: 1614512094}
     - target: {fileID: 5150037178753607049, guid: 7772b619fe33942d1a2dd88052a137bc,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
+      propertyPath: Torch
+      value: 
+      objectReference: {fileID: 1660956362}
     - target: {fileID: 5150037178753607051, guid: 7772b619fe33942d1a2dd88052a137bc,
         type: 3}
       propertyPath: m_Name

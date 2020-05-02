@@ -89,10 +89,7 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-        Stun_Light_Liban Stunnnn = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
-
-
-        Stunnnn.enabled = false;
+        
 
 
 
@@ -168,42 +165,39 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-      //  Outline O12 = GameObject.Find("enemy sphere 2").GetComponent<Outline>();
+        //  Outline O12 = GameObject.Find("enemy sphere 2").GetComponent<Outline>();
 
 
-     //  O12.enabled = false;
-
-
-
-
-
-
-     //   Outline O13 = GameObject.Find("enemy sphere 3").GetComponent<Outline>();
-
-
-     //   O13.enabled = false;
-
-
-
-
-
-      //  Outline O14 = GameObject.Find("enemy sphere 4").GetComponent<Outline>();
-
-
-     //   O14.enabled = false;
+        //  O12.enabled = false;
 
 
 
 
 
 
+        //   Outline O13 = GameObject.Find("enemy sphere 3").GetComponent<Outline>();
+
+
+        //   O13.enabled = false;
 
 
 
-        Stun_Light_Liban Stttttun = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
 
 
-        Stttttun.enabled = true;
+        //  Outline O14 = GameObject.Find("enemy sphere 4").GetComponent<Outline>();
+
+
+        //   O14.enabled = false;
+
+
+
+        
+
+
+
+
+
+
 
 
 

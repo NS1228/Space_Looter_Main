@@ -203,7 +203,7 @@ MonoBehaviour:
   ThePlayer: {fileID: 0}
   Shrink: 1.3
   BackToNormal: 1.3
-  TorchForPlayer: {fileID: 0}
+  TheTorchl: {fileID: 0}
 --- !u!114 &1830834175223780855
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Gunk: {fileID: 0}
   GunkSpot: {fileID: 0}
+  TheTorch: {fileID: 0}
 --- !u!114 &1937312927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -230,3 +231,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e864966b115be40bdac37085ca4751de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TorchPlayer: {fileID: 0}

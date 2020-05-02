@@ -23,6 +23,8 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
     public GameObject DHealth;
 
+    public GameObject Torch;
+
 
 
 
@@ -164,6 +166,11 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
             DroneHealth_Script DHEALTHHyhyh = GameObject.FindWithTag("Dronee").GetComponent<DroneHealth_Script>();
 
             DHEALTHHyhyh.enabled = true;
+
+
+
+
+            Torch.SetActive(false);
 
 
         }

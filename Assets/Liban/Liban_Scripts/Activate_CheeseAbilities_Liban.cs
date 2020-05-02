@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Activate_CheeseAbilities_Liban : MonoBehaviour
 {
+
+    public GameObject TorchPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +27,13 @@ public class Activate_CheeseAbilities_Liban : MonoBehaviour
             GetComponent<Cheese_ShrinkingPOWERUP>().enabled = true;
 
 
-            GetComponent<Stun_Light_Liban>().enabled = false;
+            TorchPlayer.SetActive(false);
 
 
-            GetComponent<Light_Hold_Blue>().enabled = false;
+
+
+
+            print("the cheese");
 
         }
 

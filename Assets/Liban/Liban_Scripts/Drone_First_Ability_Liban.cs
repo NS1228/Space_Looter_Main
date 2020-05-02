@@ -130,19 +130,6 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
-        Light_Hold_Blue JKL = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
-
-
-        JKL.enabled = false;
-
-
-
-
-
-
-
-
-
 
         //Nil_FOVdetection.immobilosingRipple = true;
         
@@ -276,6 +263,10 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
+        Drone_Second_ability_Liban RTY = GameObject.Find("Activate Drone second ability").GetComponent<Drone_Second_ability_Liban>();
+
+
+        RTY.enabled = true;
 
 
 
@@ -296,15 +287,7 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
-        Drone_Second_ability_Liban RTY = GameObject.Find("Activate Drone second ability").GetComponent<Drone_Second_ability_Liban>();
-
-
-        RTY.enabled = true;
-
-
-
-
-
+    
 
 
 
@@ -330,11 +313,7 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
-        Light_Hold_Blue QAS = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
-
-
-        QAS.enabled = true;
-
+        
 
 
 

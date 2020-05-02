@@ -11,7 +11,7 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
 
     public float BackToNormal = 1.3f;
 
-    public Transform TorchForPlayer;
+    public GameObject TheTorchl;
 
 
 
@@ -53,7 +53,7 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
 
         ThePlayer.transform.localScale /= Shrink;
 
-        TorchForPlayer.transform.localScale /= Shrink;
+        
 
 
 
@@ -61,18 +61,20 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(6.4f);
+        yield return new WaitForSeconds(5.4f);
 
 
        
 
         ThePlayer.transform.localScale *= BackToNormal;
 
-        TorchForPlayer.transform.localScale *= BackToNormal;
+        
 
-        GetComponent<Cheese_ShrinkingPOWERUP>().enabled = true;
+        GetComponent<Cheese_ShrinkingPOWERUP>().enabled = false;
 
 
+
+        TheTorchl.SetActive(true);
 
 
 
@@ -81,9 +83,9 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
         yield return new WaitForSeconds(3.0f);
 
 
-        GetComponent<Cheese_ShrinkingPOWERUP>().enabled = true;
+        
 
-        print("nice");
+        print("get back there");
 
 
     }
