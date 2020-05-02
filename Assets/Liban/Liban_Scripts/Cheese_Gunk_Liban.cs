@@ -65,7 +65,6 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
            I_L.enabled = true;
 
-             
 
 
 
@@ -73,6 +72,7 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
 
 
+        
 
 
 
@@ -148,7 +148,7 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
 
 
-
+        GetComponent<Cheese_Gunk_Liban>().enabled = false;
 
 
 
@@ -156,14 +156,35 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
             INstant_Liban _IL2 = GameObject.FindWithTag("Gunk Loc").GetComponent<INstant_Liban>();
 
-            _IL2.enabled = false; 
+            _IL2.enabled = false;
 
 
 
 
 
 
-        }
+
+
+
+
+        yield return new WaitForSeconds(5.0f);
+
+
+
+
+
+        GetComponent<Cheese_Gunk_Liban>().enabled = true;
+
+
+
+
+
+
+        print("ok");
+
+
+
+    }
 
 
 

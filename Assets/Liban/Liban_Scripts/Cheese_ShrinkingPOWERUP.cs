@@ -23,7 +23,7 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
     }
 
     // Update is called once per frame
-    void OnTriggerEnter (Collider other)
+    void Update ()
 
 
     {
@@ -34,7 +34,7 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
         {
 
 
-            StartCoroutine(Shrinkingyeahyeah(other));
+            StartCoroutine(Shrinkingyeahyeah());
 
 
 
@@ -45,7 +45,7 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
 
 
 
-    IEnumerator Shrinkingyeahyeah(Collider player)
+    IEnumerator Shrinkingyeahyeah()
 
 
     {
@@ -57,20 +57,33 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
 
 
 
-       // TorchForPlayer.SetActive(false);
+        GetComponent<Cheese_ShrinkingPOWERUP>().enabled = false;
 
 
 
         yield return new WaitForSeconds(6.4f);
 
 
-       // TorchForPlayer.SetActive(true);
+       
 
         ThePlayer.transform.localScale *= BackToNormal;
 
         TorchForPlayer.transform.localScale *= BackToNormal;
 
+        GetComponent<Cheese_ShrinkingPOWERUP>().enabled = true;
 
+
+
+
+
+
+
+        yield return new WaitForSeconds(3.0f);
+
+
+        GetComponent<Cheese_ShrinkingPOWERUP>().enabled = true;
+
+        print("nice");
 
 
     }

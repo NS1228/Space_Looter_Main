@@ -468,6 +468,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 78
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &110677619
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 110677620}
+  m_Layer: 0
+  m_Name: Activate Cheese
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &110677620
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110677619}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.4540277, y: 5.1839185, z: 26.16312}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 95
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &113038025
 GameObject:
   m_ObjectHideFlags: 0
@@ -955,7 +985,7 @@ GameObject:
   - component: {fileID: 281444097}
   m_Layer: 0
   m_Name: enemy sphere 3
-  m_TagString: EnemyDrone
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1045,7 +1075,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 281444096}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 21.45, y: 10.93, z: 53.1}
+  m_LocalPosition: {x: -8.449999, y: 8.93, z: 45.6}
   m_LocalScale: {x: 3.5033, y: 3.5033, z: 3.5033}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1807,7 +1837,7 @@ GameObject:
   - component: {fileID: 548937911}
   m_Layer: 0
   m_Name: enemy sphere 2
-  m_TagString: EnemyDrone
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1897,7 +1927,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548937910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.5, y: 10.93, z: 53.6}
+  m_LocalPosition: {x: -23.4, y: 8.93, z: 46.1}
   m_LocalScale: {x: 3.5033, y: 3.5033, z: 3.5033}
   m_Children: []
   m_Father: {fileID: 0}
@@ -4998,7 +5028,7 @@ GameObject:
   - component: {fileID: 1337688054}
   m_Layer: 0
   m_Name: enemy sphere 4
-  m_TagString: EnemyDrone
+  m_TagString: AI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5088,7 +5118,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337688053}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.8599997, y: 10.93, z: 53.7}
+  m_LocalPosition: {x: -37.76, y: 8.93, z: 46.2}
   m_LocalScale: {x: 3.5033, y: 3.5033, z: 3.5033}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7090,7 +7120,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845240700}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.4, y: 12, z: 45}
+  m_LocalPosition: {x: -23.5, y: 10, z: 37.5}
   m_LocalScale: {x: 48.256, y: 13.935, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9284,6 +9314,11 @@ PrefabInstance:
       propertyPath: DroneHealthBar
       value: 
       objectReference: {fileID: 1614512096}
+    - target: {fileID: 3323907217519421830, guid: 3fe540bbfcdd048749b0227bcd21761b,
+        type: 3}
+      propertyPath: StartingDroneHealth
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 6701647713490099471, guid: 3fe540bbfcdd048749b0227bcd21761b,
         type: 3}
       propertyPath: m_Name
@@ -9483,7 +9518,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.8
+      value: 116.4
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -9493,7 +9528,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.08
+      value: 9.7
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -10106,7 +10141,7 @@ PrefabInstance:
     - target: {fileID: 5150037178753607049, guid: 7772b619fe33942d1a2dd88052a137bc,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5150037178753607051, guid: 7772b619fe33942d1a2dd88052a137bc,
         type: 3}
