@@ -126,6 +126,7 @@ MonoBehaviour:
   ElecPos: {fileID: 0}
   ElecDevice: {fileID: 6098185550209398837}
   NewSphere: {fileID: 0}
+  Torchh: {fileID: 0}
 --- !u!1 &6098185551162338034
 GameObject:
   m_ObjectHideFlags: 0

@@ -36,7 +36,7 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
 
             StartCoroutine(Shrinkingyeahyeah());
 
-
+            TheTorchl.SetActive(false);
 
         }
 

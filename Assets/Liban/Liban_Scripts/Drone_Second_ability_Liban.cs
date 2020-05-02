@@ -11,10 +11,10 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-   // public SphereCollider ColliderForSecondAbility;
+    // public SphereCollider ColliderForSecondAbility;
 
 
-  //  public SphereCollider ColliderForFirstAbility;
+    //  public SphereCollider ColliderForFirstAbility;
 
 
 
@@ -23,14 +23,14 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
     void Update()
     {
-        
 
-        if(Input.GetMouseButtonDown(1))
+
+        if (Input.GetMouseButtonDown(1))
 
         {
 
 
-            StartCoroutine(ActivateExposeLocations());
+            StartCoroutine(ActivateExposeLocationss());
 
 
         }
@@ -45,7 +45,7 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-    IEnumerator ActivateExposeLocations()
+    IEnumerator ActivateExposeLocationss()
 
 
 
@@ -53,29 +53,7 @@ public class Drone_Second_ability_Liban : MonoBehaviour
 
 
 
-        //    Outline O1 = GameObject.Find("enemy sphere 2").GetComponent<Outline>();
-
-        //   O1.enabled = true;
-
-
-
-
-
-
-        //  Outline O2 = GameObject.Find("enemy sphere 3").GetComponent<Outline>();
-
-
-        //   O2.enabled = true;
-
-
-
-
-
-        //  Outline O3 = GameObject.Find("enemy sphere 4").GetComponent<Outline>();
-
-
-        //  O3.enabled = true;
-
+      
 
         expose = true;
 

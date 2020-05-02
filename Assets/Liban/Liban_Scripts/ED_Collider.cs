@@ -21,7 +21,7 @@ public class ED_Collider : MonoBehaviour
 
 
 
-
+    public GameObject Torchh;
 
 
   
@@ -39,7 +39,7 @@ public class ED_Collider : MonoBehaviour
         {
 
 
-           
+            Torchh.SetActive(false);
 
 
 

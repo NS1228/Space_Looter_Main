@@ -1961,6 +1961,7 @@ MonoBehaviour:
   ElecPos: {fileID: 34889643}
   ElecDevice: {fileID: 639034115}
   NewSphere: {fileID: 0}
+  Torchh: {fileID: 0}
 --- !u!135 &639034117
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8658,6 +8659,11 @@ PrefabInstance:
       propertyPath: YoFace
       value: 
       objectReference: {fileID: 8698471725429433761}
+    - target: {fileID: 1091814293989050281, guid: e90e52b89857d411a9708befba533f22,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1091814293989050282, guid: e90e52b89857d411a9708befba533f22,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8974,7 +8980,7 @@ PrefabInstance:
         type: 3}
       propertyPath: EnemyFrozenText
       value: 
-      objectReference: {fileID: 1236250844}
+      objectReference: {fileID: 0}
     - target: {fileID: 1714190210452048317, guid: fdce74944db104e3f9dcfbde473e9a1d,
         type: 3}
       propertyPath: TheAmazingDrone
@@ -8990,6 +8996,11 @@ PrefabInstance:
       propertyPath: DAENEMY2
       value: 
       objectReference: {fileID: 1086352916}
+    - target: {fileID: 1714190210452048317, guid: fdce74944db104e3f9dcfbde473e9a1d,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1714190210452048318, guid: fdce74944db104e3f9dcfbde473e9a1d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9581,7 +9592,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.4
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -9591,7 +9602,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 20.59
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -10526,6 +10537,11 @@ PrefabInstance:
       propertyPath: ElecPos
       value: 
       objectReference: {fileID: 34889643}
+    - target: {fileID: 6098185550209398836, guid: de34b4130f66249869f1f2d0aea1d1ff,
+        type: 3}
+      propertyPath: Torchh
+      value: 
+      objectReference: {fileID: 1660956362}
     - target: {fileID: 6098185550209398837, guid: de34b4130f66249869f1f2d0aea1d1ff,
         type: 3}
       propertyPath: m_Name
@@ -11665,6 +11681,11 @@ PrefabInstance:
       propertyPath: WaveSound
       value: 
       objectReference: {fileID: 968467537}
+    - target: {fileID: 7625982990196177173, guid: f0d33987f041e4bea9b6aa70b74ae3a8,
+        type: 3}
+      propertyPath: Torrrchh
+      value: 
+      objectReference: {fileID: 1660956362}
     - target: {fileID: 7625982990196177174, guid: f0d33987f041e4bea9b6aa70b74ae3a8,
         type: 3}
       propertyPath: m_Name
@@ -11951,6 +11972,11 @@ PrefabInstance:
       propertyPath: WaveeeSound
       value: 
       objectReference: {fileID: 968467537}
+    - target: {fileID: 8887735176217575043, guid: 9094bc43d85be491db8c41049a59eef9,
+        type: 3}
+      propertyPath: Torchyhhh
+      value: 
+      objectReference: {fileID: 1660956362}
     - target: {fileID: 8887735176217575052, guid: 9094bc43d85be491db8c41049a59eef9,
         type: 3}
       propertyPath: m_LocalPosition.x

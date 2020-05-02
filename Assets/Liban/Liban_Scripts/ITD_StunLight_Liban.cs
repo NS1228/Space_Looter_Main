@@ -17,6 +17,8 @@ public class ITD_StunLight_Liban : MonoBehaviour
 
     public AudioSource WaveSound;
 
+    public GameObject Torrrchh;
+
 
 
     // Start is called before the first frame update
@@ -85,8 +87,9 @@ public class ITD_StunLight_Liban : MonoBehaviour
             Final_ExposeEnemies_ITD_Liban FINALLLL = GameObject.FindWithTag("Final").GetComponent<Final_ExposeEnemies_ITD_Liban>();
 
             FINALLLL.enabled = false;
-            
 
+
+            Torrrchh.SetActive(true);
 
         }
 
