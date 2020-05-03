@@ -56,6 +56,8 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
 
 
+            GetComponent<Cheese_ShrinkingPOWERUP>().enabled = false;
+
 
 
             yield return new WaitForSeconds(4.0f);

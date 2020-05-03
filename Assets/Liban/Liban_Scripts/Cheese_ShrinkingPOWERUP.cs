@@ -27,7 +27,7 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
 
 
     {
-
+        //change to if icon is selected
 
         if(Input.GetMouseButtonDown(1))
 
@@ -58,6 +58,8 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
 
 
         GetComponent<Cheese_ShrinkingPOWERUP>().enabled = false;
+
+        GetComponent<Cheese_Gunk_Liban>().enabled = false;
 
 
 

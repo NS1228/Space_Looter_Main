@@ -57,7 +57,7 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
     {
 
 
-
+        // change to if icon is selected
 
         if (Input.GetKeyDown(KeyCode.L))
 
