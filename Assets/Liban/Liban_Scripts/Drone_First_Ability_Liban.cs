@@ -106,34 +106,9 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
-
-
-
-
             ActivateWatchAbility ERT = GameObject.Find("Activate the watch ability").GetComponent<ActivateWatchAbility>();
 
             ERT.enabled = false;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            //Nil_FOVdetection.immobilosingRipple = true;
-
-
-
-
-
 
 
 
@@ -155,9 +130,6 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
-            // TheAmazingDrone.GetComponent<BoxCollider>().enabled = true;
-
-
 
 
 
@@ -167,15 +139,6 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
             TheAmazingDrone.GetComponent<BoxCollider>().size = new Vector3(SizeX, SizeY, SizeZ);
-
-
-
-
-            // TheAmazingDrone.GetComponent<SphereCollider>().enabled = false;
-
-
-
-
 
 
 
@@ -190,11 +153,10 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
+
+
+
             freeze = false;
-
-
-
-            //  ThaaaEnemyy.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
 
 
 
@@ -235,31 +197,6 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
 
-
-            //  ColliderForFirstAbility.enabled = false;
-
-
-
-
-            //  ColliderForSecondAbility.enabled = true;
-
-
-
-
-
-
-            // ColliderForFirstAbility.radius = 521.5f;
-
-
-
-
-
-
-            //Nil_FOVdetection.immobilosingRipple = false;
-
-
-
-
             Drone_Second_ability_Liban RTY = GameObject.Find("Activate Drone second ability").GetComponent<Drone_Second_ability_Liban>();
 
 
@@ -275,15 +212,6 @@ public class Drone_First_Ability_Liban : MonoBehaviour
 
 
             yield return new WaitForSeconds(5.5f);
-
-
-
-
-
-
-
-
-
 
 
 

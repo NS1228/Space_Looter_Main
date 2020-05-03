@@ -1868,7 +1868,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 548937910}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -5103,7 +5103,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337688053}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -8966,6 +8966,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1126571998, guid: fdce74944db104e3f9dcfbde473e9a1d, type: 3}
+      propertyPath: TheDronee
+      value: 
+      objectReference: {fileID: 4533310075038509770}
     - target: {fileID: 1714190210452048316, guid: fdce74944db104e3f9dcfbde473e9a1d,
         type: 3}
       propertyPath: m_Name
@@ -8996,11 +9000,6 @@ PrefabInstance:
       propertyPath: DAENEMY2
       value: 
       objectReference: {fileID: 1086352916}
-    - target: {fileID: 1714190210452048317, guid: fdce74944db104e3f9dcfbde473e9a1d,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1714190210452048318, guid: fdce74944db104e3f9dcfbde473e9a1d,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9592,7 +9591,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.88
+      value: 118.2
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -9602,7 +9601,7 @@ PrefabInstance:
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 23.2
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 677235708055077179, guid: 603aa7640041eb64698d36ffad6c4bb8,
         type: 3}
@@ -9683,6 +9682,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 247221837, guid: 7fd59dc6df28144b28c4f653be1bb5d5, type: 3}
+      propertyPath: TheDroneYH
+      value: 
+      objectReference: {fileID: 4533310075038509770}
     - target: {fileID: 4178021124064601304, guid: 7fd59dc6df28144b28c4f653be1bb5d5,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -9748,11 +9751,6 @@ PrefabInstance:
       propertyPath: AmazingDrone
       value: 
       objectReference: {fileID: 4533310075038509770}
-    - target: {fileID: 4178021124064601307, guid: 7fd59dc6df28144b28c4f653be1bb5d5,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fd59dc6df28144b28c4f653be1bb5d5, type: 3}
 --- !u!1001 &4238538554056681507
