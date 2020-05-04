@@ -47,6 +47,7 @@ public class Nil_FOVdetection : MonoBehaviour
     public float attackSpeed;
     public GameObject attackIdentifier;
     private bool attack;
+    private bool hasAttacked;
 
 
     // private float speed;
@@ -335,8 +336,10 @@ public class Nil_FOVdetection : MonoBehaviour
         UnSlowEnemies();
         GunkStuff();
         SoundThang();
+        AttackManager();
 
-        
+
+
 
 
 
@@ -490,15 +493,18 @@ public class Nil_FOVdetection : MonoBehaviour
 
     void Chase()
     {
+
+        
         // Vector3 localPosition = player.transform.position - transform.position;
         //localPosition = localPosition.normalized; // The normalized direction in LOCAL space
         // transform.Translate(localPosition.x * Time.deltaTime * speed, localPosition.y * Time.deltaTime * speed, localPosition.z * Time.deltaTime * speed);
         //gameObject.transform.LookAt(player.transform.position);
 
 
-        if(attack)
+        if(attack && Time.timeSinceLevelLoad >= attackSpeed && !hasAttacked)
         {
-            player.GetComponent<Nil_Playerhealth>().health -= damage * attackSpeed * Time.deltaTime;
+            player.GetComponent<Nil_Playerhealth>().health -= damage;
+            hasAttacked = true;
             
         }
        
@@ -942,6 +948,8 @@ public class Nil_FOVdetection : MonoBehaviour
             print("coll");
             attackIdentifier.SetActive(true);
             attack = true;
+            agent.speed = stopSpeed;
+
         }
 
             if(theCollision.gameObject.tag == "Drone")
@@ -961,6 +969,7 @@ public class Nil_FOVdetection : MonoBehaviour
             print("coll");
             attackIdentifier.SetActive(false);
             attack = false;
+            
         }
     }
 
@@ -1065,6 +1074,15 @@ public class Nil_FOVdetection : MonoBehaviour
 
            // destroyMoveTo = true;
           //  soundColl = false;
+        }
+    }
+
+
+    public void AttackManager()
+    {
+        if(hasAttacked && Time.timeSinceLevelLoad >= attackSpeed)
+        {
+            hasAttacked = false;
         }
     }
 
