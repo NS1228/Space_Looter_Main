@@ -128,7 +128,10 @@ public class DroneHealth_Script : MonoBehaviour
 
         gameObject.SetActive(false);
         CurrentDroneHealth = 600f;
-        GetComponent<Place_Drone_InFrontOfPlayer_Liban>().DroneCameraLIVE.enabled = false;
+
+        Place_Drone_InFrontOfPlayer_Liban TYS = GameObject.Find("Press Q to child drone").GetComponent<Place_Drone_InFrontOfPlayer_Liban>();
+
+        TYS.DroneCameraLIVE.gameObject.SetActive(false);
 
 
         DroneHealthBar.gameObject.SetActive(false);
