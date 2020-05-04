@@ -33,7 +33,7 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
     public GameObject GRText;
 
 
-
+    public GameObject Torchyh;
 
     public Vector3 backtorot;
 
@@ -57,7 +57,7 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
     {
 
 
-
+        // change to if icon is selected
 
         if (Input.GetKeyDown(KeyCode.L))
 
@@ -68,7 +68,7 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
             StartCoroutine(TURNIT());
 
-
+            Torchyh.SetActive(false);
         }
 
 
@@ -168,34 +168,6 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-        Light_Hold_Blue VBN = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
-
-        VBN.TorchLightBlue.gameObject.SetActive(false);
-
-
-
-
-
-
-
-        ActivateWatchAbilityTwo_Liban TREW = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
-
-
-        TREW.enabled = false;
-
-
-
-
-
-
-
-        Stun_Light_Liban STRE = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
-
-        STRE.enabled = true;
-
-
-
-
 
 
 
@@ -224,7 +196,7 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-
+        Torchyh.SetActive(true);
 
 
         // Grenade_Timer_Text_Liban GT_Timer3 = GameObject.Find("Grenade Timer Text").GetComponent<Grenade_Timer_Text_Liban>();
@@ -291,26 +263,7 @@ public class Activate_Trajectory_TurnUP_Liban : MonoBehaviour
 
 
 
-        ActivateWatchAbilityTwo_Liban TREW2 = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
-
-
-        TREW2.enabled = true;
-
-
-
-        CursorScript.gameObject.SetActive(false);
-
-
-
-        Stun_Light_Liban STRE67 = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
-
-        STRE67.enabled = false;
-
-
-
-
-
-
+       
 
 
 

@@ -50,3 +50,4 @@ MonoBehaviour:
   ChangeCamera: 0
   DroneCameraLIVE: {fileID: 0}
   DHealth: {fileID: 0}
+  Torch: {fileID: 0}

@@ -126,10 +126,14 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
+
+
                  Grenade_Timer_Text_Liban GT_Timer3 = GameObject.Find("Grenade Timer Text").GetComponent<Grenade_Timer_Text_Liban>();
 
 
                  GT_Timer3.GrenadeTimerTimer = 11.0f;
+
+
 
 
 
@@ -139,7 +143,11 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
+
+
                 TheTrajectoryCamera.gameObject.SetActive(false);
+
+
 
 
 
@@ -148,7 +156,11 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
+
+
                 TheThirdPErsonCamera.gameObject.SetActive(true);
+
+
 
 
 
@@ -161,15 +173,15 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
+
+
                 CountdownSoundEffect.Stop();
 
 
 
 
-                Light_Hold_Blue GF = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
 
-                GF.TorchLightBlue.gameObject.SetActive(true);
 
 
 
@@ -186,6 +198,8 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
+
+
                 ActivateWatchAbilityTwo_Liban TREW2 = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
 
 
@@ -193,19 +207,21 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
+
+
+
+
                 TheCursorScript.gameObject.SetActive(false);
+
+
+
+
 
 
 
                 Stun_Light_Liban STRE67 = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
 
                 STRE67.enabled = false;
-
-
-
-
-
-
 
 
 
@@ -224,6 +240,7 @@ public class Projectile_Donut : MonoBehaviour
             {
 
 
+
                 Rigidbody obj2 = Instantiate(secondBulletPrefabs, shootingpoint.position, shootingpoint.rotation);
 
 
@@ -231,17 +248,26 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
+
+
                 readyToThrowyeah = false;
+
+
+
 
 
 
                 TheTimer = Time.timeSinceLevelLoad + 11.0f;
 
 
+
+
+
                 Grenade_Timer_Text_Liban GT_Timer3 = GameObject.Find("Grenade Timer Text").GetComponent<Grenade_Timer_Text_Liban>();
 
 
                 GT_Timer3.GrenadeTimerTimer = 11.0f;
+
 
 
 
@@ -255,6 +281,10 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
+
+
+
+
                 TheTrajectoryCamera.transform.position = WhereTheCameraWillSpawn.position;
 
 
@@ -265,10 +295,16 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
+
                 FP_RigidB.gameObject.SetActive(true);
 
 
+
+
                 GrenadeText.gameObject.SetActive(false);
+
+
+
 
 
                 CountdownSoundEffect.Stop();
@@ -448,15 +484,15 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
-            Light_Hold_Blue JKL = GameObject.Find("torcia").GetComponent<Light_Hold_Blue>();
+         //   Light_Hold_Blue JKL = GameObject.Find("torcia").GetComponent<Light_Hold_Blue>();
 
-            JKL.enabled = true;
+         //   JKL.enabled = true;
 
 
 
-            Stun_Light_Liban STLInb = GameObject.Find("torcia").GetComponent<Stun_Light_Liban>();
+        //    Stun_Light_Liban STLInb = GameObject.Find("torcia").GetComponent<Stun_Light_Liban>();
 
-            STLInb.enabled = true;
+         //   STLInb.enabled = true;
 
 
 

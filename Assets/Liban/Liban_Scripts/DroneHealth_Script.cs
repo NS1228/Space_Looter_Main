@@ -18,6 +18,8 @@ public class DroneHealth_Script : MonoBehaviour
 
     private float DroneBatteryTimer = 0.3f;
 
+    public GameObject DaTorch;
+
 
     // Start is called before the first frame update
     private void Start()
@@ -100,6 +102,8 @@ public class DroneHealth_Script : MonoBehaviour
 
             TYU4567.enabled = true;
 
+
+            DaTorch.SetActive(true);
 
 
 

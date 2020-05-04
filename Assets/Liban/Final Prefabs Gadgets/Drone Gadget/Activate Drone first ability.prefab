@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1714190210452048318}
   - component: {fileID: 1714190210452048317}
+  - component: {fileID: 1126571998}
   m_Layer: 0
   m_Name: Activate Drone first ability
   m_TagString: Untagged
@@ -48,3 +49,16 @@ MonoBehaviour:
   TheAmazingDrone: {fileID: 0}
   DAENEMY1: {fileID: 0}
   DAENEMY2: {fileID: 0}
+--- !u!114 &1126571998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1714190210452048316}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46ba4e69781914b049b4e55ee3a421db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TheDronee: {fileID: 0}

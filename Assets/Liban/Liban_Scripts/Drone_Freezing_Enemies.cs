@@ -21,7 +21,7 @@ public class Drone_Freezing_Enemies : MonoBehaviour
 
 
 
-        if ( other.CompareTag("AI") && Drone_First_Ability_Liban.freeze)
+        if ( other.CompareTag("AI") && Final_First_Ability_Drone_Liban.freeze)
 
 
         {

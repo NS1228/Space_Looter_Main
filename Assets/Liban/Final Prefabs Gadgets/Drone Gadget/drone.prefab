@@ -131,7 +131,7 @@ SphereCollider:
   m_GameObject: {fileID: 1209613965429897373}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 521.5
   m_Center: {x: -35.761044, y: 12.895386, z: 0.000061035156}
@@ -144,7 +144,7 @@ BoxCollider:
   m_GameObject: {fileID: 1209613965429897373}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 830.9622, y: 725.7905, z: 948.65625}
   m_Center: {x: -35.761044, y: 12.895386, z: 0.000061035156}
@@ -178,10 +178,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df635b353ba9347af9aeec704bd70da3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingDroneHealth: 300
+  StartingDroneHealth: 4000
   CurrentDroneHealth: 0
   DroneHealthBar: {fileID: 0}
   DroneBatteryDraineryh: 1
+  DaTorch: {fileID: 0}
 --- !u!114 &3323907217519421828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -584,7 +585,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6701647713490099471}
-  m_LocalRotation: {x: -0, y: -0.075396605, z: -0, w: 0.99715364}
+  m_LocalRotation: {x: 0, y: -0.07539642, z: 0, w: 0.9971537}
   m_LocalPosition: {x: 1.1099992, y: 8.17, z: 28.335165}
   m_LocalScale: {x: 0.0034485275, y: 0.0034485275, z: 0.0034485275}
   m_Children:

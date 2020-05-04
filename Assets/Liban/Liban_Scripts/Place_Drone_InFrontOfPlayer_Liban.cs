@@ -23,6 +23,8 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
     public GameObject DHealth;
 
+    public GameObject Torch;
+
 
 
 
@@ -67,7 +69,7 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
         {
 
-            
+            Torch.SetActive(false);
 
 
             Final_Drone_Movement_Liban FDM45 = GameObject.Find("Drone Skin").GetComponent<Final_Drone_Movement_Liban>();
@@ -91,27 +93,6 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-            // ThePlayersCamera.gameObject.SetActive(false);
-
-
-
-
-
-          //  Drone_Movement_Liban LibanDrone = GameObject.FindWithTag("Dronee").GetComponent<Drone_Movement_Liban>();
-
-
-           // LibanDrone.enabled = true;
-
-
-
-
-            // NewMovementScript DRNEMV = GameObject.FindWithTag("Dronee").GetComponent<NewMovementScript>();
-
-            // DRNEMV.enabled = true;
-
-
-
-
             LemarMovment LMovementyh = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
 
 
@@ -131,18 +112,30 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-            Drone_First_Ability_Liban GVBN3434 = GameObject.Find("Activate Drone first ability").GetComponent<Drone_First_Ability_Liban>();
+             // Drone_First_Ability_Liban GVBN3434 = GameObject.Find("Activate Drone first ability").GetComponent<Drone_First_Ability_Liban>();
 
 
-            GVBN3434.enabled = true;
+            //  GVBN3434.enabled = true;
+
+
+
+            Final_First_Ability_Drone_Liban ASW = GameObject.Find("Activate Drone first ability").GetComponent<Final_First_Ability_Drone_Liban>();
+
+            ASW.enabled = true;
 
 
 
 
-            Drone_Second_ability_Liban QWERTY = GameObject.Find("Activate Drone second ability").GetComponent<Drone_Second_ability_Liban>();
+            Final_Second_Drone_Ability_Liban SDFG = GameObject.Find("Activate Drone second ability").GetComponent<Final_Second_Drone_Ability_Liban>();
+
+            SDFG.enabled = true;
 
 
-            QWERTY.enabled = true;
+
+           // Drone_Second_ability_Liban QWERTY = GameObject.Find("Activate Drone second ability").GetComponent<Drone_Second_ability_Liban>();
+
+
+           // QWERTY.enabled = true;
 
 
 
@@ -164,6 +157,11 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
             DroneHealth_Script DHEALTHHyhyh = GameObject.FindWithTag("Dronee").GetComponent<DroneHealth_Script>();
 
             DHEALTHHyhyh.enabled = true;
+
+
+
+
+            
 
 
         }

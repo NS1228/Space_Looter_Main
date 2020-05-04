@@ -11,7 +11,7 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
 
     public float BackToNormal = 1.3f;
 
-    public Transform TorchForPlayer;
+    public GameObject TheTorchl;
 
 
 
@@ -23,20 +23,20 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
     }
 
     // Update is called once per frame
-    void OnTriggerEnter (Collider other)
+    void Update ()
 
 
     {
-
+        //change to if icon is selected
 
         if(Input.GetMouseButtonDown(1))
 
         {
 
 
-            StartCoroutine(Shrinkingyeahyeah(other));
+            StartCoroutine(Shrinkingyeahyeah());
 
-
+            TheTorchl.SetActive(false);
 
         }
 
@@ -45,7 +45,7 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
 
 
 
-    IEnumerator Shrinkingyeahyeah(Collider player)
+    IEnumerator Shrinkingyeahyeah()
 
 
     {
@@ -53,24 +53,41 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
 
         ThePlayer.transform.localScale /= Shrink;
 
-        TorchForPlayer.transform.localScale /= Shrink;
+        
 
 
 
-       // TorchForPlayer.SetActive(false);
+        GetComponent<Cheese_ShrinkingPOWERUP>().enabled = false;
+
+        GetComponent<Cheese_Gunk_Liban>().enabled = false;
 
 
 
-        yield return new WaitForSeconds(6.4f);
+        yield return new WaitForSeconds(5.4f);
 
 
-       // TorchForPlayer.SetActive(true);
+       
 
         ThePlayer.transform.localScale *= BackToNormal;
 
-        TorchForPlayer.transform.localScale *= BackToNormal;
+        
+
+        GetComponent<Cheese_ShrinkingPOWERUP>().enabled = false;
 
 
+
+        TheTorchl.SetActive(true);
+
+
+
+
+
+        yield return new WaitForSeconds(3.0f);
+
+
+        
+
+        print("get back there");
 
 
     }

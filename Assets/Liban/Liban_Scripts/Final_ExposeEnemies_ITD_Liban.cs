@@ -12,6 +12,7 @@ public class Final_ExposeEnemies_ITD_Liban : MonoBehaviour
 
     public AudioSource WaveeeSound;
 
+    public GameObject Torchyhhh;
 
 
 
@@ -20,7 +21,7 @@ public class Final_ExposeEnemies_ITD_Liban : MonoBehaviour
     {
 
 
-        FinalTimer = 8.0f;
+        FinalTimer = 12.0f;
         
     }
 
@@ -78,7 +79,10 @@ public class Final_ExposeEnemies_ITD_Liban : MonoBehaviour
             YHYHITD2.enabled = false;
 
 
-            FinalTimer = 8.0f;
+          //  FinalTimer = 8.0f;
+
+
+
 
         }
 
@@ -129,13 +133,13 @@ public class Final_ExposeEnemies_ITD_Liban : MonoBehaviour
 
 
 
-            FinalTimer = 8.0f;
+            FinalTimer = 12.0f;
 
 
             WaveeeSound.Stop();
 
 
-
+            Torchyhhh.SetActive(true);
 
 
 

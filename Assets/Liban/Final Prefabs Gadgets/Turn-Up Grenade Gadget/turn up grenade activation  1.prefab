@@ -52,6 +52,7 @@ MonoBehaviour:
   OGPlayer: {fileID: 0}
   TrajectCursor: {fileID: 0}
   GRText: {fileID: 0}
+  Torchyh: {fileID: 0}
   backtorot: {x: 0, y: 0, z: 0}
   Torch: {fileID: 0}
   Torchbacktorot: {x: 0, y: 0, z: 0}
