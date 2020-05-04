@@ -18,22 +18,20 @@ public class GogglesCollider : MonoBehaviour
 
 
 
-    void OnTriggerEnter (Collider other)
+    void Start()
 
     {
 
 
-        if(other.CompareTag("Player"))
+        
 
-        {
+        
 
             //activate the camera switch in here yeahyeah
 
 
 
-              CameraSwitch SwitchSwitch = GameObject.Find("camera switch script empty object new").GetComponent<CameraSwitch>();
-
-             SwitchSwitch.enabled = true;
+             
 
 
 
@@ -41,19 +39,19 @@ public class GogglesCollider : MonoBehaviour
             print("yo hi hi hi");
 
 
-            StartCoroutine(ActivateTEXTS(other));
+            StartCoroutine(ActivateTEXTS());
 
 
            
 
 
-        }
+        
         
     }
 
 
 
-    IEnumerator ActivateTEXTS (Collider player)
+    IEnumerator ActivateTEXTS ()
 
 
     {
@@ -68,7 +66,16 @@ public class GogglesCollider : MonoBehaviour
 
 
 
-        yield return new WaitForSeconds(4.5f);
+
+
+
+
+        yield return new WaitForSeconds(3.5f);
+           
+
+
+
+
 
 
         PressJToSwitch.gameObject.SetActive(false);

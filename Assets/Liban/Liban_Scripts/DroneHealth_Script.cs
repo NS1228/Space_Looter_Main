@@ -126,12 +126,13 @@ public class DroneHealth_Script : MonoBehaviour
     {
 
 
-
-        Destroy(gameObject);
-
+        gameObject.SetActive(false);
+        CurrentDroneHealth = 600f;
+        GetComponent<Place_Drone_InFrontOfPlayer_Liban>().DroneCameraLIVE.enabled = false;
 
 
         DroneHealthBar.gameObject.SetActive(false);
+        DaTorch.SetActive(true);
 
 
 
