@@ -8,6 +8,7 @@ public class LemarMenu : MonoBehaviour
     public static bool MenuUp = false;
 
     public GameObject Inventory;
+    public GameObject Player;
 
     // Use this for initialization
     void Start()
@@ -42,11 +43,13 @@ public class LemarMenu : MonoBehaviour
         Inventory.SetActive(false);
         Time.timeScale = 1;
         MenuUp = false;
+        Player.SetActive(true);
     }
     void Menu()
     {
         Inventory.SetActive(true);
         Time.timeScale = 0;
         MenuUp = true;
+        Player.SetActive(false);
     }
 }
