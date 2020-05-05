@@ -215,7 +215,7 @@ Transform:
   m_GameObject: {fileID: 7583743169754408140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -6.5597115, y: 1.83, z: 3.4513097}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 7583743171264312028}
   - {fileID: 2014506391}
@@ -332,9 +332,9 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  patrolSpeed: 3
-  invSoundSpeed: 6
-  chaseSpeed: 10
+  patrolSpeed: 2
+  invSoundSpeed: 5
+  chaseSpeed: 6.6
   slowedPatrol: 1.5
   slowedInvSound: 3
   slowedChase: 4
@@ -342,8 +342,8 @@ MonoBehaviour:
   damage: 50
   attackSpeed: 5
   attackIdentifier: {fileID: 1707067190588223297}
-  defaultRadius: 15
-  chaseRadius: 20
+  defaultRadius: 13
+  chaseRadius: 19
   defaultAngle: 45
   chaseAngle: 45
   flashLightBlindingLight: 0

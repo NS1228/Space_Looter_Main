@@ -248,9 +248,9 @@ MonoBehaviour:
   - {fileID: 0}
   num: 1
   minDist: 1
-  speed: 5
+  speed: 4.6
   smoothTime: 2
-  runSpeed: 7
+  runSpeed: 6
   rand: 0
   go: 1
   waitTime: 0
@@ -260,6 +260,7 @@ MonoBehaviour:
   investigating: 0
   chaseTimer: 0
   chase: 0
+  droneCanAttack: 0
   notChasing: 0
   notInvestigating: 0
   state: 0
