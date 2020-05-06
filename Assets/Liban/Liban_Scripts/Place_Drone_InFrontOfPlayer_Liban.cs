@@ -70,21 +70,21 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
         {
 
             Torch.SetActive(false);
-
+            DaDrone.SetActive(true);
 
             Final_Drone_Movement_Liban FDM45 = GameObject.Find("Drone Skin").GetComponent<Final_Drone_Movement_Liban>();
 
 
             FDM45.enabled = true;
 
-
+          
 
 
             DaDrone.transform.position = WhereTheDroneWillSpawn.transform.position;
 
 
 
-            WhereTheDroneWillSpawn.parent = null;
+        
 
 
 

@@ -19,6 +19,7 @@ public class ITD_StunLight_Liban : MonoBehaviour
 
     public GameObject Torrrchh;
 
+    public GameObject Player;
 
 
     // Start is called before the first frame update
@@ -77,6 +78,7 @@ public class ITD_StunLight_Liban : MonoBehaviour
 
 
             ITDDevice.transform.position = BackToNormalPosition.transform.position;
+            ITDDevice.transform.parent = Player.transform;
 
 
             WaveSound.Stop();

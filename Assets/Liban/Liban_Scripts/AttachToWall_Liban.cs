@@ -19,8 +19,15 @@ public class AttachToWall_Liban : MonoBehaviour
 
     public Transform BackToPositionSpawn;
 
+    public GameObject Player;
+    void Start()
+    {
+        ElecDevice.transform.position = BackToPositionSpawn.transform.position;
+    }
 
-
+    void Update()
+    {
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -229,12 +236,13 @@ public class AttachToWall_Liban : MonoBehaviour
 
 
         ElecDevice.transform.position = BackToPositionSpawn.transform.position;
+        ElecDevice.transform.parent = Player.transform;
 
 
 
-       // Final_ExposeEnemies_ITD_Liban FTREW = GameObject.Find("Expose Enemy Location ITD Device").GetComponent<Final_ExposeEnemies_ITD_Liban>();
+        // Final_ExposeEnemies_ITD_Liban FTREW = GameObject.Find("Expose Enemy Location ITD Device").GetComponent<Final_ExposeEnemies_ITD_Liban>();
 
-       // FTREW.enabled = false;
+        // FTREW.enabled = false;
 
 
 

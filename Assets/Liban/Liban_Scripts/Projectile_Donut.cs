@@ -88,7 +88,7 @@ public class Projectile_Donut : MonoBehaviour
 
         {
 
-            cursor.SetActive(true);
+            
             cursor.transform.position = Hit.point + Vector3.up * 0.5f;
 
 
@@ -173,6 +173,19 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
+                TheCursorScript.gameObject.SetActive(false);
+
+
+
+
+
+
+
+                cursor.gameObject.SetActive(false);
+
+
+
+
 
 
                 CountdownSoundEffect.Stop();
@@ -208,10 +221,17 @@ public class Projectile_Donut : MonoBehaviour
 
 
 
-
-
-
                 TheCursorScript.gameObject.SetActive(false);
+
+
+
+
+
+
+
+                cursor.gameObject.SetActive(false);
+
+
 
 
 

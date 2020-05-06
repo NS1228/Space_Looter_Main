@@ -136,6 +136,7 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
 
 
+
             RunSound.GetComponent<AudioSource>().maxDistance = 1.05f;
 
             WalkSound.GetComponent<AudioSource>().maxDistance = 1.05f;

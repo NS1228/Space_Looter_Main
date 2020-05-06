@@ -24,8 +24,10 @@ public class ED_Collider : MonoBehaviour
     public GameObject Torchh;
 
 
-  
 
+    void Update()
+    {
+    }
 
 
     // Update is called once per frame
