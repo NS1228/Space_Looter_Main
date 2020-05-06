@@ -82,29 +82,29 @@ public class ActivateWatchAbilityTwo_Liban : MonoBehaviour
 
 
 
-        ActivateWatchAbilityTwo_Liban GHTY = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
+        //ActivateWatchAbilityTwo_Liban GHTY = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
 
-        GHTY.enabled = false;
-
-
+        //GHTY.enabled = false;
 
 
 
 
 
 
-        Stun_Light_Liban STYP123 = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
-
-        STYP123.enabled = false;
 
 
+        //Stun_Light_Liban STYP123 = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
+
+        //STYP123.enabled = false;
 
 
 
 
-        ActivateWatchAbility TYUI = GameObject.Find("Activate the watch ability").GetComponent<ActivateWatchAbility>();
 
-        TYUI.enabled = false;
+
+        //ActivateWatchAbility TYUI = GameObject.Find("Activate the watch ability").GetComponent<ActivateWatchAbility>();
+
+        //TYUI.enabled = false;
 
      
 
@@ -116,6 +116,11 @@ public class ActivateWatchAbilityTwo_Liban : MonoBehaviour
 
 
         yield return new WaitForSeconds(5.0f);
+
+
+
+
+
 
 
 
@@ -147,6 +152,11 @@ public class ActivateWatchAbilityTwo_Liban : MonoBehaviour
 
 
         yield return new WaitForSeconds(6.0f);
+
+
+
+
+
 
 
 

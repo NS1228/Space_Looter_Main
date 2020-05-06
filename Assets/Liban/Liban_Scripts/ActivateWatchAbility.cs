@@ -84,24 +84,31 @@ public class ActivateWatchAbility : MonoBehaviour
         //   TheSmoke.gameObject.SetActive(true);
 
 
-        ActivateWatchAbility ACVB = GameObject.Find("Activate the watch ability").GetComponent<ActivateWatchAbility>();
+        //ActivateWatchAbility ACVB = GameObject.Find("Activate the watch ability").GetComponent<ActivateWatchAbility>();
 
-        ACVB.enabled = false;
-
-
-
-
-
-        Light_Hold_Blue BBBB2 = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
-
-        BBBB2.enabled = false;
+        //ACVB.enabled = false;
 
 
 
 
-        ActivateWatchAbilityTwo_Liban CVBNM = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
 
-        CVBNM.enabled = false;
+        //Light_Hold_Blue BBBB2 = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
+
+        //BBBB2.enabled = false;
+
+
+
+
+        //ActivateWatchAbilityTwo_Liban CVBNM = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
+
+        //CVBNM.enabled = false;
+
+
+
+
+
+
+
 
 
 
@@ -109,6 +116,11 @@ public class ActivateWatchAbility : MonoBehaviour
 
 
         yield return new WaitForSeconds(5.0f);
+
+
+
+
+
 
 
 
@@ -123,9 +135,9 @@ public class ActivateWatchAbility : MonoBehaviour
 
 
 
-        Light_Hold_Blue BBBB3 = GameObject.Find("torcia").GetComponent<Light_Hold_Blue>();
+        //Light_Hold_Blue BBBB3 = GameObject.Find("torcia").GetComponent<Light_Hold_Blue>();
 
-        BBBB3.enabled = true;
+        //BBBB3.enabled = true;
 
 
 
@@ -133,6 +145,11 @@ public class ActivateWatchAbility : MonoBehaviour
 
 
         yield return new WaitForSeconds(6.0f);
+
+
+
+
+
 
 
 

@@ -72,15 +72,7 @@ public class New_SpeedBoost_Script_Liban : MonoBehaviour
             TurnOff.enabled = true;
 
 
-            Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
-
-            B_Light.enabled = false;
-
-
-            Stun_Light_Liban G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
-
-            G_Light.enabled = false;
-
+           
 
             print("yoyoyoyo");
 
@@ -165,25 +157,6 @@ public class New_SpeedBoost_Script_Liban : MonoBehaviour
 
 
 
-            Light_Hold_Blue B_Light2 = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
-
-            B_Light2.enabled = true;
-
-
-
-
-
-            Stun_Light_Liban G_Light2 = GameObject.Find("torcia").GetComponent<Stun_Light_Liban>();
-
-            G_Light2.enabled = true;
-
-
-
-
-
-            Battery_Level Batteryyeah2 = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();
-
-            Batteryyeah2.enabled = true;
 
 
 

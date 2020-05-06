@@ -48,23 +48,19 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
 
 
-          print("faster faster...");
+            print("faster faster...");
 
 
 
 
 
-           // Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
+            // Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
 
-          //  B_Light.enabled = false;
-
-
-           
+            //  B_Light.enabled = false;
 
 
-            Battery_Level Batteryyeah = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();
 
-            Batteryyeah.enabled = false;
+
 
 
 
@@ -81,27 +77,6 @@ public class Turn_Off_TorchScript : MonoBehaviour
             WalkSound.GetComponent<AudioSource>().maxDistance = 8.0f;
 
             CrawlSound.GetComponent<AudioSource>().maxDistance = 8.0f;
-
-
-
-
-            GameObject[] enemiess = GameObject.FindGameObjectsWithTag("FlashLight");
-
-
-            foreach (GameObject gogo in enemiess)
-
-            {
-
-                gogo.GetComponent<Light_Hold_Blue>().enabled = false;
-
-                gogo.GetComponent<Battery_Level>().enabled = false;
-
-
-            }
-
-
-
-
 
 
 

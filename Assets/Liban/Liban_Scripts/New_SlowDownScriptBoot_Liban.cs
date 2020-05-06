@@ -35,19 +35,16 @@ public class New_SlowDownScriptBoot_Liban : MonoBehaviour
             
 
 
-            Battery_Level Batteryyeah = GameObject.FindWithTag("FlashLight").GetComponent<Battery_Level>();
+           
 
-            Batteryyeah.enabled = false;
+
+             LemarMovment LMoving = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+
+              LMoving.Walk -= 5.5f;
+
 
 
             print("slower slower...");
-
-
-             LemarMovment LMoving2 = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
-
-              LMoving2.Walk -= 5.5f;
-
-
 
          //   GameObject[] slowerslower = GameObject.FindGameObjectsWithTag("Player");
 
