@@ -60,7 +60,7 @@ public class INstant_Liban : MonoBehaviour
 
 
 
-               GameObject GK = Instantiate(Gunkspawnee, transform.position, transform.rotation);
+                    GameObject GK_Copy = Instantiate(Gunkspawnee, transform.position, transform.rotation);
 
 
                     LA_countsofar++;
@@ -69,9 +69,15 @@ public class INstant_Liban : MonoBehaviour
                     LA_nexttime = Time.time + spawnDelay;
 
 
+
+                    Destroy(GK_Copy, 3.9f);
+
+
                 }
 
 
+
+            }
 
             }
 
@@ -81,4 +87,3 @@ public class INstant_Liban : MonoBehaviour
 
 
     }
-}
