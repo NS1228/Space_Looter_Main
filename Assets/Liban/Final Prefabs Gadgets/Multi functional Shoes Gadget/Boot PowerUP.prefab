@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 4523090194370052663}
   m_LocalRotation: {x: 0, y: 0.99997437, z: 0, w: 0.007164446}
   m_LocalPosition: {x: -9.18, y: 3.37, z: 26.4}
-  m_LocalScale: {x: 0.08403984, y: 0.08403984, z: 0.08403984}
+  m_LocalScale: {x: 0.08403994, y: 0.08403984, z: 0.08403994}
   m_Children:
   - {fileID: 6985285913075933980}
   m_Father: {fileID: 0}
@@ -151,8 +151,8 @@ GameObject:
   - component: {fileID: 1441464082918256721}
   - component: {fileID: 5612843612509875215}
   - component: {fileID: 7983039628326348688}
-  - component: {fileID: 7983039628326348691}
   - component: {fileID: 7983039628326348690}
+  - component: {fileID: 1969445808}
   m_Layer: 0
   m_Name: Boot Skin
   m_TagString: Boot
@@ -168,7 +168,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7983039628326348714}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 119.6, y: -4.6, z: 99.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5612843614517122986}
@@ -190,7 +190,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7983039628326348714}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -230,7 +230,7 @@ MeshCollider:
   m_GameObject: {fileID: 7983039628326348714}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 1
   m_CookingOptions: 14
@@ -247,7 +247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f17534e0bcdb744abbcb6c6a387faf72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpeedBoost: 4
+  SpeedBoost: 5
   ThePlayer: {fileID: 0}
   CrawlSound: {fileID: 0}
   RunSound: {fileID: 0}
@@ -264,25 +264,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8af03ec2faad7497dbdc13bf6142f585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Slowerrrboost: 5
   ThePlayeeer: {fileID: 0}
   CrawlllSound: {fileID: 0}
   RunnnSound: {fileID: 0}
   WalkkkSound: {fileID: 0}
---- !u!114 &7983039628326348691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7983039628326348714}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0dbec969316544abcb34644327df8ee3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  PowerUpTimer: 16
-  ThePlayerYHYHYH: {fileID: 0}
-  TheShoeCMON: {fileID: 7983039628326348714}
 --- !u!114 &7983039628326348690
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -295,3 +281,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 62cdad5704a264eb3b78a917bf31c4a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1969445808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7983039628326348714}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84dd59a01381743459f32a9089002f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  NewPowerUpTimer: 16

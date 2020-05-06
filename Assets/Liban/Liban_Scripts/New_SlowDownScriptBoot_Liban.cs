@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class New_SlowDownScriptBoot_Liban : MonoBehaviour
 {
-    private float Slowerrrboost = 5.5f;
+    public float Slowerrrboost = 5f;
 
     public Transform ThePlayeeer;
 
@@ -27,43 +27,33 @@ public class New_SlowDownScriptBoot_Liban : MonoBehaviour
     {
 
 
-        if (Input.GetMouseButtonDown(1))
+        if(Input.GetMouseButtonDown(1))
 
 
         {
 
-            
 
 
            
 
 
-             LemarMovment LMoving = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+             LemarMovment LMoving3 = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
 
-              LMoving.Walk -= 5.5f;
+              LMoving3.Walk -= 5;
+
 
 
 
             print("slower slower...");
 
-         //   GameObject[] slowerslower = GameObject.FindGameObjectsWithTag("Player");
-
-          //  foreach (GameObject plpl in slowerslower)
-
-          //  {
-           //     plpl.GetComponent<LemarMovment>().Speed -= Slowerrrboost;
-
-          //  }
 
 
 
+        //    RunnnSound.GetComponent<AudioSource>().maxDistance = 0f;
 
-
-            RunnnSound.GetComponent<AudioSource>().maxDistance = 0f;
-
-            WalkkkSound.GetComponent<AudioSource>().maxDistance = 0f;
-
-            CrawlllSound.GetComponent<AudioSource>().maxDistance = 0f;
+         //   WalkkkSound.GetComponent<AudioSource>().maxDistance = 0f;
+         //
+          //  CrawlllSound.GetComponent<AudioSource>().maxDistance = 0f;
 
 
 
@@ -82,18 +72,18 @@ public class New_SlowDownScriptBoot_Liban : MonoBehaviour
             
 
 
-            LemarMovment LMoving = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+            LemarMovment LMoving4 = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
 
-            LMoving.Walk = 15;
+            LMoving4.Walk += 5f;
 
             
 
 
-            RunnnSound.GetComponent<AudioSource>().maxDistance = 1.05f;
+          //  RunnnSound.GetComponent<AudioSource>().maxDistance = 1.05f;
 
-            WalkkkSound.GetComponent<AudioSource>().maxDistance = 1.05f;
+          //  WalkkkSound.GetComponent<AudioSource>().maxDistance = 1.05f;
 
-            CrawlllSound.GetComponent<AudioSource>().maxDistance = 1.05f;
+          //  CrawlllSound.GetComponent<AudioSource>().maxDistance = 1.05f;
 
 
 

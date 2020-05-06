@@ -35,13 +35,7 @@ public class New_SpeedBoost_Script_Liban : MonoBehaviour
     {
 
 
-
-
-
-
-
-
-
+      
 
 
 
@@ -60,54 +54,18 @@ public class New_SpeedBoost_Script_Liban : MonoBehaviour
 
 
 
-        if (PowerUpTimer <= 16)
 
-
-        {
-
-
-
-            Turn_Off_TorchScript TurnOff = GameObject.Find("Boot Skin").GetComponent<Turn_Off_TorchScript>();
-
-            TurnOff.enabled = true;
-
-
-           
-
-            print("yoyoyoyo");
-
-
-
-
-
-        }
-
-
-        if (PowerUpTimer <= 10)
-
+        if(PowerUpTimer <= 16)
 
         {
 
-           
 
 
 
-
-            GameObject[] playershoess = GameObject.FindGameObjectsWithTag("Boot");
-
-
-            foreach (GameObject gos in playershoess)
-
-            {
-
-                gos.GetComponent<Turn_Off_TorchScript>().enabled = false;
-
-
-            }
+            print("Boot Power Up Active!");
 
 
 
-            print("gogogogogoo");
         }
 
 
@@ -116,7 +74,7 @@ public class New_SpeedBoost_Script_Liban : MonoBehaviour
 
 
 
-        if (PowerUpTimer <= 8 && GameObject.Find("newPlayer").GetComponent<LemarMovment>().Speed > 15 || GameObject.Find("newPlayer").GetComponent<LemarMovment>().Speed < 15)
+        if (PowerUpTimer <= 10 && GameObject.Find("newPlayer").GetComponent<LemarMovment>().Speed > 15 || GameObject.Find("newPlayer").GetComponent<LemarMovment>().Speed < 15)
 
 
         {
@@ -130,37 +88,53 @@ public class New_SpeedBoost_Script_Liban : MonoBehaviour
 
 
 
+            GetComponent<Turn_Off_TorchScript>().enabled = false;
 
-            print("ioioioiioio");
 
 
+          //  GetComponent<New_SlowDownScriptBoot_Liban>().enabled = false;
+
+
+          //  GetComponent<New_SpeedBoost_Script_Liban>().enabled = false;
+
+
+            GetComponent<Activate_NewPowerUP_Script_Liban>().enabled = false;
 
 
 
         }
 
-    
-        //cooldown
 
-        if (PowerUpTimer <= 6)
+
+
+
+
+
+        if (PowerUpTimer <= 1)
 
 
         {
 
-          //  print("ioioioiioio");
 
 
-            //  this.gameObject.SetActive(false);
+            GetComponent<New_SpeedBoost_Script_Liban>().enabled = false;
 
 
-            this.gameObject.GetComponent<MeshCollider>().enabled = false;
 
+            GetComponent<Activate_NewPowerUP_Script_Liban>().enabled = false;
 
 
 
 
 
         }
+
+
+
+
+
+
+
 
 
 
@@ -170,6 +144,10 @@ public class New_SpeedBoost_Script_Liban : MonoBehaviour
         if (PowerUpTimer <= 1)
 
         {
+
+
+
+           
 
 
 
@@ -190,22 +168,14 @@ public class New_SpeedBoost_Script_Liban : MonoBehaviour
 
 
 
+            
+
+
+           
 
 
 
-            GameObject[] playershoesss = GameObject.FindGameObjectsWithTag("Boot");
-
-
-            foreach (GameObject gossss in playershoesss)
-
-            {
-
-                gossss.GetComponent<New_SpeedBoost_Script_Liban>().enabled = false;
-
-                gossss.GetComponent<New_SlowDownScriptBoot_Liban>().enabled = false;
-
-
-            }
+            
 
 
         }

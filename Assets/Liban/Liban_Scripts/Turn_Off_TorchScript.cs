@@ -5,7 +5,7 @@ using UnityEngine;
 public class Turn_Off_TorchScript : MonoBehaviour
 {
 
-    public float SpeedBoost = 5.5f;
+    public float SpeedBoost = 10.5f;
 
     public Transform ThePlayer;
 
@@ -93,15 +93,6 @@ public class Turn_Off_TorchScript : MonoBehaviour
         {
 
 
-
-          //  Light_Hold_Blue B_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Blue>();
-
-           // B_Light.enabled = true;
-
-
-            // Light_Hold_Green G_Light = GameObject.FindWithTag("FlashLight").GetComponent<Light_Hold_Green>();
-
-            //  G_Light.enabled = true;
 
 
 
