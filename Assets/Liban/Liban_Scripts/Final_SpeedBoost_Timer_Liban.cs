@@ -74,7 +74,7 @@ public class Final_SpeedBoost_Timer_Liban : MonoBehaviour
 
 
 
-        if(NewPowerUpTimer < 8 && GameObject.Find("newPlayer").GetComponent<LemarMovment>().Speed != 15)
+        if(NewPowerUpTimer < 8 && GameObject.Find("FinalPlayer").GetComponent<LemarMovment>().Speed != 15)
 
         {
 
@@ -82,7 +82,7 @@ public class Final_SpeedBoost_Timer_Liban : MonoBehaviour
 
 
 
-            LemarMovment LMFInal = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+            LemarMovment LMFInal = GameObject.Find("FinalPlayer").GetComponent<LemarMovment>();
 
             LMFInal.Walk = 15;
 
@@ -171,7 +171,7 @@ public class Final_SpeedBoost_Timer_Liban : MonoBehaviour
 
 
 
-            LemarMovment LMFInal = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+            LemarMovment LMFInal = GameObject.Find("FinalPlayer").GetComponent<LemarMovment>();
 
             LMFInal.Walk = 15;
 

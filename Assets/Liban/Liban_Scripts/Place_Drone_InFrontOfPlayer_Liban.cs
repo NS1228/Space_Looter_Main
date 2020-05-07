@@ -69,7 +69,7 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
         {
 
-            Torch.SetActive(false);
+            //Torch.SetActive(false);
             DaDrone.SetActive(true);
 
             Final_Drone_Movement_Liban FDM45 = GameObject.Find("Drone Skin").GetComponent<Final_Drone_Movement_Liban>();
@@ -93,7 +93,7 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-            LemarMovment LMovementyh = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+            LemarMovment LMovementyh = GameObject.Find("FinalPlayer").GetComponent<LemarMovment>();
 
 
             LMovementyh.enabled = false;

@@ -72,7 +72,7 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
 
 
-            LemarMovment LMoving1 = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+            LemarMovment LMoving1 = GameObject.Find("FinalPlayer").GetComponent<LemarMovment>();
 
             LMoving1.Walk += SpeedBoost;
 
@@ -111,7 +111,7 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
 
 
-            LemarMovment LMoving = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+            LemarMovment LMoving = GameObject.Find("FinalPlayer").GetComponent<LemarMovment>();
 
             LMoving.Walk -= SpeedBoost;
 

@@ -43,7 +43,7 @@ public class New_SlowDownScriptBoot_Liban : MonoBehaviour
            
 
 
-             LemarMovment LMoving3 = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+             LemarMovment LMoving3 = GameObject.Find("FinalPlayer").GetComponent<LemarMovment>();
 
               LMoving3.Walk -= 5;
 
@@ -84,7 +84,7 @@ public class New_SlowDownScriptBoot_Liban : MonoBehaviour
             
 
 
-            LemarMovment LMoving4 = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+            LemarMovment LMoving4 = GameObject.Find("FinalPlayer").GetComponent<LemarMovment>();
 
             LMoving4.Walk += 5f;
 
