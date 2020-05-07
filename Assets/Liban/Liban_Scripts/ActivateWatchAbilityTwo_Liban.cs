@@ -82,9 +82,9 @@ public class ActivateWatchAbilityTwo_Liban : MonoBehaviour
 
 
 
-        //ActivateWatchAbilityTwo_Liban GHTY = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
+        ActivateWatchAbilityTwo_Liban GHTY = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
 
-        //GHTY.enabled = false;
+        GHTY.enabled = false;
 
 
 
@@ -172,9 +172,9 @@ public class ActivateWatchAbilityTwo_Liban : MonoBehaviour
 
 
 
-        ActivateWatchAbilityTwo_Liban AVWA2 = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
+       // ActivateWatchAbilityTwo_Liban AVWA2 = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
 
-        AVWA2.enabled = true;
+       // AVWA2.enabled = true;
 
 
 
@@ -185,7 +185,7 @@ public class ActivateWatchAbilityTwo_Liban : MonoBehaviour
         POIU.enabled = true;
 
 
-
+        GetComponent<ActivateWatchAbilityTwo_Liban>().enabled = true;
 
 
 

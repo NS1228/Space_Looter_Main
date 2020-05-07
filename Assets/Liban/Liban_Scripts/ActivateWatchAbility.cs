@@ -84,9 +84,9 @@ public class ActivateWatchAbility : MonoBehaviour
         //   TheSmoke.gameObject.SetActive(true);
 
 
-        //ActivateWatchAbility ACVB = GameObject.Find("Activate the watch ability").GetComponent<ActivateWatchAbility>();
+        ActivateWatchAbility ACVB = GameObject.Find("Activate the watch ability").GetComponent<ActivateWatchAbility>();
 
-        //ACVB.enabled = false;
+        ACVB.enabled = false;
 
 
 

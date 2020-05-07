@@ -97,13 +97,17 @@ public class DroneHealth_Script : MonoBehaviour
 
 
 
-            LemarMovment TYU4567 = GameObject.Find("newPlayer").GetComponent<LemarMovment>();
+            LemarMovment TYU4567 = GameObject.Find("FinalPlayer").GetComponent<LemarMovment>();
 
 
             TYU4567.enabled = true;
 
 
             DaTorch.SetActive(true);
+
+
+
+            
 
 
 
@@ -127,15 +131,36 @@ public class DroneHealth_Script : MonoBehaviour
 
 
         gameObject.SetActive(false);
+
+
         CurrentDroneHealth = 600f;
+
+
 
         Place_Drone_InFrontOfPlayer_Liban TYS = GameObject.Find("Press Q to child drone").GetComponent<Place_Drone_InFrontOfPlayer_Liban>();
 
         TYS.DroneCameraLIVE.gameObject.SetActive(false);
 
 
+
+
         DroneHealthBar.gameObject.SetActive(false);
         DaTorch.SetActive(true);
+
+
+
+
+        Outline OP = GameObject.FindWithTag("AI").GetComponent<Outline>();
+
+        OP.enabled = false;
+
+
+
+
+
+
+
+
 
 
 
