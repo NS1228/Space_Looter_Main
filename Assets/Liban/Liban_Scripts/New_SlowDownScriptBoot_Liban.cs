@@ -14,6 +14,12 @@ public class New_SlowDownScriptBoot_Liban : MonoBehaviour
 
     public GameObject WalkkkSound;
 
+    public GameObject CTrigger;
+    public GameObject CVisual;
+    public GameObject RTrigger;
+    public GameObject RVisual;
+    public GameObject WTrigger;
+    public GameObject WVisual;
 
 
     // Start is called before the first frame update
@@ -41,6 +47,12 @@ public class New_SlowDownScriptBoot_Liban : MonoBehaviour
 
               LMoving3.Walk -= 5;
 
+            CTrigger.gameObject.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
+            CVisual.gameObject.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
+            RTrigger.gameObject.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
+            RVisual.gameObject.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
+            WTrigger.gameObject.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
+            WVisual.gameObject.transform.localScale = new Vector3(0.75f, 0.75f, 0.75f);
 
 
 
@@ -76,14 +88,19 @@ public class New_SlowDownScriptBoot_Liban : MonoBehaviour
 
             LMoving4.Walk += 5f;
 
-            
+            CTrigger.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            CVisual.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            RTrigger.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            RVisual.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            WTrigger.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            WVisual.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
 
 
-          //  RunnnSound.GetComponent<AudioSource>().maxDistance = 1.05f;
+            //  RunnnSound.GetComponent<AudioSource>().maxDistance = 1.05f;
 
-          //  WalkkkSound.GetComponent<AudioSource>().maxDistance = 1.05f;
+            //  WalkkkSound.GetComponent<AudioSource>().maxDistance = 1.05f;
 
-          //  CrawlllSound.GetComponent<AudioSource>().maxDistance = 1.05f;
+            //  CrawlllSound.GetComponent<AudioSource>().maxDistance = 1.05f;
 
 
 

@@ -11,6 +11,18 @@ public class MashGame : MonoBehaviour
     public bool Switch;
     public float Timer;
     public bool Playing;
+
+    public int ElementReward;
+    public int LiquidReward;
+    public int MetalReward;
+
+    public GameObject UniqueItemReward;
+    public GameObject ObjectiveItemReward;
+
+    public GameObject GameCamera;
+    public GameObject PlayerCamera;
+    public GameObject Player;
+    public GameObject Game;
     // Start is called before the first frame update
     void Start()
     {
@@ -60,23 +72,39 @@ public class MashGame : MonoBehaviour
         }
         if (Timer <= 0)
         {
-           
+            Destroy(Game);
+            GameCamera.SetActive(false);
+            PlayerCamera.SetActive(true);
+            Player.GetComponent<LemarMovment>().enabled = true;
             if (Mashnumber >= 0 && Mashnumber < 50 && Playing == true)
             {
-                LemarMetal.MetalNumber += 1;
+                LemarMetal.MetalNumber += MetalReward -= 1;
+                LemarLiquid.LiquidNumber += LiquidReward -= 1;
+                LemarElement.ElementNumber += ElementReward -= 1;
                 Playing = false;
+                UniqueItemReward.SetActive(false);
+                ObjectiveItemReward.SetActive(true);
             }
             if (Mashnumber >= 50 && Mashnumber < 80 && Playing == true)
             {
-                LemarMetal.MetalNumber += 2;
+                LemarMetal.MetalNumber += MetalReward;
+                LemarLiquid.LiquidNumber += LiquidReward;
+                LemarElement.ElementNumber += ElementReward;
                 Playing = false;
+                UniqueItemReward.SetActive(false);
+                ObjectiveItemReward.SetActive(true);
             }
             if (Mashnumber >= 80 && Playing == true)
             {
-                LemarMetal.MetalNumber += 3;
+                LemarMetal.MetalNumber += MetalReward += 1;
+                LemarLiquid.LiquidNumber += LiquidReward += 1;
+                LemarElement.ElementNumber += ElementReward += 1;
                 Playing = false;
+                UniqueItemReward.SetActive(false);
+                ObjectiveItemReward.SetActive(true);
             }
         }
         
+
     }
 }

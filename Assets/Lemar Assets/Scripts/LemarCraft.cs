@@ -8,6 +8,8 @@ public class LemarCraft : MonoBehaviour
     public int LNeeded;
     public int MNeeded;
 
+    public GameObject Block;
+
     public GameObject Gadget;
     // Start is called before the first frame update
     void Start()
@@ -23,7 +25,7 @@ public class LemarCraft : MonoBehaviour
 
     public void Craft()
     {
-        if (LemarMetal.MetalNumber >= MNeeded && LemarLiquid.LiquidNumber >= LNeeded && LemarElement.ElementNumber >= ENeeded)
+        if (LemarMetal.MetalNumber >= MNeeded && LemarLiquid.LiquidNumber >= LNeeded && LemarElement.ElementNumber >= ENeeded && Block.active == false)
         {
             Gadget.SetActive(true);
             LemarMetal.MetalNumber -= MNeeded;

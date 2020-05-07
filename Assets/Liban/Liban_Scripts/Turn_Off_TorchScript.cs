@@ -15,7 +15,14 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
     public GameObject WalkSound;
 
-    
+    public GameObject CTrigger;
+    public GameObject CVisual;
+    public GameObject RTrigger;
+    public GameObject RVisual;
+    public GameObject WTrigger;
+    public GameObject WVisual;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -69,6 +76,14 @@ public class Turn_Off_TorchScript : MonoBehaviour
 
             LMoving1.Walk += SpeedBoost;
 
+            CTrigger.gameObject.transform.localScale = new Vector3(1.25f, 1.25f, 1.25f);
+            CVisual.gameObject.transform.localScale = new Vector3(1.25f, 1.25f, 1.25f);
+            RTrigger.gameObject.transform.localScale = new Vector3(1.25f, 1.25f, 1.25f);
+            RVisual.gameObject.transform.localScale = new Vector3(1.25f, 1.25f, 1.25f);
+            WTrigger.gameObject.transform.localScale = new Vector3(1.25f, 1.25f, 1.25f);
+            WVisual.gameObject.transform.localScale = new Vector3(1.25f, 1.25f, 1.25f);
+
+
 
 
 
@@ -101,7 +116,12 @@ public class Turn_Off_TorchScript : MonoBehaviour
             LMoving.Walk -= SpeedBoost;
 
 
-
+            CTrigger.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            CVisual.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            RTrigger.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            RVisual.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            WTrigger.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
+            WVisual.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
 
             RunSound.GetComponent<AudioSource>().maxDistance = 1.05f;
 
