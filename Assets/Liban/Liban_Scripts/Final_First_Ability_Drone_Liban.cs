@@ -50,88 +50,28 @@ public class Final_First_Ability_Drone_Liban : MonoBehaviour
 
 
         {
-            print("lo");
-
-
-            StartCoroutine(OneAbility());
-
-        }
-
-
-
-
-
-
-
-        IEnumerator OneAbility()
-
-
-        {
-
             freeze = true;
 
 
 
 
-          
+
 
 
 
             TheDronee.GetComponent<BoxCollider>().size = new Vector3(SizeX, SizeY, SizeZ);
 
 
-
-
-
-
-
-
-            yield return new WaitForSeconds(7.0f);
-
-
-
-
-
-            
-
-            TheDronee.GetComponent<BoxCollider>().size = new Vector3(OSizeX, OSizeY, OSizeZ);
-
-
-
-
-            freeze = false;
-
-
-
-
-
-            Final_First_Ability_Drone_Liban POI = GameObject.Find("Activate Drone First Ability").GetComponent<Final_First_Ability_Drone_Liban>();
-
-            POI.enabled = false;
-
-
-
-
-
-
-
-
-
-
-            yield return new WaitForSeconds(4.0f);
-
-
-
-
-
-            Final_First_Ability_Drone_Liban POI2 = GameObject.Find("Activate Drone First Ability").GetComponent<Final_First_Ability_Drone_Liban>();
-
-            POI2.enabled = true;
-
-
-
-
         }
+
 
     }
 }
+
+
+
+
+
+
+     
+

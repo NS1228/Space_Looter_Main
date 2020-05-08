@@ -5963,6 +5963,7 @@ GameObject:
   - component: {fileID: 5962735425569466208}
   - component: {fileID: 5962735425569466209}
   - component: {fileID: 5962735425569466214}
+  - component: {fileID: 700693304}
   m_Layer: 0
   m_Name: cheese powerup
   m_TagString: CheesePowerUp
@@ -5991,7 +5992,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5962735425569466212}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 344fea60269a34c778f3e771fc96439d, type: 3}
   m_Name: 
@@ -6013,7 +6014,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5962735425569466212}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d24d7da2b167e4c7e979d8088dd3ad7c, type: 3}
   m_Name: 
@@ -6028,12 +6029,26 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5962735425569466212}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e864966b115be40bdac37085ca4751de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TorchPlayer: {fileID: 5962735426067366163}
+--- !u!114 &700693304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5962735425569466212}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b2ce17cf5e0b943b5b75ad58744b110e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GunkyTimer: 16
+  TheTooooorch: {fileID: 5962735426067366163}
 --- !u!1 &5962735425588894700
 GameObject:
   m_ObjectHideFlags: 0
@@ -12056,7 +12071,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5962735425881433564
 Transform:
   m_ObjectHideFlags: 0
@@ -25467,6 +25482,7 @@ GameObject:
   - component: {fileID: 5962735426790076826}
   - component: {fileID: 5962735426790076827}
   - component: {fileID: 5962735426790076824}
+  - component: {fileID: 625593503}
   m_Layer: 0
   m_Name: Drone Skin
   m_TagString: Dronee
@@ -25624,7 +25640,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df635b353ba9347af9aeec704bd70da3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  StartingDroneHealth: 600
+  StartingDroneHealth: 370
   CurrentDroneHealth: 0
   DroneHealthBar: {fileID: 5962735427118930712}
   DroneBatteryDraineryh: 1
@@ -25682,6 +25698,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DroneSpeed: 0
+--- !u!114 &625593503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5962735426790076830}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f498255c32c64d559c4c2b6f559e10a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DroneeeTimer: 16
+  TheOneDrone: {fileID: 5962735426790076830}
+  TheOneTorch: {fileID: 5962735426067366163}
 --- !u!1 &5962735426794577414
 GameObject:
   m_ObjectHideFlags: 0
@@ -31573,9 +31604,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 5962735425596785702}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 600
+  m_MaxValue: 370
   m_WholeNumbers: 1
-  m_Value: 600
+  m_Value: 370
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []

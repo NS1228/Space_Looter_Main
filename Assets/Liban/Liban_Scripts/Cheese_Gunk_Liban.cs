@@ -13,7 +13,6 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
 
 
-
     // Start is called before the first frame update
     void Start()
     {
@@ -25,29 +24,15 @@ public class Cheese_Gunk_Liban : MonoBehaviour
     {
 
 
+
+
+       
+
+
         if (Input.GetMouseButtonDown(0))
 
-
         {
 
-
-
-            StartCoroutine(GunkGunk());
-
-
-
-
-
-
-        }
-
-
-
-        IEnumerator GunkGunk()
-
-        {
-
-            TheTorch.SetActive(false);
 
 
             INstant_Liban IL = GameObject.FindWithTag("Gunk Loc").GetComponent<INstant_Liban>();
@@ -56,46 +41,32 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
 
 
-            GetComponent<Cheese_ShrinkingPOWERUP>().enabled = false;
+
+
+            Cheese_ShrinkingPOWERUP ASDQW = GameObject.FindWithTag("CheesePowerUp").GetComponent<Cheese_ShrinkingPOWERUP>();
+
+            ASDQW.enabled = false;
 
 
 
-            yield return new WaitForSeconds(4.0f);
+            GetComponent<Activate_CheeseAbilities_Liban>().enabled = false;
 
 
 
-
-            Cheese_Gunk_Liban CG = GameObject.FindWithTag("CheesePowerUp").GetComponent<Cheese_Gunk_Liban>();
-
-            CG.enabled = false;
-
-
-            INstant_Liban IL6 = GameObject.FindWithTag("Gunk Loc").GetComponent<INstant_Liban>();
-
-            IL6.enabled = false;
-
-
-            TheTorch.SetActive(true);
-
-
-
-
-            yield return new WaitForSeconds(7.0f);
-
-
-            GetComponent<Cheese_ShrinkingPOWERUP>().enabled = true;
-
-
-            GetComponent<Cheese_Gunk_Liban>().enabled = true;
-
-
-            print("cheese gunk back on");
 
         }
 
 
 
 
+
+
+
+
+
+
+
+   
 
 
 

@@ -14,17 +14,28 @@ public class Activate_CheeseAbilities_Liban : MonoBehaviour
     }
 
     // Update is called once per frame
-    void OnTriggerEnter (Collider other)
+    void Update()
     {
 
-        if(other.CompareTag("Player"))
+        if(Input.GetKey(KeyCode.C))
 
         {
+
+
 
             GetComponent<Cheese_Gunk_Liban>().enabled = true;
 
 
+
+
+
             GetComponent<Cheese_ShrinkingPOWERUP>().enabled = true;
+
+
+
+
+            GetComponent<Final_Cheese_Timer_Liban>().enabled = true;
+
 
 
             TorchPlayer.SetActive(false);
@@ -34,6 +45,9 @@ public class Activate_CheeseAbilities_Liban : MonoBehaviour
 
 
             print("the cheese");
+
+
+
 
         }
 

@@ -40,10 +40,28 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
 
         {
 
+            ThePlayer.transform.localScale /= Shrink;
+            CTrigger.gameObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+            CVisual.gameObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+            RTrigger.gameObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+            RVisual.gameObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+            WTrigger.gameObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
+            WVisual.gameObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
 
-            StartCoroutine(Shrinkingyeahyeah());
 
-            TheTorchl.SetActive(false);
+
+
+            GetComponent<Cheese_ShrinkingPOWERUP>().enabled = false;
+
+
+
+            GetComponent<Cheese_Gunk_Liban>().enabled = false;
+
+
+
+
+
+            GetComponent<Activate_CheeseAbilities_Liban>().enabled = false;
 
         }
 
@@ -52,75 +70,17 @@ public class Cheese_ShrinkingPOWERUP : MonoBehaviour
 
 
 
-    IEnumerator Shrinkingyeahyeah()
 
 
-    {
+  
 
-
-        ThePlayer.transform.localScale /= Shrink;
-        CTrigger.gameObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
-        CVisual.gameObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
-        RTrigger.gameObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
-        RVisual.gameObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
-        WTrigger.gameObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
-        WVisual.gameObject.transform.localScale = new Vector3(0.7f, 0.7f, 0.7f);
-
-
-
-
-        GetComponent<Cheese_ShrinkingPOWERUP>().enabled = false;
-
-        GetComponent<Cheese_Gunk_Liban>().enabled = false;
-
-
-
-        yield return new WaitForSeconds(5.4f);
 
 
        
-
-        ThePlayer.transform.localScale *= BackToNormal;
-
-
-        CTrigger.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
-        CVisual.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
-        RTrigger.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
-        RVisual.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
-        WTrigger.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
-        WVisual.gameObject.transform.localScale = new Vector3(1f, 1f, 1f);
-
-
-
-        GetComponent<Cheese_ShrinkingPOWERUP>().enabled = false;
-
-
-
-        TheTorchl.SetActive(true);
-
-
-
-
-
-
-
-        yield return new WaitForSeconds(7.0f);
-
-
-        GetComponent<Cheese_Gunk_Liban>().enabled = true;
-
-
-        GetComponent<Cheese_ShrinkingPOWERUP>().enabled = true;
-
-
-        
-
-        print("shrinking power back on");
-
 
     }
 
 
 
 
-}
+

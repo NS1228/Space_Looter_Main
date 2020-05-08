@@ -69,6 +69,8 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
         {
 
+
+
             //Torch.SetActive(false);
             DaDrone.SetActive(true);
 
@@ -112,12 +114,6 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-             // Drone_First_Ability_Liban GVBN3434 = GameObject.Find("Activate Drone first ability").GetComponent<Drone_First_Ability_Liban>();
-
-
-            //  GVBN3434.enabled = true;
-
-
 
             Final_First_Ability_Drone_Liban ASW = GameObject.Find("Activate Drone first ability").GetComponent<Final_First_Ability_Drone_Liban>();
 
@@ -132,11 +128,7 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
-           // Drone_Second_ability_Liban QWERTY = GameObject.Find("Activate Drone second ability").GetComponent<Drone_Second_ability_Liban>();
-
-
-           // QWERTY.enabled = true;
-
+          
 
 
 
@@ -160,6 +152,14 @@ public class Place_Drone_InFrontOfPlayer_Liban : MonoBehaviour
 
 
 
+
+
+
+
+            Final_Drone_Timer_Liban TIMEII = GameObject.FindWithTag("Dronee").GetComponent<Final_Drone_Timer_Liban>();
+
+
+            TIMEII.enabled = true;
 
             
 

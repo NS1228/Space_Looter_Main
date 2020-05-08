@@ -15,7 +15,7 @@ public class Final_Second_Drone_Ability_Liban : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -24,25 +24,7 @@ public class Final_Second_Drone_Ability_Liban : MonoBehaviour
 
 
 
-        if(Input.GetMouseButtonDown(1))
-
-
-        {
-
-
-
-            StartCoroutine(ActivateLocationsss());
-
-
-        }
-
-
-
-
-
-
-
-        IEnumerator ActivateLocationsss()
+        if (Input.GetMouseButtonDown(1))
 
 
         {
@@ -55,7 +37,7 @@ public class Final_Second_Drone_Ability_Liban : MonoBehaviour
 
             TheDroneYH.GetComponent<SphereCollider>().radius = 8500;
 
-           // TheDroneYH.GetComponent<BoxCollider>().enabled = false;
+            // TheDroneYH.GetComponent<BoxCollider>().enabled = false;
 
 
 
@@ -66,18 +48,21 @@ public class Final_Second_Drone_Ability_Liban : MonoBehaviour
 
 
 
-            yield return new WaitForSeconds(12);
-
-
-
-
-            TheDroneYH.GetComponent<SphereCollider>().radius = 521.5f;
-
 
         }
 
 
-
-
     }
+
+
+
 }
+
+
+
+
+
+          //  TheDroneYH.GetComponent<SphereCollider>().radius = 521.5f;
+
+
+  
