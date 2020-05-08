@@ -77,6 +77,17 @@ public class DroneHealth_Script : MonoBehaviour
 
         }
 
+
+
+
+
+
+
+
+
+
+
+
         if(CurrentDroneHealth <= 0)
 
 
@@ -85,7 +96,12 @@ public class DroneHealth_Script : MonoBehaviour
 
 
 
+
+
             DeathDeath();
+
+
+
 
 
 
@@ -107,8 +123,8 @@ public class DroneHealth_Script : MonoBehaviour
 
 
 
-            
 
+           
 
 
         }
@@ -130,9 +146,9 @@ public class DroneHealth_Script : MonoBehaviour
     {
 
 
-        Destroy(gameObject);
-        
+        // Destroy(gameObject);
 
+        gameObject.SetActive(false);
        
 
 
@@ -157,9 +173,6 @@ public class DroneHealth_Script : MonoBehaviour
 
         OP.enabled = false;
 
-
-
-        
 
 
 
