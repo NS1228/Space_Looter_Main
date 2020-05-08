@@ -79,11 +79,17 @@ public class Cheese_Gunk_Liban : MonoBehaviour
 
 
 
-            
 
-            
+            yield return new WaitForSeconds(7.0f);
 
 
+            GetComponent<Cheese_ShrinkingPOWERUP>().enabled = true;
+
+
+            GetComponent<Cheese_Gunk_Liban>().enabled = true;
+
+
+            print("cheese gunk back on");
 
         }
 

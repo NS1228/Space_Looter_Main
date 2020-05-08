@@ -167,10 +167,10 @@ public class ActivateWatchAbility : MonoBehaviour
 
 
 
-        ActivateWatchAbilityTwo_Liban ASDF = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
+       // ActivateWatchAbilityTwo_Liban ASDF = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
 
 
-        ASDF.enabled = true;
+       // ASDF.enabled = true;
 
 
 

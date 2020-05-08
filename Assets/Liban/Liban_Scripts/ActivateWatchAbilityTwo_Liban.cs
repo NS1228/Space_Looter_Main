@@ -139,10 +139,7 @@ public class ActivateWatchAbilityTwo_Liban : MonoBehaviour
 
 
 
-        Stun_Light_Liban STYUI14 = GameObject.FindWithTag("FlashLight").GetComponent<Stun_Light_Liban>();
-
-        STYUI14.enabled = true;
-
+        
 
 
 
@@ -161,8 +158,6 @@ public class ActivateWatchAbilityTwo_Liban : MonoBehaviour
 
 
 
-
-
         TheWatchYEAHYEAH.GetComponent<MeshRenderer>().enabled = true;
 
 
@@ -172,9 +167,9 @@ public class ActivateWatchAbilityTwo_Liban : MonoBehaviour
 
 
 
-       // ActivateWatchAbilityTwo_Liban AVWA2 = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
+        ActivateWatchAbilityTwo_Liban AVWA2 = GameObject.Find("Activate second watch ability").GetComponent<ActivateWatchAbilityTwo_Liban>();
 
-       // AVWA2.enabled = true;
+        AVWA2.enabled = true;
 
 
 
