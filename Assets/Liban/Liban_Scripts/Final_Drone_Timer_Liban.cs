@@ -6,7 +6,7 @@ public class Final_Drone_Timer_Liban : MonoBehaviour
 {
 
 
-    public float DroneeeTimer = 16.0f;
+    public float DroneeeTimer = 19.0f;
 
 
     public static bool freeze;
@@ -50,7 +50,7 @@ public class Final_Drone_Timer_Liban : MonoBehaviour
 
 
 
-        if(DroneeeTimer <= 16)
+        if(DroneeeTimer <= 19)
 
         {
 
@@ -66,7 +66,7 @@ public class Final_Drone_Timer_Liban : MonoBehaviour
 
 
 
-        if(DroneeeTimer <= 8)
+        if(DroneeeTimer <= 7)
 
 
 
@@ -89,7 +89,9 @@ public class Final_Drone_Timer_Liban : MonoBehaviour
 
 
 
+            Place_Drone_InFrontOfPlayer_Liban PDIFOP = GameObject.Find("Press Q to child drone").GetComponent<Place_Drone_InFrontOfPlayer_Liban>();
 
+            PDIFOP.enabled = false;
 
 
 
@@ -107,13 +109,18 @@ public class Final_Drone_Timer_Liban : MonoBehaviour
         {
 
 
-            DroneeeTimer = 16f;
+            DroneeeTimer = 19f;
 
 
             GetComponent<Final_Drone_Timer_Liban>().enabled = false;
 
 
 
+
+            
+
+
+         
 
         }
 

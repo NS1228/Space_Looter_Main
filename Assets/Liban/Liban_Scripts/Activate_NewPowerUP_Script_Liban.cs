@@ -16,7 +16,7 @@ public class Activate_NewPowerUP_Script_Liban : MonoBehaviour
 
 
 
-        if (Input.GetKey(KeyCode.O))
+        if (Input.GetKey(KeyCode.Z))
 
         {
 

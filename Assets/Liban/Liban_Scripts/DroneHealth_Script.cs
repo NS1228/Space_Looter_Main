@@ -8,7 +8,7 @@ public class DroneHealth_Script : MonoBehaviour
 {
 
 
-    public float StartingDroneHealth = 300.0f;
+    public float StartingDroneHealth = 370.0f;
 
     public float CurrentDroneHealth;
 
@@ -130,10 +130,13 @@ public class DroneHealth_Script : MonoBehaviour
     {
 
 
-        gameObject.SetActive(false);
+        Destroy(gameObject);
 
 
-        CurrentDroneHealth = 600f;
+       
+
+
+        CurrentDroneHealth = 370f;
 
 
 
