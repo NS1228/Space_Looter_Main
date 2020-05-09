@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Nil_Playerhealth : MonoBehaviour
+public class Reset_Level_3 : MonoBehaviour
 {
 
     public float health;
@@ -23,12 +23,12 @@ public class Nil_Playerhealth : MonoBehaviour
 
     }
 
-        // Update is called once per frame
-        void Update()
+    // Update is called once per frame
+    void Update()
     {
-        if(health <=0)
+        if (health <= 0)
         {
-            SceneManager.LoadScene("Level 2");
+            SceneManager.LoadScene("Level 3");
         }
     }
 }

@@ -3,32 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class Nil_Playerhealth : MonoBehaviour
+public class Go_To_Level_2 : MonoBehaviour
 {
-
-    public float health;
     // Start is called before the first frame update
-    void Start()
-    {
-        health = 100;
-    }
-
     void OnCollisionEnter(Collision collision)
     {
         //Check for a match with the specified name on any GameObject that collides with your GameObject
-        if (collision.gameObject.tag == "AI")
-        {
-            health = 0;
-        }
-
-    }
-
-        // Update is called once per frame
-        void Update()
-    {
-        if(health <=0)
+        if (collision.gameObject.tag == "Player")
         {
             SceneManager.LoadScene("Level 2");
         }
+
     }
 }
