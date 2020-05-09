@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Level 1/Level 1.unity
     guid: 093d2b00c28a95242bbe07419316715e
   - enabled: 1
-    path: Assets/endofdemo.unity
-    guid: 5054a6a2a589180409d25d01bb896bb8
+    path: Assets/Level 2.unity
+    guid: 05d5d28ed99d48941af23d20130382f4
+  - enabled: 1
+    path: Assets/Level 3.unity
+    guid: 398281f5090bd0947b70442bd81def7e
   m_configObjects: {}
