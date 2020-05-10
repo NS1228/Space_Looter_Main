@@ -8238,19 +8238,19 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5962735425394357578, guid: 95f262256063cbd419a29e6e6a94be1e,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5962735425554608973, guid: 95f262256063cbd419a29e6e6a94be1e,
         type: 3}
       propertyPath: BatteryObject
       value: 
       objectReference: {fileID: 116788836}
-    - target: {fileID: 5962735426184381659, guid: 95f262256063cbd419a29e6e6a94be1e,
+    - target: {fileID: 5962735427194618059, guid: 95f262256063cbd419a29e6e6a94be1e,
         type: 3}
-      propertyPath: m_IsActive
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5962735427194618059, guid: 95f262256063cbd419a29e6e6a94be1e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6558366821254305264, guid: 95f262256063cbd419a29e6e6a94be1e,
@@ -8313,11 +8313,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6558366821254305279, guid: 95f262256063cbd419a29e6e6a94be1e,
-        type: 3}
-      propertyPath: Speed
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 95f262256063cbd419a29e6e6a94be1e, type: 3}
 --- !u!4 &1214622993 stripped
@@ -8338,19 +8333,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1214622992}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1214623000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1214622995}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2470a898278f10489360de923c81a96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
 --- !u!1 &1217668004
 GameObject:
   m_ObjectHideFlags: 0

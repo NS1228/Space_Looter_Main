@@ -5933,8 +5933,7 @@ MonoBehaviour:
   BatteryObject: {fileID: 0}
   DangerTextyeahyeah: {fileID: 5962735427219173881}
   LowBatterySoudEffect: {fileID: 5962735425803099881}
-  StunLightYellow: {fileID: 61394455472369099, guid: c9c14c8f99f6d0d47b25a8a4634f09eb,
-    type: 3}
+  StunLightYellow: {fileID: 5962735426074441333}
 --- !u!114 &5962735425554608962
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17444,7 +17443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &5962735426067366162
 Transform:
   m_ObjectHideFlags: 0
@@ -17669,6 +17668,7 @@ GameObject:
   - component: {fileID: 5962735426074441323}
   - component: {fileID: 5962735426074441333}
   - component: {fileID: 5962735426074441322}
+  - component: {fileID: 2069732490}
   m_Layer: 0
   m_Name: Stun Light Yellow
   m_TagString: Untagged
@@ -17758,11 +17758,23 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5962735426074441320}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 110.31, y: 82.2, z: 643.2}
   m_Center: {x: 0, y: 0, z: 373.8}
+--- !u!114 &2069732490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5962735426074441320}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e6ad96ea999c487098db4844288fa71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5962735426077731371
 GameObject:
   m_ObjectHideFlags: 0
@@ -18691,7 +18703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5962735426184381658
 Transform:
   m_ObjectHideFlags: 0
@@ -37556,6 +37568,7 @@ GameObject:
   - component: {fileID: 6558366821254305276}
   - component: {fileID: 6558366821254305277}
   - component: {fileID: 6558366821254305266}
+  - component: {fileID: 1214623000}
   m_Layer: 9
   m_Name: FinalPlayer
   m_TagString: Player
@@ -37595,7 +37608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a78764861217f9458bd32ca2b64bef8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 15
+  Speed: 5
   Sprint: 0
   Walk: 0
   Crawl: 0
@@ -37658,3 +37671,16 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1214623000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6558366821254305264}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d2470a898278f10489360de923c81a96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
