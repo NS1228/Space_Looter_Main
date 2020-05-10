@@ -8243,15 +8243,25 @@ PrefabInstance:
       propertyPath: BatteryObject
       value: 
       objectReference: {fileID: 116788836}
-    - target: {fileID: 5962735427194618059, guid: 95f262256063cbd419a29e6e6a94be1e,
+    - target: {fileID: 5962735426067366163, guid: 95f262256063cbd419a29e6e6a94be1e,
         type: 3}
-      propertyPath: m_AnchorMax.x
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5962735426420967901, guid: 95f262256063cbd419a29e6e6a94be1e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5962735427194618059, guid: 95f262256063cbd419a29e6e6a94be1e,
         type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5962735427194618059, guid: 95f262256063cbd419a29e6e6a94be1e,
+        type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6558366821254305264, guid: 95f262256063cbd419a29e6e6a94be1e,
         type: 3}
